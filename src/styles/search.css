@@ -1,0 +1,33 @@
+.search-box {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 22px 0;
+}
+
+.search-box label {
+	font-size: 0.95rem;
+	color: var(--text-02);
+}
+
+.search-box input {
+	width: 100%;
+	padding: 16px;
+	border-radius: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: var(--bg-contrast);
+	color: var(--text-01);
+	font-size: 1rem;
+}
+
+.search-box input:focus {
+	outline: none;
+	border-color: var(--accent);
+}
+
+.hint {
+	font-size: 0.85rem;
+	color: var(--text-02);
+	display: block;
+	margin-top: 4px;
+}

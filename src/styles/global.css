@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Motiva+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+	--bg-01: #030712;
+	--bg-02: #0b1220;
+	--bg-contrast: #121b2f;
+	--accent: #66e4ff;
+	--accent-strong: #5ee6a4;
+	--danger: #ff6b81;
+	--text-01: #f4f7ff;
+	--text-02: #9ba6c7;
+	--stroke: rgba(255, 255, 255, 0.1);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: radial-gradient(circle at top, #101b35 0%, #060910 60%);
+	color: var(--text-01);
+	font-family: "Motiva Sans", "Segoe UI", sans-serif;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: auto;
+	padding: 48px 24px 80px;
+}
+
+.selected-game {
+	display: flex;
+	gap: 18px;
+	align-items: center;
+	margin-top: 24px;
+	padding: 18px;
+	border-radius: 18px;
+	background: rgba(12, 18, 34, 0.9);
+	border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.selected-game img {
+	width: 140px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 12px;
+	background: #050812;
+}
+
+.selected-game h3 {
+	margin: 0 0 6px;
+}
+
+h1 {
+	font-size: 2.4rem;
+	margin-bottom: 0.4rem;
+}
+
+p {
+	color: var(--text-02);
+}
+
+button {
+	font-family: inherit;
+	font-weight: 600;
+}
+
+.info,
+.error {
+	margin-top: 12px;
+	padding: 12px 16px;
+	border-radius: 10px;
+	background: var(--bg-contrast);
+}
+
+.error {
+	border: 1px solid var(--danger);
+	color: var(--danger);
+}
