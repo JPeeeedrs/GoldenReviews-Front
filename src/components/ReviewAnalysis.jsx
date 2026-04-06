@@ -4,11 +4,10 @@ const numberFormat = (value) =>
 	new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
 
 export default function ReviewAnalysis({ data }) {
-	if (!data) return null;
-
-	const { game, summary, highlights, topics, keywords } = data;
-
 	const orderedTopics = useMemo(() => {
+		if (!data?.topics) return [];
+
+		const topics = data.topics;
 		if (!topics) return [];
 		return [...topics]
 			.sort((a, b) => {
@@ -17,7 +16,11 @@ export default function ReviewAnalysis({ data }) {
 				return totalB - totalA;
 			})
 			.slice(0, 8);
-	}, [topics]);
+	}, [data?.topics]);
+
+	if (!data) return null;
+
+	const { game, summary, highlights, keywords } = data;
 
 	const owners = game?.owners ?? game?.steamspy?.owners;
 	const totalSteamReviews =
@@ -27,7 +30,7 @@ export default function ReviewAnalysis({ data }) {
 		<section className='analysis'>
 			<header className='analysis-hero'>
 				<div>
-					<p className='eyebrow'>Jogo em análise</p>
+					<p className='eyebrow'>Golden Reviews • jogo em análise</p>
 					<h2>{game?.name ?? ""}</h2>
 					<div className='meta-line'>
 						{summary?.avg_hours !== undefined && (

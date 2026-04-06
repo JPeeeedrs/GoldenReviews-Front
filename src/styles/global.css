@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Motiva+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
-	--bg-01: #030712;
-	--bg-02: #0b1220;
-	--bg-contrast: #121b2f;
-	--accent: #66e4ff;
-	--accent-strong: #5ee6a4;
-	--danger: #ff6b81;
-	--text-01: #f4f7ff;
-	--text-02: #9ba6c7;
-	--stroke: rgba(255, 255, 255, 0.1);
+	--bg-01: #050815;
+	--bg-02: #120d24;
+	--bg-contrast: #1c1632;
+	--accent: #9e7dff;
+	--accent-violet: #7d4dff;
+	--accent-gold: #d6a13d;
+	--accent-gold-soft: #f3d489;
+	--accent-strong: #67c1f5;
+	--danger: #ff758f;
+	--text-01: #f3f5ff;
+	--text-02: #a8b1d2;
+	--stroke: rgba(174, 148, 255, 0.32);
 }
 
 * {
@@ -17,7 +20,23 @@
 }
 
 body {
-	background: radial-gradient(circle at top, #101b35 0%, #060910 60%);
+	background:
+		radial-gradient(
+			circle at 14% 8%,
+			rgba(125, 77, 255, 0.34),
+			transparent 42%
+		),
+		radial-gradient(
+			circle at 90% 2%,
+			rgba(214, 161, 61, 0.22),
+			transparent 38%
+		),
+		radial-gradient(
+			circle at 55% 100%,
+			rgba(158, 125, 255, 0.2),
+			transparent 36%
+		),
+		linear-gradient(180deg, #080412 0%, #050815 100%);
 	color: var(--text-01);
 	font-family: "Motiva Sans", "Segoe UI", sans-serif;
 	min-height: 100vh;
@@ -37,8 +56,13 @@ body {
 	margin-top: 24px;
 	padding: 18px;
 	border-radius: 18px;
-	background: rgba(12, 18, 34, 0.9);
-	border: 1px solid rgba(255, 255, 255, 0.04);
+	background: linear-gradient(
+		120deg,
+		rgba(26, 16, 52, 0.94),
+		rgba(33, 18, 56, 0.88)
+	);
+	border: 1px solid rgba(214, 161, 61, 0.38);
+	box-shadow: 0 14px 30px rgba(6, 9, 24, 0.45);
 }
 
 .selected-game img {
@@ -56,6 +80,15 @@ body {
 h1 {
 	font-size: 2.4rem;
 	margin-bottom: 0.4rem;
+	background: linear-gradient(
+		120deg,
+		var(--accent-gold-soft) 8%,
+		var(--accent) 52%,
+		var(--accent-violet) 100%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 }
 
 p {
@@ -67,12 +100,13 @@ button {
 	font-weight: 600;
 }
 
-.info,
+.status-info,
 .error {
 	margin-top: 12px;
 	padding: 12px 16px;
 	border-radius: 10px;
 	background: var(--bg-contrast);
+	border: 1px solid rgba(214, 161, 61, 0.24);
 }
 
 .error {

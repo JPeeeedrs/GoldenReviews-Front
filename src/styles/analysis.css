@@ -1,9 +1,20 @@
 .analysis {
 	margin-top: 40px;
 	padding: 32px;
-	background: var(--bg-02);
+	background:
+		radial-gradient(
+			circle at top right,
+			rgba(125, 77, 255, 0.32),
+			transparent 48%
+		),
+		radial-gradient(
+			circle at bottom left,
+			rgba(214, 161, 61, 0.2),
+			transparent 44%
+		),
+		var(--bg-02);
 	border-radius: 24px;
-	border: 1px solid rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(214, 161, 61, 0.28);
 	box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
 	display: flex;
 	flex-direction: column;
@@ -15,6 +26,12 @@
 	flex-wrap: wrap;
 	gap: 24px;
 	align-items: center;
+	justify-content: space-between;
+}
+
+.analysis-hero > div {
+	flex: 1 1 420px;
+	min-width: 280px;
 }
 
 .analysis-hero .eyebrow {
@@ -46,9 +63,12 @@
 .game-cover {
 	width: 360px;
 	max-width: 100%;
+	margin-left: auto;
 	border-radius: 18px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(214, 161, 61, 0.56);
+	box-shadow:
+		0 12px 30px rgba(0, 0, 0, 0.4),
+		0 0 0 1px rgba(125, 77, 255, 0.24);
 }
 
 .stat-grid {
@@ -59,11 +79,11 @@
 
 .stat-card {
 	background:
-		radial-gradient(circle at top, rgba(102, 228, 255, 0.15), transparent 60%),
+		radial-gradient(circle at top, rgba(125, 77, 255, 0.24), transparent 62%),
 		var(--bg-contrast);
 	border-radius: 16px;
 	padding: 18px;
-	border: 1px solid rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(125, 77, 255, 0.34);
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
@@ -79,19 +99,19 @@
 }
 
 .stat-card.good {
-	background: linear-gradient(135deg, rgba(94, 230, 164, 0.25), transparent);
+	background: linear-gradient(135deg, rgba(214, 161, 61, 0.36), transparent);
 }
 
 .stat-card.bad {
-	background: linear-gradient(135deg, rgba(255, 107, 129, 0.22), transparent);
+	background: linear-gradient(135deg, rgba(125, 77, 255, 0.34), transparent);
 }
 
 .stat-card.neutral {
-	background: linear-gradient(135deg, rgba(102, 228, 255, 0.18), transparent);
+	background: linear-gradient(135deg, rgba(125, 77, 255, 0.22), transparent);
 }
 
 .stat-card.highlight {
-	background: linear-gradient(135deg, rgba(255, 214, 137, 0.25), transparent);
+	background: linear-gradient(135deg, rgba(243, 212, 137, 0.4), transparent);
 }
 
 .highlights-grid,
@@ -108,10 +128,10 @@
 }
 
 .highlights-grid p {
-	background: rgba(255, 255, 255, 0.04);
+	background: rgba(34, 22, 57, 0.66);
 	padding: 12px 14px;
 	border-radius: 12px;
-	border: 1px solid rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(125, 77, 255, 0.3);
 	margin-bottom: 8px;
 }
 
@@ -125,11 +145,11 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	border-bottom: 1px solid rgba(125, 77, 255, 0.26);
 }
 
 .keywords-grid strong {
-	color: var(--accent);
+	color: var(--accent-gold-soft);
 }
 
 .topics-grid {
@@ -139,10 +159,14 @@
 }
 
 .topic-card {
-	background: rgba(8, 15, 32, 0.9);
+	background: linear-gradient(
+		145deg,
+		rgba(26, 15, 49, 0.94),
+		rgba(33, 17, 52, 0.9)
+	);
 	border-radius: 18px;
 	padding: 18px;
-	border: 1px solid rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(214, 161, 61, 0.24);
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
@@ -206,8 +230,19 @@
 	border-radius: 12px;
 	background: var(--bg-contrast);
 	color: var(--text-01);
-	border: 1px solid rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(125, 77, 255, 0.34);
 	font-size: 1rem;
+}
+
+.limit-box input[type="number"] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+.limit-box input[type="number"]::-webkit-outer-spin-button,
+.limit-box input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .limit-box select {
@@ -221,7 +256,12 @@
 	width: 100%;
 	border: none;
 	border-radius: 14px;
-	background: linear-gradient(135deg, var(--accent), #4cc5ff);
+	background: linear-gradient(
+		120deg,
+		var(--accent-violet) 0%,
+		var(--accent) 54%,
+		var(--accent-gold) 100%
+	);
 	color: #061127;
 	font-weight: 700;
 	font-size: 1.05rem;
@@ -233,11 +273,52 @@
 
 .analyze-btn:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 15px 30px rgba(76, 197, 255, 0.25);
+	box-shadow:
+		0 15px 30px rgba(125, 77, 255, 0.34),
+		0 0 0 1px rgba(214, 161, 61, 0.28);
 }
 
 .analyze-btn:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
 	box-shadow: none;
+}
+
+.back-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 15px;
+	padding: 10px 14px;
+	border-radius: 12px;
+	border: 1px solid rgba(214, 161, 61, 0.44);
+	background: linear-gradient(
+		135deg,
+		rgba(125, 77, 255, 0.42),
+		rgba(214, 161, 61, 0.34)
+	);
+	color: #f6edcf;
+	font-weight: 700;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.back-btn span {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.back-btn:hover {
+	transform: translateY(-1px);
+	border-color: var(--accent-gold);
+	box-shadow: 0 10px 24px rgba(125, 77, 255, 0.34);
+}
+
+.back-btn:focus-visible {
+	outline: 2px solid var(--accent-gold);
+	outline-offset: 2px;
 }

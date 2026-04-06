@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import SearchBox from "./components/SearchBox";
-import Buttons from "./components/Buttons";
 import Results from "./components/Results";
 import SelectedGame from "./components/SelectedGame";
 import ReviewAnalysis from "./components/ReviewAnalysis";
@@ -22,10 +21,7 @@ export default function App() {
 
 	// 🔎 Buscar jogos
 	useEffect(() => {
-		if (query.length < 2) {
-			setGames([]);
-			return;
-		}
+		if (query.length < 2) return;
 
 		const timeout = setTimeout(async () => {
 			try {
@@ -38,6 +34,8 @@ export default function App() {
 
 		return () => clearTimeout(timeout);
 	}, [query]);
+
+	const visibleGames = query.length < 2 ? [] : games;
 
 	// 🎮 Selecionar jogo (AGORA NÃO ANALISA)
 	function handleSelect(game) {
@@ -66,21 +64,21 @@ export default function App() {
 
 	return (
 		<div className='container'>
-			<h1>🔎 Buscador de jogos da Steam</h1>
-			<p>Digite o nome do jogo e veja sugestões em tempo real.</p>
+			<h1>🏆 Golden Reviews</h1>
+			<p>
+				Analisador de reviews da Steam. Digite o nome do jogo e veja sugestões
+				em tempo real.
+			</p>
 
-			<SearchBox value={query} onChange={setQuery} />
-
-			<Buttons
-				onClearSearch={() => {
+			<SearchBox
+				value={query}
+				onChange={setQuery}
+				onClear={() => {
 					setQuery("");
 					setSelected(null);
 					setReviews(null);
 				}}
-				onClearSelected={() => {
-					setSelected(null);
-					setReviews(null);
-				}}
+				showClear={Boolean(query) || Boolean(selected)}
 			/>
 
 			{/* 🔢 quantidade */}
@@ -109,18 +107,19 @@ export default function App() {
 				</div>
 			</div>
 
-			{!query && <div className='info'>Digite algo para começar.</div>}
+			{!query && <div className='status-info'>Digite algo para começar.</div>}
 
 			{/* 🔙 voltar */}
 			{selected && (
 				<button
-					style={{ marginTop: "15px" }}
+					className='back-btn'
 					onClick={() => {
 						setSelected(null);
 						setReviews(null);
 					}}
 				>
-					🔙 Voltar
+					<span aria-hidden='true'>↩</span>
+					Voltar
 				</button>
 			)}
 
@@ -129,7 +128,7 @@ export default function App() {
 			{/* 📋 lista */}
 			{!selected && (
 				<Results
-					games={games}
+					games={visibleGames}
 					onSelect={handleSelect}
 					selectedGame={selected}
 				/>
@@ -142,14 +141,16 @@ export default function App() {
 					onClick={handleAnalyze}
 					disabled={loading}
 				>
-					{loading ? "Analisando..." : "📊 Analisar Reviews"}
+					{loading
+						? "Analisando com Golden Reviews..."
+						: "📊 Analisar com Golden Reviews"}
 				</button>
 			)}
 
 			{selected && (
 				<p className='hint'>
-					🤖 Validação semântica com IA chegará em breve para garantir
-					consistência das reviews.
+					🤖 O Golden Reviews terá validação semântica com IA em breve para
+					garantir consistência das reviews.
 				</p>
 			)}
 
