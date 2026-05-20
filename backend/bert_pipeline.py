@@ -10,153 +10,6 @@ from typing import Iterable
 DEFAULT_SENT_MIN_LEN = 35
 DEFAULT_BATCH_SIZE = 64
 
-CATEGORY_KEYWORDS = {
-    "bugs e crashes": [
-        "bug",
-        "crash",
-        "glitch",
-        "erro",
-        "falha",
-        "tela preta",
-        "softlock",
-        "travou",
-        "travando",
-    ],
-    "desempenho e fps": [
-        "fps",
-        "lag",
-        "desempenho",
-        "performance",
-        "otimiz",
-        "framerate",
-        "stutter",
-        "lento",
-        "pesado",
-    ],
-    "servidores e online": [
-        "servidor",
-        "online",
-        "multiplayer",
-        "matchmaking",
-        "fila",
-        "ping",
-        "latencia",
-        "ranked",
-        "lobby",
-        "cross-play",
-        "dedicado",
-    ],
-    "graficos e visual": [
-        "grafico",
-        "graficos",
-        "visual",
-        "arte",
-        "bonito",
-        "lindo",
-        "feio",
-        "animacao",
-        "textura",
-        "resolucao",
-        "iluminacao",
-        "sombras",
-        "ray tracing",
-        "pixel",
-    ],
-    "gameplay e mecanicas": [
-        "gameplay",
-        "mecanica",
-        "jogabilidade",
-        "controles",
-        "combate",
-        "movimentacao",
-        "progressao",
-        "habilidade",
-        "responsivo",
-    ],
-    "historia e narrativa": [
-        "historia",
-        "enredo",
-        "narrativa",
-        "roteiro",
-        "personagem",
-        "lore",
-        "trama",
-        "final",
-        "missao",
-        "dialogo",
-        "campanha",
-    ],
-    "conteudo e duracao": [
-        "conteudo",
-        "duracao",
-        "curto",
-        "longo",
-        "horas",
-        "repetitivo",
-        "mapa",
-        "mundo",
-        "end game",
-        "grind",
-        "campanha",
-    ],
-    "preco e monetizacao": [
-        "preco",
-        "valor",
-        "caro",
-        "barato",
-        "vale a pena",
-        "promocao",
-        "dlc",
-        "microtransacao",
-        "pay to win",
-        "loot box",
-        "compra",
-        "gratis",
-    ],
-    "som e trilha": [
-        "som",
-        "sons",
-        "musica",
-        "trilha",
-        "audio",
-        "dublagem",
-        "voz",
-        "efeitos sonoros",
-        "soundtrack",
-    ],
-    "suporte e desenvolvedores": [
-        "suporte",
-        "desenvolvedor",
-        "dev",
-        "atualizacao",
-        "patch",
-        "abandonado",
-        "comunidade",
-        "cheater",
-        "anti-cheat",
-    ],
-    "diversao e imersao": [
-        "divertido",
-        "viciante",
-        "imersivo",
-        "entretenimento",
-        "incrivel",
-        "maravilhoso",
-        "epico",
-        "obra prima",
-        "amigos",
-        "cooperativo",
-    ],
-    "tutorial e curva de aprendizado": [
-        "tutorial",
-        "dificil",
-        "facil",
-        "acessivel",
-        "aprender",
-        "complexo",
-        "curva",
-    ],
-}
 
 
 @dataclass
@@ -176,6 +29,9 @@ class BertPipeline:
         self._topic_model_pos = None
         self._topic_model_neg = None
         self._embedding_model = None
+
+    def is_loaded(self) -> bool:
+        return self._sentiment_analyzer is not None
 
     def load(self) -> None:
         """Load models once and keep them in memory."""
@@ -299,31 +155,6 @@ class BertPipeline:
         if not words:
             return f"Topico {topic_id}"
         return f"Topico {topic_id}: {', '.join(words)}"
-
-    def topic_category(self, topic_id: int, polarity: str) -> str:
-        self.load()
-
-        if topic_id == -1:
-            return "Outros"
-
-        model = self._topic_model_pos if polarity == "positive" else self._topic_model_neg
-        topic = model.get_topic(topic_id) if model is not None else None
-        if not topic:
-            return "Outros"
-
-        words = [word.lower() for word, _ in topic[:10]]
-        if not words:
-            return "Outros"
-
-        best_category = None
-        best_hits = 0
-        for category, keywords in CATEGORY_KEYWORDS.items():
-            hits = sum(1 for kw in keywords if any(kw in word for word in words))
-            if hits > best_hits:
-                best_hits = hits
-                best_category = category
-
-        return best_category if best_category else "Outros"
 
     def _iter_sentences(self, reviews: list[dict]) -> Iterable[str]:
         for review in reviews:

@@ -19,7 +19,7 @@ export default function App() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	// 🔎 Buscar jogos
+	// Buscar jogos
 	useEffect(() => {
 		if (query.length < 2) return;
 
@@ -37,13 +37,13 @@ export default function App() {
 
 	const visibleGames = query.length < 2 ? [] : games;
 
-	// 🎮 Selecionar jogo (AGORA NÃO ANALISA)
+	//Selecionar jogo (AGORA NÃO ANALISA)
 	function handleSelect(game) {
 		setSelected(game);
 		setReviews(null);
 	}
 
-	// 📊 BOTÃO ANALISAR
+	//BOTÃO ANALISAR
 	async function handleAnalyze() {
 		if (!selected) return;
 
@@ -64,7 +64,7 @@ export default function App() {
 
 	return (
 		<div className='container'>
-			<h1>🏆 Golden Reviews</h1>
+			<h1>Golden Reviews</h1>
 			<p>
 				Analisador de reviews da Steam. Digite o nome do jogo e veja sugestões
 				em tempo real.
@@ -81,7 +81,7 @@ export default function App() {
 				showClear={Boolean(query) || Boolean(selected)}
 			/>
 
-			{/* 🔢 quantidade */}
+			{/*quantidade */}
 			<div className='limit-box'>
 				<div>
 					<label>Qtd. máxima de reviews</label>
@@ -109,7 +109,7 @@ export default function App() {
 
 			{!query && <div className='status-info'>Digite algo para começar.</div>}
 
-			{/* 🔙 voltar */}
+			{/*voltar */}
 			{selected && (
 				<button
 					className='back-btn'
@@ -125,7 +125,7 @@ export default function App() {
 
 			<SelectedGame game={selected} />
 
-			{/* 📋 lista */}
+			{/*lista */}
 			{!selected && (
 				<Results
 					games={visibleGames}
@@ -134,7 +134,7 @@ export default function App() {
 				/>
 			)}
 
-			{/* 🚀 BOTÃO ANALISAR */}
+			{/*BOTÃO ANALISAR */}
 			{selected && (
 				<button
 					className='analyze-btn'
@@ -143,22 +143,15 @@ export default function App() {
 				>
 					{loading
 						? "Analisando com Golden Reviews..."
-						: "📊 Analisar com Golden Reviews"}
+						: "Analisar com Golden Reviews"}
 				</button>
 			)}
 
-			{selected && (
-				<p className='hint'>
-					🤖 O Golden Reviews terá validação semântica com IA em breve para
-					garantir consistência das reviews.
-				</p>
-			)}
-
-			{/* ⏳ loading */}
+			{/*loading */}
 			{error && <p className='error'>{error}</p>}
-			{loading && <p>🔄 Processando reviews...</p>}
+			{loading && <p>Processando reviews...</p>}
 
-			{/* 📊 resultado */}
+			{/* resultado */}
 			<ReviewAnalysis data={reviews} />
 		</div>
 	);

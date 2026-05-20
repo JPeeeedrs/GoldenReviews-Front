@@ -114,15 +114,13 @@
 	background: linear-gradient(135deg, rgba(243, 212, 137, 0.4), transparent);
 }
 
-.highlights-grid,
-.keywords-grid {
+.highlights-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 	gap: 24px;
 }
 
-.highlights-grid h3,
-.keywords-grid h3 {
+.highlights-grid h3 {
 	margin-top: 0;
 	margin-bottom: 12px;
 }
@@ -135,27 +133,62 @@
 	margin-bottom: 8px;
 }
 
-.keywords-grid ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.highlight-column.positive p {
+	border-color: rgba(103, 193, 245, 0.55);
+	box-shadow: inset 0 0 0 1px rgba(103, 193, 245, 0.12);
 }
 
-.keywords-grid li {
-	display: flex;
-	justify-content: space-between;
-	padding: 10px 0;
-	border-bottom: 1px solid rgba(125, 77, 255, 0.26);
-}
-
-.keywords-grid strong {
-	color: var(--accent-gold-soft);
+.highlight-column.negative p {
+	border-color: rgba(255, 117, 143, 0.55);
+	box-shadow: inset 0 0 0 1px rgba(255, 117, 143, 0.12);
 }
 
 .topics-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-template-columns: 1fr;
 	gap: 20px;
+}
+
+.topics-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.topics-header h3 {
+	margin: 0;
+}
+
+.topics-toggle {
+	border: 1px solid rgba(214, 161, 61, 0.4);
+	background: linear-gradient(
+		135deg,
+		rgba(125, 77, 255, 0.36),
+		rgba(214, 161, 61, 0.28)
+	);
+	color: #f6edcf;
+	padding: 10px 16px;
+	border-radius: 999px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.topics-toggle:hover {
+	transform: translateY(-1px);
+	border-color: var(--accent-gold);
+	box-shadow: 0 10px 22px rgba(125, 77, 255, 0.32);
+}
+
+.topics-toggle:focus-visible {
+	outline: 2px solid var(--accent-gold);
+	outline-offset: 2px;
 }
 
 .topic-card {
@@ -170,6 +203,16 @@
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
+}
+
+.topic-card.positive {
+	border-color: rgba(103, 193, 245, 0.55);
+	box-shadow: inset 0 0 0 1px rgba(103, 193, 245, 0.12);
+}
+
+.topic-card.negative {
+	border-color: rgba(255, 117, 143, 0.55);
+	box-shadow: inset 0 0 0 1px rgba(255, 117, 143, 0.12);
 }
 
 .topic-header {
@@ -187,10 +230,16 @@
 
 .topic-columns span {
 	display: block;
-	margin-bottom: 6px;
+	padding: 8px 0;
+	border-bottom: 1px solid rgba(125, 77, 255, 0.22);
 	color: var(--text-01);
 	font-size: 0.92rem;
 	line-height: 1.4;
+}
+
+.topic-columns span:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
 }
 
 .muted {

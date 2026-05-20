@@ -1,6 +1,6 @@
 const getCapsule = (appid, fallback) =>
 	fallback ||
-	`https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/capsule_184x69.jpg`;
+	`https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
 
 export default function GameCard({ game, onSelect, selected }) {
 	const cover = getCapsule(game.appid, game.image);

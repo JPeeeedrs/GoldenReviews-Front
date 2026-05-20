@@ -1,26 +1,30 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 const numberFormat = (value) =>
 	new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
 
 export default function ReviewAnalysis({ data }) {
+	const [topicView, setTopicView] = useState("positive");
+
 	const orderedTopics = useMemo(() => {
 		if (!data?.topics) return [];
 
 		const topics = data.topics;
 		if (!topics) return [];
 		return [...topics]
+			.filter((topic) => (topic?.[topicView]?.count ?? 0) > 0)
 			.sort((a, b) => {
-				const totalA = a.positive.count + a.negative.count;
-				const totalB = b.positive.count + b.negative.count;
-				return totalB - totalA;
+				const countA = a?.[topicView]?.count ?? 0;
+				const countB = b?.[topicView]?.count ?? 0;
+				return countB - countA;
 			})
 			.slice(0, 8);
-	}, [data?.topics]);
+	}, [data?.topics, topicView]);
 
 	if (!data) return null;
 
 	const { game, summary, highlights } = data;
+	const topicLabel = topicView === "positive" ? "Positivos" : "Negativos";
 
 	const owners = game?.owners ?? game?.steamspy?.owners;
 	const totalSteamReviews =
@@ -96,7 +100,7 @@ export default function ReviewAnalysis({ data }) {
 			</div>
 
 			<div className='highlights-grid'>
-				<div>
+				<div className='highlight-column positive'>
 					<h3>✅ O que elogiam</h3>
 					{highlights?.positivo?.length ? (
 						highlights.positivo.map((sentence, idx) => (
@@ -106,7 +110,7 @@ export default function ReviewAnalysis({ data }) {
 						<p className='muted'>Sem frases suficientes.</p>
 					)}
 				</div>
-				<div>
+				<div className='highlight-column negative'>
 					<h3>❌ O que criticam</h3>
 					{highlights?.negativo?.length ? (
 						highlights.negativo.map((sentence, idx) => (
@@ -118,43 +122,50 @@ export default function ReviewAnalysis({ data }) {
 				</div>
 			</div>
 
-			<div className='topics-grid'>
-				{orderedTopics.map((topic) => (
-					<div className='topic-card' key={topic.name}>
-						<div className='topic-header'>
-							<strong>{topic.name}</strong>
-							<span>
-								{numberFormat(topic.positive.count + topic.negative.count)}{" "}
-								menções
-							</span>
-						</div>
-						<div className='topic-columns'>
-							<div>
-								<p className='eyebrow'>Positivos</p>
-								{topic.positive.examples.length ? (
-									topic.positive.examples.map((sentence, idx) => (
-										<span key={`tpos-${topic.name}-${idx}`}>{sentence}</span>
-									))
-								) : (
-									<span className='muted'>Sem menções.</span>
-								)}
-							</div>
-
-							<div>
-								<p className='eyebrow'>Negativos</p>
-								{topic.negative.examples.length ? (
-									topic.negative.examples.map((sentence, idx) => (
-										<span key={`tneg-${topic.name}-${idx}`}>{sentence}</span>
-									))
-								) : (
-									<span className='muted'>Sem menções.</span>
-								)}
-							</div>
-						</div>
-					</div>
-				))}
+			<div className='topics-header'>
+				<h3>Topicos {topicView === "positive" ? "positivos" : "negativos"}</h3>
+				<button
+					type='button'
+					className='topics-toggle'
+					onClick={() =>
+						setTopicView((current) =>
+							current === "positive" ? "negative" : "positive",
+						)
+					}
+				>
+					{topicView === "positive" ? "Ver negativos" : "Ver positivos"}
+				</button>
 			</div>
 
+			<div className='topics-grid'>
+				{orderedTopics.map((topic) => {
+					const examples = topic?.[topicView]?.examples ?? [];
+					const count = topic?.[topicView]?.count ?? 0;
+
+					return (
+						<div className={`topic-card ${topicView}`} key={topic.name}>
+							<div className='topic-header'>
+								<strong>{topic.name}</strong>
+								<span>{numberFormat(count)} menções</span>
+							</div>
+							<div className='topic-columns'>
+								<div>
+									<p className='eyebrow'>{topicLabel}</p>
+									{examples.length ? (
+										examples.map((sentence, idx) => (
+											<span key={`t${topicView}-${topic.name}-${idx}`}>
+												{sentence}
+											</span>
+										))
+									) : (
+										<span className='muted'>Sem menções.</span>
+									)}
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
 		</section>
 	);
 }

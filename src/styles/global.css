@@ -66,11 +66,11 @@ body {
 }
 
 .selected-game img {
-	width: 140px;
-	height: 80px;
-	object-fit: cover;
+	width: 260px;
+	height: auto;
+	max-height: 180px;
 	border-radius: 12px;
-	background: #050812;
+	background: transparent;
 }
 
 .selected-game h3 {

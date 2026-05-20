@@ -303,17 +303,9 @@ def reviews_endpoint():
             "summary": summary,
             "highlights": analysis["highlights"],
             "topics": analysis["topics"],
-            "keywords": {
-                "positive": [],
-                "negative": [],
-            },
             "meta": {
                 "language": language,
                 "maxReviewsRequested": max_reviews,
-            },
-            "aiConsistency": {
-                "status": "pending",
-                "message": "Validador semântico será habilitado em breve.",
             },
         }
     )
