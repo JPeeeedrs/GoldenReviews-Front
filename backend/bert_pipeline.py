@@ -224,12 +224,16 @@ class BertPipeline:
 
         pos_topics = []
         if pos_sents:
-            pos_topics, _ = self._topic_model_pos.transform(pos_sents)
+            pos_topics_raw, _ = self._topic_model_pos.transform(pos_sents)
+            # Fix off-by-one BERTopic index shift caused by reduce_outliers / embeddings strategy
+            pos_topics = [t - 1 for t in pos_topics_raw]
             by_topic["positive"] = self._group_by_topic(pos_sents, pos_topics)
 
         neg_topics = []
         if neg_sents:
-            neg_topics, _ = self._topic_model_neg.transform(neg_sents)
+            neg_topics_raw, _ = self._topic_model_neg.transform(neg_sents)
+            # Fix off-by-one BERTopic index shift caused by reduce_outliers / embeddings strategy
+            neg_topics = [t - 1 for t in neg_topics_raw]
             by_topic["negative"] = self._group_by_topic(neg_sents, neg_topics)
 
         review_dump = []

@@ -199,31 +199,48 @@ def analyze_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def _build_topics_payload(by_topic: dict[str, dict[str, dict[str, list[str]]]]):
+def _build_topics_payload(by_topic: dict[str, dict[str, list[str]]]):
     pos_groups = by_topic.get("positive", {})
     neg_groups = by_topic.get("negative", {})
-    topic_ids = {**pos_groups, **neg_groups}
 
     payload = []
-    for topic_id in sorted(topic_ids, key=lambda value: int(value)):
+    
+    # Processar tópicos positivos (modelo positivo)
+    for topic_id, examples in pos_groups.items():
         if str(topic_id) == "-1":
             continue
-
-        pos_examples = pos_groups.get(topic_id, [])
-        neg_examples = neg_groups.get(topic_id, [])
-        label_source = "positive" if len(pos_examples) >= len(neg_examples) else "negative"
-        label = BERT_PIPELINE.topic_label(int(topic_id), label_source)
-
+            
+        label = BERT_PIPELINE.topic_label(int(topic_id), "positive")
         payload.append(
             {
                 "name": label,
                 "positive": {
-                    "count": len(pos_examples),
-                    "examples": pos_examples[:5],
+                    "count": len(examples),
+                    "examples": examples[:5],
                 },
                 "negative": {
-                    "count": len(neg_examples),
-                    "examples": neg_examples[:5],
+                    "count": 0,
+                    "examples": [],
+                },
+            }
+        )
+        
+    # Processar tópicos negativos (modelo negativo)
+    for topic_id, examples in neg_groups.items():
+        if str(topic_id) == "-1":
+            continue
+            
+        label = BERT_PIPELINE.topic_label(int(topic_id), "negative")
+        payload.append(
+            {
+                "name": label,
+                "positive": {
+                    "count": 0,
+                    "examples": [],
+                },
+                "negative": {
+                    "count": len(examples),
+                    "examples": examples[:5],
                 },
             }
         )
