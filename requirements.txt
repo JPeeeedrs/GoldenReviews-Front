@@ -1,0 +1,8 @@
+# Golden Reviews Backend Dependencies
+Flask
+Flask-Cors
+requests
+spacy
+
+# Note: The Portuguese language model for spaCy is installed separately.
+# Run: python -m spacy download pt_core_news_sm

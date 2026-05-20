@@ -20,7 +20,7 @@ export default function ReviewAnalysis({ data }) {
 
 	if (!data) return null;
 
-	const { game, summary, highlights, keywords } = data;
+	const { game, summary, highlights } = data;
 
 	const owners = game?.owners ?? game?.steamspy?.owners;
 	const totalSteamReviews =
@@ -155,38 +155,6 @@ export default function ReviewAnalysis({ data }) {
 				))}
 			</div>
 
-			<div className='keywords-grid'>
-				<div>
-					<h3>🔍 Termos positivos</h3>
-					<ul>
-						{keywords?.positive?.length ? (
-							keywords.positive.slice(0, 18).map(([phrase, count]) => (
-								<li key={phrase}>
-									<span>{phrase}</span>
-									<strong>{count}×</strong>
-								</li>
-							))
-						) : (
-							<li className='muted'>Nada encontrado.</li>
-						)}
-					</ul>
-				</div>
-				<div>
-					<h3>⚠️ Termos negativos</h3>
-					<ul>
-						{keywords?.negative?.length ? (
-							keywords.negative.slice(0, 18).map(([phrase, count]) => (
-								<li key={phrase}>
-									<span>{phrase}</span>
-									<strong>{count}×</strong>
-								</li>
-							))
-						) : (
-							<li className='muted'>Nada encontrado.</li>
-						)}
-					</ul>
-				</div>
-			</div>
 		</section>
 	);
 }

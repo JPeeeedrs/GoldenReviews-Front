@@ -2,15 +2,16 @@
 
 from __future__ import annotations
 
-import re
+import json
 import time
-from collections import Counter, defaultdict
-from typing import Any, Callable, Optional
+from pathlib import Path
+from typing import Any
 
 import requests
-import spacy
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+
+from bert_pipeline import BertConfig, BertPipeline
 
 
 app = Flask(__name__)
@@ -26,239 +27,24 @@ STEAM_DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={app_i
 STEAM_SEARCH_URL = "https://store.steampowered.com/api/storesearch/"
 STEAMSPY_DETAILS_URL = "https://steamspy.com/api.php"
 
-TOPICS: dict[str, list[str]] = {
-    "🐛 bugs e crashes": [
-        "bug",
-        "bugs",
-        "bugado",
-        "bugada",
-        "bugar",
-        "bugou",
-        "crash",
-        "crasha",
-        "crashou",
-        "crashando",
-        "travou",
-        "trava",
-        "travando",
-        "glitch",
-        "glitches",
-        "erro",
-        "erros",
-        "falha",
-        "falhas",
-        "não abre",
-        "não inicia",
-        "não funciona",
-        "não roda",
-        "loop infinito",
-        "tela preta",
-        "softlock",
-    ],
-    "📉 desempenho e FPS": [
-        "fps",
-        "lag",
-        "lags",
-        "lagando",
-        "desempenho",
-        "performance",
-        "otimização",
-        "otimizado",
-        "frames",
-        "framerate",
-        "stuttering",
-        "engasga",
-        "lento",
-        "pesado",
-        "queda de fps",
-        "drops",
-    ],
-    "🌐 servidores e online": [
-        "servidor",
-        "servidores",
-        "online",
-        "multiplayer",
-        "matchmaking",
-        "fila de espera",
-        "conexão",
-        "desconectado",
-        "ping",
-        "latência",
-        "ranked",
-        "lobby",
-        "cross-play",
-        "p2p",
-        "dedicado",
-    ],
-    "🎨 gráficos e visual": [
-        "gráfico",
-        "gráficos",
-        "visual",
-        "arte",
-        "bonito",
-        "lindo",
-        "feio",
-        "animação",
-        "textura",
-        "resolução",
-        "iluminação",
-        "sombras",
-        "ray tracing",
-    ],
-    "🎮 gameplay e mecânicas": [
-        "gameplay",
-        "mecânica",
-        "jogabilidade",
-        "controles",
-        "combate",
-        "movimentação",
-        "progressão",
-        "habilidade",
-        "responsivo",
-    ],
-    "📖 história e narrativa": [
-        "história",
-        "enredo",
-        "narrativa",
-        "roteiro",
-        "personagem",
-        "lore",
-        "trama",
-        "final",
-        "missão",
-        "diálogo",
-    ],
-    "📦 conteúdo e duração": [
-        "conteúdo",
-        "duração",
-        "curto",
-        "longo",
-        "horas de jogo",
-        "repetitivo",
-        "mapa",
-        "mundo",
-        "replayability",
-        "end game",
-        "grind",
-    ],
-    "💰 preço e monetização": [
-        "preço",
-        "valor",
-        "caro",
-        "barato",
-        "vale a pena",
-        "promoção",
-        "dlc",
-        "microtransação",
-        "pay to win",
-        "loot box",
-        "compra",
-        "grátis",
-    ],
-    "🔊 som e trilha": [
-        "som",
-        "sons",
-        "música",
-        "trilha",
-        "áudio",
-        "dublagem",
-        "voz",
-        "efeitos sonoros",
-    ],
-    "🛠️ suporte e desenvolvedores": [
-        "suporte",
-        "desenvolvedor",
-        "dev",
-        "atualização",
-        "patch",
-        "abandonado",
-        "comunidade",
-        "cheater",
-        "anti-cheat",
-    ],
-    "😄 diversão e imersão": [
-        "divertido",
-        "viciante",
-        "imersivo",
-        "entretenimento",
-        "incrível",
-        "maravilhoso",
-        "épico",
-        "obra prima",
-    ],
-    "📚 tutorial e curva de aprendizado": [
-        "tutorial",
-        "difícil",
-        "fácil",
-        "acessível",
-        "aprender",
-        "complexo",
-        "curva de aprendizado",
-    ],
-}
+BASE_DIR = Path(__file__).resolve().parent
+BERT_MODELS_DIR = (
+    BASE_DIR
+    / ".."
+    / "sandbox"
+    / "pacotao_golden_review"
+    / "models"
+    / "bertopic"
+).resolve()
 
-BLACKLIST_CHUNKS = {
-    "jogo",
-    "game",
-    "jogos",
-    "games",
-    "eu",
-    "você",
-    "ele",
-    "ela",
-    "coisa",
-    "coisas",
-    "parte",
-    "partes",
-    "muito",
-    "pouco",
-    "vez",
-    "vezes",
-    "steam",
-    "valve",
-    "esse",
-    "essa",
-    "isso",
-}
+BERT_CONFIG = BertConfig(
+    sentiment_model="pysentimiento/bertweet-pt-sentiment",
+    embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    bertopic_pos_dir=BERT_MODELS_DIR / "ludoprism_positivo_dir",
+    bertopic_neg_dir=BERT_MODELS_DIR / "ludoprism_negativo_dir",
+)
 
-NEGATIVE_MARKERS = [
-    "não funciona",
-    "nao funciona",
-    "não roda",
-    "nao roda",
-    "não abre",
-    "crashando",
-    "travando",
-    "bugado",
-    "péssimo",
-    "horrível",
-    "insuportável",
-    "lixo",
-]
-
-POSITIVE_IN_NEG = [
-    "boa história",
-    "bons gráficos",
-    "boa gameplay",
-    "mas a história",
-    "porém o gameplay",
-    "apesar",
-    "pelo menos",
-    "ponto positivo",
-]
-
-
-def load_nlp() -> spacy.Language:
-    try:
-        return spacy.load("pt_core_news_sm")
-    except OSError as exc:
-        raise RuntimeError(
-            "Modelo spaCy 'pt_core_news_sm' não encontrado. "
-            "Instale com: python -m spacy download pt_core_news_sm"
-        ) from exc
-
-
-NLP = load_nlp()
+BERT_PIPELINE = BertPipeline(BERT_CONFIG)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -400,132 +186,62 @@ def fetch_reviews(
     return reviews
 
 
-def _topics_from_sentence(sentence: str) -> list[str]:
-    lower = sentence.lower()
-    found: list[str] = []
-    for topic, keywords in TOPICS.items():
-        if any(keyword in lower for keyword in keywords):
-            found.append(topic)
-    return found
-
-
-def _sentence_sentiment(sentence: str, review_positive: bool) -> str:
-    lower = sentence.lower()
-    sentiment = "positivo" if review_positive else "negativo"
-    if review_positive:
-        if any(marker in lower for marker in NEGATIVE_MARKERS):
-            return "negativo"
-    else:
-        if any(marker in lower for marker in POSITIVE_IN_NEG):
-            return "positivo"
-    return sentiment
-
-
-def _sentence_quality(sentence: str) -> float:
-    length = len(sentence)
-    if length < 40:
-        return 0.0
-    if length > 400:
-        return 0.6
-    score = min(length / 200, 1.0)
-    if re.search(r"\d+", sentence):
-        score += 0.1
-    if re.search(r"capítulo|missão|fase|nível|mapa|chefe|boss", sentence, re.I):
-        score += 0.1
-    return min(score, 1.0)
-
-
-def _deduplicate(sentences: list[str]) -> list[str]:
-    selected: list[str] = []
-    for sentence in sentences:
-        current = set(sentence.lower().split())
-        duplicate = False
-        for existing in selected:
-            words_existing = set(existing.lower().split())
-            union = current | words_existing
-            if union and len(current & words_existing) / len(union) > 0.65:
-                duplicate = True
-                break
-        if not duplicate:
-            selected.append(sentence)
-    return selected
-
-
-def _relevant_chunks(doc: spacy.tokens.Doc) -> list[str]:
-    chunks: list[str] = []
-    for chunk in doc.noun_chunks:
-        text = chunk.text.strip().lower()
-        tokens = text.split()
-        if len(tokens) < 2:
-            continue
-        if all(token in BLACKLIST_CHUNKS for token in tokens):
-            continue
-        if tokens[0] in BLACKLIST_CHUNKS:
-            continue
-        chunks.append(text)
-    return chunks
-
-
 def analyze_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
-    by_topic: dict[str, dict[str, list[str]]] = defaultdict(
-        lambda: {"positivo": [], "negativo": []}
-    )
-    chunks_pos: Counter[str] = Counter()
-    chunks_neg: Counter[str] = Counter()
-    positive_sentences: list[str] = []
-    negative_sentences: list[str] = []
-
-    for review in reviews:
-        text = review["text"]
-        is_positive = review["recommended"]
-        doc = NLP(text[:6000])
-
-        for sent in doc.sents:
-            sentence = sent.text.strip()
-            if len(sentence) < 35:
-                continue
-
-            topics = _topics_from_sentence(sentence)
-            sentiment = _sentence_sentiment(sentence, is_positive)
-
-            phrase_doc = NLP(sentence)
-            for chunk in _relevant_chunks(phrase_doc):
-                if sentiment == "positivo":
-                    chunks_pos[chunk] += 1
-                else:
-                    chunks_neg[chunk] += 1
-
-            if sentiment == "positivo":
-                positive_sentences.append(sentence)
-            else:
-                negative_sentences.append(sentence)
-
-            if not topics:
-                continue
-
-            for topic in topics:
-                bucket = by_topic[topic][sentiment]
-                if sentence not in bucket:
-                    bucket.append(sentence)
-
-    def _post_process(sentences: list[str]) -> list[str]:
-        return _deduplicate(
-            sorted(sentences, key=_sentence_quality, reverse=True)
-        )
-
-    for topic in by_topic:
-        for sentiment in ("positivo", "negativo"):
-            by_topic[topic][sentiment] = _post_process(by_topic[topic][sentiment])
-
+    result = BERT_PIPELINE.analyze(reviews)
+    topics = _build_topics_payload(result["by_topic"])
+    _write_review_dump(result.get("review_dump", []))
     return {
-        "por_topico": dict(by_topic),
-        "chunks_positivos": chunks_pos.most_common(25),
-        "chunks_negativos": chunks_neg.most_common(25),
-        "destaques": {
-            "positivo": _post_process(positive_sentences)[:8],
-            "negativo": _post_process(negative_sentences)[:8],
+        "topics": topics,
+        "highlights": {
+            "positivo": result["highlights"]["positive"],
+            "negativo": result["highlights"]["negative"],
         },
     }
+
+
+def _build_topics_payload(by_topic: dict[str, dict[str, dict[str, list[str]]]]):
+    pos_groups = by_topic.get("positive", {})
+    neg_groups = by_topic.get("negative", {})
+    topic_ids = {**pos_groups, **neg_groups}
+
+    payload = []
+    for topic_id in sorted(topic_ids, key=lambda value: int(value)):
+        if str(topic_id) == "-1":
+            continue
+
+        pos_examples = pos_groups.get(topic_id, [])
+        neg_examples = neg_groups.get(topic_id, [])
+        label_source = "positive" if len(pos_examples) >= len(neg_examples) else "negative"
+        label = BERT_PIPELINE.topic_label(int(topic_id), label_source)
+
+        payload.append(
+            {
+                "name": label,
+                "positive": {
+                    "count": len(pos_examples),
+                    "examples": pos_examples[:5],
+                },
+                "negative": {
+                    "count": len(neg_examples),
+                    "examples": neg_examples[:5],
+                },
+            }
+        )
+
+    return payload
+
+
+def _write_review_dump(rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+
+    output_dir = BASE_DIR / "analysis_output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "reviews_analysis.json"
+    output_path.write_text(
+        json.dumps(rows, ensure_ascii=True, indent=2),
+        encoding="utf-8",
+    )
 
 
 def summarize_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
@@ -564,30 +280,15 @@ def reviews_endpoint():
     summary = summarize_reviews(reviews)
     game = fetch_game_details(appid)
 
-    topics_payload = [
-        {
-            "name": topic,
-            "positive": {
-                "count": len(data["positivo"]),
-                "examples": data["positivo"][:5],
-            },
-            "negative": {
-                "count": len(data["negativo"]),
-                "examples": data["negativo"][:5],
-            },
-        }
-        for topic, data in analysis["por_topico"].items()
-    ]
-
     return jsonify(
         {
             "game": game,
             "summary": summary,
-            "highlights": analysis["destaques"],
-            "topics": topics_payload,
+            "highlights": analysis["highlights"],
+            "topics": analysis["topics"],
             "keywords": {
-                "positive": analysis["chunks_positivos"],
-                "negative": analysis["chunks_negativos"],
+                "positive": [],
+                "negative": [],
             },
             "meta": {
                 "language": language,
