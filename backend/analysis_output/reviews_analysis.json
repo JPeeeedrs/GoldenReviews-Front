@@ -1,110 +1,30 @@
 [
   {
-    "sentence": "No quesito enigmas, \u00e9 MUITO divertido investigar os detalhes dos cen\u00e1rios e pistas encontradas.",
+    "sentence": "Meu primeiro Souls da vida, no come\u00e7o tava morrendo muito a parecia muito dificil, porem no final parecia o come\u00e7o, esse jogo \u00e9 muito foda seja nas musicas, lutas, armas, armaduras e ate os mapa, Majula \u00e9 simplesmente lindo, recomendo pra quem quer come\u00e7ar nos souls ou pra quem pretende jogar o 2.",
     "sentiment": "POS",
-    "topic_id": 16,
-    "category": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label_prev": "Topico 15: simulador, simuladores, voo"
+    "topic_id": 160,
+    "category": "Topico 160: soul, reaver, tripula\u00e7\u00e3o",
+    "topic_label": "Topico 160: soul, reaver, tripula\u00e7\u00e3o",
+    "topic_label_prev": "Topico 159: pena, vale, concluindo"
   },
   {
-    "sentence": "Cada puzzle desenvolvido pelo Cellbit \u00e9 muito criativo, utilizando de detalhes presentes em cartas e documentos, \u00e1udios gravados e at\u00e9 falas dos personagens e dos aliados (que por mais de serem \"dicas\", s\u00e3o bem \u00fateis).",
+    "sentence": "Um dos souls que eu mais me apeguei antes de fecharem os servidores no PS3, me diverti muito jogando em call com amigos e aprendendo quase tudo com eles.",
     "sentiment": "POS",
-    "topic_id": 16,
-    "category": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label_prev": "Topico 15: simulador, simuladores, voo"
+    "topic_id": 43,
+    "category": "Topico 43: ps2, ps4, ps3",
+    "topic_label": "Topico 43: ps2, ps4, ps3",
+    "topic_label_prev": "Topico 42: 1010, 910, nota"
   },
   {
-    "sentence": "Tudo isso, torna a investiga\u00e7\u00e3o imersiva.",
+    "sentence": "\u00c9 \u00fanico pra mim de um jeito que sempre penso nele como o meu favorito e sempre vou recomendar PRA CARAMBA!",
     "sentiment": "POS",
-    "topic_id": 668,
-    "category": "Topico 668: looks, acreditar, techs",
-    "topic_label": "Topico 668: looks, acreditar, techs",
-    "topic_label_prev": "Topico 667: wwe, cole\u00e7\u00e3o, farming"
+    "topic_id": 557,
+    "category": "Topico 557: favoritos, preferido, favorito",
+    "topic_label": "Topico 557: favoritos, preferido, favorito",
+    "topic_label_prev": "Topico 556: simples, ecelentes, intense"
   },
   {
-    "sentence": "Nessa parte do jogo, na quest\u00e3o investigativa, no lado \"Enigma\", eu ADOREI cada detalhe e momento.",
-    "sentiment": "POS",
-    "topic_id": 187,
-    "category": "Topico 187: moira, murdered, suspect",
-    "topic_label": "Topico 187: moira, murdered, suspect",
-    "topic_label_prev": "Topico 186: sebastian, elenco, imer\u00e7\u00e3o"
-  },
-  {
-    "sentence": "Em especial, meu puzzle favorito, como \u00e1rea num todo, \u00e9 o Cemit\u00e9rio e toda a navega\u00e7\u00e3o por ele.",
-    "sentiment": "POS",
-    "topic_id": 26,
-    "category": "Topico 26: mapa, mapas, gigante",
-    "topic_label": "Topico 26: mapa, mapas, gigante",
-    "topic_label_prev": "Topico 25: recomendado, recomendo, recomendad\u00edssimo"
-  },
-  {
-    "sentence": "Outro fato interessante, e que impactou minha experi\u00eancia, \u00e9 a quest\u00e3o do COMBATE, a \"Sobreviv\u00eancia ao Horror\".",
-    "sentiment": "POS",
-    "topic_id": 746,
-    "category": "Topico 746: horror, survival, survivor",
-    "topic_label": "Topico 746: horror, survival, survivor",
-    "topic_label_prev": "Topico 745: replay, criadas, variar"
-  },
-  {
-    "sentence": "Em muitos casos isso \u00e9 divertido, mas encontro uma car\u00eancia na dificuldade de \"gameplay\" que o jogo possui.",
-    "sentiment": "POS",
-    "topic_id": 183,
-    "category": "Topico 183: continuarei, problemas, acontece",
-    "topic_label": "Topico 183: continuarei, problemas, acontece",
-    "topic_label_prev": "Topico 182: fallout, vegas, new"
-  },
-  {
-    "sentence": "Cada personagem \u00e9 cheio de personalidade, tanto na constru\u00e7\u00e3o do design e hist\u00f3ria, como na dublagem.",
-    "sentiment": "POS",
-    "topic_id": 13,
-    "category": "Topico 13: personagens, personagem, personalidade",
-    "topic_label": "Topico 13: personagens, personagem, personalidade",
-    "topic_label_prev": "Topico 12: resident, evil, remake"
-  },
-  {
-    "sentence": "Ouvir os \u00e1udios e ver as manias, brincadeiras e conflitos desse elenco inteiro \u00e9 muito divertido e torna o jogo muito rico.",
-    "sentiment": "POS",
-    "topic_id": 506,
-    "category": "Topico 506: dante, carism\u00e1ticos, binitos",
-    "topic_label": "Topico 506: dante, carism\u00e1ticos, binitos",
-    "topic_label_prev": "Topico 505: gradua\u00e7\u00e3o, federal, forno"
-  },
-  {
-    "sentence": "Para al\u00e9m disso, o estilo art\u00edstico colocado no jogo, a mistura de figuras 2d em um cen\u00e1rio 3d \u00e9 muito gostosa de ver.",
-    "sentiment": "POS",
-    "topic_id": 1,
-    "category": "Topico 1: gr\u00e1ficos, gr\u00e1fico, graficos",
-    "topic_label": "Topico 1: gr\u00e1ficos, gr\u00e1fico, graficos",
-    "topic_label_prev": "Topico 0: amigos, sozinho, amigo"
-  },
-  {
-    "sentence": "Todo cen\u00e1rio \u00e9 muito bonito, todos os documentos e pistas que s\u00e3o colocadas, o uso da luz UV nas paredes, as miniaturas, os modelos que aparecem nos di\u00e1logos, as anima\u00e7\u00f5es, a pr\u00f3pria capa do jogo.",
-    "sentiment": "POS",
-    "topic_id": 421,
-    "category": "Topico 421: fernbus, gramado, beautiful",
-    "topic_label": "Topico 421: fernbus, gramado, beautiful",
-    "topic_label_prev": "Topico 420: mer, raid, savana"
-  },
-  {
-    "sentence": "N\u00e3o posso esquecer tamb\u00e9m da TRILHA SONORA magn\u00edfica que esse jogo possui, as melodias do medo, os temas das fases, dos boses, s\u00e3o muito bons de ouvir e contribuem diretamente para a imers\u00e3o das fases desse jogo.",
-    "sentiment": "POS",
-    "topic_id": 640,
-    "category": "Topico 640: m\u00fasicas, m\u00fasica, menu",
-    "topic_label": "Topico 640: m\u00fasicas, m\u00fasica, menu",
-    "topic_label_prev": "Topico 639: kda, party, team"
-  },
-  {
-    "sentence": "Enigma do Medo \u00e9 um jogo ASSOMBROSAMENTE MARAVILHOSO E BELO.",
-    "sentiment": "POS",
-    "topic_id": 185,
-    "category": "Topico 185: tyler, trans, visage",
-    "topic_label": "Topico 185: tyler, trans, visage",
-    "topic_label_prev": "Topico 184: netease, sonhei, possu\u00ed"
-  },
-  {
-    "sentence": "Em resumo, eu amei o jogo, adorei resolver os puzzles e montar todo o mapa mental para me guiar no entendimento da hist\u00f3ria.",
+    "sentence": "adoro a franquia e mesmo n\u00e3o sendo o melhor dark souls da franquia, adorei a gameplay",
     "sentiment": "POS",
     "topic_id": 469,
     "category": "Topico 469: gostei, adorei, sanctum",
@@ -112,191 +32,95 @@
     "topic_label_prev": "Topico 468: garantidas, proporcionar, boooooooooooooooooooooom"
   },
   {
-    "sentence": "Foi algo muito divertido e novo para mim.",
+    "sentence": "jogo incr\u00edvel, me prendeu em cada segundo de gameplay.",
     "sentiment": "POS",
-    "topic_id": 323,
-    "category": "Topico 323: diverti, emocionei, rindo",
-    "topic_label": "Topico 323: diverti, emocionei, rindo",
-    "topic_label_prev": "Topico 322: ano, year, fuing"
+    "topic_id": 615,
+    "category": "Topico 615: assustei, morrendo, resumia",
+    "topic_label": "Topico 615: assustei, morrendo, resumia",
+    "topic_label_prev": "Topico 614: underground, epis\u00f3dio, epis\u00f3dios"
   },
   {
-    "sentence": "Eu me apaixonei nas personagens, no mist\u00e9rio e m\u00fasica que me acompanhou por toda essa jornada.",
+    "sentence": "A ambienta\u00e7\u00e3o \u00e9 absurda e o jogo recompensa muito quem pega o timing das mec\u00e2nicas.",
     "sentiment": "POS",
-    "topic_id": 126,
-    "category": "Topico 126: henry, delilah, parque",
-    "topic_label": "Topico 126: henry, delilah, parque",
-    "topic_label_prev": "Topico 125: cof, slender, imigrante"
+    "topic_id": 374,
+    "category": "Topico 374: diferenciada, mec\u00e2nica, mec\u00e2nicas",
+    "topic_label": "Topico 374: diferenciada, mec\u00e2nica, mec\u00e2nicas",
+    "topic_label_prev": "Topico 373: lara, croft, fury"
   },
   {
-    "sentence": "Estou muito ansioso para as DLC's e para a trajet\u00f3ria dessa hist\u00f3ria num geral, seja os RPG's, quadrinhos ou at\u00e9 uma futura adapta\u00e7\u00e3o em s\u00e9rie ou filme.",
+    "sentence": "Os \u00fanicos pontos que achei meio chatos foram alguns bosses\" mais fracos e certas \u00e1reas lotadas de inimigos, mas no geral o jogo \u00e9 bom demais e muito subestimado.",
     "sentiment": "POS",
-    "topic_id": 347,
-    "category": "Topico 347: dlc, dlcs, base",
-    "topic_label": "Topico 347: dlc, dlcs, base",
-    "topic_label_prev": "Topico 346: cachorro, consegue, "
+    "topic_id": 267,
+    "category": "Topico 267: pouqu\u00edssimas, divulgado, tornado",
+    "topic_label": "Topico 267: pouqu\u00edssimas, divulgado, tornado",
+    "topic_label_prev": "Topico 266: presente, todavia, adiou"
   },
   {
-    "sentence": "Uma experi\u00eancia e tanto de investiga\u00e7\u00e3o, vale muito a pena!",
+    "sentence": "Game is good and pretty easy, one of the best, if not the best\nPeak Souls 2 10/10 Play It",
     "sentiment": "POS",
-    "topic_id": 107,
-    "category": "Topico 107: conferir, pena, vale",
-    "topic_label": "Topico 107: conferir, pena, vale",
-    "topic_label_prev": "Topico 106: h1, h1b, bh1"
+    "topic_id": 57,
+    "category": "Topico 57: recomendo, h1bbsem, comentarios",
+    "topic_label": "Topico 57: recomendo, h1bbsem, comentarios",
+    "topic_label_prev": "Topico 56: estrat\u00e9gia, estrategia, turnos"
   },
   {
-    "sentence": "E n\u00e3o \u00e9 preciso conhecer o universo antes de jogar, pode ir com tudo :)\n\nA mistura de pixelart com 3D \u00e9 muito bem trabalhada, as m\u00fasicas s\u00e3o incr\u00edveis, documentos bem feitinhos e uma dublagem incr\u00edvel, tudo isso numa ambienta\u00e7\u00e3o maravilhosa que da vontade de olhar cada detalhe.",
+    "sentence": "Mesmo tendo uma mistura de amor e \u00f3dio por esse jogo.",
     "sentiment": "POS",
-    "topic_id": 432,
-    "category": "Topico 432: otimos, graficos, somada",
-    "topic_label": "Topico 432: otimos, graficos, somada",
-    "topic_label_prev": "Topico 431: rainbow, six, siege"
+    "topic_id": 394,
+    "category": "Topico 394: foda, entregador, odiar",
+    "topic_label": "Topico 394: foda, entregador, odiar",
+    "topic_label_prev": "Topico 393: paywall, pre\u00e7o, justo"
   },
   {
-    "sentence": "Conta at\u00e9 com um modo que voc\u00ea n\u00e3o pode ver as evidencias de longe, deixando o jogo mais imersivo no quesito investiga\u00e7\u00e3o, amei ficar tirando foto das coisas e fazendo anota\u00e7\u00f5es no meu caderno !",
+    "sentence": "as pessoas que falam mal desse jogo sao literalmente insanas\ntem alguns pequenos problemas (assim como todos os dark souls) mas apesar disso \u00e9 um jogo impecavel",
     "sentiment": "POS",
-    "topic_id": 458,
-    "category": "Topico 458: premissa, consci\u00eancia, reflex\u00e3o",
-    "topic_label": "Topico 458: premissa, consci\u00eancia, reflex\u00e3o",
-    "topic_label_prev": "Topico 457: sossegada, brilharam, dissesse"
+    "topic_id": 921,
+    "category": "Topico 921: interagindo, arrasam, caracterizados",
+    "topic_label": "Topico 921: interagindo, arrasam, caracterizados",
+    "topic_label_prev": "Topico 920: destruindo, ff, capturaevolu\u00e7\u00e3o"
   },
   {
-    "sentence": "as lutas s\u00e3o foda de qualquer forma e alguma hora tu pega o jeito, fora que tem diferentes tipos de batalhas e voc\u00ea vai estar investigando e explorando a hist\u00f3ria na maior parte do tempo, n\u00e3o se torna tanto um problema isso.",
+    "sentence": "Me encantei com o jogo e vim direto para DS2.",
     "sentiment": "POS",
-    "topic_id": 948,
-    "category": "Topico 948: retar, inimigos, contra",
-    "topic_label": "Topico 948: retar, inimigos, contra",
-    "topic_label_prev": "Topico 947: habib, r\u00e9, acreditando"
+    "topic_id": 43,
+    "category": "Topico 43: ps2, ps4, ps3",
+    "topic_label": "Topico 43: ps2, ps4, ps3",
+    "topic_label_prev": "Topico 42: 1010, 910, nota"
   },
   {
-    "sentence": "Um xodozinho meu esse, amo muito <3",
+    "sentence": "V\u00e1rios cen\u00e1rios maravilhosos, como a cidade principal, Majula, Floresta dos Gigantes e Iron Keep.",
     "sentiment": "POS",
-    "topic_id": 312,
-    "category": "Topico 312: together, adopted, our",
-    "topic_label": "Topico 312: together, adopted, our",
-    "topic_label_prev": "Topico 311: cachorro, consegue, "
+    "topic_id": 153,
+    "category": "Topico 153: animais, montanhas, florestas",
+    "topic_label": "Topico 153: animais, montanhas, florestas",
+    "topic_label_prev": "Topico 152: conquistas, apenas, apreciar\u00e3o"
   },
   {
-    "sentence": "cara, eu n\u00e3o sei nem explicar em palavras o que eu senti jogando esse jogo.",
+    "sentence": "Gostei tamb\u00e9m das novas mec\u00e2nicas de NPC petrificados e tochas.",
     "sentiment": "POS",
-    "topic_id": 50,
-    "category": "Topico 50: palavra, descrever, palavras",
-    "topic_label": "Topico 50: palavra, descrever, palavras",
-    "topic_label_prev": "Topico 49: simples, f\u00e1cil, simplicidade"
+    "topic_id": 245,
+    "category": "Topico 245: mec\u00e2nica, setor, mechanics",
+    "topic_label": "Topico 245: mec\u00e2nica, setor, mechanics",
+    "topic_label_prev": "Topico 244: perfeito, perfeita, perfeitamente"
   },
   {
-    "sentence": "a hist\u00f3ria \u00e9 muito boa, a pixel art do jogo \u00e9 uma coisa linda de ver, os personagens s\u00e3o fodas para krlh, a dublagem \u00e9 simplesmente perfeita, o jogo tem uma ambienta\u00e7\u00e3o muito boa, enigmas que d\u00e3o gosto de resolver e eu simplesmente n\u00e3o conseguia parar de jogar mais e mais a cada dia que passava.",
+    "sentence": "Como no primeiro jogo, explora\u00e7\u00e3o aqui \u00e9 maravilhoso.",
     "sentiment": "POS",
-    "topic_id": 375,
-    "category": "Topico 375: breath, expande, zelda",
-    "topic_label": "Topico 375: breath, expande, zelda",
-    "topic_label_prev": "Topico 374: diferenciada, mec\u00e2nica, mec\u00e2nicas"
+    "topic_id": 734,
+    "category": "Topico 734: zool\u00f3gico, zoo, animais",
+    "topic_label": "Topico 734: zool\u00f3gico, zoo, animais",
+    "topic_label_prev": "Topico 733: derrubadores, apresente, jg"
   },
   {
-    "sentence": "eu fiquei t\u00e3o cativado e imerso no universo do jogo que at\u00e9 longe do meu pc eu ficava pensando em como poderia resolver algo que estava faltando.",
+    "sentence": "\u00c9 muito imersivo entrar nos jogos da s\u00e9rie sem nenhum spoiler, sem no\u00e7\u00e3o alguma do que ir\u00e1 encontrar.",
     "sentiment": "POS",
-    "topic_id": 892,
-    "category": "Topico 892: sims, acostumando, beta",
-    "topic_label": "Topico 892: sims, acostumando, beta",
-    "topic_label_prev": "Topico 891: agrad\u00e1vel, bonito, h1visualmente"
+    "topic_id": 921,
+    "category": "Topico 921: interagindo, arrasam, caracterizados",
+    "topic_label": "Topico 921: interagindo, arrasam, caracterizados",
+    "topic_label_prev": "Topico 920: destruindo, ff, capturaevolu\u00e7\u00e3o"
   },
   {
-    "sentence": "uma experi\u00eancia \u00fanica e que vale muito a pena.",
-    "sentiment": "POS",
-    "topic_id": 941,
-    "category": "Topico 941: valeram, espera, valeu",
-    "topic_label": "Topico 941: valeram, espera, valeu",
-    "topic_label_prev": "Topico 940: ashley, iluminados, queridinha"
-  },
-  {
-    "sentence": "N\u00e3o zerei ainda, mas que puta jogo.",
-    "sentiment": "POS",
-    "topic_id": 507,
-    "category": "Topico 507: amiguinho, concluidos, ameiiiiiiiiiiiiii",
-    "topic_label": "Topico 507: amiguinho, concluidos, ameiiiiiiiiiiiiii",
-    "topic_label_prev": "Topico 506: dante, carism\u00e1ticos, binitos"
-  },
-  {
-    "sentence": "Cellbit \u00e9 o melhor quando se trata de dedicar-se a seus projetos, pra mim ele bodou em ordem e nunca vai parar de bodar.",
-    "sentiment": "POS",
-    "topic_id": 32,
-    "category": "Topico 32: desenvolvedores, hack, slash",
-    "topic_label": "Topico 32: desenvolvedores, hack, slash",
-    "topic_label_prev": "Topico 31: f1, codemasters, 2020"
-  },
-  {
-    "sentence": "Obrigado Santo Felps por ter gerado o God Of The Games",
-    "sentiment": "POS",
-    "topic_id": 596,
-    "category": "Topico 596: obrigado, landfall, lerem",
-    "topic_label": "Topico 596: obrigado, landfall, lerem",
-    "topic_label_prev": "Topico 595: sonora, trilha, trila"
-  },
-  {
-    "sentence": "Personagens muito bons, puzzle que talvez vc precise olhar na internet como resolver kkk mas o plot todo vale a pena.",
-    "sentiment": "POS",
-    "topic_id": 16,
-    "category": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label": "Topico 16: puzzles, puzzle, quebracabe\u00e7as",
-    "topic_label_prev": "Topico 15: simulador, simuladores, voo"
-  },
-  {
-    "sentence": "\u00d3timo jogo, bons enigmas, hist\u00f3ria bem interessante e muito bem desenvolvida, pontos pra dublagem brasileira que \u00e9 absurda de boa, explora\u00e7\u00e3o do mapa muito boa e divertida, por\u00e9m a otimiza\u00e7\u00e3o do jogo \u00e9 bem mediocre, mas nada que atrapalhe na gameplay.",
-    "sentiment": "POS",
-    "topic_id": 352,
-    "category": "Topico 352: pok\u00e9mon, evolu\u00eddo, att",
-    "topic_label": "Topico 352: pok\u00e9mon, evolu\u00eddo, att",
-    "topic_label_prev": "Topico 351: ops, black, error"
-  },
-  {
-    "sentence": "O combate \u00e9 bem simples e em algumas partes pode atrapalhar um pouco (o boneco demora muito pra virar pra tr\u00e1s e atacar), por\u00e9m como o jogo n\u00e3o \u00e9 focado nisso n\u00e3o \u00e9 um problem\u00e3o\r\n\r\nEm resumo \u00e9 um jogo incr\u00edvel que vale cada centavo, recomendo demais, pode comprar sem medo",
-    "sentiment": "POS",
-    "topic_id": 847,
-    "category": "Topico 847: combate, camadas, t\u00e1ticas",
-    "topic_label": "Topico 847: combate, camadas, t\u00e1ticas",
-    "topic_label_prev": "Topico 846: visuais, visual, riqu\u00edssimo"
-  },
-  {
-    "sentence": "Na maior parte n\u00e3o tem isso, ent\u00e3o o jogo \u00e9 bom",
-    "sentiment": "POS",
-    "topic_id": 329,
-    "category": "Topico 329: especializada, barato, gratuito",
-    "topic_label": "Topico 329: especializada, barato, gratuito",
-    "topic_label_prev": "Topico 328: demorada, divis\u00e3o, subindo"
-  },
-  {
-    "sentence": "Os personagens de Enigma do Medo s\u00e3o t\u00e3o especiais, assim como cada detalhe pequeno no cen\u00e1rio, assim como cada detalhe em cada camada de som no jogo, ou t\u00e3o especiais quanto o sistema de investiga\u00e7\u00e3o ou o trabalho gr\u00e1fico dos documentos de investiga\u00e7\u00e3o, ou das sprites do personagens.",
-    "sentiment": "POS",
-    "topic_id": 201,
-    "category": "Topico 201: personagens, desenvolvimento, underbosses",
-    "topic_label": "Topico 201: personagens, desenvolvimento, underbosses",
-    "topic_label_prev": "Topico 200: karma, harvest, moon"
-  },
-  {
-    "sentence": "Cada detalhe desse jogo esbanja amor e carinho por um desses projetos que mudam a vida.",
-    "sentiment": "POS",
-    "topic_id": 155,
-    "category": "Topico 155: sea, solitude, mostrar\u00e1",
-    "topic_label": "Topico 155: sea, solitude, mostrar\u00e1",
-    "topic_label_prev": "Topico 154: forager, feminina, fuma\u00e7a"
-  },
-  {
-    "sentence": "Cada cent\u00edmetro desse jogo \u00e9 uma demonstra\u00e7\u00e3o delicada e singela do que o amor \u00e9 capaz de fazer - seja da filha para um pai, de um amigo para outro, de um namorado para outro, de uma menina para seu cachorrinho.",
-    "sentiment": "POS",
-    "topic_id": 735,
-    "category": "Topico 735: adrenalina, emo\u00e7\u00f5es, transformados",
-    "topic_label": "Topico 735: adrenalina, emo\u00e7\u00f5es, transformados",
-    "topic_label_prev": "Topico 734: zool\u00f3gico, zoo, animais"
-  },
-  {
-    "sentence": "Os espa\u00e7os dentro do jogo contam a hist\u00f3ria de uma forma maravilhosa, cada pequeno objeto localizado em um local espec\u00edfico \u00e9 capaz de contar uma hist\u00f3ria sem sequer precisar de um texto pr\u00e9vio.",
-    "sentiment": "POS",
-    "topic_id": 100,
-    "category": "Topico 100: envolvendo, gato, monociclo",
-    "topic_label": "Topico 100: envolvendo, gato, monociclo",
-    "topic_label_prev": "Topico 99: ralph, susto, ammooo"
-  },
-  {
-    "sentence": "Cada local aqui \u00e9 vivo, pulsa e respira as hist\u00f3rias e os momentos deixados pelos personagens dessa hist\u00f3ria em cada um dos lugares que passaram.",
+    "sentence": "Explorar cada canto, pois novos caminhos, tesouros e bonitos cen\u00e1rios poderiam surgir em qualquer esquina.",
     "sentiment": "POS",
     "topic_id": 482,
     "category": "Topico 482: admirando, paisagens, ilha",
@@ -304,15 +128,359 @@
     "topic_label_prev": "Topico 481: ideia, valorizar, roteiro"
   },
   {
-    "sentence": "Conhecer o presente atrav\u00e9s dos resqu\u00edcios do passado dentro desse jogo \u00e9 uma d\u00e1diva.",
+    "sentence": "Mas\u2026 n\u00e3o me conectei a esse jogo como ao primeiro:\n\nAdorei a mensagem do primeiro jogo \u2018voc\u00ea s\u00f3 perde quando desiste\u2019, DS1 n\u00e3o se importava quantas vezes eu morria para um boss, ou se eu era um tioz\u00e3o com reflexos ruins.",
     "sentiment": "POS",
-    "topic_id": 70,
-    "category": "Topico 70: nostalgia, rockstar, antigos",
-    "topic_label": "Topico 70: nostalgia, rockstar, antigos",
-    "topic_label_prev": "Topico 69: recomendar, recomendando, recomendo"
+    "topic_id": 330,
+    "category": "Topico 330: leagueb, brocket, parei",
+    "topic_label": "Topico 330: leagueb, brocket, parei",
+    "topic_label_prev": "Topico 329: especializada, barato, gratuito"
   },
   {
-    "sentence": "Acompanhar e sentir tudo o que esses lugar e essas pessoas foram um dia \u00e9 como vestir uma segunda pele, e d\u00e1 pra notar o esfor\u00e7o dado em aprofundar cada detalhe dos personagens aqui.",
+    "sentence": "N\u00edtido contraste ao comparar com o mapa interconectado e coerente do primeiro jogo.",
+    "sentiment": "POS",
+    "topic_id": 75,
+    "category": "Topico 75: mapa, mapas, explora\u00e7\u00e3o",
+    "topic_label": "Topico 75: mapa, mapas, explora\u00e7\u00e3o",
+    "topic_label_prev": "Topico 74: love, paix\u00e3o, amo"
+  },
+  {
+    "sentence": "A explora\u00e7\u00e3o \u00e9 divertida e os combates um bal\u00e9 t\u00e9cnico perfeito.",
+    "sentiment": "POS",
+    "topic_id": 818,
+    "category": "Topico 818: mec\u00e2nica, apoliptico, conveni\u00eancias",
+    "topic_label": "Topico 818: mec\u00e2nica, apoliptico, conveni\u00eancias",
+    "topic_label_prev": "Topico 817: 3500, abrese, pertinho"
+  },
+  {
+    "sentence": "RAPAZZZZZZZZZZZ S\u00d3 DIGO UMA COISA ESSE JOGO \u00c9 MASSA MSM COM AS COISAS RUINS QUE FALAM DELE.",
+    "sentiment": "POS",
+    "topic_id": 783,
+    "category": "Topico 783: peixe, csgo, agoraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "topic_label": "Topico 783: peixe, csgo, agoraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "topic_label_prev": "Topico 782: eli, prince, beowulf"
+  },
+  {
+    "sentence": "Jogo muito bom, level design \u00f3timo, os bosses demoram um pouco pra ficarem marcantes na minha opini\u00e3o, estou lvl 105 em 22 horas de gameplay, dificuldade moderada, otima ambienta\u00e7\u00e3o, quantidade de inimigos desnecessariamente grandes, digo, quando vc passa uma area matando um por um, \u00e9 tranquilo, mas quando vc morre e s\u00f3 quer passar correndo \u00e9 a parte mais frustrante desse jogo.",
+    "sentiment": "POS",
+    "topic_id": 1019,
+    "category": "Topico 1019: labours, hercules, morrer",
+    "topic_label": "Topico 1019: labours, hercules, morrer",
+    "topic_label_prev": "Topico 1018: feel, sentimentos, be"
+  },
+  {
+    "sentence": "Acho um \u00f3timo dark souls, inova em muitas coisas comparado com o dark souls 1 e 3, sistema de magia interessante, talvez quando eu zerar as dlcs e o jogo em si eu volto aqui",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "acabei de zerar pela primeira vez, totalmente injusto e muitas vezes infundado o hate q esse jogo recebe, jogasso absurdo, vale cada centavo\r\n\r\nmt bem otimizado, proton 11 rodou perfeitamente a todo instante",
+    "sentiment": "POS",
+    "topic_id": 516,
+    "category": "Topico 516: inazuma, imbecil, startopia",
+    "topic_label": "Topico 516: inazuma, imbecil, startopia",
+    "topic_label_prev": "Topico 515: intelig\u00eancia, artificial, aranhas"
+  },
+  {
+    "sentence": "O jogo tem seus pros e contras como todo outro, mas os contras n\u00e3o me impedem de jogar essa maravilha!",
+    "sentiment": "POS",
+    "topic_id": 90,
+    "category": "Topico 90: pes, expectativas, superou",
+    "topic_label": "Topico 90: pes, expectativas, superou",
+    "topic_label_prev": "Topico 89: moda, 1960, s\u00e9rgio"
+  },
+  {
+    "sentence": "N\u00e3o \u00e9 divers\u00e3o comum, \u00e9 teimosia pura \u2014 e no fim, valeu cada segundo.",
+    "sentiment": "POS",
+    "topic_id": 299,
+    "category": "Topico 299: adrenalina, qse, mta",
+    "topic_label": "Topico 299: adrenalina, qse, mta",
+    "topic_label_prev": "Topico 298: paguei, reais, valeu"
+  },
+  {
+    "sentence": "Jogo maravilhoso, mapas fod\u00e1ticos, bosses com mec\u00e2nicas muito unicas e complexas, gosto muito dos bosses desse jogo (apesar de ter uns meme), mas todos tem o seu lugar e diferencial, ele \u00e9 o darksouls com mais possibilidades de builds diferentes, por conta da sua variedade imensa de armaduras, magias, armas e tudo.",
+    "sentiment": "POS",
+    "topic_id": 273,
+    "category": "Topico 273: skills, magias, chamaram",
+    "topic_label": "Topico 273: skills, magias, chamaram",
+    "topic_label_prev": "Topico 272: franquia, favoritos, recommended"
+  },
+  {
+    "sentence": "Sem falar dos itens muito bons e que so tem nele como o recipiente de alma que da a possibilidade do Bearer of the curse (ALIAS QUE FRASE FODA), realocar seus pontos e a bonfire asetic que faz a area ficar no ng+, pacto que faz o jogo ficar ng+ que foi copiado em sekiro, e o powerstance copiado posteriormente em elden ring e varias outras mecanicas que vieram dps do ds2.",
+    "sentiment": "POS",
+    "topic_id": 625,
+    "category": "Topico 625: mago, ninja, magias",
+    "topic_label": "Topico 625: mago, ninja, magias",
+    "topic_label_prev": "Topico 624: dbz, gene, kerbal"
+  },
+  {
+    "sentence": "Poderia ficar horas e horas falando sobre esse jogo, dos bosses como o Velstadt, fullmeknight, sihn, Sir Alonne, Darklurker, cavaleiro do espelho dentre outros, Alias 91 de avalia\u00e7\u00e3o pelos criticos (Melhor avalia\u00e7\u00e3o entre os dark souls) chorem Dark souls 2 \u00e9 bom para KLHRR",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "Primeiro jogo souls like que jogo, n\u00e3o vou mentir \u00e9 dif\u00edcil mas eu estou gostando muito de jogar \u00e9 divertido tem horas que fico com muita raiva, tipo quando perco minhas almas, meu personagem era pra ser um mago mais agora ele t\u00e1 meio puxado pra um espadachim pq ter magia e bom mais ela acaba a\u00ed vc fica a merc\u00ea da morte e uma espada sempre ajuda, em resumo jogo muito bom sempre quis jogar um jogo desse tipo",
+    "sentiment": "POS",
+    "topic_id": 160,
+    "category": "Topico 160: soul, reaver, tripula\u00e7\u00e3o",
+    "topic_label": "Topico 160: soul, reaver, tripula\u00e7\u00e3o",
+    "topic_label_prev": "Topico 159: pena, vale, concluindo"
+  },
+  {
+    "sentence": "A experi\u00eancia \u00fanica de RPG de a\u00e7\u00e3o \u00e0 moda antiga cativou a imagina\u00e7\u00e3o de jogadores no mundo inteiro, com desafio incr\u00edvel e emo\u00e7\u00f5es intensas.",
+    "sentiment": "POS",
+    "topic_id": 965,
+    "category": "Topico 965: ocultos, aprenderrelembrar, aprendar",
+    "topic_label": "Topico 965: ocultos, aprenderrelembrar, aprendar",
+    "topic_label_prev": "Topico 964: sloko, duma, familiariza\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Por mais que seja considerado o pior, Ds2 \u00e9 o meu favorito, jogo \u00e9 bom demais.",
+    "sentiment": "POS",
+    "topic_id": 93,
+    "category": "Topico 93: fifa, favorito, favoritos",
+    "topic_label": "Topico 93: fifa, favorito, favoritos",
+    "topic_label_prev": "Topico 92: 2013, ark, version"
+  },
+  {
+    "sentence": "Por mais que seja dif\u00edcil, vale a pena jogar.",
+    "sentiment": "POS",
+    "topic_id": 810,
+    "category": "Topico 810: jogem, pena, porre",
+    "topic_label": "Topico 810: jogem, pena, porre",
+    "topic_label_prev": "Topico 809: d\u00edficl, leiam, interessados"
+  },
+  {
+    "sentence": "Sinceramente, t\u00e3o bom quanto a vers\u00e3o SOTFS, na real eu achei at\u00e9 um pouco mais bacana.",
+    "sentiment": "POS",
+    "topic_id": 92,
+    "category": "Topico 92: 2013, ark, version",
+    "topic_label": "Topico 92: 2013, ark, version",
+    "topic_label_prev": "Topico 91: cpu, gpu, boas"
+  },
+  {
+    "sentence": "Tive uma \u00f3tima experi\u00eancia jogando essa vers\u00e3o original e me diverti bastante.",
+    "sentiment": "POS",
+    "topic_id": 19,
+    "category": "Topico 19: adorei, gostei, amei",
+    "topic_label": "Topico 19: adorei, gostei, amei",
+    "topic_label_prev": "Topico 18: contada, hist\u00f3ria, story"
+  },
+  {
+    "sentence": "Diria que gostei at\u00e9 mais do que o Scholar of the First Sin.",
+    "sentiment": "POS",
+    "topic_id": 226,
+    "category": "Topico 226: depress\u00e3o, curou, trash",
+    "topic_label": "Topico 226: depress\u00e3o, curou, trash",
+    "topic_label_prev": "Topico 225: defense, tower, towers"
+  },
+  {
+    "sentence": "Sem d\u00favidas Dark Souls 2 \u00e9 o melhor da trilogia.",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "Melhor Dark Souls (dps dos outros), bom d+",
+    "sentiment": "POS",
+    "topic_id": 699,
+    "category": "Topico 699: dark, souls, equipar\u00e1vel",
+    "topic_label": "Topico 699: dark, souls, equipar\u00e1vel",
+    "topic_label_prev": "Topico 698: vozes, voz, voice"
+  },
+  {
+    "sentence": "ou seja mt pika\r\nse tiver a chance jogue e n\u00e3o desista",
+    "sentiment": "POS",
+    "topic_id": 287,
+    "category": "Topico 287: sigo, kct, engrasado",
+    "topic_label": "Topico 287: sigo, kct, engrasado",
+    "topic_label_prev": "Topico 286: halo, mcc, azure"
+  },
+  {
+    "sentence": "Bom vou ser bem franco eu gostei do jogo um dos melhores jogos que eu joguei melhor que ds1 em mec\u00e2nicas e discut\u00edvel gosto e gosto e essa e somente minha opini\u00e3o mais e um \u00f3timo o jogo em si se voc\u00ea nunca jogou por causa de v\u00eddeos do youtube ou qualquer coisa da internet espera uma promo\u00e7\u00e3o da uma chance se n\u00e3o gostar e s\u00f3 pedir reembolso voc\u00ea n\u00e3o esta cometendo 1 crime se o jogo te prendeu o suficiente para tu n\u00e3o perceber o tempo passar voc\u00ea teve a experiencia de jogar um bom souls mais isso e somente minha experiencia e um abra\u00e7o a todos.",
+    "sentiment": "POS",
+    "topic_id": 154,
+    "category": "Topico 154: forager, feminina, fuma\u00e7a",
+    "topic_label": "Topico 154: forager, feminina, fuma\u00e7a",
+    "topic_label_prev": "Topico 153: animais, montanhas, florestas"
+  },
+  {
+    "sentence": "Esse DS2 \u00e9 t\u00e3o daora quanto a vers\u00e3o SotFS.",
+    "sentiment": "POS",
+    "topic_id": 143,
+    "category": "Topico 143: fps, kof, nham",
+    "topic_label": "Topico 143: fps, kof, nham",
+    "topic_label_prev": "Topico 142: simplemente, inesquec\u00edvel, subindo"
+  },
+  {
+    "sentence": "Valeu cada centavo pra ver como o game era antes das mudan\u00e7as da vers\u00e3o Scholar.",
+    "sentiment": "POS",
+    "topic_id": 348,
+    "category": "Topico 348: paguei, centavo, reais",
+    "topic_label": "Topico 348: paguei, centavo, reais",
+    "topic_label_prev": "Topico 347: dlc, dlcs, base"
+  },
+  {
+    "sentence": "De longe \u00e9 o pior, apenas joguem\ud83d\ude01\nE s\u00f3 me falta esse pra completar a cole\u00e7\u00e3o de todos os Souls 100%.",
+    "sentiment": "POS",
+    "topic_id": 394,
+    "category": "Topico 394: foda, entregador, odiar",
+    "topic_label": "Topico 394: foda, entregador, odiar",
+    "topic_label_prev": "Topico 393: paywall, pre\u00e7o, justo"
+  },
+  {
+    "sentence": "O melhor souls, na sua melhor forma.",
+    "sentiment": "POS",
+    "topic_id": 215,
+    "category": "Topico 215: aprovado, awwwww, chie",
+    "topic_label": "Topico 215: aprovado, awwwww, chie",
+    "topic_label_prev": "Topico 214: paz, descanse, pr\u00f3ximos"
+  },
+  {
+    "sentence": "jogo bom demais, ouvi falar que \u00e9 o melhor da saga souls",
+    "sentiment": "POS",
+    "topic_id": 793,
+    "category": "Topico 793: anarcocapitalista, feminazi, ewe",
+    "topic_label": "Topico 793: anarcocapitalista, feminazi, ewe",
+    "topic_label_prev": "Topico 792: xd, instalar, cs"
+  },
+  {
+    "sentence": "Joguei MUITO Dark Souls 2 no PS3, estava esperando uma promo legal pra rejogar na steam ent\u00e3o n\u00e3o podia deixar essa passar.",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "E de brinde comprei de presente pro meu namorado, ele queria muito jogar e eu quero muito ver ele jogando essa maravilha\n\nFoi o primeiro soulslike que joguei.",
+    "sentiment": "POS",
+    "topic_id": 118,
+    "category": "Topico 118: inf\u00e2ncia, infancia, marcou",
+    "topic_label": "Topico 118: inf\u00e2ncia, infancia, marcou",
+    "topic_label_prev": "Topico 117: amo, adoro, love"
+  },
+  {
+    "sentence": "Foi uma experi\u00eancia totalmente nova na \u00e9poca e certamente por isso se tornou t\u00e3o memor\u00e1vel pra mim\n\nA atmosfera do mundo do DS2 \u00e9 extremamente triste e melanc\u00f3lico, e \u00e9 exatamente nisso que ele brilha, e uma boa parte do jogo \u00e9 realmente sombria.",
+    "sentiment": "POS",
+    "topic_id": 436,
+    "category": "Topico 436: shantae, tdo, horror",
+    "topic_label": "Topico 436: shantae, tdo, horror",
+    "topic_label_prev": "Topico 435: 333333, abusiva, despe\u00e7o"
+  },
+  {
+    "sentence": "O jogo me conquistou muito pelos visuais e por sua variedade de magias, apesar da limita\u00e7\u00e3o de uso de cada uma.",
+    "sentiment": "POS",
+    "topic_id": 273,
+    "category": "Topico 273: skills, magias, chamaram",
+    "topic_label": "Topico 273: skills, magias, chamaram",
+    "topic_label_prev": "Topico 272: franquia, favoritos, recommended"
+  },
+  {
+    "sentence": "Meu destaque mesmo vai para as Hexes, \u00e9 uma experi\u00eancia bem \u00fanica que exige investimento e paci\u00eancia, sendo necess\u00e1rio equilibrar INT e FTH ao mesmo tempo, o que j\u00e1 complica a build desde o in\u00edcio do jogo e leva um bom tempo at\u00e9 ela realmente come\u00e7ar a funcionar bem.",
+    "sentiment": "POS",
+    "topic_id": 168,
+    "category": "Topico 168: pistar, cansativo, dif\u00edcil",
+    "topic_label": "Topico 168: pistar, cansativo, dif\u00edcil",
+    "topic_label_prev": "Topico 167: terror, hell, dem\u00f4nios"
+  },
+  {
+    "sentence": "A Great Resonance Soul, que \u00e9 a minha principal hex, custa 500 almas por casting, isso pra primeira run \u00e9 quase um tiro no p\u00e9, a Climax ent\u00e3o nem se fala, gasta TODAS suas almas pra um dano que nem compensa\n\u00c9 uma \u00f3tima build que exige dedica\u00e7\u00e3o, mas n\u00e3o pra primeira run\n\nNo geral \u00e9 um \u00f3timo game, recomendo muito pra quem gosta de um bom soulslike",
+    "sentiment": "POS",
+    "topic_id": -1,
+    "category": "Topico geral",
+    "topic_label": "Topico geral",
+    "topic_label_prev": null
+  },
+  {
+    "sentence": "nao zerei mas gostei mt do que joguei ate agora,e quem tem preconceito com esse jogo so pq a jogabilidade e um pouco diferente e viadp",
+    "sentiment": "POS",
+    "topic_id": 849,
+    "category": "Topico 849: motivou, ouvido, admitir",
+    "topic_label": "Topico 849: motivou, ouvido, admitir",
+    "topic_label_prev": "Topico 848: gtx, rodando, 60fps"
+  },
+  {
+    "sentence": "muito bom, otima para sofrer, hitbox  \u00e9 boa pra jogar fora, porem o jogo tem armaduras muito drip, aura 1000+",
+    "sentiment": "POS",
+    "topic_id": 747,
+    "category": "Topico 747: shot, tiroteio, beventos",
+    "topic_label": "Topico 747: shot, tiroteio, beventos",
+    "topic_label_prev": "Topico 746: horror, survival, survivor"
+  },
+  {
+    "sentence": "Dark Souls 2 \u00e9 um dos meus favoritos.",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "Mas, o melhor de tudo \u00e9 quando voc\u00ea tenta fugir e os inimigos viram o flash.",
+    "sentiment": "POS",
+    "topic_id": 668,
+    "category": "Topico 668: looks, acreditar, techs",
+    "topic_label": "Topico 668: looks, acreditar, techs",
+    "topic_label_prev": "Topico 667: wwe, cole\u00e7\u00e3o, farming"
+  },
+  {
+    "sentence": "Um \u00f3timo exemplo \u00e9 o moinho, que n\u00e3o d\u00e1 o menor ind\u00edcio de que precisa ser incendiado para desativar o veneno da Mytha; as portas que voc\u00ea encontra no come\u00e7o, mas que s\u00f3 ser\u00e3o abertas muito tempo depois; a falta de avisos sobre como melhorar a cura; entre v\u00e1rios outros detalhes jogados ao acaso.",
+    "sentiment": "POS",
+    "topic_id": 299,
+    "category": "Topico 299: adrenalina, qse, mta",
+    "topic_label": "Topico 299: adrenalina, qse, mta",
+    "topic_label_prev": "Topico 298: paguei, reais, valeu"
+  },
+  {
+    "sentence": "Dito isso, Nota 10 melhor peak souls humilde",
+    "sentiment": "POS",
+    "topic_id": 893,
+    "category": "Topico 893: batima, recomendadiss\u00edmo, macetar",
+    "topic_label": "Topico 893: batima, recomendadiss\u00edmo, macetar",
+    "topic_label_prev": "Topico 892: sims, acostumando, beta"
+  },
+  {
+    "sentence": "\u00e9 uma merda, mas eu vou jogar at\u00e9 o final pq quero zerar todos os jogos Souls",
+    "sentiment": "POS",
+    "topic_id": 462,
+    "category": "Topico 462: automoves, nvl, porqe",
+    "topic_label": "Topico 462: automoves, nvl, porqe",
+    "topic_label_prev": "Topico 461: m\u00e9dia, acima, bons"
+  },
+  {
+    "sentence": "Eu sempre taquei pau nesse jogo sem ao menos ter sa\u00eddo do inicio dele (pela diferen\u00e7a GRITANTE dos outros jogos), Dark Souls 2 \u00e9 um misto de \u00e1reas dif\u00edceis, com bosses f\u00e1ceis DE MAAAAAAAAIS e muito mal aproveitados, The Rotten \u00e9 o mais dif\u00edcil na minha opini\u00e3o, pelo simples fato da arena ser limitada, pegar fogo e ele ter ataques de m\u00e9dio e curto alcance.",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "O melhor boss em quest\u00e3o de presen\u00e7a de arena e design foi definitivamente Lost Sinner, pela roupa e pela arena me lembrou muito os Abyss Watchers do DS3, sendo uma das lutas menos rid\u00edculas e at\u00e9 legal de se jogar contra.",
+    "sentiment": "POS",
+    "topic_id": 161,
+    "category": "Topico 161: boss, chefes, lutas",
+    "topic_label": "Topico 161: boss, chefes, lutas",
+    "topic_label_prev": "Topico 160: soul, reaver, tripula\u00e7\u00e3o"
+  },
+  {
+    "sentence": "( ) Tem hist\u00f3ria s\u00f3 pra n\u00e3o dizer que n\u00e3o tem\r\n(x) Uma hist\u00f3ria digna de prestar aten\u00e7\u00e3o\r\n( ) Uma hist\u00f3ria bem elaborada\r\n( )Mais complexa que Machado de Assis\r\n\r\nJogabilidade:\r\n( ) Tudo travado igual a coluna de uma senhora de 90 anos\r\n( ) Precisa de dois dedos pra jogar\r\n(X) Ruim, mas com muita determina\u00e7\u00e3o vai\r\n( ) Gostoso de jogar\r\n( ) Jogabilidade excelente\r\n\r\nTrilha sonora:\r\n( ) Meu peido faz um barulho mais bonito\r\n( ) Deixa mutado\r\n(x) Nada de especial comparado aos outros\r\n( ) Boa\r\n( ) Memor\u00e1vel\r\n( ) Toque isso no meu funeral\r\n\r\nN\u00edvel de divers\u00e3o:\r\n(x) T\u00e3o legal quanto assistir uma po\u00e7a d'\u00e1gua evaporar\r\n( ) Entret\u00e9m\r\n( ) Vai te prender por horas!",
+    "sentiment": "POS",
+    "topic_id": 149,
+    "category": "Topico 149: esfor\u00e7ando, gostar, escanamento",
+    "topic_label": "Topico 149: esfor\u00e7ando, gostar, escanamento",
+    "topic_label_prev": "Topico 148: volante, carro, lamborghini"
+  },
+  {
+    "sentence": "De pontos positivos, consigo pensar apenas na customiza\u00e7\u00e3o de personagem, que ainda \u00e9 decente comparada com t\u00edtulos mais novos da From, e a sele\u00e7\u00e3o de armaduras, tem v\u00e1rias com um desing interessante.",
     "sentiment": "POS",
     "topic_id": 13,
     "category": "Topico 13: personagens, personagem, personalidade",
@@ -320,23 +488,495 @@
     "topic_label_prev": "Topico 12: resident, evil, remake"
   },
   {
-    "sentence": "O jogo \u00e9 lindo demais, a mistura do 2D com o 3D t\u00e1 impec\u00e1vel e essa vis\u00e3o isom\u00e9trica super estilizada \u00e9 maravilhosa demais.",
+    "sentence": "O pessoal que ama esse jogo sempre fala umas coisas absurdas, tipo \u201cparece um sonho\u201d ou \u201co mundo \u00e9 lindo e colorido\u201d e \u201cMajula \u00e9 meu lar\u201d.",
     "sentiment": "POS",
-    "topic_id": 700,
-    "category": "Topico 700: castle, inspira\u00e7\u00e3o, illusion",
-    "topic_label": "Topico 700: castle, inspira\u00e7\u00e3o, illusion",
-    "topic_label_prev": "Topico 699: dark, souls, equipar\u00e1vel"
+    "topic_id": 582,
+    "category": "Topico 582: gaytorade69, rindo, welligton",
+    "topic_label": "Topico 582: gaytorade69, rindo, welligton",
+    "topic_label_prev": "Topico 581: trackmania, 79, wiki"
   },
   {
-    "sentence": "O Ordem mudou a minha vida em muitos sentidos, e fico feliz demais por EDM fazer parte agora dessa hist\u00f3ria de amor que tenho por esse universo.",
+    "sentence": "MEU PARCEIIIIIROO, SE FOR COMPRAR O DS2 COMPRE A VERS\u00c3O SCHOLAR OF THE BLA BLA BLA, PQ PQP TODOS OS TUTORIAS, ANALISE DE BUILDS E TUTORIAS DE BUILD S\u00c3O DESSA VERS\u00c3O.",
     "sentiment": "POS",
-    "topic_id": 840,
-    "category": "Topico 840: apaixonei, amor, demos",
-    "topic_label": "Topico 840: apaixonei, amor, demos",
-    "topic_label_prev": "Topico 839: war, total, fi\u00e9is"
+    "topic_id": 452,
+    "category": "Topico 452: combust\u00edvel, bpr\u00f3s, cabe\u00e7ote",
+    "topic_label": "Topico 452: combust\u00edvel, bpr\u00f3s, cabe\u00e7ote",
+    "topic_label_prev": "Topico 451: deixam, bugs, komaru"
   },
   {
-    "sentence": "Mesmo que haja elementos que me incomodaram, n\u00e3o \u00e9 justo rebaixar a qualidade e potencial que esse universo possui.",
+    "sentence": "Eles te perseguem muito mais do que o normal nos jogos anteriores, eles podem te atacar enquanto voc\u00ea tenta entrar na fog do chefe ent\u00e3o voc\u00ea morre e claro, fica feliz pq o jogo \u00e9 maravilhoso certo ?",
+    "sentiment": "POS",
+    "topic_id": 496,
+    "category": "Topico 496: aleat\u00f3rios, transitos, tombos",
+    "topic_label": "Topico 496: aleat\u00f3rios, transitos, tombos",
+    "topic_label_prev": "Topico 495: grava, your, obrigatorio"
+  },
+  {
+    "sentence": "- Bonfire Astetic\n- PVP\n- Gr\u00e1ficos bonitos at\u00e9 hoje\n- \u00d3tima otimiza\u00e7\u00e3o\n- Resetar o seu level\n- Ng+ com novos inimigos e surpresas agrad\u00e1veis \n- Covenants interessantes e at\u00e9 um Boss extra no final de uma delas\n- Muitos segredos interessantes pra voc\u00ea descobrir\n- Muitas armas legais e a mecanica power stance\n- A trilha sonora\n\nMas pra mim isso n\u00e3o supera o que Dark Souls 1 fez.",
+    "sentiment": "POS",
+    "topic_id": 52,
+    "category": "Topico 52: souls, dark, darksiders",
+    "topic_label": "Topico 52: souls, dark, darksiders",
+    "topic_label_prev": "Topico 51: fnaf, tibia, elogio"
+  },
+  {
+    "sentence": "Que \u00e9 um mundo interessante e com chefes extremamente marcantes ainda mais depois de conhecer a lore do jogo.",
+    "sentiment": "POS",
+    "topic_id": 161,
+    "category": "Topico 161: boss, chefes, lutas",
+    "topic_label": "Topico 161: boss, chefes, lutas",
+    "topic_label_prev": "Topico 160: soul, reaver, tripula\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Realmente a \u00fanica coisa \"maravilhosa\" que eu achei foi 3 chefes :\n- Fume Knight\n- Dragon Sihn~\n- Sir Alone (embora \u00e9 rid\u00edculo o tanto de inimigos que tem s\u00f3 pra te fazer gastar estus)",
+    "sentiment": "POS",
+    "topic_id": 522,
+    "category": "Topico 522: estirado, disrespectful, coitado",
+    "topic_label": "Topico 522: estirado, disrespectful, coitado",
+    "topic_label_prev": "Topico 521: seguidas, 300, horas"
+  },
+  {
+    "sentence": "joguei 47 horas e meu hd morreu, troquei por um ssd e n\u00e3o salvou o progresso.",
+    "sentiment": "NEG",
+    "topic_id": 0,
+    "category": "Topico 0: joguei, fiquei, gostei",
+    "topic_label": "Topico 0: joguei, fiquei, gostei",
+    "topic_label_prev": null
+  },
+  {
+    "sentence": "(s\u00f3 n\u00e3o gostei da dlc dos exploradores, que tem as armadilhas e tals).",
+    "sentiment": "NEG",
+    "topic_id": 117,
+    "category": "Topico 117: gostei, agradou, gosto",
+    "topic_label": "Topico 117: gostei, agradou, gosto",
+    "topic_label_prev": "Topico 116: boss, floor, killing"
+  },
+  {
+    "sentence": "dark souls 2 \u00e9 definitivamente um dos jogos j\u00e1 feitos, sempre ouvi muitas criticas dele e n\u00e3o pensava que podia t\u00e3o ruim assim, dai comprei pra finalmente jogar, e meu amg quando o jogo tem 3 teclas pra tu se curar vc j\u00e1 v\u00ea q o buraco \u00e9 mais em baixo, tem um delay bizarro quando d\u00e1 roll, tu tem q rolar exatamente no pixel que o jogo quer se n\u00e3o tu leva hit, e se vc leva um hit de um inimigo que ataca combando, j\u00e1 era vai levar no minimo 50 ataques, e n\u00e3o chora n\u00e3o.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "fora essa parada ridicula de seu personagem estar olhando um pouquinho pro lado do inimgo e vc erra o ataque e n\u00e3o d\u00e1 nem 0,00001 de dano, mas rlx pq os inimigos tbm v\u00e3o errar(as vezes), tem diversos lugares que tem uma porrada de inimigo socado em um lugar, tipo na frente de uma boss fight, ou do lado da bonfire, e os bosses ahhh os bosses eles tem desings legais n\u00e3o d\u00e1 pra negar, tipo o cavaleiro do espelho, mas tem alguns bosses q s\u00e3o multiplos, porque tem uma boss fight q s\u00e3o CINCO gargulas MEU IRM\u00c3O EU NUNCA FUI T\u00c3O AGREDIDO.",
+    "sentiment": "NEG",
+    "topic_id": 87,
+    "category": "Topico 87: inimigo, inimigos, matar",
+    "topic_label": "Topico 87: inimigo, inimigos, matar",
+    "topic_label_prev": "Topico 86: hackers, cyberpunk, hacker"
+  },
+  {
+    "sentence": "Na grande maioria os bosses s\u00e3o f\u00e1ceis, ataca, recua, ataca, recua e s\u00f3, exceto os que s\u00e3o multiplos.",
+    "sentiment": "NEG",
+    "topic_id": 513,
+    "category": "Topico 513: muni\u00e7\u00e3o, fogo, sniper",
+    "topic_label": "Topico 513: muni\u00e7\u00e3o, fogo, sniper",
+    "topic_label_prev": "Topico 512: brabo, abre, reinicia"
+  },
+  {
+    "sentence": "N\u00e3o recomendo que inicie a franquia por ele.",
+    "sentiment": "NEG",
+    "topic_id": 47,
+    "category": "Topico 47: recomendo, recomendar, perca",
+    "topic_label": "Topico 47: recomendo, recomendar, perca",
+    "topic_label_prev": "Topico 46: desenvolvedores, desenvolvedor, atualiza\u00e7\u00f5es"
+  },
+  {
+    "sentence": "A cada morte seu personagem ficar\u00e1 mais fraco, tornando cada tentativa mais dif\u00edcil.",
+    "sentiment": "NEG",
+    "topic_id": 472,
+    "category": "Topico 472: sede, fome, herbivoros",
+    "topic_label": "Topico 472: sede, fome, herbivoros",
+    "topic_label_prev": "Topico 471: desisto, mudar, nn"
+  },
+  {
+    "sentence": "Em DS2 me pareceu haver algo errado com o design de n\u00edvel.",
+    "sentiment": "NEG",
+    "topic_id": 429,
+    "category": "Topico 429: fsx, 60fps, hd",
+    "topic_label": "Topico 429: fsx, 60fps, hd",
+    "topic_label_prev": "Topico 428: 15horas, 213, apraz\u00edvel"
+  },
+  {
+    "sentence": "Algumas transi\u00e7\u00f5es n\u00e3o fazem muito sentido.",
+    "sentiment": "NEG",
+    "topic_id": 267,
+    "category": "Topico 267: fraco, apetrechos, atingiu",
+    "topic_label": "Topico 267: fraco, apetrechos, atingiu",
+    "topic_label_prev": "Topico 266: bau, nu, house"
+  },
+  {
+    "sentence": "No micro, as constru\u00e7\u00f5es n\u00e3o fazem sentido algum.",
+    "sentiment": "NEG",
+    "topic_id": 122,
+    "category": "Topico 122: sentido, linearmente, menor",
+    "topic_label": "Topico 122: sentido, linearmente, menor",
+    "topic_label_prev": "Topico 121: repetitivo, repetitiva, torna"
+  },
+  {
+    "sentence": "Muitos corredores que d\u00e3o em beco sem sa\u00edda, salas e mais salas vazias.",
+    "sentiment": "NEG",
+    "topic_id": 157,
+    "category": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label_prev": "Topico 156: comprem, lixo, "
+  },
+  {
+    "sentence": "Talvez, mas n\u00e3o deixa de causar a sensa\u00e7\u00e3o de que o jogo n\u00e3o teve o mesmo n\u00edvel de carinho que o primeiro em seu desenvolvimento.",
+    "sentiment": "NEG",
+    "topic_id": 280,
+    "category": "Topico 280: low, sexualizado, anteriormentes",
+    "topic_label": "Topico 280: low, sexualizado, anteriormentes",
+    "topic_label_prev": "Topico 279: flamengo, hacker, odio"
+  },
+  {
+    "sentence": "O excesso de armadilhas e emboscadas tornam o jogo cansativo de explorar Todo mapa parece um Sen\u2019s Fortress, de novo e de novo\u2026 sem uma Anor Londo no final.",
+    "sentiment": "NEG",
+    "topic_id": 11,
+    "category": "Topico 11: mapa, mapas, pequeno",
+    "topic_label": "Topico 11: mapa, mapas, pequeno",
+    "topic_label_prev": "Topico 10: gr\u00e1ficos, gr\u00e1fico, graficos"
+  },
+  {
+    "sentence": "Outro ponto que me desanimou \u00e9 que 90% dos inimigos (incluindo bosses) s\u00e3o humanoides.",
+    "sentiment": "NEG",
+    "topic_id": 535,
+    "category": "Topico 535: negavam, lideran\u00e7a, aprova",
+    "topic_label": "Topico 535: negavam, lideran\u00e7a, aprova",
+    "topic_label_prev": "Topico 534: trens, construir, troncos"
+  },
+  {
+    "sentence": "Com essa review talvez pare\u00e7a que odiei o jogo.",
+    "sentiment": "NEG",
+    "topic_id": 357,
+    "category": "Topico 357: odeio, detesto, detestei",
+    "topic_label": "Topico 357: odeio, detesto, detestei",
+    "topic_label_prev": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel"
+  },
+  {
+    "sentence": "dark souls 2 entre os tres da franquia e o mais estranho, metade do jogo e um boss rush e quase todos os bosses sao broxas, dito isso melhor jogo peak souls 2 10/10",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Ainda sim, \u00e9 PEAK SOULS 2, se tiver s\u00f3 essa vers\u00e3o em m\u00e3os, m\u00e3o na massa, foco em power stance, E QUEBRA A CARA O SIR ALONE NA PORRADA!",
+    "sentiment": "NEG",
+    "topic_id": 516,
+    "category": "Topico 516: 150mega, ansiosos, atenciosamente",
+    "topic_label": "Topico 516: 150mega, ansiosos, atenciosamente",
+    "topic_label_prev": "Topico 515: abandonado, quero, matar"
+  },
+  {
+    "sentence": "rapaz, este jogo dos 40 minutos que joguei, morri umas 15 vezes ja.",
+    "sentiment": "NEG",
+    "topic_id": 0,
+    "category": "Topico 0: joguei, fiquei, gostei",
+    "topic_label": "Topico 0: joguei, fiquei, gostei",
+    "topic_label_prev": null
+  },
+  {
+    "sentence": "respirei parei de jogar, porque o controle e o pc custa mais caro que o jogo.",
+    "sentiment": "NEG",
+    "topic_id": 444,
+    "category": "Topico 444: desisti, parei, desinstalei",
+    "topic_label": "Topico 444: desisti, parei, desinstalei",
+    "topic_label_prev": "Topico 443: comprei, 72, decks"
+  },
+  {
+    "sentence": "aqui voce morre, apanha, morre, \u00e9 humilhado, morre, esfaqueado, morre, atropelado por um cavalo, morre, entra no lugar errado morre de novo.",
+    "sentiment": "NEG",
+    "topic_id": 182,
+    "category": "Topico 182: morrer, morreu, pulm\u00e3o",
+    "topic_label": "Topico 182: morrer, morreu, pulm\u00e3o",
+    "topic_label_prev": "Topico 181: destroying, destroem, the"
+  },
+  {
+    "sentence": "DS2 \u00e9 o tipo de jogo que te irrita, te pune e ainda parece rir da tua cara.",
+    "sentiment": "NEG",
+    "topic_id": 188,
+    "category": "Topico 188: conectar, conex\u00e3o, servidor",
+    "topic_label": "Topico 188: conectar, conex\u00e3o, servidor",
+    "topic_label_prev": "Topico 187: konami, conseguiu, rosa"
+  },
+  {
+    "sentence": "Muita gente tem medo de comprar o jogo porque ouve os outros falarem que a hitbox \u00e9 quebrada ou que a hist\u00f3ria \u00e9 fraca, e esses pontos at\u00e9 fazem sentido, mas n\u00e3o acho que sejam erros t\u00e3o terr\u00edveis assim.",
+    "sentiment": "NEG",
+    "topic_id": 73,
+    "category": "Topico 73: rocket, league, lenda",
+    "topic_label": "Topico 73: rocket, league, lenda",
+    "topic_label_prev": "Topico 72: manual, battlefield, prq\u00ea"
+  },
+  {
+    "sentence": "Para falar a verdade, eu considero o 2 tecnicamente melhor que o 1 em v\u00e1rios aspectos, o problema real \u00e9 que o design dos chefes \u00e9 meio pobre e poucos bosses s\u00e3o memor\u00e1veis de verdade.",
+    "sentiment": "NEG",
+    "topic_id": 520,
+    "category": "Topico 520: melhorar, invent\u00e1rio, palha\u00e7ada",
+    "topic_label": "Topico 520: melhorar, invent\u00e1rio, palha\u00e7ada",
+    "topic_label_prev": "Topico 519: position, desperdi\u00e7ado, aproveitamento"
+  },
+  {
+    "sentence": "Jog\u00e3o, cheio de coisa idiota(principalmente pra pc) mas baum, testa ai, se perder \u00e9 normal aceita e segue",
+    "sentiment": "NEG",
+    "topic_id": -1,
+    "category": "Topico geral",
+    "topic_label": "Topico geral",
+    "topic_label_prev": null
+  },
+  {
+    "sentence": "morre volta , morre volta, morre volta.",
+    "sentiment": "NEG",
+    "topic_id": 51,
+    "category": "Topico 51: susan, morreu, casa",
+    "topic_label": "Topico 51: susan, morreu, casa",
+    "topic_label_prev": "Topico 50: multiplayer, empresas, empresa"
+  },
+  {
+    "sentence": "a\u00ed voc\u00ea mata o primeiro boss na d\u00e9cima tentativa, fica feliz e morre pro primeiro inimigo que aparece que nem bosta.",
+    "sentiment": "NEG",
+    "topic_id": 87,
+    "category": "Topico 87: inimigo, inimigos, matar",
+    "topic_label": "Topico 87: inimigo, inimigos, matar",
+    "topic_label_prev": "Topico 86: hackers, cyberpunk, hacker"
+  },
+  {
+    "sentence": "Toda a mensagem do DS2 \u00e9 centrada na simples descoberta de uma terra perdida\n\nO combate do jogo \u00e9 muito duro, tudo \u00e9 muito devagar, principalmente a cura que leva cerca de 3 horas e meia pro personagem tomar a Estus.",
+    "sentiment": "NEG",
+    "topic_id": 426,
+    "category": "Topico 426: lento, movimenta\u00e7\u00e3o, infectados",
+    "topic_label": "Topico 426: lento, movimenta\u00e7\u00e3o, infectados",
+    "topic_label_prev": "Topico 425: escuro, chaves, transcendeu"
+  },
+  {
+    "sentence": "eu acho um pouco extrapolado as cr\u00edticas que fazem sobre DS2 pois acabam pintando o jogo como se ele fosse ruim, mas n\u00e3o se enganem, o jogo n\u00e3o \u00e9 ruim, talvez ele seja sim o patinho feio da FromSoftware, mas mesmo assim n\u00e3o deixa de ser Dark Souls, ele traz coisas novas que diferencia ele dos outros jogos e tendo uma alta dificuldade, recomendo muito para amantes da s\u00e9rie souls a pelo menos jogarem o DS2 pra sentirem um gostinho diferente de gameplay, mas tambem quero deixar claro que n\u00e3o nego os problemas do jogo e seus defeitos, pois o DS2 tem sim bastante defeitos, mas s\u00e3o esses defeitos que o difere dos demais, caso queira perder a cabe\u00e7a e se aventurar por areas lotadas de inimigos, jogue Dark Souls 2",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "J\u00e1 zerei no PlayStation, mas quando comprei para zerar tamb\u00e9m no PC, o jogo simplesmente n\u00e3o me desceu.",
+    "sentiment": "NEG",
+    "topic_id": 2,
+    "category": "Topico 2: pc, ram, fps",
+    "topic_label": "Topico 2: pc, ram, fps",
+    "topic_label_prev": "Topico 1: polenguinho, nada, zero"
+  },
+  {
+    "sentence": "Pra come\u00e7ar, tive que jogar no teclado e mouse, porque o controle estava todo bugado.",
+    "sentiment": "NEG",
+    "topic_id": 282,
+    "category": "Topico 282: mouse, controle, teclado",
+    "topic_label": "Topico 282: mouse, controle, teclado",
+    "topic_label_prev": "Topico 281: gabriel, traqueiarei, puta"
+  },
+  {
+    "sentence": "Al\u00e9m disso, tudo aquilo que o pessoal reclamava \u2014 e que pra mim n\u00e3o era problema \u2014 acabou aparecendo com for\u00e7a total: movimenta\u00e7\u00e3o travada, hitbox toda bugada, personagem cansado e fraco.",
+    "sentiment": "NEG",
+    "topic_id": 94,
+    "category": "Topico 94: trabalhos, caprichado, especifico",
+    "topic_label": "Topico 94: trabalhos, caprichado, especifico",
+    "topic_label_prev": "Topico 93: empresa, empresas, clientes"
+  },
+  {
+    "sentence": "Tudo isso me fez desistir de zerar no PC.",
+    "sentiment": "NEG",
+    "topic_id": 16,
+    "category": "Topico 16: pc, port, computador",
+    "topic_label": "Topico 16: pc, port, computador",
+    "topic_label_prev": "Topico 15: hist\u00f3ria, narrativa, historia"
+  },
+  {
+    "sentence": "No PS5 eu finalizei e confirmo que o jogo \u00e9 bom, mas no PC, simplesmente, foi uma experi\u00eancia horr\u00edvel.",
+    "sentiment": "NEG",
+    "topic_id": 536,
+    "category": "Topico 536: ps4, ps2, ps1",
+    "topic_label": "Topico 536: ps4, ps2, ps1",
+    "topic_label_prev": "Topico 535: negavam, lideran\u00e7a, aprova"
+  },
+  {
+    "sentence": "Jogo q simplesmente nao tem tutorial, eu nao joguei o ds1 pois o 2 estava mais barato e, pelo q os usuarios do reddit falaram, nao e necessario jogar o primeiro jogo (pelo menos no aspecto lore), mas mesmo assim achei q teria um tutorial, fiquei mais de 15 munitos procurando o butao de pulo, e alem disso, nada das mecanicas principais sao explicadas de forma explicita, pq o meu personagem vira um zumbi ?",
+    "sentiment": "NEG",
+    "topic_id": 521,
+    "category": "Topico 521: telejogo, patife, lava",
+    "topic_label": "Topico 521: telejogo, patife, lava",
+    "topic_label_prev": "Topico 520: melhorar, invent\u00e1rio, palha\u00e7ada"
+  },
+  {
+    "sentence": ", pq o meu personagem perde a vida maxima quando meu morro ?",
+    "sentiment": "NEG",
+    "topic_id": 316,
+    "category": "Topico 316: arrumei, desculpem, 310",
+    "topic_label": "Topico 316: arrumei, desculpem, 310",
+    "topic_label_prev": "Topico 315: muta, ferrei, bla"
+  },
+  {
+    "sentence": ", e o mais importante, ONDE CARALHOS EU TENHO Q IR, perguntas essas q eu esperava encontrar as respostas nos primeiros minutos de gameplay mas nao, eles so te jogam em um mundo onde vc nao sabe nem como andar direito e \u00e9 isso, nao quero terq ficar a cada 5 minutos tendo q abrir um video no youtube so pra saber como fazer uma a\u00e7\u00e3o basica q poderia ser explicada em um tutorial, nao sei se \u00e9 esse o proposito do jogo, mas eu definitivamente nao gostei, jogo superestimado",
+    "sentiment": "NEG",
+    "topic_id": 529,
+    "category": "Topico 529: aprender, tutorial, espec\u00edfica",
+    "topic_label": "Topico 529: aprender, tutorial, espec\u00edfica",
+    "topic_label_prev": "Topico 528: mafia, mudan\u00e7as, treta"
+  },
+  {
+    "sentence": "acho que esses foram os piores R$38,72 que j\u00e1 gastei em um jogo.",
+    "sentiment": "NEG",
+    "topic_id": 69,
+    "category": "Topico 69: pior, piores, joguei",
+    "topic_label": "Topico 69: pior, piores, joguei",
+    "topic_label_prev": "Topico 68: comunidade, t\u00f3xica, toxica"
+  },
+  {
+    "sentence": "muito dificil, passei nem do nome sfdkkkkkkk",
+    "sentiment": "NEG",
+    "topic_id": 410,
+    "category": "Topico 410: kkkk, kkkkkk, kkkkk",
+    "topic_label": "Topico 410: kkkk, kkkkkk, kkkkk",
+    "topic_label_prev": "Topico 409: bizarro, estranho, strange"
+  },
+  {
+    "sentence": "o jogo em si e jogavel, o problema e q ele n reconhece controle nenhum,ja testei 3 diferentes(todos funcionando perfeitamente em outros jogos) e ele n reconhece nenhum",
+    "sentiment": "NEG",
+    "topic_id": 282,
+    "category": "Topico 282: mouse, controle, teclado",
+    "topic_label": "Topico 282: mouse, controle, teclado",
+    "topic_label_prev": "Topico 281: gabriel, traqueiarei, puta"
+  },
+  {
+    "sentence": "eu vou breve, o jogo tinha muito potencial mas ele falhou em tudo oque devia ser bom e muitas partes ele so tenta ser dificil spmando inimigos em areas minuusculas, logo eu zerei o jogo e 90% dele eu nao me diverti e so passei raiva",
+    "sentiment": "NEG",
+    "topic_id": 0,
+    "category": "Topico 0: joguei, fiquei, gostei",
+    "topic_label": "Topico 0: joguei, fiquei, gostei",
+    "topic_label_prev": null
+  },
+  {
+    "sentence": "Isso n\u00e3o \u00e9 amor pelo jogo, \u00e9 s\u00edndrome de Estocolmo disfar\u00e7ada de nostalgia.",
+    "sentiment": "NEG",
+    "topic_id": 439,
+    "category": "Topico 439: voltado, apreciadores, tens\u00e3ohorror",
+    "topic_label": "Topico 439: voltado, apreciadores, tens\u00e3ohorror",
+    "topic_label_prev": "Topico 438: acabar, viaja, quanto"
+  },
+  {
+    "sentence": "Agora, vamos falar sobre essa aberra\u00e7\u00e3o.",
+    "sentiment": "NEG",
+    "topic_id": 323,
+    "category": "Topico 323: ponte, loko, b2durante",
+    "topic_label": "Topico 323: ponte, loko, b2durante",
+    "topic_label_prev": "Topico 322: financie, paguem, 250"
+  },
+  {
+    "sentence": "O jogo \u00e9 inimigo do lazer, n\u00eamesis da criatividade e campe\u00e3o em ser o pior Souls que j\u00e1 joguei.",
+    "sentiment": "NEG",
+    "topic_id": 356,
+    "category": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label_prev": "Topico 355: comprem, lixo, "
+  },
+  {
+    "sentence": "Tudo aqui parece feito com pregui\u00e7a, e o resultado \u00e9 uma experi\u00eancia que confunde dificuldade com caos, transformando-se em uma completa tortura.",
+    "sentiment": "NEG",
+    "topic_id": 265,
+    "category": "Topico 265: hospital, npc, aprender",
+    "topic_label": "Topico 265: hospital, npc, aprender",
+    "topic_label_prev": "Topico 264: amigos, sozinho, amizade"
+  },
+  {
+    "sentence": "Os atalhos s\u00e3o mal planejados e as bonfires ficam em lugares sem sentido.",
+    "sentiment": "NEG",
+    "topic_id": 157,
+    "category": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label_prev": "Topico 156: comprem, lixo, "
+  },
+  {
+    "sentence": "O level design \u00e9 um desastre monumental, com corredores infinitos, salas gen\u00e9ricas, becos sem sa\u00edda em excesso e backtracking for\u00e7ado s\u00f3 para inflar horas de jogo.",
+    "sentiment": "NEG",
+    "topic_id": 157,
+    "category": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label": "Topico 157: edif\u00edcio, locais, cidade",
+    "topic_label_prev": "Topico 156: comprem, lixo, "
+  },
+  {
+    "sentence": "[h3]Combate[/h3]\n\nO combate, que deveria ser o ponto alto, aqui \u00e9 um festival de inconsist\u00eancias.",
+    "sentiment": "NEG",
+    "topic_id": 124,
+    "category": "Topico 124: combate, combates, batalhas",
+    "topic_label": "Topico 124: combate, combates, batalhas",
+    "topic_label_prev": "Topico 123: recomendo, recomendar, ningu\u00e9m"
+  },
+  {
+    "sentence": "\u00c9 imposs\u00edvel lutar com confian\u00e7a quando o pr\u00f3prio jogo parece conspirar contra as leis do pr\u00f3prio mundo.",
+    "sentiment": "NEG",
+    "topic_id": 296,
+    "category": "Topico 296: censura, imposs\u00edvel, impede",
+    "topic_label": "Topico 296: censura, imposs\u00edvel, impede",
+    "topic_label_prev": "Topico 295: zuuuuuuuuuummmm, compre, hoje"
+  },
+  {
+    "sentence": "[h3]Bosses med\u00edocres[/h3]\n\nOs chefes s\u00e3o vers\u00f5es recicladas de inimigos comuns, as arenas s\u00e3o min\u00fasculas, cheias de mobs e uma hitbox mentirosa.",
+    "sentiment": "NEG",
+    "topic_id": 87,
+    "category": "Topico 87: inimigo, inimigos, matar",
+    "topic_label": "Topico 87: inimigo, inimigos, matar",
+    "topic_label_prev": "Topico 86: hackers, cyberpunk, hacker"
+  },
+  {
+    "sentence": "A sensa\u00e7\u00e3o de vit\u00f3ria \u00e9 substitu\u00edda por al\u00edvio de nunca mais precisar ver aquela desgr4\u00e7a.",
+    "sentiment": "NEG",
+    "topic_id": 394,
+    "category": "Topico 394: hakan, 108, avis\u00e1los",
+    "topic_label": "Topico 394: hakan, 108, avis\u00e1los",
+    "topic_label_prev": "Topico 393: adoraria, rpg, shot"
+  },
+  {
+    "sentence": "Ah, e ainda h\u00e1 o alcance do aggro: voc\u00ea pode atravessar o mapa correndo e ainda ter\u00e1 um filho da put# te perseguindo.",
+    "sentiment": "NEG",
+    "topic_id": 323,
+    "category": "Topico 323: ponte, loko, b2durante",
+    "topic_label": "Topico 323: ponte, loko, b2durante",
+    "topic_label_prev": "Topico 322: financie, paguem, 250"
+  },
+  {
+    "sentence": "Se voc\u00ea tiver um m\u00ednimo de QI, vai perceber que \u00e9 muito mais conveniente ignorar tudo e rushar at\u00e9 os bosses, que, ironicamente, costumam ser ridiculamente f\u00e1ceis.",
+    "sentiment": "NEG",
+    "topic_id": 247,
+    "category": "Topico 247: ia, intelig\u00eancia, artificial",
+    "topic_label": "Topico 247: ia, intelig\u00eancia, artificial",
+    "topic_label_prev": "Topico 246: bug, si, s\u00ed"
+  },
+  {
+    "sentence": "\u00c9 algo t\u00e3o rid\u00edculo que, se um mob decidir te combar com pelo menos quatro ataques, voc\u00ea n\u00e3o vai conseguir revidar.",
+    "sentiment": "NEG",
+    "topic_id": 87,
+    "category": "Topico 87: inimigo, inimigos, matar",
+    "topic_label": "Topico 87: inimigo, inimigos, matar",
+    "topic_label_prev": "Topico 86: hackers, cyberpunk, hacker"
+  },
+  {
+    "sentence": "Outro ponto terr\u00edvel \u00e9 a adaptability: \u00e9 praticamente obrigat\u00f3rio se n\u00e3o quiser um jogo lento e frustrante, seja pela quantidade miser\u00e1vel de frames no dodge ou pela velocidade pat\u00e9tica ao usar o Estus.",
+    "sentiment": "NEG",
+    "topic_id": 63,
+    "category": "Topico 63: velocidade, luta, inimigos",
+    "topic_label": "Topico 63: velocidade, luta, inimigos",
+    "topic_label_prev": "Topico 62: voc\u00eb, lara, croft"
+  },
+  {
+    "sentence": "E tamb\u00e9m tem o status de poison, que \u00e9 ridiculamente forte, chegando ao ponto de permitir que voc\u00ea infecte o boss e passe a luta correndo enquanto ele morre de c4ncer.",
+    "sentiment": "NEG",
+    "topic_id": 458,
+    "category": "Topico 458: killer, suvivor, hit",
+    "topic_label": "Topico 458: killer, suvivor, hit",
+    "topic_label_prev": "Topico 457: fama, in, ascen\u00e7\u00e3o"
+  },
+  {
+    "sentence": "[h3]NPCs e quests[/h3]\n\nAs quests continuam sem sentido como sempre, mas h\u00e1 o b\u00f4nus de algumas terem requisitos chatinhos, como o fato de voc\u00ea n\u00e3o conseguir certas roupas herdadas apenas porque n\u00e3o invocou o querid\u00e3o para um combate tr\u00eas vezes.",
     "sentiment": "NEG",
     "topic_id": 565,
     "category": "Topico 565: pare\u00e7am, insignificantes, guarda",
@@ -344,173 +984,1531 @@
     "topic_label_prev": "Topico 564: silenciadas, attila, locais"
   },
   {
-    "sentence": "Recomendo mano, mas as vezes tem uns enigma nada haver, tipo de o tirar o brilho do jogo, acho que \u00e9 meio aleat\u00f3rio, e em outros casos fala para fazer algo que n\u00e3o \u00e9 exatamento o que tem que ser feito.",
+    "sentence": "Tamb\u00e9m h\u00e1 microtravamentos ap\u00f3s trocar de janela, inimigos aparecendo com atraso e bugs por todos os lados.",
     "sentiment": "NEG",
-    "topic_id": 104,
-    "category": "Topico 104: engolidos, ch\u00e3o, correio",
-    "topic_label": "Topico 104: engolidos, ch\u00e3o, correio",
-    "topic_label_prev": "Topico 103: horr\u00edvel, p\u00e9ssimo, pessimos"
+    "topic_id": 505,
+    "category": "Topico 505: bugs, brotando, parede",
+    "topic_label": "Topico 505: bugs, brotando, parede",
+    "topic_label_prev": "Topico 504: batida, design, ui"
   },
   {
-    "sentence": "A investiga\u00e7\u00e3o inteira do Per\u00edmetro demonstra um ambiente de caos e sofrimento puro, onde o Medo \u00e9 capaz de causar momentos inimagin\u00e1veis.",
+    "sentence": "O som \u00e9 outro desastre; v\u00e1rias \u00e1reas simplesmente n\u00e3o t\u00eam trilha alguma, e quando t\u00eam, s\u00e3o faixas recicladas de DS 1.",
     "sentiment": "NEG",
-    "topic_id": 170,
-    "category": "Topico 170: avo, bomber, situa\u00e7\u00f5es",
-    "topic_label": "Topico 170: avo, bomber, situa\u00e7\u00f5es",
-    "topic_label_prev": "Topico 169: anima\u00e7\u00f5es, anima\u00e7\u00e3o, summons"
+    "topic_id": 3,
+    "category": "Topico 3: trilha, sonora, m\u00fasica",
+    "topic_label": "Topico 3: trilha, sonora, m\u00fasica",
+    "topic_label_prev": "Topico 2: pc, ram, fps"
   },
   {
-    "sentence": "o meu cerebro fritou nos enigmas do samuel.",
+    "sentence": "[h3]Ideias boas, execu\u00e7\u00e3o desastrosa[/h3]\n\nO jogo tenta enfiar dezenas de mec\u00e2nicas como counter damage, back attack, power stance, weapon scaling, sweet spots, entre v\u00e1rias outras, mas sem qualquer integra\u00e7\u00e3o ou explica\u00e7\u00e3o decente, e quase n\u00e3o h\u00e1 momentos apropriados para usar a maioria, ou as vezes apenas n\u00e3o funcionam de forma consistente.",
+    "sentiment": "NEG",
+    "topic_id": 63,
+    "category": "Topico 63: velocidade, luta, inimigos",
+    "topic_label": "Topico 63: velocidade, luta, inimigos",
+    "topic_label_prev": "Topico 62: voc\u00eb, lara, croft"
+  },
+  {
+    "sentence": "E o farm de covenants continua sendo uma tortura para quem quer platinar, feito apenas para inflar tempo de jogo.",
+    "sentiment": "NEG",
+    "topic_id": 273,
+    "category": "Topico 273: colapso, drag\u00e3o, governo",
+    "topic_label": "Topico 273: colapso, drag\u00e3o, governo",
+    "topic_label_prev": "Topico 272: cof, mercado, produto"
+  },
+  {
+    "sentence": "Ele apresenta vislumbres de algo que poderia ter sido incr\u00edvel, mas tudo se perdeu em um mar de falhas t\u00e9cnicas, mec\u00e2nicas desastrosas e escolhas de design que preferem inflar conte\u00fado e criar dificuldades artificiais, em vez de construir desafios memor\u00e1veis.",
+    "sentiment": "NEG",
+    "topic_id": 484,
+    "category": "Topico 484: imagens, visual, ilumina\u00e7\u00e3o",
+    "topic_label": "Topico 484: imagens, visual, ilumina\u00e7\u00e3o",
+    "topic_label_prev": "Topico 483: ganham, 75, pare"
+  },
+  {
+    "sentence": "O resultado \u00e9 uma par\u00f3dia do pr\u00f3prio g\u00eanero que ajudou a consagrar: um jogo que pune o jogador n\u00e3o por falta de habilidade, mas por suas pr\u00f3prias inconsist\u00eancias, bugs e decis\u00f5es pregui\u00e7osas.",
+    "sentiment": "NEG",
+    "topic_id": 165,
+    "category": "Topico 165: rank, racismo, ora",
+    "topic_label": "Topico 165: rank, racismo, ora",
+    "topic_label_prev": "Topico 164: promissor, telltele, agrad\u00e1veldivertido"
+  },
+  {
+    "sentence": "Isso aqui n\u00e3o \u00e9 dif\u00edcil; \u00e9 chato, tedioso, inconsistente, desrespeitoso e entorpecente.",
+    "sentiment": "NEG",
+    "topic_id": 143,
+    "category": "Topico 143: chato, novela, assistir",
+    "topic_label": "Topico 143: chato, novela, assistir",
+    "topic_label_prev": "Topico 142: pre\u00e7o, reais, ves\u00e3o"
+  },
+  {
+    "sentence": "Um jogo que suga a alma e o prazer.",
+    "sentiment": "NEG",
+    "topic_id": 337,
+    "category": "Topico 337: roubar, criancas, ditado",
+    "topic_label": "Topico 337: roubar, criancas, ditado",
+    "topic_label_prev": "Topico 336: aurora, planeta, boss"
+  },
+  {
+    "sentence": "os controles do 1 j\u00e1 s\u00e3o ruins, dai ap\u00f3s acostumar, fui  jogar o 2 e adivinha?",
+    "sentiment": "NEG",
+    "topic_id": 282,
+    "category": "Topico 282: mouse, controle, teclado",
+    "topic_label": "Topico 282: mouse, controle, teclado",
+    "topic_label_prev": "Topico 281: gabriel, traqueiarei, puta"
+  },
+  {
+    "sentence": "totalmente diferente, e totalmente horrivel de se jogar",
+    "sentiment": "NEG",
+    "topic_id": 356,
+    "category": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label_prev": "Topico 355: comprem, lixo, "
+  },
+  {
+    "sentence": "PIOR JOGO J\u00c1 FEITO NA HIST\u00d3RIA DOS JOGOS.",
+    "sentiment": "NEG",
+    "topic_id": 36,
+    "category": "Topico 36: merda, cu, legends",
+    "topic_label": "Topico 36: merda, cu, legends",
+    "topic_label_prev": "Topico 35: criticam, cr\u00edticas, negatividade"
+  },
+  {
+    "sentence": "N\u00e3o chega nem aos p\u00e9s do DS1 imagina do 3.",
+    "sentiment": "NEG",
+    "topic_id": 159,
+    "category": "Topico 159: re7, re2, preta",
+    "topic_label": "Topico 159: re7, re2, preta",
+    "topic_label_prev": "Topico 158: chato, burrisse, desesperadores"
+  },
+  {
+    "sentence": "P\u00e9ssima movimenta\u00e7\u00e3o, hitbox bugada.",
+    "sentiment": "NEG",
+    "topic_id": 30,
+    "category": "Topico 30: teclado, mouse, fps",
+    "topic_label": "Topico 30: teclado, mouse, fps",
+    "topic_label_prev": "Topico 29: porra, cu, meo"
+  },
+  {
+    "sentence": "P\u00e9ssima estrutura de jogo, p\u00e9ssima mec\u00e2nica, p\u00e9ssima hist\u00f3ria.",
+    "sentiment": "NEG",
+    "topic_id": 356,
+    "category": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label": "Topico 356: horr\u00edvel, p\u00e9ssimo, terr\u00edvel",
+    "topic_label_prev": "Topico 355: comprem, lixo, "
+  },
+  {
+    "sentence": "Gra\u00e7as a deus os novos jogos n\u00e3o sa\u00edram com a mesma equipe.",
+    "sentiment": "NEG",
+    "topic_id": 27,
+    "category": "Topico 27: melhorar, melhor, bom",
+    "topic_label": "Topico 27: melhorar, melhor, bom",
+    "topic_label_prev": "Topico 26: terror, medo, scare"
+  },
+  {
+    "sentence": "Numero de runs: 1\n\n1 : parece um video de desafio dde maldicao 100% do tempo, procurar estus so funciona no elden ring, camera focada uma bosta, bosses copia e cola, runs back de boss provaveis as piores, e por fim uma das piores experiencias que tive, mas entrar em lembrancas foi legal.",
+    "sentiment": "NEG",
+    "topic_id": 418,
+    "category": "Topico 418: clicar, bot\u00e3o, adventures",
+    "topic_label": "Topico 418: clicar, bot\u00e3o, adventures",
+    "topic_label_prev": "Topico 417: fruta, jagged, importa"
+  },
+  {
+    "sentence": "The Rotten \u00e9 chato de lutar e em absolutamente nenhum dos bosses eu tive aquela sensa\u00e7\u00e3o t\u00edpica de conquista, j\u00e1 que as lutas contra chefes s\u00e3o extremamente limitadas e simplesmente HORRIVEIS pela falta de moveset!",
+    "sentiment": "NEG",
+    "topic_id": 124,
+    "category": "Topico 124: combate, combates, batalhas",
+    "topic_label": "Topico 124: combate, combates, batalhas",
+    "topic_label_prev": "Topico 123: recomendo, recomendar, ningu\u00e9m"
+  },
+  {
+    "sentence": "Os cen\u00e1rios s\u00e3o extremamente isolados, o level design desse jogo \u00e9 horroroso comparado ao DS1, j\u00e1 que eles colocaram MUITAS \u00e1reas extremamente fod@-s3 e com falta de conex\u00e3o com o mapa (tipo os atalhos do DS1 para firelink), fazendo com que se torne enjoativo se progredir no jogo.",
+    "sentiment": "NEG",
+    "topic_id": 476,
+    "category": "Topico 476: servi\u00e7os, menu, execu\u00e7\u00f5es",
+    "topic_label": "Topico 476: servi\u00e7os, menu, execu\u00e7\u00f5es",
+    "topic_label_prev": "Topico 475: favor, acro, abobrinha"
+  },
+  {
+    "sentence": "N\u00e3o gostei das mec\u00e2nicas implementadas de adaptabilidade (ADP) que influ\u00eancia diretamente nos I-frames (invincibility frames) que \u00e9 aquilo que te deixa invulner\u00e1vel quando voc\u00ea da um roll, pelo fato deles apenas terem reciclado o fator \"RES\" que absolutamente NINGU\u00c9M utilizava nos outros jogos da serie, tamb\u00e9m sendo responsavel por 90% das cr\u00edticas a este jogo, fazendo com que aquela subcomunidade de jogadores de souls like t\u00f3xicos entrem no jogo, terminem o jogo e v\u00e3o falar como se fossem deuses do mundo dos jogos e que est\u00e3o em um patamar acima de quem n\u00e3o jogou, assim como ja fazem com pessoas que n\u00e3o jogam souls like, endeusando o g\u00eanero com a fal\u00e1cia de que \"n\u00e3o \u00e9 qualquer um que joga\" e dps v\u00e3o quic@r e m@mar 500 pic4s na volta pra casa.",
+    "sentiment": "NEG",
+    "topic_id": 393,
+    "category": "Topico 393: adoraria, rpg, shot",
+    "topic_label": "Topico 393: adoraria, rpg, shot",
+    "topic_label_prev": "Topico 392: mosquitos, repetitive, chata"
+  },
+  {
+    "sentence": "Dark Souls 2 teve a implementa\u00e7\u00e3o de uma nova engine (BUGADA DE MAIS INCLUSIVE), com detalhes novos como quest\u00e3o de visibilidade no escuro na hora de dar lock-on em inimigos, fazendo com que voc\u00ea tenha que haver uma ilumina\u00e7\u00e3o minima para conseguir \"lockar\" o inimigo.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Por\u00e9m diferente de DS1 (n\u00e3o vou considerar o 3 neste quesito pelo fato de ser injusto) os cen\u00e1rios s\u00e3o extremamente gen\u00e9ricos e com falta de certas decora\u00e7\u00f5es que moldam a atmosfera da \u00e1rea, tendo salas SIMPLESMENTE VAZIAS SEM PORR@ NENHUMA.",
+    "sentiment": "NEG",
+    "topic_id": 380,
+    "category": "Topico 380: cores, cor, ilumina\u00e7\u00e3o",
+    "topic_label": "Topico 380: cores, cor, ilumina\u00e7\u00e3o",
+    "topic_label_prev": "Topico 379: live, safe, online"
+  },
+  {
+    "sentence": "Assim como virou moda falar mal desse jogo, virou moda defender ele a todo custo na internet, dizendo que este jogo foi injusti\u00e7ado, mas na minha opini\u00e3o se n tivessem tacado o pau nesse jogo pelas coisas ruins, n\u00e3o haveria a absurda evolu\u00e7\u00e3o de ritmo e jogabilidade no DS3.",
+    "sentiment": "NEG",
+    "topic_id": 327,
+    "category": "Topico 327: loja, sims, indies",
+    "topic_label": "Topico 327: loja, sims, indies",
+    "topic_label_prev": "Topico 326: \u00f4nibus, coca, complacentes"
+  },
+  {
+    "sentence": "Achei uma experiencia dolorosa e chata de mais, j\u00e1 que entre cada momento de divers\u00e3o e outro, demorava mais ou menos 15hrs.",
+    "sentiment": "NEG",
+    "topic_id": 545,
+    "category": "Topico 545: curta, awakens, procurarem",
+    "topic_label": "Topico 545: curta, awakens, procurarem",
+    "topic_label_prev": "Topico 544: overall, prejudicar, cansa"
+  },
+  {
+    "sentence": "Pensei: \u201calgo de errado n\u00e3o est\u00e1 certo, eu n\u00e3o gosto desse jogo\u201d.",
+    "sentiment": "NEG",
+    "topic_id": 439,
+    "category": "Topico 439: voltado, apreciadores, tens\u00e3ohorror",
+    "topic_label": "Topico 439: voltado, apreciadores, tens\u00e3ohorror",
+    "topic_label_prev": "Topico 438: acabar, viaja, quanto"
+  },
+  {
+    "sentence": "A movimenta\u00e7\u00e3o do personagem \u00e9 vagarosa, pesada.",
+    "sentiment": "NEG",
+    "topic_id": 286,
+    "category": "Topico 286: personagem, alex, sebastian",
+    "topic_label": "Topico 286: personagem, alex, sebastian",
+    "topic_label_prev": "Topico 285: tiro, strike, atirar"
+  },
+  {
+    "sentence": "O personagem parece que est\u00e1 grudado no ch\u00e3o.",
+    "sentiment": "NEG",
+    "topic_id": 286,
+    "category": "Topico 286: personagem, alex, sebastian",
+    "topic_label": "Topico 286: personagem, alex, sebastian",
+    "topic_label_prev": "Topico 285: tiro, strike, atirar"
+  },
+  {
+    "sentence": "Ainda inventaram um stat s\u00f3 para controlar os Iframes, ent\u00e3o mesmo rolando nu vai acabar tomando porrada.",
+    "sentiment": "NEG",
+    "topic_id": 169,
+    "category": "Topico 169: anima\u00e7\u00f5es, anima\u00e7\u00e3o, summons",
+    "topic_label": "Topico 169: anima\u00e7\u00f5es, anima\u00e7\u00e3o, summons",
+    "topic_label_prev": "Topico 168: bola, gol, advers\u00e1rio"
+  },
+  {
+    "sentence": "O level desing \u00e9 extremamente chato e sem imagina\u00e7\u00e3o, n\u00e3o espere nada similar a Dark Souls I.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "O jogo \u00e9 feio, n\u00e3o por ser antigo, mas porque a engine de ilumina\u00e7\u00e3o \u00e9 tosca, um completo downgrade do que tinha sido prometido originalmente.",
+    "sentiment": "NEG",
+    "topic_id": 194,
+    "category": "Topico 194: otimizado, mal, horrivelmente",
+    "topic_label": "Topico 194: otimizado, mal, horrivelmente",
+    "topic_label_prev": "Topico 193: irritante, ficar, pode"
+  },
+  {
+    "sentence": "Os personagens s\u00e3o todos uns PNC, s\u00e9rio n\u00e3o tem ningu\u00e9m na mesma vibe do Solaire ou do Siegmeyer, todo mundo te trata feito um peda\u00e7o de bosta.",
+    "sentiment": "NEG",
+    "topic_id": 18,
+    "category": "Topico 18: personagens, personagem, protagonista",
+    "topic_label": "Topico 18: personagens, personagem, protagonista",
+    "topic_label_prev": "Topico 17: servidor, servidores, server"
+  },
+  {
+    "sentence": "bem na verdade n\u00e3o tem hist\u00f3ria n\u00e9?",
+    "sentiment": "NEG",
+    "topic_id": 67,
+    "category": "Topico 67: hist\u00f3ria, nexo, historia",
+    "topic_label": "Topico 67: hist\u00f3ria, nexo, historia",
+    "topic_label_prev": "Topico 66: ping, sul, americano"
+  },
+  {
+    "sentence": "\u00c9 basicamente fanfiction e fanservise, nada realmente interessante, tanto que Dark Souls 3 basicamente ignora a exist\u00eancia do DS2.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "S\u00f3 tinha build quebrada, e n\u00e3o era restrito por level do char, mas sim por \u201csoul memory\u201d, outra mec\u00e2nica retardada implementada por esse jogo.",
+    "sentiment": "NEG",
+    "topic_id": 149,
+    "category": "Topico 149: pe\u00e7as, wwe, forza",
+    "topic_label": "Topico 149: pe\u00e7as, wwe, forza",
+    "topic_label_prev": "Topico 148: lanche, gastado, comprado"
+  },
+  {
+    "sentence": "Enfim, \u00e9 uma sequ\u00eancia bem med\u00edocre para um jogo incr\u00edvel, totalmente n\u00e3o vale jogar atualmente.",
+    "sentiment": "NEG",
+    "topic_id": 102,
+    "category": "Topico 102: prote\u00e7ao, conquistando, obscura",
+    "topic_label": "Topico 102: prote\u00e7ao, conquistando, obscura",
+    "topic_label_prev": "Topico 101: compre, gaste, comprem"
+  },
+  {
+    "sentence": "pq fizestes isso comigo from software.",
+    "sentiment": "NEG",
+    "topic_id": 16,
+    "category": "Topico 16: pc, port, computador",
+    "topic_label": "Topico 16: pc, port, computador",
+    "topic_label_prev": "Topico 15: hist\u00f3ria, narrativa, historia"
+  },
+  {
+    "sentence": "[h2] ESSE JOGO \u00c9 UMA BAITA BRINCADEIRA DE MAU GOSTO COM O F\u00c3 DE SOULS LIKE.",
+    "sentiment": "NEG",
+    "topic_id": 29,
+    "category": "Topico 29: porra, cu, meo",
+    "topic_label": "Topico 29: porra, cu, meo",
+    "topic_label_prev": "Topico 28: assassino, policiais, pol\u00edcia"
+  },
+  {
+    "sentence": "esque\u00e7am que essa atrocidade de DS2 existe.",
+    "sentiment": "NEG",
+    "topic_id": 265,
+    "category": "Topico 265: hospital, npc, aprender",
+    "topic_label": "Topico 265: hospital, npc, aprender",
+    "topic_label_prev": "Topico 264: amigos, sozinho, amizade"
+  },
+  {
+    "sentence": "review sincera do jogo base pois fui com a mente aberta pra jogar ele: \nCONTRAS\n- os mapas sao na maioria insuport\u00e1veis e feios, tanto pelos inimigo quanto por est\u00e9tica \n- tem armadilha pra todo lado sem ter sentido algum.",
+    "sentiment": "NEG",
+    "topic_id": 192,
+    "category": "Topico 192: di\u00e1logos, espa\u00e7amento, texto",
+    "topic_label": "Topico 192: di\u00e1logos, espa\u00e7amento, texto",
+    "topic_label_prev": "Topico 191: load, corno, mtu"
+  },
+  {
+    "sentence": ") cela de straid eh um exemplo\n- hitbox dos inimigo eh sacanagem de vez em quando\n- o dano de queda eh meio absurdo de verdade mesmo\n- se vc morre sua vida limite diminui kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk piada pronta namoral\n- os 3 boss final sao extremamente broxante (2 carinha, nashandra e aidi sla das quanta)\n- vc tem que pesquisar na wiki que tem que queimar o moinho pra nao ter chao de veneno no boss da medusa pq nao \u00e9 nada obvio\n- os npc te xingam mesmo se vc compra coisa neles (meio paia da parte deles pprt)\n- tem mt aranha (credo mano :/)\n- nao tem o cebolao vulgo siegmeyer nem o solaire (ja que copiaram 2 boss podiam botar eles ne :D)\n\nPR\u00d3S\n- as quests de npcs s\u00e3o legais (lucatiel diva)\n- majula \u00e9 tao bonita quanto a trilha sonora\n- tem um npc gato que te vende item (\u00e9pico)\n- veneno eh extremamente roubado mas tb pode ser usado contra vc entao nao sei se \u00e9 um pr\u00f3 de vdd\n- vc pode escolher o caminho que quer ir primeiro (eu vou pra heide antes da floresta por exemplo)\n- vc pode invocar o jester thomas num boss e ele eh extremamente roubado e sola o boss facil\n- os invasores sao bem de boa de matar\n- se vc jogar online fica mt facil de saber onde tem porta secreta\n- as armas de boss sao mt daora tanto em design quanto moveset\n- vc pode dar qualquer roupa que quiser pra rosabeth transformando ela em uma grande diva se quiser (achei legal)\n- tem aquela inimiga gostosa do deserto que \u00e9 piromancer e tem uns tetao imenso \ud83e\udd24",
+    "sentiment": "NEG",
+    "topic_id": 87,
+    "category": "Topico 87: inimigo, inimigos, matar",
+    "topic_label": "Topico 87: inimigo, inimigos, matar",
+    "topic_label_prev": "Topico 86: hackers, cyberpunk, hacker"
+  },
+  {
+    "sentence": "eeeeeeeeeeeeeeeeee, meu gato cagou no meu teclado, reenbolsei, e a merda nao saiu 10/10, deu comida pro meu cachorro",
+    "sentiment": "NEG",
+    "topic_id": 230,
+    "category": "Topico 230: halls, cise, mazer",
+    "topic_label": "Topico 230: halls, cise, mazer",
+    "topic_label_prev": "Topico 229: vira, resolvem, programado"
+  },
+  {
+    "sentence": "Um dos piores soulslike para platinar, foi um parto realizar essa miss\u00e3o.",
+    "sentiment": "NEG",
+    "topic_id": 57,
+    "category": "Topico 57: pior, piores, disparado",
+    "topic_label": "Topico 57: pior, piores, disparado",
+    "topic_label_prev": "Topico 56: decep\u00e7\u00e3o, decepcionado, decepcionou"
+  },
+  {
+    "sentence": "Al\u00e9m de tudo, bosses gen\u00e9ricos e sistema lento de combate",
+    "sentiment": "NEG",
+    "topic_id": 124,
+    "category": "Topico 124: combate, combates, batalhas",
+    "topic_label": "Topico 124: combate, combates, batalhas",
+    "topic_label_prev": "Topico 123: recomendo, recomendar, ningu\u00e9m"
+  },
+  {
+    "sentence": "N\u00e3o \u00e9 um jogo ruim\r\n\r\nMas \u00e9 um Dark Souls Ruim\r\nRecomendo come\u00e7ar dos outros primeiros, e deixar esse por ultimo (fiz isso)",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "jogo lerdo pqp vc ter que upar um status pra ter mais frames no roll que ideia de fdp jogo paia\n odeio",
+    "sentiment": "NEG",
+    "topic_id": 303,
+    "category": "Topico 303: fps, quedas, video",
+    "topic_label": "Topico 303: fps, quedas, video",
+    "topic_label_prev": "Topico 302: reais, 200, 300"
+  },
+  {
+    "sentence": "N\u00e3o acreditem nas reviews desses lun\u00e1ticos, tudo nesse jogo \u00e9 ruim e frustrante.",
+    "sentiment": "NEG",
+    "topic_id": 24,
+    "category": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label_prev": "Topico 23: resident, evil, horror"
+  },
+  {
+    "sentence": "parabens pra quem fez esse jogo, concerteza essas mesmas pessoas n\u00e3o ir\u00e3o pro c\u00e9u por te feito um jogo t\u00e3o diabolico que nem esse, quem acha esse jogo bom tem que ter o mesmo destino que n\u00e3o ser\u00e1 Jesus Cristo pois concerteza j\u00e1 est\u00e3o com a mente conturbada e possuida pelo oriundo, se eu pudesse pontuar esse jogo de 1 a 10 eu iria negativar de 0 a -10, jogo imundo, mediocre e tudo de ruim que existe.",
+    "sentiment": "NEG",
+    "topic_id": 120,
+    "category": "Topico 120: cancer, s\u00edndrome, cerebral",
+    "topic_label": "Topico 120: cancer, s\u00edndrome, cerebral",
+    "topic_label_prev": "Topico 119: michael, demotado, deturparam"
+  },
+  {
+    "sentence": "Esse game e uma grande merda, com certeza o diretor foi corno e descontou toda a raiva dele nesse game",
+    "sentiment": "NEG",
+    "topic_id": 582,
+    "category": "Topico 582: spike, lee, bl\u00e1",
+    "topic_label": "Topico 582: spike, lee, bl\u00e1",
+    "topic_label_prev": "Topico 581: opacidade, mudar, op\u00e7\u00e3o"
+  },
+  {
+    "sentence": "PIOR Q BATE COM O CU EM MA\u00c7ANETA DE FRIGOBAR",
+    "sentiment": "NEG",
+    "topic_id": 359,
+    "category": "Topico 359: porra, 20min, blevem",
+    "topic_label": "Topico 359: porra, 20min, blevem",
+    "topic_label_prev": "Topico 358: eh, oh, url"
+  },
+  {
+    "sentence": "DEUS, POR FAVOR, MATE TODOS OS ENVOLVIDOS NA CRIA\u00c7\u00c3O DESSE JOGO",
+    "sentiment": "NEG",
+    "topic_id": 29,
+    "category": "Topico 29: porra, cu, meo",
+    "topic_label": "Topico 29: porra, cu, meo",
+    "topic_label_prev": "Topico 28: assassino, policiais, pol\u00edcia"
+  },
+  {
+    "sentence": "Incrivel que do primeiro jogo pra esse eles conseguiram piorar em TUDO, vsf jogo lixo",
+    "sentiment": "NEG",
+    "topic_id": 158,
+    "category": "Topico 158: chato, burrisse, desesperadores",
+    "topic_label": "Topico 158: chato, burrisse, desesperadores",
+    "topic_label_prev": "Topico 157: edif\u00edcio, locais, cidade"
+  },
+  {
+    "sentence": "Na minha opini\u00e3o, esse jogo \u00e9 uma mancha na franquia.",
+    "sentiment": "NEG",
+    "topic_id": 24,
+    "category": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label_prev": "Topico 23: resident, evil, horror"
+  },
+  {
+    "sentence": "Dentre os principais defeitos que me vem em mente, consigo citar:\n\n- Tem a pior lore da trilogia\n- Piores NPCs\n- Pior hitbox\n- Pior conex\u00e3o entre mapas\n- A grande maioria dos bosses s\u00e3o esquec\u00edveis\n- A granda maioria dos mapas s\u00e3o esquec\u00edveis\n- Uso de estus extremamente lento\n- Estragaram os frames de invencibilidade do rolamento e te for\u00e7am a upar um novo atributo pra melhorar isso\n- A adi\u00e7\u00e3o do Soul Memory\n- \u00c9 extremamente ma\u00e7ante pra zerar o jogo e o fato de adicionarem novos inimigos gen\u00e9ricos com skin de invasor nos NG+, n\u00e3o \u00e9 ponto positivo pra mim\n\nEnquanto as qualidades n\u00e3o passam de:\n\n- Ter um bom pvp\n- Power Stance\n- Possibilidade de buffar armas mesmo que estejam imbuidas com alguma pedra\n- Jogabilidade mais din\u00e2mica que te possibilita atacar mais livremente com ambas as m\u00e3os e tamb\u00e9m correr e rolar pra qualquer dire\u00e7\u00e3o, mesmo com a mira lockada\n\nRecomendo o jogo apenas pra quem quer zerar e/ou platinar todos os jogos da franquia, se tiver um amigo pra se distrair e compensar a falta de qualidade do jogo, ou apenas pelo pvp.",
+    "sentiment": "NEG",
+    "topic_id": 348,
+    "category": "Topico 348: bresident, bclaireb, layers",
+    "topic_label": "Topico 348: bresident, bclaireb, layers",
+    "topic_label_prev": "Topico 347: menu, compartilhado, bfs"
+  },
+  {
+    "sentence": "Eu n\u00e3o acho o jogo horr\u00edvel como  a maioria que joga fala.",
+    "sentiment": "NEG",
+    "topic_id": 123,
+    "category": "Topico 123: recomendo, recomendar, ningu\u00e9m",
+    "topic_label": "Topico 123: recomendo, recomendar, ningu\u00e9m",
+    "topic_label_prev": "Topico 122: sentido, linearmente, menor"
+  },
+  {
+    "sentence": "Nesse meio tempo, minha maior indigna\u00e7\u00e3o com o jogo s\u00e3o os bosses gen\u00e9ricos e f\u00e1ceis que ele tem, al\u00e9m de alguns mobs do pr\u00f3prio jogo serem uma reaproveita\u00e7\u00e3o dos do Dark Souls 1, como as g\u00e1rgulas ou os sentinelas de ferro que esse jogo tem.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Acho que ele \u00e9 o patinho feio da trilogia Souls, mas longe de ser horr\u00edvel, apenas muito abaixo.",
+    "sentiment": "NEG",
+    "topic_id": 286,
+    "category": "Topico 286: personagem, alex, sebastian",
+    "topic_label": "Topico 286: personagem, alex, sebastian",
+    "topic_label_prev": "Topico 285: tiro, strike, atirar"
+  },
+  {
+    "sentence": "INFELIZMENTE, POR CAUSA DA MERD@ DO ELDEN RING OS PUCTOS DOS JAPA DERAM UMA DE NINTENDO E VALORIZARAM OS JOGOS QUE S\u00c3O MAIS VELHOS QUE MEU IRM\u00c3O.",
+    "sentiment": "NEG",
+    "topic_id": 29,
+    "category": "Topico 29: porra, cu, meo",
+    "topic_label": "Topico 29: porra, cu, meo",
+    "topic_label_prev": "Topico 28: assassino, policiais, pol\u00edcia"
+  },
+  {
+    "sentence": "Eu gosto muito desse jogo, mais puta q praiu, esse demonio da fornalha e um fdp, todo bugado boss chato pra cacete, esse boss parou de ser dificil pra ser chato, nao aguento mais fica tentando mata esse fdp hitbox toda fudida toda bugada, qual e o sentido de colocar um campo de forca, esse fdp se ajoelha e vou ataca ele ativa essa merda e morro, bixo arrombado nao faz sentido colocar um demonio de 5 metro dentro de uma sala minuscula, o fdp da um ataque e leva a porra toda jogo do caraio, to preso nesse boss desgra\u00e7ado, quem fez o sistema dele teve ser um corno com toda a certeza",
+    "sentiment": "NEG",
+    "topic_id": 259,
+    "category": "Topico 259: babaca, crisol, judeu",
+    "topic_label": "Topico 259: babaca, crisol, judeu",
+    "topic_label_prev": "Topico 258: detonado, upar, horas"
+  },
+  {
+    "sentence": "jogo lixo vsf se o SOTFS ja \u00e9 ruim imagina essa bosta, npc tudo burro pqp excesso de inimigo hitbox horrivel, bosses lixos quem participou da cria\u00e7\u00e3o desse jogo \u00e9 Ignorante, burro, idiota, imbecil, retardado, analfabeto, bo\u00e7al, bronco, est\u00fapido, iletrado, ignaro, ileg\u00edvel, obscuro, sombrio, onagro, atrasado, inculto, obsoleto, retr\u00f3gado, be\u00f3cio, rude, desaforado, descort\u00eas, duro, est\u00f3lido, inepto, lamb\u00e3o, obtuso, palerma, sandeu, selvagem, toupeira, cavo, incapaz, insensato, incompetente, imperito, impr\u00f3prio, inapto, in\u00e1bil, insuficiente, abagualado, b\u00e1rbaro, labrusco, s\u00e1faro, insciente, inepto, insipiente, imprudente, leigo, alheio, estranho, profano, estulto, f\u00e1tuo, mentecapto, pateta, toleir\u00e3o, \u00edrrito, v\u00e3o, oco, chocho, fr\u00edvolo, f\u00fatil, vazio, definhado, enfezado, frustrado, abeutalhado, agreste, \u00e1spero, chamb\u00e3o, cavalar, desabrido, dif\u00edcil, escabroso, fragoso, incivil, inclemente, indelicado, in\u00f3spito, pesado, reboto, r\u00edspido, rombudo, severo, silvestre, tacanho, tosco, covarde, poltr\u00e3o, safado, baldo, infundado, mentido, nugativo, supervac\u00e2neo, curto, bordeg\u00e3o, asin\u00e1rio, bordalengo, calino, indouto, sinistro, arrogante, desinformado, alvar, atoleimado, est\u00fapido, bo\u00e7al, bronco, animal, Disparatado, rude, az\u00eamola, desajeitado, lanzudo, brutal, asselvajado, bestial, protervo, selvagem, truculento, violento, chulo, irracional, javardo, malcriado, desaforado, atrevido, insolente, descort\u00eas, inconveniente, indelicado, intrat\u00e1vel, confragoso, cru, cruel, despiedado, dif\u00edcil, implac\u00e1vel, penoso, tirano, triste, est\u00f3lido, estouvado, n\u00e9scio, abarroado, abrutalhado, achamboado achavascado, b\u00e1rbaro, chaboqueiro, crasso, desabrido, grosso, labrego, demiurgo, maleducado, reles, rugoso, r\u00fastico, soez, tarimbeiro, abestalhado, aluado, bab\u00e3o, bobalh\u00e3o, bobo, boc\u00f3, demente, descerebrado, desequilibrado, desmiolado, lerda\u00e7o, paspalh\u00e3o, pastranho, sendeiro, toupeira, v\u00e3o, bestial\u00f3gico, insoci\u00e1vel, mal-humorado, ranzinza, soberbo, panema, embotado, escabroso, inclemente, carniceiro, safado, entupido, obducto, boto, agro, balordo.",
+    "sentiment": "NEG",
+    "topic_id": 343,
+    "category": "Topico 343: importamos, troianos, gregos",
+    "topic_label": "Topico 343: importamos, troianos, gregos",
+    "topic_label_prev": "Topico 342: ruas, cat\u00e1strofe, boss"
+  },
+  {
+    "sentence": "A gente tenta jogar, mas o jogo te pune te todas as formas.",
+    "sentiment": "NEG",
+    "topic_id": 177,
+    "category": "Topico 177: jason, kd, tribunal",
+    "topic_label": "Topico 177: jason, kd, tribunal",
+    "topic_label_prev": "Topico 176: simulador, simula\u00e7\u00e3o, passageiros"
+  },
+  {
+    "sentence": "Se voc\u00ea morre diversas vezes para o mesmo chefe, sua vida diminui pela metade, e voc\u00ea fica vulner\u00e1vel a tomar hit kill do boss simplesmente por essa mecanica limitante.",
+    "sentiment": "NEG",
+    "topic_id": 116,
+    "category": "Topico 116: boss, floor, killing",
+    "topic_label": "Topico 116: boss, floor, killing",
+    "topic_label_prev": "Topico 115: estragar, gameplay, pode"
+  },
+  {
+    "sentence": "Tem hora que voc\u00ea desvia e mesmo assim toma o dano, que logica \u00e9 essa?",
+    "sentiment": "NEG",
+    "topic_id": 85,
+    "category": "Topico 85: will, chamas, enfrenta",
+    "topic_label": "Topico 85: will, chamas, enfrenta",
+    "topic_label_prev": "Topico 84: boca, meia, piores"
+  },
+  {
+    "sentence": "Chega a ser ridiculo, n\u00e3o \u00e9 por menos que \u00e9 o pior da Saga Souls, e olha que joguei todos, at\u00e9 Sekiro e Elden.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Percept\u00edvel a falta que faz o Myiazaki.",
+    "sentiment": "NEG",
+    "topic_id": 516,
+    "category": "Topico 516: 150mega, ansiosos, atenciosamente",
+    "topic_label": "Topico 516: 150mega, ansiosos, atenciosamente",
+    "topic_label_prev": "Topico 515: abandonado, quero, matar"
+  },
+  {
+    "sentence": "Comparando com os outros da franquia, \u00e9 bem abaixo.",
+    "sentiment": "NEG",
+    "topic_id": 324,
+    "category": "Topico 324: franquia, faces, teimaram",
+    "topic_label": "Topico 324: franquia, faces, teimaram",
+    "topic_label_prev": "Topico 323: ponte, loko, b2durante"
+  },
+  {
+    "sentence": "n\u00e3o da pra chamar de dark souls, como f\u00e3 da franquia que jogo horrivel!",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "o online n\u00e3o funciona, a dificuldade \u00e9 baseada na jogabidade que n\u00e3o funciona, hitbox aqui \u00e9 uma piada, simplesmente n\u00e3o existe.",
+    "sentiment": "NEG",
+    "topic_id": 31,
+    "category": "Topico 31: online, offline, multiplayer",
+    "topic_label": "Topico 31: online, offline, multiplayer",
+    "topic_label_prev": "Topico 30: teclado, mouse, fps"
+  },
+  {
+    "sentence": "tenho nojo desse jogo, bosses horrivelmente desinteressantes diferente dos jogos anteriores, e historia nem se fale, consegue ser pior em tudo que o pr\u00f3prio demon souls e dark souls que s\u00e3o antecessores.",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Desmitificando um dos jogos mais superestimados e spoiler do final: o jogo \u00e9 realmente ruim\nA minha conclus\u00e3o \u00e9 que n\u00e3o adianta.",
+    "sentiment": "NEG",
+    "topic_id": 24,
+    "category": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label": "Topico 24: otimizado, injog\u00e1vel, triste",
+    "topic_label_prev": "Topico 23: resident, evil, horror"
+  },
+  {
+    "sentence": "Pra come\u00e7ar s\u00e3o muitas \u00e1reas sem inspira\u00e7\u00e3o, gen\u00e9ricas e feias como por exemplo:\n- Forest of the Fallen Giants\n- Lost Bastille\n- Huntsman Copse\n- Harvest Valley (essa \u00e9 a pior, parece um cen\u00e1rio de play 2, \u00e9 lament\u00e1vel)\n- Doors of Pharros\n- Brightstone Tseldora\n- The Gutter\n- Frigid Outskirts (essa n\u00e3o podia faltar, n\u00e3o \u00e9 mesmo ?",
+    "sentiment": "NEG",
+    "topic_id": 210,
+    "category": "Topico 210: alquimistas, guilda, mago",
+    "topic_label": "Topico 210: alquimistas, guilda, mago",
+    "topic_label_prev": "Topico 209: ruim, fude, namoral"
+  },
+  {
+    "sentence": ")\n\nOutra coisa que  nesses cen\u00e1rios s\u00f3 tem um \u00fanico lugar que \u00e9 bonito e o resto \u00e9 uma merda e o engra\u00e7ado \u00e9 que em todos os videos o pessoal diz que o jogo tem cen\u00e1rios maravilhosos como Majula, Drangleic Castle, Shrine of Amana, Dragon Shrine, por\u00e9m, isso \u00e9 s\u00f3 1/3 do jogo base kkkkkk , o resto s\u00e3o cen\u00e1rios que voc\u00ea s\u00f3 quer terminar de uma vez de t\u00e3o sem inspira\u00e7\u00e3o.",
+    "sentiment": "NEG",
+    "topic_id": 176,
+    "category": "Topico 176: simulador, simula\u00e7\u00e3o, passageiros",
+    "topic_label": "Topico 176: simulador, simula\u00e7\u00e3o, passageiros",
+    "topic_label_prev": "Topico 175: bit, retro, feito"
+  },
+  {
+    "sentence": "Agora falando sobre os Chefes do jogo, a\u00ed que fica pior ainda.",
+    "sentiment": "NEG",
+    "topic_id": 344,
+    "category": "Topico 344: tropico, piorou, pior",
+    "topic_label": "Topico 344: tropico, piorou, pior",
+    "topic_label_prev": "Topico 343: importamos, troianos, gregos"
+  },
+  {
+    "sentence": "S\u00e3o v\u00e1rios chefes que s\u00e3o uma c\u00f3pia descarada dos chefes \u00edcones do Dark Souls 1, e vou dar aqui v\u00e1rios exemplos, pois eu realmente joguei essa \"p\u00e9rola\" superestimada:\n- Old Dragon Slayer : Um Ornstein piorado e muito f\u00e1cil\n- Najka : A Quelaag sem inspira\u00e7\u00e3o \n- The Rotten : Um Nito tosc\u00e3o (e tem at\u00e9 os mesmos efeitos sonoros kkkk)\n- Ruin Sentinel : ?",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "Tem chefes muitos bons como em algumas dlcs, mas at\u00e9 mesmo l\u00e1 tem chefes toscos ou extramente mal balanceados (o famoso dois chefes iguais ao mesmo tempo).",
+    "sentiment": "NEG",
+    "topic_id": 342,
+    "category": "Topico 342: ruas, cat\u00e1strofe, boss",
+    "topic_label": "Topico 342: ruas, cat\u00e1strofe, boss",
+    "topic_label_prev": "Topico 341: ea, dlc, guild"
+  },
+  {
+    "sentence": "Cerca de 40 chefes e s\u00f3 uns 7 ou 8 s\u00e3o realmente bons.",
+    "sentiment": "NEG",
+    "topic_id": 520,
+    "category": "Topico 520: melhorar, invent\u00e1rio, palha\u00e7ada",
+    "topic_label": "Topico 520: melhorar, invent\u00e1rio, palha\u00e7ada",
+    "topic_label_prev": "Topico 519: position, desperdi\u00e7ado, aproveitamento"
+  },
+  {
+    "sentence": "Outra coisa s\u00e3o as armas constantemente quebrando, o status adaptive, o estus flask mais lento do jogo, 50 inimigos antes de entrar nos chefes (pra te fazer gastar sua cura XD).",
+    "sentiment": "NEG",
+    "topic_id": 8,
+    "category": "Topico 8: armas, inimigos, arma",
+    "topic_label": "Topico 8: armas, inimigos, arma",
+    "topic_label_prev": "Topico 7: carro, carros, volante"
+  },
+  {
+    "sentence": "Ent\u00e3o ao total eu joguei esse jogo 5 vezes (4 na scholar e 1 na original) e o \u00fanico motivo pra essa paga\u00e7\u00e3o de pau absurda pra um jogo bem nota 7 deve ser a mem\u00f3ria afetiva mesmo.",
+    "sentiment": "NEG",
+    "topic_id": 570,
+    "category": "Topico 570: reembolso, wipe, gastei",
+    "topic_label": "Topico 570: reembolso, wipe, gastei",
+    "topic_label_prev": "Topico 569: referencias, voce, referencia"
+  },
+  {
+    "sentence": "Pq a cada Souls que foi lan\u00e7ando esse aqui foi ficando cada vez mais feio e datado.",
+    "sentiment": "NEG",
+    "topic_id": 132,
+    "category": "Topico 132: nazistas, apelido, nazista",
+    "topic_label": "Topico 132: nazistas, apelido, nazista",
+    "topic_label_prev": "Topico 131: quiral, porrinhas, pezinho"
+  },
+  {
+    "sentence": "Ent\u00e3o COM CERTEZA voc\u00ea N\u00c3O precisa jogar esse souls meia boca.",
+    "sentiment": "NEG",
+    "topic_id": 1,
+    "category": "Topico 1: polenguinho, nada, zero",
+    "topic_label": "Topico 1: polenguinho, nada, zero",
+    "topic_label_prev": "Topico 0: joguei, fiquei, gostei"
+  },
+  {
+    "sentence": "Pq n\u00e3o tem o Miyazaki e o jogo sempre t\u00e1 querendo te f#der s\u00f3 pq \"\u00e9 um jogo dif\u00edcil\".",
+    "sentiment": "NEG",
+    "topic_id": 468,
+    "category": "Topico 468: oferenda, comentando, rpg",
+    "topic_label": "Topico 468: oferenda, comentando, rpg",
+    "topic_label_prev": "Topico 467: irritante, ficar, pode"
+  },
+  {
+    "sentence": "Baixa um emulador ou compra um PS5 pra jogar Demon Souls que l\u00e1 voc\u00ea vai ver que j\u00e1 em 2009 o level design e os chefes s\u00e3o mt superiores.",
+    "sentiment": "NEG",
+    "topic_id": 536,
+    "category": "Topico 536: ps4, ps2, ps1",
+    "topic_label": "Topico 536: ps4, ps2, ps1",
+    "topic_label_prev": "Topico 535: negavam, lideran\u00e7a, aprova"
+  },
+  {
+    "sentence": "Eis que comprei o jogo errado, ao inv\u00e9s de comprar o Dark Souls 2: Scholar of the First Sin \ud83e\udd21",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "eu amo dark souls, mas o 2 tem muita coisa paia",
+    "sentiment": "NEG",
+    "topic_id": 307,
+    "category": "Topico 307: souls, dark, darksiders",
+    "topic_label": "Topico 307: souls, dark, darksiders",
+    "topic_label_prev": "Topico 306: baldur, gate, manuten\u00e7\u00e3o"
+  },
+  {
+    "sentence": "perdi meu save por simplesmente existir, vai tomar no cu\n\nedit:carros 2",
+    "sentiment": "NEG",
+    "topic_id": 301,
+    "category": "Topico 301: doppler, mavericks, porr4da",
+    "topic_label": "Topico 301: doppler, mavericks, porr4da",
+    "topic_label_prev": "Topico 300: politicamente, censura, bounty"
+  },
+  {
+    "sentence": "me fale, me fale quem fez amana, eu vou enfiar 5 metros de karalho no cu desse filha da puta",
+    "sentiment": "NEG",
+    "topic_id": 80,
+    "category": "Topico 80: mi, lobisome, moedinha",
+    "topic_label": "Topico 80: mi, lobisome, moedinha",
+    "topic_label_prev": "Topico 79: comprem, lixo, tdm"
+  },
+  {
+    "sentence": "PERDI MEU SAVE LEVEL 70, EU TE ODEIO DARK SOULS 2.",
+    "sentiment": "NEG",
+    "topic_id": 279,
+    "category": "Topico 279: flamengo, hacker, odio",
+    "topic_label": "Topico 279: flamengo, hacker, odio",
+    "topic_label_prev": "Topico 278: fala, irm\u00e3, converssar"
+  },
+  {
+    "sentence": "Mec\u00e2nicas muito chatas, mapas desagrad\u00e1veis, chefes paias, e as vezes muito f\u00e1cil",
+    "sentiment": "NEG",
+    "topic_id": 11,
+    "category": "Topico 11: mapa, mapas, pequeno",
+    "topic_label": "Topico 11: mapa, mapas, pequeno",
+    "topic_label_prev": "Topico 10: gr\u00e1ficos, gr\u00e1fico, graficos"
+  },
+  {
+    "sentence": "Faltou MUITO or\u00e7amento, os cara usaram dinheiro de caridade pra fazer a porra do jogo, 50 crian\u00e7as com canc\u00ear morreram pra essa merda ser feita e o jogo consegue ser podre, acho q o cara usou algum tipo de droga pq essa porra n\u00e3o t\u00e1 pura nem fudendo, esse jogo merece ser queimado.",
+    "sentiment": "NEG",
+    "topic_id": 582,
+    "category": "Topico 582: spike, lee, bl\u00e1",
+    "topic_label": "Topico 582: spike, lee, bl\u00e1",
+    "topic_label_prev": "Topico 581: opacidade, mudar, op\u00e7\u00e3o"
+  },
+  {
+    "sentence": "dito isso, vou jogar mais 47 horas.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Jogar Enigma do Medo foi a experi\u00eancia mais diferente que eu tive com videogames at\u00e9 o momento.",
+    "sentence": "Nos x1 que eu rachava o bico, nunca ganhava um dos caras e surtava.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "O jogo, como prop\u00f5e o t\u00edtulo, tem sua tem\u00e1tica em volta de Enigmas e Medo.",
+    "sentence": "Depois de um tempo jogando, achei ele um dos Souls com a melhor variedade de builds e um combate bem fora do comum.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "No qual, para avaliar minha experi\u00eancia, tenho que fazer essa divis\u00e3o.",
+    "sentence": "N\u00e3o d\u00e1 pra dizer que \u00e9 o DS mais dificil, ele \u00e9 punitivo.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Montar um mapa mental com elas (pois eu joguei no Modo Detetive), fez com que minha experi\u00eancia fosse \u00fanica, algo que saiu das telas do jogo e tornou a \"mec\u00e2nica\" de tirar prints, uma pe\u00e7a chave.",
+    "sentence": "como uma experiencia ele \u00e9 inesquecivel, como um jogo pra se divertir/distrair a mente \u00e9 depressivo",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Voc\u00ea sente, de fato, que \u00e9 um investigador e est\u00e1 resolvendo esse mist\u00e9rio.",
+    "sentence": "vc morre muito, mas e legal, eu quebrei quebrei a barra de espaco do meu teclado por ela nao ter pulado mas tirando isso e bem dificil",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Voc\u00ea tem que sentar e ler com aten\u00e7\u00e3o os documentos, anotar os h\u00e1bitos dos personagens, entender suas rela\u00e7\u00f5es, para assim resolver os quebra-cabe\u00e7as constru\u00eddos.",
+    "sentence": "[h2] \ud83e\udd48 O Dark Souls mais pol\u00eamico [/h2]\n\nZerei DS1 explorando tudo e matando todos os bosses (DLC inclusa).",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "na quest\u00e3o \"Medo\", simplesmente n\u00e3o encontrei no jogo.",
+    "sentence": "DS2 itera na f\u00f3rmula do primeiro jogo, adicionando algumas mec\u00e2nicas novas que apimentam o gameplay\u2026 e outras que o amargam.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Embora seja visto como um jogo de terror, e h\u00e1 elementos disso, como os Zumbis de Sangue.",
+    "sentence": "O jogo \u00e9 muito mais punitivo que DS1.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "N\u00e3o houve momento em que senti medo jogando, que fiquei assustado vendo algo.",
+    "sentence": "Alguns pontos positivos: Os menus s\u00e3o mais intuitivos e f\u00e1ceis de navegar.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "A trama em si tem muitas caracteristicas de horror, mas esse n\u00e3o \u00e9 um jogo assustador.",
+    "sentence": "H\u00e1 mais armas e variedade de builds.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Isso n\u00e3o \u00e9 um problema, apenas uma escolha art\u00edstica que a equipe quis seguir.",
+    "sentence": "O importante \u00e9 levantar e tentar de novo!",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "O combate em si, as lutas e os chefes, n\u00e3o s\u00e3o como a maioria dos jogos, onde eles possuem uma barra de vida e voc\u00ea tem que zerar ela.",
+    "sentence": "Aqui essa mensagem se perde com a nova mec\u00e2nica de hollow.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "O jogo caminha pelo lado Enigma, onde voc\u00ea tem que resolver um puzzle para conseguir vencer aquele chefe.",
+    "sentence": "No macro, os mapas n\u00e3o se conectam muito bem.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "S\u00e3o poucas vezes que voc\u00ea sente que esse jogo \u00c9 dif\u00edcil, a dificuldade dele se encontra nos enigmas, portanto, matar Zumbis de Sangue e outros inimigos mais \"comuns\" acaba ficando repetitivo e pouco desafiador.",
+    "sentence": "F\u00e3s dizem que essas decis\u00f5es de design foram propositais para o jogo refletir o estado de confus\u00e3o da mente em deteriora\u00e7\u00e3o do protagonista.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "No lado \"Medo\", o jogo deixa a desejar.",
+    "sentence": "Somada a essa confus\u00e3o, muitos caminhos s\u00e3o obscuros.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Tanto na quest\u00e3o de amea\u00e7a que a maioria do inimigos causa, como tamb\u00e9m na gameplay e movimenta\u00e7\u00e3o que ele possui, onde as armas acabam sendo complicadas de usar.",
+    "sentence": "H\u00e1 v\u00e1rios bonfires (save points) e bosses obrigat\u00f3rios escondidos atr\u00e1s de paredes ilus\u00f3rias (paredes essas muito mais dif\u00edceis de descobrir comparadas ao primeiro jogo).",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Por fim, e longe de ser menos importante, a arte desse jogo.",
+    "sentence": "Precisei consultar a internet em v\u00e1rios momentos, o que quebrou a magia da explora\u00e7\u00e3o e descoberta.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "eu n\u00e3o exagerei quando disse que TUDO era lindo.",
+    "sentence": "DS2 manda mensagens conflitantes com suas mec\u00e2nicas.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Sema a trilha sonora, esse seria um jogo completamente diferente.",
+    "sentence": "Por um lado o jogo pede para o jogador ser cauteloso com armadilhas por todo lado, por outro, pede para o jogador correr pois a tocha tem tempo limite.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "S\u00f3 dei uma sofrida em algumas batalhas, por conta da jogabilidade.",
+    "sentence": "A anima\u00e7\u00e3o de healing com estus flask em DS2 \u00e9 a mais lenta de toda a franquia\u2026 o que exige uma precis\u00e3o enorme na hora de se curar.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Eu esperava mais referencias ao sistema de RPG, talvez alguma progress\u00e3o para a personagem, mas pelo menos voc\u00ea consegue alguns itens que ajudam a lidar de formas diferentes com alguns inimigos.",
+    "sentence": "Por\u00e9m, o jogo tem algumas falhas e a balan\u00e7a desafio/frustra\u00e7\u00e3o se desequilibrou para mim.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "[b][i] \"Porque agora n\u00f3s temos os mesmo olhos.",
+    "sentence": "O jogo tamb\u00e9m tem a tarefa ingrata de ser uma sequ\u00eancia de um excelente jogo.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "\" [/i] [/b]\r\n\r\nAcompanhei EDM desde o anuncio at\u00e9 o dia em que foi lan\u00e7ado mas, s\u00f3 pude jogar realmente agora.",
+    "sentence": "Decidi desinstalar para tentar de novo em outro momento.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "Enigma do Medo \u00e9 uma hist\u00f3ria sobre dor, perdas e os arrependimentos gerados por escolhas na vida.",
+    "sentence": "status: \ud83c\udff3\ufe0f abandonado (~80%) (por enquanto.",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"
   },
   {
-    "sentence": "mas, \u00e9 antes de tudo, um jogo sobre amor!",
+    "sentence": "um dia tentarei novamente)\n\n\n[b]Tecnologias e compatibilidade:[/b]\n[list]\n[*] \u274c\u26a0\ufe0f\u2601\ufe0f [b]N\u00e3o supporta Steam Cloud[/b] Voc\u00ea deve fazer backup do save manualmente.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[*] \u2705\ud83c\udfae Controle suportado\n[*] \u2705\ud83d\udc27 Roda liso no Linux (Proton Exp)\n[*] \u274c\u2194\ufe0f N\u00e3o suporta widescreen\n[*] \u274c\ud80c\ude8860+\ud80c\ude89   n\u00e3o suporta mais de 60 FPS\n[/list]",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Gosto de ser um Tank ambulante, carregando um poste nas costas.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Aprendo mais coisas cada vez que jogo, mesmo j\u00e1 tendo jogado 300 h.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "-Come\u00e7e o jogo\r\n- ignore o tutorial\r\n- va pra majula\r\n- pegue o caminho errado\r\n-seja SOLADO.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "por um cavaleiro\r\n- veja um guia\r\n- nao tenha paci\u00eancia pra um guia\r\n- jogue na ra\u00e7a\r\n- zere o jogo.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "-fa\u00e7a isso tudo mais duas vezes pra platinar, simplesmente dark souls 2",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "\u00c9 um bom jogo, e bem diferente da vers\u00e3o schollar, sendo essa a minha primeira experiencia com dark souls 2 vanilla.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "\u00c9 uma vers\u00e3o bem mais facil, pois n\u00e3o tem aquele spam maluco de inimigos, ent\u00e3o me acostumei com uma vers\u00e3o mais \"dificil\", sinceramente recomendo pegar a schollar, isso aqui \u00e9 s\u00f3 pra quem \u00e9 f\u00e3 e gostaria de rejogar com uma aleatoriedade de itens maior.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "primeira experiencia com jogos souls like.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "s\u00f3 preciso de tempo para viver o jogo, porque nao da para viver socialmente e jogar ele.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Morri mais do que gostaria de admitir, me perdi, xinguei\u2026 mas mesmo assim continuei.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Porque no meio de toda essa desgra\u00e7a, tem algo que te prende.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "mato um chefe gigante facilmente, logo depois morro de forma humilhante para um porco espinho giratorio.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Muita gente fala mal de Dark Souls 2, mas no fundo n\u00e3o \u00e9 bem assim.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Com certeza ele n\u00e3o \u00e9 o melhor da franquia e diria at\u00e9 que \u00e9 o mais fraco, mas ser o \"pior\" entre tr\u00eas gigantes n\u00e3o \u00e9 algo ruim, \u00e9 s\u00f3 tipo uma estrela que brilha um pouco menos.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O jogo n\u00e3o \u00e9 perfeito mas tamb\u00e9m n\u00e3o \u00e9 ruim, ent\u00e3o o esquema \u00e9 tirar suas pr\u00f3prias conclus\u00f5es e n\u00e3o ficar s\u00f3 repetindo o que ouve por a\u00ed, tem que ir de mente aberta nessas situa\u00e7\u00f5es.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Desenvolvido pela FROM SOFTWARE, DARK SOULS\u2122 II \u00e9 a t\u00e3o esperada sequ\u00eancia do sucesso avassalador de 2011, Dark Souls\u2122.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "The peak watchers\r\nDARK SOULS II (\u25d0\u25e1\u25d0)(\u25d0\u25e1\u25d0)(\u25d0\u25e1\u25d0)",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Por mais que eu te odeie, eu te acho um jog\u00e3o.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Esse jogo \u00e9 terr\u00edvel, mas se tiver chance \u00e9 importante que voc\u00ea jogue, para concordar comigo.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "\u00c9 um game bem diferente que, se voc\u00ea jogou o SotFS antes, vai notar de imediato.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Como eu joguei a vers\u00e3o Scholar primeiro, j\u00e1 cheguei nas \u00e1reas esperando os mesmos inimigos, mas me surpreendi.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "A diferen\u00e7a \u00e9 clara logo cedo: n\u00e3o tem aquele Drag\u00e3o Vermelho e a presen\u00e7a dos Cavaleiros de Heide (os cavaleiros brancos) que antes eram concentrados na Torre de Chamas de Heide, aqui eles ficam espalhados pelo mapa, sentados em diferentes cantos.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "comprei o jogo na promo\u00e7\u00e3o, instalei o jogo abri morri pra um ogro sei l\u00e1 o que era aquilo no inicio do game, fui pra majula fui fazer o pacto morri pra 3 porcos do tamanho de um pinscher, depois entrei na floresta dos gigantes morri 14 vezes pra passar mas no final passei isso que importa.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "E quem precisar de ajuda no farm das medalhas, s\u00f3 mandar mensagem.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "jogo \u00e9 bom at\u00e9 apertar play, depois voc\u00ea repensa se foi uma boa ideia.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "resumo: se n\u00e3o liga pra sanidade mental 10/10, se liga 9/10",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Dx9, vers\u00e3o vanilla, com os dlcs adicionais e nada mais.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": ", e possivel recuperar a vida maxima ?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": ", como exatamente funciona o sistema de combate ?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h1]Sh*t Souls II \u2013 O Pior L1xo J\u00e1 Criado[/h1]\n\nPrimeiramente, se voc\u00ea \u00e9 f\u00e3 disso aqui, talvez precise de um psiquiatra.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Se voc\u00ea pensa em jogar essa coisa esperando um teste de habilidade, paci\u00eancia e divers\u00e3o, parab\u00e9ns: vai encontrar exatamente o oposto.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Design de mapa[/h3]\n\nA ambienta\u00e7\u00e3o \u00e9 um mosaico de ideias jogadas no liquidificador.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Cada \u00e1rea parece feita por uma equipe diferente que nunca conversou entre si: conex\u00f5es geogr\u00e1ficas sem sentido, elevadores que desafiam a gravidade e castelos vazios, com mais eco do que mob\u00edlia, mesmo sendo habitados (aparentemente, a rainha da COBI\u00c7A e o rei vivem de bolsa fam\u00edlia).",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Anima\u00e7\u00f5es quebrando, golpes que \u00e0s vezes acertam e \u00e0s vezes n\u00e3o, i-frames que transformam rolamentos em sorteios.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Inimigos entram em super armor aleatoriamente, dano \u00e0s vezes chega antes da anima\u00e7\u00e3o e combos que deveriam matar mas que, milagrosamente deixam o mob com 1 de vida.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Muitos t\u00eam mais HP do que mec\u00e2nica, e as batalhas se resumem a repetir tr\u00eas ataques previs\u00edveis.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O verdadeiro desafio aqui \u00e9 o t\u00e9dio, e ele sempre vence.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Inimigos e IA[/h3]\n\nSh*t Souls II acredita que dificuldade = quantidade.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Cada zona \u00e9 um zool\u00f3gico lotado de mobs que te atacam em bando, flanqueiam em corredores min\u00fasculos e te detectam atrav\u00e9s das paredes.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Outros disparam flechas e magias que fazem curva para te acertar atr\u00e1s de coberturas e, \u00e0s vezes, at\u00e9 atravessam paredes.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Mas, caso voc\u00ea tente enfrent\u00e1-los juntos, vai virar alvo de um ex\u00e9rcito: se tentar bater em um, outro ir\u00e1 te interromper; se correr para curar, eles pulam na sua cabe\u00e7a; se tentar atacar enquanto est\u00e3o parados te olhando, eles aceleram o golpe.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O mesmo vale para os arqueiros, que disparam muito mais r\u00e1pido que voc\u00ea.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Aqui, voc\u00ea s\u00f3 sobrevive por sorte, nunca por habilidade.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Sistema de Combate[/h3]\n\nJ\u00e1 vamos come\u00e7ar pelo pior: a stamina, que consome mais r\u00e1pido do que paci\u00eancia em fila de banco e se regenera na velocidade de um idoso subindo escada.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Itens, cura e durabilidade[/h3]\n\nO Estus \u00e9 MUITO lento, mesmo com agility alta, o personagem bebe mais devagar que um monge em retiro espiritual.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Nem faz sentido us\u00e1-lo, j\u00e1 que h\u00e1 uma infinidade de itens de cura em abund\u00e2ncia e muito mais eficientes.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "As armas quebram com uma frequ\u00eancia irritante, especialmente quando h\u00e1 m\u00faltiplos inimigos, e o dano de queda \u00e9 completamente aleat\u00f3rio.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "\u00c0s vezes voc\u00ea morre caindo de um degrau, outras vezes pula de um penhasco e sai ileso.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Hitboxes e colis\u00f5es[/h3]\n\nAs hitboxes daqui s\u00e3o t\u00e3o largas que parecem incluir o ar ao redor do personagem.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Bosses como Fume Knight e Lud & Zallen transformam cada golpe em uma amea\u00e7a de propor\u00e7\u00f5es c\u00f3smicas: voc\u00ea apanha mesmo estando em outro CEP.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "E, frequentemente, as armas colidem nas paredes, ou melhor, as SUAS armas colidem nas paredes, porque as dos inimigos parecem atravessar a mat\u00e9ria.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Em outras palavras, voc\u00ea \u00e9 obrigado a chamar um NPC para te ajudar se quiser platinar o jogo.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Nada disso \u00e9 explicado em lugar algum; n\u00e3o h\u00e1 pistas nem detalhes sobre isso.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Parece at\u00e9 que foi feito para for\u00e7ar o jogador a pesquisar guias externos.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Or\u00e7amento, aparentemente, estava em falta.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Polimento e trilha sonora[/h3]\n\nO jogo d\u00e1 claros sinais de pressa no desenvolvimento: quedas de FPS do nada, texturas piscando, mapa de lava parecendo um benchmark de CPU.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "No fim, \u00e9 mais f\u00e1cil ficar parado spammando ataque em um ponto cego dos mobs.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Problemas diversos[/h3]\n\nFalta orienta\u00e7\u00e3o e l\u00f3gica nas mec\u00e2nicas.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "H\u00e1 itens que podem ser perdidos caso caiam na lava, runbacks absurdamente longos, aus\u00eancia de i-frame nas fog walls, e spam de emboscadas que seriam toler\u00e1veis em pequenas doses, mas que aparecem a cada cinco metros.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[h3]Conclus\u00e3o[/h3]\n\nJ\u00e1 deu pra entender que o game \u00e9 falho em praticamente tudo o que faz, n\u00e9?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Se pensa em comprar esperando algo \u00e0 altura dos outros Souls, esque\u00e7a.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Mas, se quiser experimentar o abismo da frustra\u00e7\u00e3o e entender o verdadeiro significado de sofrimento, bem-vindo a Sh*t Souls II.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Compared to Dark Souls The controls here are another level of garbage",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Platinei porque tenho s\u00e9rios problemas mentais e para ficar \"bonito\" com os outros dois.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Jogo pol\u00eamico por ter certas mec\u00e2nicas diferentes dos outros games da triologia, por\u00e9m ele necessariamente n\u00e3o \u00e9 ruim por ser diferente.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Este jogo n\u00e3o \u00e9 de todo mal, mas eu n\u00e3o recomendaria pra algu\u00e9m que gostou muito do DS1 ou DS3, s\u00f3 se quiser a experi\u00eancia de jogar e dizer o que achou com suas pr\u00f3prias palavras.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Dificuldade do jogo se torna grande quando voc\u00ea tem a quebra de expectativa de pensar que DS2 seria no padr\u00e3o dos outros jogos da Fromsoftware, e tem que basicamente se for\u00e7ar a terminar apenas porque iniciou e ja foi longe o suficiente.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Gr\u00e1ficos:\r\n( ) Roblox\r\n( ) 144p\r\n( ) Aceit\u00e1vel\r\n(x) Bom\r\n( ) \u00d3timo\r\n( ) Cada frame foi pintado por Da Vinci\r\n\r\nRequisitos para uma boa experi\u00eancia:\r\n( ) Uma pilha de batata\r\n( ) qualquer coisa que conduza energia\r\n(X) Um i5 com uma GPU mais antiga\r\n( ) No m\u00ednimo uma GTX 1050TI\r\n( ) uma RTX3070 e um gerador industrial\r\n\r\nHist\u00f3ria:\r\n( ) Que hist\u00f3ria?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "( ) Meu mundo melhorou depois de jogar isso aqui\r\n( ) Minha namorada me proibiu de abrir esse jogo, estava abandonando ela pra jogar\r\n\r\nBugs:\r\n( ) Esse \u00e9 o novo CyberPunk ?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "(X) D\u00e1 pra jogar\r\n( ) Os bugs deixam o jogo mais divertido\r\n( ) Um ou dois\r\n( ) A palavra bug \u00e9 desconhecida\r\n( ) Esse jogo saiu perfeito do forno\r\n\r\nTempo de jogo:\r\n( ) 3 horas - \u00c9 aqueles jogos pra ganhar conquista\r\n( ) 8-15 horas\r\n(x) 24-48 horas\r\n( ) + 100 horas\r\n( ) Multiplayer inifinito\r\n( ) One Piece acaba e voc\u00ea ainda n\u00e3o fez tudo\r\n\r\nDificuldade:\r\n( ) D\u00e1 pra zerar vendado e b\u00eabado\r\n(x) Ridiculamente tranquilo\r\n( ) Com um pouco de pr\u00e1tica vai\r\n( ) Bem desafiador, as vezes dif\u00edcil\r\n( ) Soulslike\r\n( ) Voc\u00ea precisa de reflexos instant\u00e2neos e 4 m\u00e3os\r\n\r\nComplexidade:\r\n( ) Jogo da velha \u00e9 mais complexo\r\n( ) D\u00e1 pra jogar casualmente de boa\r\n(x) F\u00e1cil de aprender, dif\u00edcil de dominar\r\n( ) \u00c9 daqueles jogos que as pessoas ficam estudando\r\n( ) Precisa de, no m\u00ednimo, 2 doutorados\r\n\r\nPre\u00e7o:\r\n( ) De gra\u00e7a ta caro\r\n(x) Compre se tiver dinheiro sobrando\r\n( ) Espere uma promo\u00e7\u00e3o\r\n( ) Pre\u00e7o justo\r\n( ) Pagaria at\u00e9 mais\r\n\r\nPara melhor experiencia:\r\n( ) Desinstalar.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "( ) O jogo \u00e9 Offline\r\n(x) Single player \r\n( ) Co-op\r\n( ) Multiplayer\r\n\r\nVale a pena ?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "( ) Arrependimento\r\n( ) Reembolsa isso ai\r\n(x) \u00c9 bom, mas pra zerar uma vez s\u00f3 e nunca mais abrir\r\n( ) Recomendo!",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "( ) Queria apagar a mem\u00f3ria s\u00f3 pra me encantar de novo\r\n\r\nNota 04/10 ~ tenha essa experi\u00eancia horrorosa e crie suas conclus\u00f5es.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Depois de 10 anos resolvi, aleatoriamente, jogar Dark Souls 2 novamente.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "De fato, n\u00e3o sei de onde veio esta vontade de fazer merda, mas aqui estamos.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Como nunca me dei o trabalho de fazer um review de DkS2, decidi fazer agora, depois de ter experimentado todos os jogos da trilogia, incluindo os agregados da fam\u00edlia, Demon's Souls, Bloodbone, Sekiro e Elden Ring.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Pois bem, resumidamente, \u00e9 um bom jogo?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Isso \u00e9 sempre o caso, independentemente de equip load.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Voc\u00ea pode estar pelado, vai se sentir t\u00e3o lerdo quanto algu\u00e9m usando a armadura mais pesada do jogo.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Muitos inimigos acertam o personagem j\u00e1 no in\u00edcio da anima\u00e7\u00e3o, n\u00e3o dando tempo de reagir aos golpes.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Os inimigos nunca param de atacar, e cada sala que tu entra tem uma gank squad esperando pra te cercar.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O mesmo vale pro desing de mundo no geral.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O design art\u00edstico do jogo tamb\u00e9m n\u00e3o ajuda, n\u00e3o parece que \u00e9 da mesma empresa que fez Demon's Souls e DS1.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "(aquele jogo tem seus pr\u00f3prios problemas com hist\u00f3ria, mas n\u00e3o vem ao caso).",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Alguns malucos ainda hoje falam que o multiplayer desse era o melhor da Fromsoft, acho que jogaram um jogo diferente.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O co-op, de fato, n\u00e3o era ruim, umas das poucas melhorias em rela\u00e7\u00e3o ao original.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "A realidade \u00e9: s\u00f3 ama esse jogo que teve a primeira experiencia \u201cSouls\u201d com ele, o que \u00e9 compreens\u00edvel .",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Quem jogou primeiro os anteriores, ou os que vieram depois, sempre tem opini\u00f5es bem diferentes sobre este aqui, e geralmente n\u00e3o s\u00e3o boas.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Ainda n\u00e3o consegui fazer o pulo do tutorial",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "[/h2]\nse eu voltasse com minha [b] Ex Namorada [/b]  que tem [b] Cabelo Colorido, Franja, Borderline, Pai Ausente [/b]  e que gosta de [b] Hello Kitty [/b] .",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "S\u00f3 jogue se vc for doente, ou querer ser depressivo",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "exemplos: porta da bastilha perdida q vc abre e se anda pra frente vc so morre (?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "); escada que simplesmente acaba e vc cai no mapa da sarjeta; baus com poison, flecha e sla mais oq; (parece q to jogando cat mario)\n- unicos mapas \"bons\" sao majula, bastilha perdida e iron keep.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "- tem shrine of amana e no mans wharf kkkkkkk imagine passar raiva\n- tem boss reaproveitado do 1 kkk meme demais\n- vc toma hit se entrar na nevoa e cancela a anima\u00e7\u00e3o\n- vc toma dano se puxar alavanca\n- vc toma dano se abrir porta\n- todas as anima\u00e7\u00f5es demoram uma eternidade (tomar estus incluso)\n- upar status pro roll funcionar como deveria e o estus ser um pouco menos punitivo deveria ser crime\n- boss extremamente esqueciveis, com moveset limitadasso e faceis demais com exce\u00e7\u00e3o do cavaleiro do escudo de espelho, pursuer, medusa e lost sinner\n- se vc n ta de build de mago vc ta fudido\n- tem bonfire que vc spawna tomando dano pq tem inimigo colado (?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Joguei por umas 70-80 horas, e por algum motivo a Steam n\u00e3o registra conquistas e nem tempo de jogo nesse modo , mas tudo bem.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Compre a vers\u00e3o Scholar of The First Sin, voc\u00ea ter\u00e1 uma platina mais f\u00e1cil por conta do online para farmar pactos e ajuda, al\u00e9m de que caso precise de ajuda, tamb\u00e9m \u00e9 de f\u00e1cil acesso.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "\u00c9 poss\u00edvel farmar a Medalha da Luz Solar e o Pacto dos Guardi\u00f5es dos Sinos no Offline para pegar a magia e piromancia que requerem esse pacto, mas demora um pouco mais.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "O servidor desse jogo e\u00b4vazio, se tiver 5% dos players da vers\u00e3o Scholar j\u00e1 \u00e9 muito.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "TO QUERENDO FAZER UMA BUILD DE VENENO MAS SOFRI UM SOFT LOCK POR CAUSA DAS DIFEREN\u00c7A ENTRE AS DUAS VERS\u00d5ES.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "*COMPRE A VERS\u00c3O SCHOLAR OF THE FIRST XIAOMI* N\u00c3O SE IMPORTE COM OPINI\u00c3O DE YOUTUBER CHOR\u00c3O O JOGO \u00c9 BOM SIM!",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "joguei bastante esse jogo no console e em outro computador, mas no meu computador atual (bem mais potente) o jogo n\u00e3o abre por nada, n\u00e3o importa o que eu fa\u00e7a, ele n\u00e3o abre.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Ent\u00e3o, se for comprar, tenha em mente que existe uma probabilidade de n\u00e3o funcionar",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Se os deuses do Olimpo tivessem forjado um campo de provas para testar n\u00e3o apenas a for\u00e7a do bra\u00e7o, mas a resist\u00eancia da alma, ele se pareceria com Dark Souls II.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "o seu maior inimigo desse jogo sera a hitbox .",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Pros:\n\nBoas DLC's\nBoa variedade de armas e itens\nMajula\nSistema de teleporte (com imagem dos locais)\n\nCons:\n\nMobilidade\nJogabilidade\nPerder vida quando morre\nLevel design\nBosses\nPosicionamento dos bichos\nQuantidade e n\u00e3o qualidade\nTrilha sonora esquec\u00edvel (comparado aos outros jogos)\nHist\u00f3ria (n\u00e3o parece se conectar t\u00e3o bem quanto os outros jogos)\nAnima\u00e7\u00f5es no geral\nEstus n\u00e3o cura imediatamente\nMapas n\u00e3o memor\u00e1veis",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "tem que ter o Miyazaki na parada pra dosar as coisas e colocar inspira\u00e7\u00e3o, pois \u00e9 isso que falta muito nesse jogo.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Se voc\u00ea gostou do level design e chefes marcantes do Demon Souls e Dark Souls 1, voc\u00ea vai se decepcionar demais aqui.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "Pesquise qualquer lista gringa ou brasileira sobre piores chefes da saga Souls e mais de 50% de qualquer uma dessas listas ser\u00e1 s\u00f3 dos chefes do Dark Souls 2.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "- Belfry Gargoyles : \u00c9 exatamente a mesma luta das Gargulas do DS1 s\u00f3 que agora s\u00e3o 5 ao mesmo tempo (genial s\u00f3 que n\u00e3o)\n- Skeleton Lords : Essa aqui \u00e9 s\u00f3 matar os esqueletos e pronto, sem contexto.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "- Covetous Demon : colocaram o Jabba no jogo\n- Executioner Chariot : Dmc 3 ?",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "- Royal Rat Authorit : outra luta que \u00e9 uma c\u00f3pia descarada do Dark Souls 1 (Sif)\n- Prowling Magus : \u00e9 s\u00f3 uma igrejinha com uns inimigos kkk\n\nE v\u00e1rios outros.",
+    "sentiment": "NEU",
+    "topic_id": null,
+    "category": "Sem categoria"
+  },
+  {
+    "sentence": "S\u00e3o tantos erros que n\u00e3o superam os acertos, mas quais s\u00e3o os acertos ?",
     "sentiment": "NEU",
     "topic_id": null,
     "category": "Sem categoria"

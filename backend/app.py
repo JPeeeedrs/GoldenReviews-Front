@@ -111,6 +111,7 @@ def fetch_reviews(
     app_id: str,
     max_reviews: int = 0,
     language: str = "brazilian",
+    review_type: str = "all",
 ) -> list[dict[str, Any]]:
     reviews: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -123,7 +124,7 @@ def fetch_reviews(
         params = {
             "json": 1,
             "language": language,
-            "review_type": "all",
+            "review_type": review_type,
             "purchase_type": "all",
             "num_per_page": 100,
             "filter": "recent",
@@ -184,6 +185,31 @@ def fetch_reviews(
         time.sleep(0.35)
 
     return reviews
+
+
+def fetch_reviews_balanced(
+    app_id: str,
+    max_reviews: int = 0,
+    language: str = "brazilian",
+) -> list[dict[str, Any]]:
+    if max_reviews < 2:
+        return fetch_reviews(app_id, max_reviews, language)
+
+    per_side = max_reviews // 2
+    positive = fetch_reviews(
+        app_id,
+        max_reviews=per_side,
+        language=language,
+        review_type="positive",
+    )
+    negative = fetch_reviews(
+        app_id,
+        max_reviews=per_side,
+        language=language,
+        review_type="negative",
+    )
+
+    return positive + negative
 
 
 def analyze_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
@@ -289,7 +315,7 @@ def reviews_endpoint():
     max_reviews = int(request.args.get("maxReviews", 1200))
     language = request.args.get("language", "brazilian")
 
-    reviews = fetch_reviews(appid, max_reviews, language)
+    reviews = fetch_reviews_balanced(appid, max_reviews, language)
     if not reviews:
         return jsonify({"error": "Nenhuma review encontrada no idioma solicitado."}), 404
 
