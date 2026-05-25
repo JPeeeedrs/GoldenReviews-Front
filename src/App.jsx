@@ -149,7 +149,12 @@ export default function App() {
 
 			{/*loading */}
 			{error && <p className='error'>{error}</p>}
-			{loading && <p>Processando reviews...</p>}
+			{loading && (
+				<div className='analysis-loading' role='status' aria-live='polite'>
+					<div className='loading-wheel' aria-hidden='true'></div>
+					<p>Analisando reviews. Isso pode demorar alguns minutos.</p>
+				</div>
+			)}
 
 			{/* resultado */}
 			<ReviewAnalysis data={reviews} />
