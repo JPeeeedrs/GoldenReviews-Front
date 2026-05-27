@@ -1,6 +1,6 @@
 export async function searchSteamGames(term) {
 	const res = await fetch(
-		`http://localhost:5000/search?q=${encodeURIComponent(term)}`,
+		`http://localhost:8000/search?q=${encodeURIComponent(term)}`,
 	);
 
 	if (!res.ok) throw new Error("Erro ao buscar jogos");
@@ -16,7 +16,7 @@ export async function getReviews(appid, maxReviews, language = "brazilian") {
 		language,
 	});
 
-	const res = await fetch(`http://localhost:5000/reviews?${params.toString()}`);
+	const res = await fetch(`http://localhost:8000/reviews?${params.toString()}`);
 
 	if (!res.ok) throw new Error("Erro ao buscar reviews");
 

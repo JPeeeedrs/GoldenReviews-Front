@@ -1,0 +1,11 @@
+const fs = require('fs');
+let api = fs.readFileSync('src/services/steamApi.js', 'utf8');
+api = api.replace(/5000/g, '8000').replace('// ðŸ“Š REVIEWS', '// REVIEWS');
+fs.writeFileSync('src/services/steamApi.js', api, 'utf8');
+let app = fs.readFileSync('src/App.jsx', 'utf8');
+app = app.replace(/sugestÃµes/g, 'sugestões').replace(/PortuguÃªs/g, 'Português').replace(/InglÃªs/g, 'Inglês').replace(/comeÃ§ar/g, 'começar');
+fs.writeFileSync('src/App.jsx', app, 'utf8');
+let review = fs.readFileSync('src/components/ReviewAnalysis.jsx', 'utf8');
+review = review.replace(/anÃ¡lise/g, 'análise').replace(/tÃ³picos/g, 'tópicos').replace(/mÃ©dias/g, 'médias').replace(/cÃ³pias/g, 'cópias').replace(/mÃ¡x/g, 'máx').replace(/TÃ³picos/g, 'Tópicos').replace(/menÃ§Ãµes/g, 'menções');
+fs.writeFileSync('src/components/ReviewAnalysis.jsx', review, 'utf8');
+console.log('Fixed encodings and ports!');

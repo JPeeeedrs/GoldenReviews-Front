@@ -10,149 +10,148 @@ import "./styles/global.css";
 import "./styles/analysis.css";
 
 export default function App() {
-	const [query, setQuery] = useState("");
-	const [games, setGames] = useState([]);
-	const [selected, setSelected] = useState(null);
-	const [reviews, setReviews] = useState(null);
-	const [maxReviews, setMaxReviews] = useState(1200);
-	const [language, setLanguage] = useState("brazilian");
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(null);
+  const [query, setQuery] = useState("");
+  const [games, setGames] = useState([]);
+  const [selected, setSelected] = useState(null);
+  const [reviews, setReviews] = useState(null);
+  const [maxReviews, setMaxReviews] = useState(1200);
+  const [language, setLanguage] = useState("brazilian");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-	// Buscar jogos
-	useEffect(() => {
-		if (query.length < 2) return;
+  // Buscar jogos
+  useEffect(() => {
+    if (query.length < 2) return;
 
-		const timeout = setTimeout(async () => {
-			try {
-				const data = await searchSteamGames(query);
-				setGames(data);
-			} catch (e) {
-				console.error(e);
-			}
-		}, 400);
+    const timeout = setTimeout(async () => {
+      try {
+        const data = await searchSteamGames(query);
+        setGames(data);
+      } catch (e) {
+        console.error(e);
+      }
+    }, 400);
 
-		return () => clearTimeout(timeout);
-	}, [query]);
+    return () => clearTimeout(timeout);
+  }, [query]);
 
-	const visibleGames = query.length < 2 ? [] : games;
+  const visibleGames = query.length < 2 ? [] : games;
 
-	//Selecionar jogo (AGORA NÃO ANALISA)
-	function handleSelect(game) {
-		setSelected(game);
-		setReviews(null);
-	}
+  function handleSelect(game) {
+    setSelected(game);
+    setReviews(null);
+  }
 
-	//BOTÃO ANALISAR
-	async function handleAnalyze() {
-		if (!selected) return;
+  async function handleAnalyze() {
+    if (!selected) return;
 
-		setLoading(true);
-		setReviews(null);
-		setError(null);
+    setLoading(true);
+    setReviews(null);
+    setError(null);
 
-		try {
-			const data = await getReviews(selected.appid, maxReviews, language);
-			setReviews(data);
-		} catch (e) {
-			console.error(e);
-			setError("Não foi possível analisar as reviews agora.");
-		}
+    try {
+      let data = await getReviews(selected.appid, maxReviews, language);
 
-		setLoading(false);
-	}
+      while (data.status === "processing") {
+        console.log("Em processamento, aguardando...");
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        data = await getReviews(selected.appid, maxReviews, language);
+      }
 
-	return (
-		<div className='container'>
-			<h1>Golden Reviews</h1>
-			<p>
-				Analisador de reviews da Steam. Digite o nome do jogo e veja sugestões
-				em tempo real.
-			</p>
+      setReviews(data);
+    } catch (e) {
+      console.error(e);
+      setError("Erro ao processar as reviews.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
-			<SearchBox
-				value={query}
-				onChange={setQuery}
-				onClear={() => {
-					setQuery("");
-					setSelected(null);
-					setReviews(null);
-				}}
-				showClear={Boolean(query) || Boolean(selected)}
-			/>
+  return (
+    <div className="container">
+      <h1>Golden Reviews</h1>
+      <p>
+        Analisador de reviews da Steam. Digite o nome do jogo e veja sugestões
+        em tempo real.
+      </p>
 
-			{/*quantidade */}
-			<div className='limit-box'>
-				<div>
-					<label>Qtd. máxima de reviews</label>
-					<input
-						type='number'
-						value={maxReviews}
-						onChange={(e) => setMaxReviews(Number(e.target.value))}
-						min={200}
-						max={5000}
-					/>
-				</div>
+      <SearchBox
+        value={query}
+        onChange={setQuery}
+        onClear={() => {
+          setQuery("");
+          setSelected(null);
+          setReviews(null);
+        }}
+        showClear={Boolean(query) || Boolean(selected)}
+      />
 
-				<div>
-					<label>Idioma</label>
-					<select
-						value={language}
-						onChange={(e) => setLanguage(e.target.value)}
-					>
-						<option value='brazilian'>Português (Brasil)</option>
-						<option value='english'>Inglês</option>
-						<option value='all'>Todos idiomas</option>
-					</select>
-				</div>
-			</div>
+      <div className="limit-box">
+        <div>
+          <label>Qtd. máxima de reviews</label>
+          <input
+            type="number"
+            value={maxReviews}
+            onChange={(e) => setMaxReviews(Number(e.target.value))}
+            min={200}
+            max={5000}
+          />
+        </div>
 
-			{!query && <div className='status-info'>Digite algo para começar.</div>}
+        <div>
+          <label>Idioma</label>
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+          >
+            <option value="brazilian">Português (Brasil)</option>
+            <option value="english">Inglês</option>
+            <option value="all">Todos idiomas</option>
+          </select>
+        </div>
+      </div>
 
-			{/*voltar */}
-			{selected && (
-				<button
-					className='back-btn'
-					onClick={() => {
-						setSelected(null);
-						setReviews(null);
-					}}
-				>
-					<span aria-hidden='true'>↩</span>
-					Voltar
-				</button>
-			)}
+      {!query && <div className="status-info">Digite algo para começar.</div>}
 
-			<SelectedGame game={selected} />
+      {selected && (
+        <button
+          className="back-btn"
+          onClick={() => {
+            setSelected(null);
+            setReviews(null);
+          }}
+        >
+          <span aria-hidden="true">↩</span>
+          Voltar
+        </button>
+      )}
 
-			{/*lista */}
-			{!selected && (
-				<Results
-					games={visibleGames}
-					onSelect={handleSelect}
-					selectedGame={selected}
-				/>
-			)}
+      <SelectedGame game={selected} />
 
-			{/*BOTÃO ANALISAR */}
-			{selected && (
-				<button
-					className='analyze-btn'
-					onClick={handleAnalyze}
-					disabled={loading}
-				>
-					{loading
-						? "Analisando com Golden Reviews..."
-						: "Analisar com Golden Reviews"}
-				</button>
-			)}
+      {!selected && (
+        <Results
+          games={visibleGames}
+          onSelect={handleSelect}
+          selectedGame={selected}
+        />
+      )}
 
-			{/*loading */}
-			{error && <p className='error'>{error}</p>}
-			{loading && <p>Processando reviews...</p>}
+      {selected && (
+        <button
+          className="analyze-btn"
+          onClick={handleAnalyze}
+          disabled={loading}
+        >
+          {loading
+            ? "Analisando com Golden Reviews..."
+            : "Analisar com Golden Reviews"}
+        </button>
+      )}
 
-			{/* resultado */}
-			<ReviewAnalysis data={reviews} />
-		</div>
-	);
+      {error && <p className="error">{error}</p>}
+      {loading && <p>Processando reviews...</p>}
+
+      <ReviewAnalysis data={reviews} />
+    </div>
+  );
 }

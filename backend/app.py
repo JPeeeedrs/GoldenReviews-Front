@@ -1,25 +1,34 @@
-"""Flask backend para análise de reviews da Steam."""
+"""FastAPI backend para análise de reviews da Steam com cache SQLite e ABSA."""
 
 from __future__ import annotations
 
 import json
 import time
+import sqlite3
+import asyncio
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import requests
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from fastapi import FastAPI, BackgroundTasks, Query
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
-from bert_pipeline import BertConfig, BertPipeline
+from pipeline_online import ABSAPipeline
 
+app = FastAPI(title="Golden Reviews API")
 
-app = Flask(__name__)
-CORS(app)
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ════════════════════════════════════════════════════════════════════════════
-# CONFIG
+# CONFIG & DB
 # ════════════════════════════════════════════════════════════════════════════
 
 STEAM_REVIEWS_URL = "https://store.steampowered.com/appreviews/{app_id}"
@@ -28,6 +37,7 @@ STEAM_SEARCH_URL = "https://store.steampowered.com/api/storesearch/"
 STEAMSPY_DETAILS_URL = "https://steamspy.com/api.php"
 
 BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "cache.db"
 BERT_MODELS_DIR = (
     BASE_DIR
     / ".."
@@ -37,14 +47,27 @@ BERT_MODELS_DIR = (
     / "bertopic"
 ).resolve()
 
-BERT_CONFIG = BertConfig(
-    sentiment_model="pysentimiento/bertweet-pt-sentiment",
-    embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-    bertopic_pos_dir=BERT_MODELS_DIR / "ludoprism_positivo_dir",
-    bertopic_neg_dir=BERT_MODELS_DIR / "ludoprism_negativo_dir",
-)
+MODEL_PATH = str(BASE_DIR.parent / "steam_bertopic_model")
+# Instanciando o Pipeline de Inferência (Demora uns instantes no startup)
+PIPELINE = ABSAPipeline(MODEL_PATH)
 
-BERT_PIPELINE = BertPipeline(BERT_CONFIG)
+
+def init_db():
+    """Inicializa o banco de dados SQLite."""
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.execute("PRAGMA journal_mode=WAL;")
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS game_cache (
+                appid TEXT PRIMARY KEY,
+                status TEXT,
+                data TEXT,
+                updated_at REAL
+            )
+            """
+        )
+
+init_db()
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -212,148 +235,109 @@ def fetch_reviews_balanced(
     return positive + negative
 
 
-def analyze_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
-    result = BERT_PIPELINE.analyze(reviews)
-    topics = _build_topics_payload(result["by_topic"])
-    _write_review_dump(result.get("review_dump", []))
-    return {
-        "topics": topics,
-        "highlights": {
-            "positivo": result["highlights"]["positive"],
-            "negativo": result["highlights"]["negative"],
-        },
-    }
-
-
-def _build_topics_payload(by_topic: dict[str, dict[str, list[str]]]):
-    pos_groups = by_topic.get("positive", {})
-    neg_groups = by_topic.get("negative", {})
-
-    payload = []
-    
-    # Processar tópicos positivos (modelo positivo)
-    for topic_id, examples in pos_groups.items():
-        if str(topic_id) == "-1":
-            continue
-            
-        label = BERT_PIPELINE.topic_label(int(topic_id), "positive")
-        payload.append(
-            {
-                "name": label,
-                "positive": {
-                    "count": len(examples),
-                    "examples": examples[:5],
-                },
-                "negative": {
-                    "count": 0,
-                    "examples": [],
-                },
-            }
-        )
+def _background_analysis_task(appid: str, max_reviews: int, language: str):
+    """Worker Thread (Gargalo CPU-Bound resolvido no FastAPI via Background Tasks/Thread Pool)"""
+    try:
+        print(f"[Worker] Fetching reviews para appid={appid}...")
+        reviews = fetch_reviews_balanced(appid, max_reviews, language)
+        game_details = fetch_game_details(appid)
         
-    # Processar tópicos negativos (modelo negativo)
-    for topic_id, examples in neg_groups.items():
-        if str(topic_id) == "-1":
-            continue
+        if not reviews:
+            with sqlite3.connect(DB_PATH) as conn:
+                conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
+                             ('{"error": "Nenhuma review encontrada."}', time.time(), appid))
+            return
             
-        label = BERT_PIPELINE.topic_label(int(topic_id), "negative")
-        payload.append(
-            {
-                "name": label,
-                "positive": {
-                    "count": 0,
-                    "examples": [],
-                },
-                "negative": {
-                    "count": len(examples),
-                    "examples": examples[:5],
-                },
-            }
-        )
+        print(f"[Worker] Iniciando ABSA Pipeline para appid={appid} com {len(reviews)} reviews...")
+        # Usa o pipeline instanciado
+        analysis_result = PIPELINE.process_reviews(reviews, game_details)
+        
+        # Merge com detalhes extras se precisasse
+        analysis_result["game"] = {**analysis_result["game"], **game_details}
 
-    return payload
+        # Salva o JSON processado no SQLite
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",
+                         (json.dumps(analysis_result), time.time(), appid))
+                         
+        print(f"[Worker] Modelagem concluída para appid={appid}!")
 
-
-def _write_review_dump(rows: list[dict[str, Any]]) -> None:
-    if not rows:
-        return
-
-    output_dir = BASE_DIR / "analysis_output"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "reviews_analysis.json"
-    output_path.write_text(
-        json.dumps(rows, ensure_ascii=True, indent=2),
-        encoding="utf-8",
-    )
-
-
-def summarize_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
-    total = len(reviews)
-    positive = sum(1 for r in reviews if r["recommended"])
-    negative = total - positive
-    pct_positive = round((positive * 100 / total), 1) if total else 0
-    avg_hours = round(sum(r["hours"] for r in reviews) / total, 1) if total else 0
-    return {
-        "collected": total,
-        "positive": {"count": positive, "percent": pct_positive},
-        "negative": {"count": negative, "percent": round(100 - pct_positive, 1)},
-        "avg_hours": avg_hours,
-    }
+    except Exception as e:
+        print(f"[Worker] Error processando appid={appid}: {e}")
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
+                         (json.dumps({"error": str(e)}), time.time(), appid))
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROUTES
 # ════════════════════════════════════════════════════════════════════════════
 
-
-@app.route("/reviews")
-def reviews_endpoint():
-    appid = (request.args.get("appid") or "").strip()
+@app.get("/reviews")
+def reviews_endpoint(
+    background_tasks: BackgroundTasks, 
+    appid: str = Query(..., description="App ID na Steam"),
+    maxReviews: int = Query(1200, description="Nº máximo de reviews"),
+    language: str = Query("brazilian", description="Idioma das reviews")
+):
+    appid = appid.strip()
     if not appid:
-        return jsonify({"error": "Parâmetro 'appid' é obrigatório."}), 400
+        return JSONResponse(status_code=400, content={"error": "Parâmetro 'appid' é obrigatório."})
 
-    max_reviews = int(request.args.get("maxReviews", 1200))
-    language = request.args.get("language", "brazilian")
+    # Consulta ao Cache (Catraca)
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.execute("SELECT status, data FROM game_cache WHERE appid = ?", (appid,))
+        row = cursor.fetchone()
 
-    reviews = fetch_reviews_balanced(appid, max_reviews, language)
-    if not reviews:
-        return jsonify({"error": "Nenhuma review encontrada no idioma solicitado."}), 404
+        if row:
+            status, data = row
+            if status == "completed":
+                return JSONResponse(content=json.loads(data))
+            elif status == "error":
+                 return JSONResponse(status_code=500, content=json.loads(data))
+            elif status == "processing":
+                 # O Bate-Volta no Banco - Se o jogo está pocessando, retorna HTTP 202
+                 return JSONResponse(
+                     status_code=202,
+                     content={
+                         "status": "processing",
+                         "message": "Análise da Inteligência em andamento. Continue consultando."
+                     }
+                 )
 
-    analysis = analyze_reviews(reviews)
-    summary = summarize_reviews(reviews)
-    game = fetch_game_details(appid)
+        # Se não existe no cache, vamos engatilhar a Análise Background
+        conn.execute(
+            "INSERT INTO game_cache (appid, status, data, updated_at) VALUES (?, ?, ?, ?)",
+            (appid, "processing", "", time.time())
+        )
+        
+    # Dispara a Fila de Espera (Worker CPU-bound rodará usando FastAPI background task nativa -> via asynchio threadpool)
+    background_tasks.add_task(_background_analysis_task, appid, maxReviews, language)
 
-    return jsonify(
-        {
-            "game": game,
-            "summary": summary,
-            "highlights": analysis["highlights"],
-            "topics": analysis["topics"],
-            "meta": {
-                "language": language,
-                "maxReviewsRequested": max_reviews,
-            },
-        }
+    return JSONResponse(
+         status_code=202,
+         content={
+             "status": "processing",
+             "message": "A Análise da inteligência começou agora. Continue consultando."
+         }
     )
-
-
 
 def _default_capsule(appid: str) -> str:
     return f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/capsule_184x69.jpg"
 
 
-@app.route("/search")
-def search():
-    term = request.args.get("q", "")
+@app.get("/search")
+def search(q: str = Query("", description="Termo de pesquisa")):
+    term = q.strip()
     if len(term) < 2:
-        return jsonify([])
+        return []
 
     params = {"term": term, "l": "portuguese", "cc": "BR"}
     try:
         res = requests.get(STEAM_SEARCH_URL, params=params, timeout=5)
         data = res.json()
     except requests.RequestException:
-        return jsonify({"error": "Erro na Steam"}), 502
+        return JSONResponse(status_code=502, content={"error": "Erro na Steam"})
 
     items = data.get("items", [])
     results: list[dict[str, Any]] = []
@@ -377,8 +361,8 @@ def search():
             }
         )
 
-    return jsonify(results)
-
+    return results
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
