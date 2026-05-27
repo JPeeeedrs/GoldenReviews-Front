@@ -4,7 +4,7 @@ import Results from "./components/Results";
 import SelectedGame from "./components/SelectedGame";
 import ReviewAnalysis from "./components/ReviewAnalysis";
 
-import { searchSteamGames, getReviews } from "./services/steamApi";
+import { searchSteamGames, analyzeGame } from "./services/steamApi";
 
 import "./styles/global.css";
 import "./styles/analysis.css";
@@ -14,10 +14,10 @@ export default function App() {
 	const [games, setGames] = useState([]);
 	const [selected, setSelected] = useState(null);
 	const [reviews, setReviews] = useState(null);
-	const [maxReviews, setMaxReviews] = useState(1200);
-	const [language, setLanguage] = useState("brazilian");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
+	const [maxReviews, setMaxReviews] = useState(1200);
+	const [language, setLanguage] = useState("brazilian");
 
 	// Buscar jogos
 	useEffect(() => {
@@ -43,23 +43,49 @@ export default function App() {
 		setReviews(null);
 	}
 
+	useEffect(() => {
+		if (!loading || !selected) return;
+
+		let active = true;
+		const gameKey = selected.appid || selected.name;
+
+		const poll = async () => {
+			try {
+				const result = await analyzeGame(gameKey);
+				if (!active) return;
+				if (result.status === 200) {
+					setReviews({
+						...result.data,
+						meta: {
+							language,
+							maxReviewsRequested: maxReviews,
+						},
+					});
+					setLoading(false);
+				}
+			} catch (e) {
+				if (!active) return;
+				console.error(e);
+				setError("Não foi possível analisar as reviews agora.");
+				setLoading(false);
+			}
+		};
+
+		poll();
+		const intervalId = setInterval(poll, 2000);
+		return () => {
+			active = false;
+			clearInterval(intervalId);
+		};
+	}, [loading, selected]);
+
 	//BOTÃO ANALISAR
-	async function handleAnalyze() {
+	function handleAnalyze() {
 		if (!selected) return;
 
 		setLoading(true);
 		setReviews(null);
 		setError(null);
-
-		try {
-			const data = await getReviews(selected.appid, maxReviews, language);
-			setReviews(data);
-		} catch (e) {
-			console.error(e);
-			setError("Não foi possível analisar as reviews agora.");
-		}
-
-		setLoading(false);
 	}
 
 	return (

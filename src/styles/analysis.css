@@ -44,25 +44,27 @@
 
 .analysis-hero h2 {
 	margin: 0;
-	font-size: 2rem;
+	font-size: 2.1rem;
 }
 
 .analysis-hero .description {
 	margin: 0;
 	max-width: 520px;
+	color: var(--text-02);
 }
 
 .meta-line {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 12px;
-	margin: 8px 0;
+	margin: 10px 0 12px;
 	color: var(--text-02);
 }
 
 .game-cover {
 	width: 360px;
 	max-width: 100%;
+	height: auto;
 	margin-left: auto;
 	border: 1px solid rgba(214, 161, 61, 0.56);
 	border-radius: 18px;
@@ -73,7 +75,7 @@
 
 .stat-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 	gap: 16px;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .stat-card strong {
-	font-size: 1.4rem;
+	font-size: 1.25rem;
 }
 
 .stat-card.good {

@@ -10,6 +10,9 @@ const SETTINGS = {
 	minCombinedDocs: 60,
 	excludeMaxDocs: 40,
 	excludeMaxTopics: 80,
+	newThemeScoreThreshold: 1.6,
+	newThemeSimilarityThreshold: 0.55,
+	maxNewThemes: 12,
 };
 
 const CATEGORY_COLORS = [
@@ -371,7 +374,7 @@ const matchCategoryRule = (entry) => {
 		}
 	});
 
-	return { rule: best, score: bestScore };
+	return { rule: best, score: bestScore, text };
 };
 
 const vectorFromRep = (rep) => {
@@ -411,6 +414,69 @@ const buildAnalysis = (data) => {
 		const rule = match.rule;
 		topicThemeLookup[entry.id] = rule ? rule.label : buildCategoryLabel(entry);
 	});
+
+	const unmatched = topics
+		.map((entry) => {
+			const match = matchCategoryRule(entry);
+			return {
+				...entry,
+				matchScore: match.score,
+				matchText: match.text,
+				vector: vectorFromRep(entry.rep),
+			};
+		})
+		.filter((entry) => entry.matchScore < SETTINGS.newThemeScoreThreshold)
+		.sort((a, b) => b.size - a.size);
+
+	const newThemeGroups = [];
+	const assigned = new Set();
+	for (let i = 0; i < unmatched.length; i += 1) {
+		const anchor = unmatched[i];
+		if (assigned.has(anchor.id)) continue;
+		const group = [anchor];
+		assigned.add(anchor.id);
+		for (let j = i + 1; j < unmatched.length; j += 1) {
+			const candidate = unmatched[j];
+			if (assigned.has(candidate.id)) continue;
+			const sim = cosine(anchor.vector, candidate.vector);
+			if (sim >= SETTINGS.newThemeSimilarityThreshold) {
+				group.push(candidate);
+				assigned.add(candidate.id);
+			}
+		}
+		newThemeGroups.push(group);
+		if (newThemeGroups.length >= SETTINGS.maxNewThemes) break;
+	}
+
+	const suggestedNewThemes = newThemeGroups
+		.map((group, index) => {
+			const topicsSorted = [...group].sort((a, b) => b.size - a.size);
+			const keywordPool = topicsSorted.flatMap((item) => item.keywords || []);
+			const keywordCounts = keywordPool.reduce((acc, kw) => {
+				const token = normalizeToken(kw);
+				if (!token) return acc;
+				acc[token] = (acc[token] || 0) + 1;
+				return acc;
+			}, {});
+			const topKeywords = Object.entries(keywordCounts)
+				.sort((a, b) => b[1] - a[1])
+				.slice(0, 4)
+				.map(([kw]) => kw);
+			const totalGroupDocs = topicsSorted.reduce((sum, item) => sum + item.size, 0);
+			return {
+				id: `novo-${index + 1}`,
+				topicCount: group.length,
+				totalDocs: totalGroupDocs,
+				keywords: topKeywords,
+				topics: topicsSorted.map((item) => ({
+					id: item.id,
+					size: item.size,
+					label: buildCategoryLabel(item),
+					keywords: item.keywords.slice(0, 5),
+				})),
+			};
+		})
+		.sort((a, b) => b.totalDocs - a.totalDocs);
 
 	const categories = {};
 	RULE_INDEX.forEach((rule) => {
@@ -587,6 +653,8 @@ const buildAnalysis = (data) => {
 		allTopicsStatus,
 		mergeCandidates: mergeCandidatesSameTheme,
 		mergeByTheme,
+		newThemes: suggestedNewThemes,
+		newThemeCandidates: unmatched,
 	};
 };
 
@@ -714,6 +782,7 @@ export default function App() {
 						["overview", "Visão Geral"],
 						["importance", "Mais Importantes"],
 						["merges", "Candidatos a Fusão"],
+						["new-themes", "Novos Temas"],
 						["exclude", "Sugestão de Exclusão"],
 						["all", "Todos os Tópicos"],
 					].map(([id, label]) => (
@@ -1599,6 +1668,110 @@ export default function App() {
 								mais coesos, com melhor separação semântica e menor ruído nas
 								análises downstream.
 							</div>
+						</div>
+					</div>
+				)}
+
+				{/* ── NEW THEMES ── */}
+				{tab === "new-themes" && (
+					<div>
+						<div style={{ marginBottom: 16, color: "#94a3b8", fontSize: 13 }}>
+							Tópicos com baixa aderência às regras atuais e agrupados por similaridade.
+						</div>
+
+						<div style={{ display: "grid", gap: 12 }}>
+							{active.newThemes.map((group) => (
+								<div
+									key={group.id}
+									style={{
+										background: "#13172a",
+										border: "1px solid #1e3a5f",
+										borderRadius: 10,
+										padding: "14px 18px",
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											justifyContent: "space-between",
+											marginBottom: 8,
+										}}
+									>
+										<span style={{ fontSize: 13, color: "#f8fafc", fontWeight: 700 }}>
+											Sugestão {group.id}
+										</span>
+										<span style={{ fontSize: 12, color: "#94a3b8" }}>
+											{group.topicCount} tópicos · {group.totalDocs.toLocaleString()} docs
+										</span>
+									</div>
+									<div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+										{group.keywords.map((kw) => (
+											<span
+												key={kw}
+												style={{
+													fontSize: 10,
+													background: "#0f172a",
+													color: "#7dd3fc",
+													padding: "2px 6px",
+													borderRadius: 4,
+													border: "1px solid #1e3a5f",
+												}}
+										>
+											{kw}
+										</span>
+										))}
+									</div>
+
+									<div style={{ marginTop: 10, display: "grid", gap: 8 }}>
+										{group.topics.slice(0, 8).map((topic) => (
+											<div
+												key={topic.id}
+												style={{
+													background: "#0d0d1a",
+													borderRadius: 8,
+													padding: "8px 10px",
+													border: "1px solid #1e293b",
+												}}
+											>
+												<div
+													style={{
+														display: "flex",
+														justifyContent: "space-between",
+														marginBottom: 4,
+													}}
+												>
+													<span style={{ fontSize: 12, color: "#f8fafc" }}>
+														Topico #{topic.id}
+													</span>
+													<span style={{ fontSize: 11, color: "#94a3b8" }}>
+														{topic.size.toLocaleString()} docs
+													</span>
+												</div>
+												<div style={{ fontSize: 12, color: "#7dd3fc" }}>
+													{topic.label}
+												</div>
+												<div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+													{topic.keywords.map((kw) => (
+														<span
+															key={kw}
+															style={{
+																fontSize: 10,
+																background: "#0f172a",
+																color: "#94a3b8",
+																padding: "2px 6px",
+																borderRadius: 4,
+																border: "1px solid #1e3a5f",
+															}}
+														>
+															{kw}
+														</span>
+														))}
+												</div>
+											</div>
+										))}
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 				)}

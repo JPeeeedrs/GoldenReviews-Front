@@ -1,24 +1,23 @@
+const BASE_URL = "http://localhost:8000";
+
 export async function searchSteamGames(term) {
-	const res = await fetch(
-		`http://localhost:5000/search?q=${encodeURIComponent(term)}`,
-	);
+	const res = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(term)}`);
 
 	if (!res.ok) throw new Error("Erro ao buscar jogos");
 
 	return await res.json();
 }
 
-// 📊 REVIEWS
-export async function getReviews(appid, maxReviews, language = "brazilian") {
-	const params = new URLSearchParams({
-		appid,
-		maxReviews,
-		language,
-	});
+export async function analyzeGame(gameName) {
+	const res = await fetch(
+		`${BASE_URL}/analyze/${encodeURIComponent(gameName)}`,
+	);
 
-	const res = await fetch(`http://localhost:5000/reviews?${params.toString()}`);
+	if (res.status === 202) {
+		return { status: 202, data: await res.json() };
+	}
 
-	if (!res.ok) throw new Error("Erro ao buscar reviews");
+	if (!res.ok) throw new Error("Erro ao analisar reviews");
 
-	return await res.json();
+	return { status: 200, data: await res.json() };
 }
