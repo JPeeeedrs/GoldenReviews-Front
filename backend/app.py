@@ -38,14 +38,6 @@ STEAMSPY_DETAILS_URL = "https://steamspy.com/api.php"
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "cache.db"
-BERT_MODELS_DIR = (
-    BASE_DIR
-    / ".."
-    / "sandbox"
-    / "pacotao_golden_review"
-    / "models"
-    / "bertopic"
-).resolve()
 
 MODEL_PATH = str(BASE_DIR.parent / "steam_bertopic_model")
 # Instanciando o Pipeline de Inferência (Demora uns instantes no startup)

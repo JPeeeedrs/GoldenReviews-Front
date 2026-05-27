@@ -31,12 +31,17 @@ nltk.download('punkt', quiet=True)
 class ABSAPipeline:
     def __init__(self, bertopic_model_path: str):
         print("Iniciando carregamento dos modelos na memória...")
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        
         # 1. Carregador de Sentimentos Múltiplos (Hugging Face)
         self.sentiment_model_name = "tabularisai/multilingual-sentiment-analysis"
         self.sentiment_tokenizer = AutoTokenizer.from_pretrained(self.sentiment_model_name)
         self.sentiment_model = AutoModelForSequenceClassification.from_pretrained(self.sentiment_model_name)
-        # Pesos correspondentes às classes do modelo [1 Estrela, 2 Estrelas, 3 Estrelas, 4 Estrelas, 5 Estrelas] (geralmente essa é a ordem)
-        self.score_weights = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])
+        self.sentiment_model.eval()  # Garante modo de inferência
+        self.sentiment_model.to(self.device)
+        
+        # Pesos correspondentes às classes do modelo [1 Estrela, 2 Estrelas, 3 Estrelas, 4 Estrelas, 5 Estrelas]
+        self.score_weights = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0]).to(self.device)
 
         # 2. Carregador de Embeddings para BERTopic
         self.embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
@@ -48,7 +53,7 @@ class ABSAPipeline:
         """
         Gera um score de 1.0 a 5.0 usando produto escalar.
         """
-        inputs = self.sentiment_tokenizer(text, return_tensors='pt', truncation=True, max_length=512)
+        inputs = self.sentiment_tokenizer(text, return_tensors='pt', truncation=True, max_length=512).to(self.device)
         with torch.no_grad():
             outputs = self.sentiment_model(**inputs)
             
@@ -60,7 +65,7 @@ class ABSAPipeline:
             # Fallback se o modelo 'tabularisai' tiver saídas diferentes
             # Se for 3 outputs (Neg, Neu, Pos)
              if len(probs) == 3:
-                 temp_weights = torch.tensor([1.0, 3.0, 5.0])
+                 temp_weights = torch.tensor([1.0, 3.0, 5.0]).to(self.device)
                  score = torch.dot(probs, temp_weights).item()
                  return score
                  
@@ -126,10 +131,12 @@ class ABSAPipeline:
         positive_topics = []
         negative_topics = []
         
+        # Score global da review (agregado por review única e não ponderado por qtde de frases)
+        unique_reviews = df.drop_duplicates('review_id')
+        overall_score = unique_reviews['review_score'].mean() if len(unique_reviews) > 0 else 0
+
         # Para resgatar as palavras chaves
         topic_info = self.topic_model.get_topic_info()
-        
-        overall_score = df['review_score'].mean() if len(df) > 0 else 0
 
         for _, row in agg_df.iterrows():
             tid = int(row['topic_id'])
