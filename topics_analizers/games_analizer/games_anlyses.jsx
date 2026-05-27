@@ -106,7 +106,8 @@ export default function SteamSpyTopGames() {
 						Dados em tempo real via SteamSpy. Sem backend.
 					</p>
 					<p style={{ color: "#64748b", fontSize: 12, margin: "6px 0 0" }}>
-						Total no endpoint: {formatNumber(totalCount)} · Exibindo: {formatNumber(games.length)}
+						Total no endpoint: {formatNumber(totalCount)} · Exibindo:{" "}
+						{formatNumber(games.length)}
 					</p>
 				</header>
 

@@ -127,7 +127,6 @@ A arquitetura do sistema foi dividida em frontend e backend.
 
 Usuario -> Frontend React -> Backend Flask -> APIs da Steam -> Processamento -> Resultado visual
 
-
 ## 6. Metodologia
 
 O projeto utiliza principalmente a metodologia CRISP-DM (Cross Industry Standard Process for Data Mining), aplicada junto de tecnicas de analise exploratoria de dados (EDA), processamento de linguagem natural (NLP) e classificacao textual.
