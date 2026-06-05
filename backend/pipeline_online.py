@@ -79,42 +79,53 @@ class ABSAPipeline:
 
     def process_reviews(self, raw_reviews: List[Dict[str, Any]], game_details: dict) -> Dict[str, Any]:
         start_time = time.time()
-        
-        # Estrutura para Dataframe
-        data_rows = []
-        
-        # 1 e 2. Sentimento da Review e Herança
+
+        # 1. Extração de Frases Brutas
+        sentences_to_infer = []
+        review_ids = []
+
         for review in raw_reviews:
             r_text = review.get('text', '')
-            if not r_text: continue
-            
-            review_score = self.extract_continuous_score(r_text)
-            
-            # Fatiamento e Herança
+            if not r_text:
+                continue
+
             sentences = self.simple_sentence_split(r_text)
             for sent in sentences:
+                sentences_to_infer.append(sent)
+                review_ids.append(review.get("id"))
+
+        if not sentences_to_infer:
+            return self._build_empty_response(game_details, start_time)
+
+        # 2. Inferência de Tópico (MUITO RÁPIDO)
+        # Não re-geramos os embeddings explicitamente pois model.transform fará isso
+        # internamente via a property self.embedding_model que atachamos no init.
+        topics, _ = self.topic_model.transform(sentences_to_infer)
+
+        # 3. Classificação de Sentimento com Filtro de Ruído (Otimização)
+        data_rows = []
+        for i, sent in enumerate(sentences_to_infer):
+            topic_id = topics[i]
+
+            # Se for ruído (-1), ignora e não gasta inferência do modelo pesado
+            if topic_id != -1:
+                sent_score = self.extract_continuous_score(sent)
+
                 data_rows.append({
-                    "review_id": review.get("id"),
+                    "review_id": review_ids[i],
                     "sentence": sent,
-                    "review_score": review_score
+                    "review_score": sent_score,
+                    "topic_id": topic_id
                 })
-        
+
         if not data_rows:
             return self._build_empty_response(game_details, start_time)
 
-        df = pd.DataFrame(data_rows)
-        
-        # 3. Inferência do Tópico usando model.transform() (MUITO RÁPIDO)
-        sentences_to_infer = df['sentence'].tolist()
-        # Não re-geramos os embeddings explicitamente pois model.transform fará isso 
-        # internamente via a property self.embedding_model que atachamos no init.
-        topics, _ = self.topic_model.transform(sentences_to_infer)
-        
-        df['topic_id'] = topics
-        
+        df_valid = pd.DataFrame(data_rows)
+
         # 4. Agregação Final usando Pandas
-        resultado_final = self._aggregate_results(df, game_details, start_time, len(raw_reviews))
-        
+        resultado_final = self._aggregate_results(df_valid, game_details, start_time, len(raw_reviews))
+
         return resultado_final
 
     def _aggregate_results(self, df: pd.DataFrame, game_details: dict, start_time: float, num_analyzed: int) -> Dict[str, Any]:
@@ -142,6 +153,7 @@ class ABSAPipeline:
             tid = int(row['topic_id'])
             score = float(row['score'])
             mentions = int(row['mentions'])
+            is_positive_topic = score >= 3.0
             
             # Recuperar palavras e quotes
             words_freq = self.topic_model.get_topic(tid)
@@ -149,13 +161,28 @@ class ABSAPipeline:
             
             # Encontrar frases representativas
             rep_docs = self.topic_model.get_representative_docs(tid)
-            
-            # Se não houver rep_docs, buscar diretamente no DF para ter amostras
-            if not rep_docs:
-                 amostras = df[df['topic_id'] == tid]['sentence'].head(2).tolist()
-                 quotes = amostras
+
+            df_topic = df[df['topic_id'] == tid]
+            if is_positive_topic:
+                df_topic = df_topic[df_topic['review_score'] >= 3.0]
             else:
-                 quotes = rep_docs[:2]
+                df_topic = df_topic[df_topic['review_score'] < 3.0]
+
+            # Se não houver exemplos alinhados ao viés, faz fallback para o tópico completo
+            if df_topic.empty:
+                df_topic = df[df['topic_id'] == tid]
+
+            # Se houver rep_docs, filtra apenas as alinhadas ao viés do tópico
+            if rep_docs:
+                allowed = set(df_topic['sentence'].tolist())
+                filtered_rep_docs = [doc for doc in rep_docs if doc in allowed]
+                quotes = filtered_rep_docs[:2]
+            else:
+                quotes = []
+
+            # Se não houver rep_docs válidas, buscar diretamente no DF para ter amostras
+            if not quotes:
+                quotes = df_topic['sentence'].head(2).tolist()
                  
             topic_name = " | ".join([k.capitalize() for k in keywords[:3]])
 
@@ -168,7 +195,7 @@ class ABSAPipeline:
             }
             
             # Separação por threshold 3.0
-            if score >= 3.0:
+            if is_positive_topic:
                 positive_topics.append(topic_payload)
             else:
                 negative_topics.append(topic_payload)

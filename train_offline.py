@@ -6,6 +6,8 @@ Objetivo: Resolver o Cold Start utilizando um dataset estático do Kaggle.
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from bertopic import BERTopic
+from sklearn.feature_extraction.text import CountVectorizer
+from nltk.corpus import stopwords
 import nltk
 import ssl
 import certifi
@@ -19,6 +21,17 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 
 nltk.download('punkt')
+nltk.download('stopwords')
+
+# 1. Configurando Stop Words (Removendo lixo e nomes genéricos de jogos)
+stop_words_pt = stopwords.words('portuguese')
+custom_stop_words = stop_words_pt + [
+    'jogo', 'jogar', 'game', 'steam', 'pra', 'pro', 'the', 'witcher',
+    'batman', 'resident', 'evil', 'jogabilidade', 'horas', 'td', 'tr', 'h1',
+    'list', 'url', 'kkkk', 'kkkkk', 'cities', 'skylines', 'souls', 'arkham',
+    'capcom', 'revelations'
+]
+vectorizer_model = CountVectorizer(stop_words=custom_stop_words)
 
 def main():
     print("1. Carregando dataset estático com reviews da Steam...")
@@ -36,7 +49,7 @@ def main():
     for review in amostra_reviews:
         # Fatiamento em frases
         frases = nltk.sent_tokenize(review, language='portuguese')
-        sentences.extend([f.strip() for f in frases if len(f.strip()) > 30])
+        sentences.extend([f.strip() for f in frases if len(f.strip()) > 10])
     
     print(f"Total de frases extraídas: {len(sentences)}")
 
@@ -46,17 +59,31 @@ def main():
     print("Gerando embeddings (isso pode demorar)....")
     embeddings = embedding_model.encode(sentences, show_progress_bar=True)
 
-    print("4. Treinando o BERTopic do zero...")
+    print("4. Treinando o BERTopic parametrizado...")
     topic_model = BERTopic(
         embedding_model=embedding_model,
+        vectorizer_model=vectorizer_model,
         language="multilingual",
+        nr_topics="auto",
+        min_topic_size=15,
         verbose=True
     )
     
-    # Treina o modelo nos dados
-    topic_model.fit(sentences, embeddings)
+    topics, probs = topic_model.fit_transform(sentences, embeddings)
 
-    print("5. Salvando o modelo treinado em disco...")
+    print("5. Aplicando redução moderada de outliers (Threshold: 0.85)...")
+    # Resgata apenas os outliers que tenham 85% ou mais de similaridade com um tópico existente
+    new_topics = topic_model.reduce_outliers(
+        sentences,
+        topics,
+        strategy="embeddings",
+        threshold=0.85
+    )
+
+    # Atualiza o modelo com os outliers resgatados
+    topic_model.update_topics(sentences, topics=new_topics)
+
+    print("6. Salvando o modelo refinado em disco...")
     topic_model.save("steam_bertopic_model", serialization="safetensors")
     print("Pipeline de Treinamento Offline concluído com sucesso!")
 
