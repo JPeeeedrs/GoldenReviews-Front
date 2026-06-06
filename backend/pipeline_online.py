@@ -159,30 +159,21 @@ class ABSAPipeline:
             words_freq = self.topic_model.get_topic(tid)
             keywords = [w[0] for w in words_freq[:3]] if words_freq else [f"Topico {tid}"]
             
-            # Encontrar frases representativas
-            rep_docs = self.topic_model.get_representative_docs(tid)
+            # Extração inteligente de quotes por polaridade do tópico
+            df_topic_all = df_valid[df_valid['topic_id'] == tid]
 
-            df_topic = df[df['topic_id'] == tid]
             if is_positive_topic:
-                df_topic = df_topic[df_topic['review_score'] >= 3.0]
+                df_topic_filtered = df_topic_all[df_topic_all['review_score'] >= 3.0] \
+                    .sort_values(by='review_score', ascending=False)
             else:
-                df_topic = df_topic[df_topic['review_score'] < 3.0]
+                df_topic_filtered = df_topic_all[df_topic_all['review_score'] < 3.0] \
+                    .sort_values(by='review_score', ascending=True)
 
-            # Se não houver exemplos alinhados ao viés, faz fallback para o tópico completo
-            if df_topic.empty:
-                df_topic = df[df['topic_id'] == tid]
-
-            # Se houver rep_docs, filtra apenas as alinhadas ao viés do tópico
-            if rep_docs:
-                allowed = set(df_topic['sentence'].tolist())
-                filtered_rep_docs = [doc for doc in rep_docs if doc in allowed]
-                quotes = filtered_rep_docs[:2]
+            # Fallback de segurança: se filtro vier vazio, usa o tópico completo
+            if df_topic_filtered.empty:
+                quotes = df_topic_all['sentence'].head(2).tolist()
             else:
-                quotes = []
-
-            # Se não houver rep_docs válidas, buscar diretamente no DF para ter amostras
-            if not quotes:
-                quotes = df_topic['sentence'].head(2).tolist()
+                quotes = df_topic_filtered['sentence'].head(2).tolist()
                  
             topic_name = " | ".join([k.capitalize() for k in keywords[:3]])
 
