@@ -4,7 +4,7 @@ import Results from "./components/Results";
 import SelectedGame from "./components/SelectedGame";
 import ReviewAnalysis from "./components/ReviewAnalysis";
 
-import { searchSteamGames, analyzeGame } from "./services/steamApi";
+import { searchSteamGames, getReviews } from "./services/steamApi";
 
 import "./styles/global.css";
 import "./styles/analysis.css";
@@ -14,10 +14,10 @@ export default function App() {
 	const [games, setGames] = useState([]);
 	const [selected, setSelected] = useState(null);
 	const [reviews, setReviews] = useState(null);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(null);
 	const [maxReviews, setMaxReviews] = useState(1200);
 	const [language, setLanguage] = useState("brazilian");
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
 
 	// Buscar jogos
 	useEffect(() => {
@@ -37,22 +37,23 @@ export default function App() {
 
 	const visibleGames = query.length < 2 ? [] : games;
 
-	//Selecionar jogo (AGORA NÃO ANALISA)
 	function handleSelect(game) {
 		setSelected(game);
 		setReviews(null);
 	}
 
+	// Polling Effect - Mantido da HEAD com as novas chamadas do ABSA
 	useEffect(() => {
 		if (!loading || !selected) return;
 
 		let active = true;
-		const gameKey = selected.appid || selected.name;
 
 		const poll = async () => {
 			try {
-				const result = await analyzeGame(gameKey);
+				const result = await getReviews(selected.appid, maxReviews, language);
 				if (!active) return;
+
+				// Se o cache já concluiu e montou o JSON completo (Status 200)
 				if (result.status === 200) {
 					setReviews({
 						...result.data,
@@ -63,6 +64,7 @@ export default function App() {
 					});
 					setLoading(false);
 				}
+				// Se retornar 202, continua em polling silenciosamente
 			} catch (e) {
 				if (!active) return;
 				console.error(e);
@@ -77,9 +79,9 @@ export default function App() {
 			active = false;
 			clearInterval(intervalId);
 		};
-	}, [loading, selected]);
+	}, [loading, selected, maxReviews, language]);
 
-	//BOTÃO ANALISAR
+	// BOTÃO ANALISAR
 	function handleAnalyze() {
 		if (!selected) return;
 
@@ -107,7 +109,6 @@ export default function App() {
 				showClear={Boolean(query) || Boolean(selected)}
 			/>
 
-			{/*quantidade */}
 			<div className='limit-box'>
 				<div>
 					<label>Qtd. máxima de reviews</label>
@@ -135,7 +136,6 @@ export default function App() {
 
 			{!query && <div className='status-info'>Digite algo para começar.</div>}
 
-			{/*voltar */}
 			{selected && (
 				<button
 					className='back-btn'
@@ -151,7 +151,6 @@ export default function App() {
 
 			<SelectedGame game={selected} />
 
-			{/*lista */}
 			{!selected && (
 				<Results
 					games={visibleGames}
@@ -160,7 +159,7 @@ export default function App() {
 				/>
 			)}
 
-			{/*BOTÃO ANALISAR */}
+			{/* Botão de Análise atualizado com a nova UX */}
 			{selected && (
 				<button
 					className='analyze-btn'
@@ -173,16 +172,14 @@ export default function App() {
 				</button>
 			)}
 
-			{/*loading */}
 			{error && <p className='error'>{error}</p>}
 			{loading && (
 				<div className='analysis-loading' role='status' aria-live='polite'>
 					<div className='loading-wheel' aria-hidden='true'></div>
-					<p>Analisando reviews. Isso pode demorar alguns minutos.</p>
+					<p>Processando reviews...</p>
 				</div>
 			)}
 
-			{/* resultado */}
 			<ReviewAnalysis data={reviews} />
 		</div>
 	);

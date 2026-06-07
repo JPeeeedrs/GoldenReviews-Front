@@ -1,4 +1,4 @@
-"""FastAPI backend for Steam review analysis with async polling and SQLite cache."""
+"""FastAPI backend para análise de reviews da Steam com cache SQLite (WAL) e ABSA."""
 
 from __future__ import annotations
 
@@ -8,17 +8,17 @@ import sqlite3
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import requests
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from .bert_pipeline import BertConfig, BertPipeline
-
+from pipeline_online import ABSAPipeline
 
 app = FastAPI(title="Golden Reviews API")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -27,9 +27,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # ════════════════════════════════════════════════════════════════════════════
-# CONFIG
+# CONFIG & DB
 # ════════════════════════════════════════════════════════════════════════════
 
 STEAM_REVIEWS_URL = "https://store.steampowered.com/appreviews/{app_id}"
@@ -38,56 +37,29 @@ STEAM_SEARCH_URL = "https://store.steampowered.com/api/storesearch/"
 STEAMSPY_DETAILS_URL = "https://steamspy.com/api.php"
 
 BASE_DIR = Path(__file__).resolve().parent
-BERT_MODELS_DIR = (
-    BASE_DIR
-    / ".."
-    / "sandbox"
-    / "pacotao_golden_review"
-    / "models"
-    / "bertopic"
-).resolve()
+DB_PATH = BASE_DIR / "cache.db"
 
-BERT_CONFIG = BertConfig(
-    sentiment_model="pysentimiento/bertweet-pt-sentiment",
-    embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-    bertopic_pos_dir=BERT_MODELS_DIR / "ludoprism_positivo_dir",
-    bertopic_neg_dir=BERT_MODELS_DIR / "ludoprism_negativo_dir",
-)
-
-BERT_PIPELINE = BertPipeline(BERT_CONFIG)
-
-TOPIC_EXPORT_PATH = (BASE_DIR / ".." / "topics_analizers" / "topics_export.json").resolve()
+MODEL_PATH = str(BASE_DIR.parent / "steam_bertopic_model")
+# Instanciando o Pipeline de Inferência (Demora uns instantes no startup)
+PIPELINE = ABSAPipeline(MODEL_PATH)
 
 
-def _load_theme_lookup(path: Path) -> dict[str, dict[int, str]]:
-    if not path.exists():
-        return {"positive": {}, "negative": {}}
+def init_db():
+    """Inicializa o banco de dados SQLite com suporte a concorrência."""
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.execute("PRAGMA journal_mode=WAL;")
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS game_cache (
+                appid TEXT PRIMARY KEY,
+                status TEXT,
+                data TEXT,
+                updated_at REAL
+            )
+            """
+        )
 
-    data = json.loads(path.read_text(encoding="utf-8"))
-    lookup: dict[str, dict[int, str]] = {"positive": {}, "negative": {}}
-    for sentiment in ("positive", "negative"):
-        kept_by_theme = (data.get(sentiment) or {}).get("keptByTheme", {})
-        for theme, topics in kept_by_theme.items():
-            for item in topics:
-                try:
-                    topic_id = int(item.get("id"))
-                except (TypeError, ValueError):
-                    continue
-                lookup[sentiment][topic_id] = theme
-    return lookup
-
-
-THEME_LOOKUP = _load_theme_lookup(TOPIC_EXPORT_PATH)
-
-DB_DIR = (BASE_DIR / "analysis_output").resolve()
-DB_PATH = (DB_DIR / "analysis_cache.db").resolve()
-
-MODEL_VERSION = "bert-v2.3"
-MAX_REVIEWS_DEFAULT = 1200
-HIGHLIGHT_LIMIT = 6
-TOPIC_LIMIT = 6
-QUOTE_LIMIT = 3
-
+init_db()
 
 # ════════════════════════════════════════════════════════════════════════════
 # HELPER FUNCTIONS
@@ -228,466 +200,128 @@ def fetch_reviews(
 
     return reviews
 
-
-def fetch_reviews_balanced(
-    app_id: str,
-    max_reviews: int = 0,
-    language: str = "brazilian",
-) -> list[dict[str, Any]]:
-    if max_reviews < 2:
-        return fetch_reviews(app_id, max_reviews, language)
-
-    per_side = max_reviews // 2
-    positive = fetch_reviews(
-        app_id,
-        max_reviews=per_side,
-        language=language,
-        review_type="positive",
-    )
-    negative = fetch_reviews(
-        app_id,
-        max_reviews=per_side,
-        language=language,
-        review_type="negative",
-    )
-
-    return positive + negative
-
-
-def analyze_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
-    result = BERT_PIPELINE.analyze(reviews)
-    themes = _build_theme_payload(result.get("by_topic", {}), THEME_LOOKUP)
-    _write_review_dump(result.get("review_dump", []))
-    return {
-        "themes": themes,
-        "highlights": result.get("highlights", {"positive": [], "negative": []}),
-        "by_topic": result.get("by_topic", {}),
-    }
-
-
-def _build_theme_payload(
-    by_topic: dict[str, dict[str, list[str]]],
-    lookup: dict[str, dict[int, str]],
-):
-    entries: dict[str, dict[str, Any]] = {}
-
-    def ensure_theme(theme: str) -> dict[str, Any]:
-        if theme not in entries:
-            entries[theme] = {
-                "name": theme,
-                "positive": {"count": 0, "examples": []},
-                "negative": {"count": 0, "examples": []},
-            }
-        return entries[theme]
-
-    for sentiment in ("positive", "negative"):
-        topics = by_topic.get(sentiment, {})
-        for topic_id, examples in topics.items():
-            if str(topic_id) == "-1":
-                continue
-            try:
-                topic_int = int(topic_id)
-            except (TypeError, ValueError):
-                continue
-            theme = lookup.get(sentiment, {}).get(topic_int)
-            if not theme:
-                continue
-
-            entry = ensure_theme(theme)
-            bucket = entry[sentiment]
-            bucket["count"] += len(examples)
-            if len(bucket["examples"]) < 5:
-                remaining = 5 - len(bucket["examples"])
-                bucket["examples"].extend(examples[:remaining])
-
-    return sorted(
-        entries.values(),
-        key=lambda item: item["positive"]["count"] + item["negative"]["count"],
-        reverse=True,
-    )
-
-
-def _build_topics_payload(by_topic: dict[str, dict[str, list[str]]]):
-    pos_groups = by_topic.get("positive", {})
-    neg_groups = by_topic.get("negative", {})
-
-    payload = []
-    for topic_id, examples in pos_groups.items():
-        if str(topic_id) == "-1":
-            continue
-
-        label = BERT_PIPELINE.topic_label(int(topic_id), "positive")
-        payload.append(
-            {
-                "name": label,
-                "positive": {"count": len(examples), "examples": examples[:5]},
-                "negative": {"count": 0, "examples": []},
-            }
-        )
-
-    for topic_id, examples in neg_groups.items():
-        if str(topic_id) == "-1":
-            continue
-
-        label = BERT_PIPELINE.topic_label(int(topic_id), "negative")
-        payload.append(
-            {
-                "name": label,
-                "positive": {"count": 0, "examples": []},
-                "negative": {"count": len(examples), "examples": examples[:5]},
-            }
-        )
-
-    return payload
-
-
-def _write_review_dump(rows: list[dict[str, Any]]) -> None:
-    if not rows:
-        return
-
-    output_dir = BASE_DIR / "analysis_output"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "reviews_analysis.json"
-    output_path.write_text(
-        json.dumps(rows, ensure_ascii=True, indent=2),
-        encoding="utf-8",
-    )
-
-
-def summarize_reviews(reviews: list[dict[str, Any]]) -> dict[str, Any]:
-    total = len(reviews)
-    positive = sum(1 for r in reviews if r["recommended"])
-    negative = total - positive
-    pct_positive = round((positive * 100 / total), 1) if total else 0
-    avg_hours = round(sum(r["hours"] for r in reviews) / total, 1) if total else 0
-    return {
-        "collected": total,
-        "positive": {"count": positive, "percent": pct_positive},
-        "negative": {"count": negative, "percent": round(100 - pct_positive, 1)},
-        "avg_hours": avg_hours,
-    }
-
-
-def _init_db() -> None:
-    DB_DIR.mkdir(parents=True, exist_ok=True)
-    with _get_connection() as conn:
-        conn.execute("PRAGMA journal_mode=WAL;")
-        conn.execute(
-            """
-            CREATE TABLE IF NOT EXISTS game_analysis (
-                game_name TEXT PRIMARY KEY,
-                status TEXT NOT NULL
-                    CHECK(status IN ('processing','completed','error')),
-                result_json TEXT,
-                error_message TEXT,
-                model_version TEXT,
-                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-            );
-            """
-        )
-
-
-def _get_connection() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH, timeout=30)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def _fetch_game_row(game_name: str) -> sqlite3.Row | None:
-    with _get_connection() as conn:
-        row = conn.execute(
-            "SELECT status, result_json, error_message FROM game_analysis WHERE game_name = ?",
-            (game_name,),
-        ).fetchone()
-    return row
-
-
-def _insert_processing(game_name: str) -> bool:
+def _background_analysis_task(appid: str, max_reviews: int, language: str):
+    """Worker Thread para evitar bloqueio do event loop do FastAPI"""
     try:
-        with _get_connection() as conn:
-            conn.execute(
-                """
-                INSERT INTO game_analysis (
-                    game_name,
-                    status,
-                    result_json,
-                    error_message,
-                    model_version
-                )
-                VALUES (?, 'processing', NULL, NULL, ?)
-                """,
-                (game_name, MODEL_VERSION),
-            )
-        return True
-    except sqlite3.IntegrityError:
-        return False
+        print(f"[Worker] Fetching reviews para appid={appid}...")
+        reviews = fetch_reviews(appid, max_reviews, language)
+        game_details = fetch_game_details(appid)
+        
+        if not reviews:
+            with sqlite3.connect(DB_PATH) as conn:
+                conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
+                             ('{"error": "Nenhuma review encontrada."}', time.time(), appid))
+            return
+            
+        print(f"[Worker] Iniciando ABSA Pipeline para appid={appid} com {len(reviews)} reviews...")
+        analysis_result = PIPELINE.process_reviews(reviews, game_details)
+        
+        analysis_result["game"] = {**analysis_result.get("game", {}), **game_details}
 
+        # ------------------------------------------------------------------
+        # FIX: Restaurando a matemática do Summary que o Front espera
+        # ------------------------------------------------------------------
+        total = len(reviews)
+        pos_count = sum(1 for r in reviews if r.get("recommended"))
+        neg_count = total - pos_count
+        
+        pos_pct = round((pos_count / total) * 100) if total > 0 else 0
+        neg_pct = round((neg_count / total) * 100) if total > 0 else 0
+        avg_hours = sum(r.get("hours", 0) for r in reviews) / total if total > 0 else 0
+        
+        if "summary" not in analysis_result:
+            analysis_result["summary"] = {}
+            
+        # Atualiza o summary com os dados crus da Steam preservando o que a IA gerou
+        analysis_result["summary"].update({
+            "reviews_analyzed": total,
+            "positive_count": pos_count,
+            "positive_percentage": pos_pct,
+            "negative_count": neg_count,
+            "negative_percentage": neg_pct,
+            "avg_hours": avg_hours
+        })
+        # ------------------------------------------------------------------
 
-def _update_result(game_name: str, result: dict[str, Any]) -> None:
-    with _get_connection() as conn:
-        conn.execute(
-            """
-            UPDATE game_analysis
-            SET
-                status = 'completed',
-                result_json = ?,
-                error_message = NULL,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE game_name = ?
-            """,
-            (json.dumps(result, ensure_ascii=True), game_name),
-        )
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",
+                         (json.dumps(analysis_result), time.time(), appid))
+                         
+        print(f"[Worker] Modelagem concluída para appid={appid}!")
 
+    except Exception as e:
+        print(f"[Worker] Error processando appid={appid}: {e}")
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
+                         (json.dumps({"error": str(e)}), time.time(), appid))
 
-def _update_error(game_name: str, message: str) -> None:
-    with _get_connection() as conn:
-        conn.execute(
-            """
-            UPDATE game_analysis
-            SET
-                status = 'error',
-                error_message = ?,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE game_name = ?
-            """,
-            (message, game_name),
-        )
-
-
-def _resolve_game(game_name: str) -> dict[str, Any]:
-    raw = game_name.strip()
-    if not raw:
-        raise ValueError("Empty game name")
-
-    if raw.isdigit():
-        details = fetch_game_details(raw)
-        return {"steam_appid": int(raw), "name": details.get("name", raw)}
-
-    params = {"term": raw, "l": "portuguese", "cc": "BR"}
-    resp = requests.get(STEAM_SEARCH_URL, params=params, timeout=8)
-    data = resp.json()
-    items = data.get("items", [])
-    if not items:
-        raise ValueError("Game not found")
-
-    appid = str(items[0].get("appid") or items[0].get("id"))
-    details = fetch_game_details(appid)
-    return {"steam_appid": int(appid), "name": details.get("name", raw)}
-
-
-def _extract_keywords(label: str) -> list[str]:
-    if ":" not in label:
-        return []
-    tail = label.split(":", 1)[1]
-    return [w.strip() for w in tail.split(",") if w.strip()]
-
-
-def _score_topic(mentions: int, max_mentions: int, sentiment: str) -> float:
-    if max_mentions <= 0:
-        return 3.0
-    ratio = mentions / max_mentions
-    if sentiment == "positive":
-        score = 3.5 + (ratio * 1.5)
-    else:
-        score = 3.0 - (ratio * 1.5)
-    return round(max(1.0, min(5.0, score)), 1)
-
-
-def _build_topics_response(by_topic: dict[str, dict[str, list[str]]]) -> dict[str, Any]:
-    pos_groups = by_topic.get("positive", {})
-    neg_groups = by_topic.get("negative", {})
-    max_pos = max((len(v) for v in pos_groups.values()), default=0)
-    max_neg = max((len(v) for v in neg_groups.values()), default=0)
-
-    positive = []
-    for topic_id, examples in pos_groups.items():
-        if str(topic_id) == "-1":
-            continue
-        label = BERT_PIPELINE.topic_label(int(topic_id), "positive")
-        positive.append(
-            {
-                "topic": label,
-                "mentions": len(examples),
-                "score": _score_topic(len(examples), max_pos, "positive"),
-                "keywords": _extract_keywords(label),
-                "quotes": examples[:QUOTE_LIMIT],
-            }
-        )
-
-    negative = []
-    for topic_id, examples in neg_groups.items():
-        if str(topic_id) == "-1":
-            continue
-        label = BERT_PIPELINE.topic_label(int(topic_id), "negative")
-        negative.append(
-            {
-                "topic": label,
-                "mentions": len(examples),
-                "score": _score_topic(len(examples), max_neg, "negative"),
-                "keywords": _extract_keywords(label),
-                "quotes": examples[:QUOTE_LIMIT],
-            }
-        )
-
-    positive = sorted(positive, key=lambda item: item["mentions"], reverse=True)[:TOPIC_LIMIT]
-    negative = sorted(negative, key=lambda item: item["mentions"], reverse=True)[:TOPIC_LIMIT]
-    return {"positive": positive, "negative": negative}
-
-
-def process_game(game_name: str) -> dict[str, Any]:
-    started = time.perf_counter()
-    resolved = _resolve_game(game_name)
-    appid = str(resolved["steam_appid"])
-    details = fetch_game_details(appid)
-
-    reviews = fetch_reviews_balanced(appid, max_reviews=MAX_REVIEWS_DEFAULT)
-    if not reviews:
-        raise RuntimeError("No reviews found")
-
-    analysis = analyze_reviews(reviews)
-    summary = summarize_reviews(reviews)
-
-    positive_pct = summary["positive"]["percent"]
-    overall_score = round(1 + (positive_pct / 100) * 4, 1)
-
-    result = {
-        "game": {
-            "name": resolved["name"],
-            "steam_appid": resolved["steam_appid"],
-            "header_image": details.get("header_image")
-            or _default_capsule(appid),
-            "release_date": details.get("release_date"),
-            "price": details.get("price"),
-            "owners": details.get("owners"),
-            "total_reviews": details.get("total_reviews"),
-            "short_description": details.get("short_description"),
-            "steamspy": details.get("steamspy"),
-        },
-        "summary": {
-            "overall_score": overall_score,
-            "positive_percentage": positive_pct,
-            "positive_count": summary["positive"]["count"],
-            "negative_percentage": summary["negative"]["percent"],
-            "negative_count": summary["negative"]["count"],
-            "reviews_analyzed": summary["collected"],
-            "avg_hours": summary["avg_hours"],
-        },
-        "highlights": {
-            "positive": analysis["highlights"].get("positive", [])[:HIGHLIGHT_LIMIT],
-            "negative": analysis["highlights"].get("negative", [])[:HIGHLIGHT_LIMIT],
-        },
-        "topics": _build_topics_response(analysis["by_topic"]),
-        "meta": {
-            "language": "brazilian",
-            "maxReviewsRequested": MAX_REVIEWS_DEFAULT,
-        },
-        "metadata": {
-            "processing_time_seconds": round(time.perf_counter() - started, 2),
-            "model_version": MODEL_VERSION,
-            "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        },
-    }
-    return result
-
-
-def process_game_and_store(game_name: str) -> None:
-    try:
-        result = process_game(game_name)
-        _update_result(game_name, result)
-    except Exception as exc:  # noqa: BLE001
-        _update_error(game_name, str(exc))
+def _default_capsule(appid: str) -> str:
+    return f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/capsule_184x69.jpg"
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROUTES
 # ════════════════════════════════════════════════════════════════════════════
 
-
-@app.on_event("startup")
-def _startup() -> None:
-    _init_db()
-
-
 @app.get("/")
 def root():
     return {
         "status": "ok",
-        "service": "golden-reviews-api",
-        "version": MODEL_VERSION,
+        "service": "golden-reviews-api"
     }
-
-
-@app.get("/analyze/{game_name}")
-async def analyze_endpoint(game_name: str):
-    row = _fetch_game_row(game_name)
-    if row:
-        status = row["status"]
-        if status == "completed":
-            payload = json.loads(row["result_json"] or "{}")
-            return JSONResponse(status_code=200, content=payload)
-        if status == "processing":
-            return JSONResponse(
-                status_code=202,
-                content={"status": "processing", "message": "Analysis in progress"},
-            )
-        if status == "error":
-            return JSONResponse(
-                status_code=500,
-                content={"status": "error", "message": row["error_message"] or ""},
-            )
-
-    inserted = _insert_processing(game_name)
-    if not inserted:
-        row = _fetch_game_row(game_name)
-        if row and row["status"] == "completed":
-            payload = json.loads(row["result_json"] or "{}")
-            return JSONResponse(status_code=200, content=payload)
-        return JSONResponse(
-            status_code=202,
-            content={"status": "processing", "message": "Analysis in progress"},
-        )
-
-    asyncio.create_task(asyncio.to_thread(process_game_and_store, game_name))
-    return JSONResponse(
-        status_code=202,
-        content={"status": "processing", "message": "Analysis in progress"},
-    )
-
 
 @app.get("/reviews")
 def reviews_endpoint(
-    appid: str = Query("", alias="appid"),
-    max_reviews: int = Query(MAX_REVIEWS_DEFAULT, alias="maxReviews"),
-    language: str = Query("brazilian", alias="language"),
+    background_tasks: BackgroundTasks, 
+    appid: str = Query(..., description="App ID na Steam"),
+    maxReviews: int = Query(1200, description="Nº máximo de reviews"),
+    language: str = Query("brazilian", description="Idioma das reviews")
 ):
     appid = appid.strip()
     if not appid:
-        raise HTTPException(status_code=400, detail="appid is required")
+        return JSONResponse(status_code=400, content={"error": "Parâmetro 'appid' é obrigatório."})
 
-    reviews = fetch_reviews_balanced(appid, max_reviews, language)
-    if not reviews:
-        raise HTTPException(status_code=404, detail="No reviews found")
+    # Consulta ao Cache (Catraca do Polling)
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.execute("SELECT status, data FROM game_cache WHERE appid = ?", (appid,))
+        row = cursor.fetchone()
 
-    analysis = analyze_reviews(reviews)
-    summary = summarize_reviews(reviews)
-    game = fetch_game_details(appid)
+        if row:
+            status, data = row
+            if status == "completed":
+                return JSONResponse(content=json.loads(data))
+            elif status == "error":
+                 return JSONResponse(status_code=500, content=json.loads(data))
+            elif status == "processing":
+                 return JSONResponse(
+                     status_code=202,
+                     content={
+                         "status": "processing",
+                         "message": "Análise da Inteligência em andamento. Continue consultando."
+                     }
+                 )
 
-    return {
-        "game": game,
-        "summary": summary,
-        "highlights": analysis["highlights"],
-        "themes": analysis["themes"],
-        "meta": {"language": language, "maxReviewsRequested": max_reviews},
-    }
+        # Se não existe no cache, vamos engatilhar a Análise Background
+        conn.execute(
+            "INSERT INTO game_cache (appid, status, data, updated_at) VALUES (?, ?, ?, ?)",
+            (appid, "processing", "", time.time())
+        )
+        
+    # Dispara a Fila de Espera (Worker CPU-bound)
+    background_tasks.add_task(_background_analysis_task, appid, maxReviews, language)
 
-
-def _default_capsule(appid: str) -> str:
-    return f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/capsule_184x69.jpg"
+    return JSONResponse(
+         status_code=202,
+         content={
+             "status": "processing",
+             "message": "A Análise da inteligência começou agora. Continue consultando."
+         }
+    )
 
 
 @app.get("/search")
-def search(term: str = Query("", alias="q")):
+def search(q: str = Query("", description="Termo de pesquisa", alias="q")):
+    term = q.strip()
     if len(term) < 2:
         return []
 
@@ -696,7 +330,7 @@ def search(term: str = Query("", alias="q")):
         res = requests.get(STEAM_SEARCH_URL, params=params, timeout=5)
         data = res.json()
     except requests.RequestException:
-        raise HTTPException(status_code=502, detail="Steam error")
+        raise HTTPException(status_code=502, detail="Erro na comunicação com a Steam")
 
     items = data.get("items", [])
     results: list[dict[str, Any]] = []
@@ -715,3 +349,7 @@ def search(term: str = Query("", alias="q")):
         results.append({"appid": appid, "name": item.get("name"), "image": image})
 
     return results
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
