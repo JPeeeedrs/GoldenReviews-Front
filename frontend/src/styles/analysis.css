@@ -412,3 +412,33 @@
 		transform: rotate(360deg);
 	}
 }
+
+.ai-summary-box {
+	background: linear-gradient(145deg, #1e293b, #0f172a);
+	border: 1px solid #334155;
+	border-left: 4px solid #facc15; /* Detalhe dourado na lateral */
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin: 2rem 0;
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.ai-summary-header h3 {
+	color: #facc15;
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ai-summary-box p {
+	color: #e2e8f0;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0;
+}

@@ -1,9 +1,5 @@
 import { useMemo, useState } from "react";
 import groupedTopics from "../../topics_analizers/grouped_topics_llm.json";
-console.log(groupedTopics);
-console.log("Tipo do grouped_topics:", typeof groupedTopics);
-console.log("É array?", Array.isArray(groupedTopics));
-console.log("Primeiras chaves:", Object.keys(groupedTopics).slice(0, 5));
 
 const numberFormat = (value) =>
 	new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
@@ -32,7 +28,9 @@ export default function ReviewAnalysis({ data }) {
 				const mapped = getMappedTheme(topic.topic_id);
 				return (
 					!mapped?.toLowerCase().includes("lixo") &&
-					!mapped?.toLowerCase().includes("descart")
+					!mapped?.toLowerCase().includes("descart") &&
+					!mapped?.toLowerCase().includes("opinião") &&
+					!mapped?.toLowerCase().includes("recomendações")
 				);
 			})
 			.slice(0, 10);
@@ -50,6 +48,11 @@ export default function ReviewAnalysis({ data }) {
 		game?.total_reviews ?? game?.steamspy?.total_reviews ?? null;
 	const avgHours = summary?.avg_hours;
 
+	const aiSummary = summary?.ai_text_summary;
+	const aiSummaryText =
+		typeof aiSummary === "object" ? aiSummary?.resumo : aiSummary;
+	const aiNota = typeof aiSummary === "object" ? aiSummary?.nota_ia : null;
+
 	return (
 		<section className='analysis'>
 			<header className='analysis-hero'>
@@ -57,9 +60,10 @@ export default function ReviewAnalysis({ data }) {
 					<p className='eyebrow'>GOLDEN REVIEWS • JOGO EM ANÁLISE</p>
 					<h2>{game?.name ?? ""}</h2>
 					<div className='meta-line'>
-						{summary?.overall_score !== undefined && (
+						{(aiNota ?? summary?.overall_score) !== undefined && (
 							<span>
-								⭐ {numberFormat(summary.overall_score)} Score Geral (IA)
+								⭐ {numberFormat(aiNota ?? summary.overall_score)} Score Geral
+								(IA)
 							</span>
 						)}
 						{avgHours !== undefined && avgHours !== null && (
@@ -80,6 +84,16 @@ export default function ReviewAnalysis({ data }) {
 					/>
 				)}
 			</header>
+
+			{aiSummaryText && (
+				<div className='ai-summary-box'>
+					<div className='ai-summary-header'>
+						<h3>✨ Opinião dos Jogadores (Resumo IA)</h3>
+						{aiNota !== null && <span>⭐ {numberFormat(aiNota)} / 5.0</span>}
+					</div>
+					<p>{aiSummaryText}</p>
+				</div>
+			)}
 
 			<div className='stat-grid'>
 				<div className='stat-card'>

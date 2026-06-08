@@ -17,6 +17,8 @@ from fastapi.responses import JSONResponse
 
 from pipeline_online import ABSAPipeline
 
+from llm_summary import gerar_resumo
+
 app = FastAPI(title="Golden Reviews API")
 
 app.add_middleware(
@@ -241,6 +243,11 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
             "avg_hours": avg_hours
         })
         # ------------------------------------------------------------------
+
+        # ==================================================================
+        print(f"[Worker] Gerando resumo em linguagem natural via LLM...")
+        texto_resumo = gerar_resumo(analysis_result)
+        analysis_result["summary"]["ai_text_summary"] = texto_resumo
 
         with sqlite3.connect(DB_PATH) as conn:
             conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",

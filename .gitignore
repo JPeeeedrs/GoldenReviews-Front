@@ -26,3 +26,5 @@ __pycache__
 .venv
 .env
 cache.db
+cache.db-shm
+cache.db-wal
