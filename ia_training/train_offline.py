@@ -84,7 +84,7 @@ def main():
     topic_model.update_topics(sentences, topics=new_topics)
 
     print("6. Salvando o modelo refinado em disco...")
-    topic_model.save("steam_bertopic_model", serialization="safetensors")
+    topic_model.save("../backend/steam_bertopic_model", serialization="safetensors")
     print("Pipeline de Treinamento Offline concluído com sucesso!")
 
 if __name__ == "__main__":

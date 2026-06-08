@@ -1,4 +1,9 @@
 import { useMemo, useState } from "react";
+import groupedTopics from "../../topics_analizers/grouped_topics_llm.json";
+console.log(groupedTopics);
+console.log("Tipo do grouped_topics:", typeof groupedTopics);
+console.log("É array?", Array.isArray(groupedTopics));
+console.log("Primeiras chaves:", Object.keys(groupedTopics).slice(0, 5));
 
 const numberFormat = (value) =>
 	new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
@@ -9,10 +14,28 @@ const integerFormat = (value) =>
 export default function ReviewAnalysis({ data }) {
 	const [topicView, setTopicView] = useState("positive");
 
+	const getMappedTheme = (topicId) => {
+		if (topicId === undefined || topicId === null) return null;
+
+		const normalizedId = String(
+			typeof topicId === "number" ? Math.trunc(topicId) : parseInt(topicId, 10),
+		);
+
+		return groupedTopics[normalizedId] || null;
+	};
+
 	const orderedTopics = useMemo(() => {
 		if (!data?.topics) return [];
 		const topicsArray = data.topics[topicView] || [];
-		return topicsArray.slice(0, 10);
+		return topicsArray
+			.filter((topic) => {
+				const mapped = getMappedTheme(topic.topic_id);
+				return (
+					!mapped?.toLowerCase().includes("lixo") &&
+					!mapped?.toLowerCase().includes("descart")
+				);
+			})
+			.slice(0, 10);
 	}, [data?.topics, topicView]);
 
 	if (!data) return null;
@@ -59,12 +82,10 @@ export default function ReviewAnalysis({ data }) {
 			</header>
 
 			<div className='stat-grid'>
-				{/* Restaurado 100% igual a imagem */}
 				<div className='stat-card'>
 					<span>Reviews processadas</span>
 					<strong>{integerFormat(summary?.reviews_analyzed ?? 0)}</strong>
 				</div>
-
 				<div className='stat-card good'>
 					<span>Positivas</span>
 					<strong>
@@ -72,7 +93,6 @@ export default function ReviewAnalysis({ data }) {
 						{summary?.positive_percentage ?? 0}%
 					</strong>
 				</div>
-
 				<div className='stat-card bad'>
 					<span>Negativas</span>
 					<strong>
@@ -80,7 +100,6 @@ export default function ReviewAnalysis({ data }) {
 						{summary?.negative_percentage ?? 0}%
 					</strong>
 				</div>
-
 				<div className='stat-card neutral'>
 					<span>Idioma / limite</span>
 					<strong>
@@ -89,22 +108,18 @@ export default function ReviewAnalysis({ data }) {
 						{integerFormat(meta?.maxReviewsRequested ?? 0)} máx.
 					</strong>
 				</div>
-
 				{owners && (
 					<div className='stat-card highlight'>
 						<span>🧾 Estimativa de cópias (SteamSpy)</span>
 						<strong>{owners}</strong>
 					</div>
 				)}
-
 				{totalSteamReviews && (
 					<div className='stat-card highlight'>
 						<span>🗳️ Reviews totais na Steam</span>
 						<strong>{integerFormat(totalSteamReviews)}</strong>
 					</div>
 				)}
-
-				{/* Card do ABSA adicionado sem quebrar os originais */}
 				{metadata?.processing_time_seconds !== undefined && (
 					<div className='stat-card neutral'>
 						<span>Processamento IA</span>
@@ -137,10 +152,26 @@ export default function ReviewAnalysis({ data }) {
 					const count = topic?.mentions ?? 0;
 					const keywords = topic?.keywords?.slice(0, 3).join(", ");
 
+					// Lógica de agrupamento:
+					// Se o topic ID existir no JSON, usa o tema da IA. Se não, usa o original (o original é o topic.topic)
+					const mappedTheme = getMappedTheme(topic.topic_id);
+					console.log(
+						"topic_id:",
+						topic.topic_id,
+						"tipo:",
+						typeof topic.topic_id,
+						"→ mappedTheme:",
+						mappedTheme,
+					);
+					console.log("topic completo:", topic);
 					return (
 						<div className={`topic-card ${topicView}`} key={`topic-${idx}`}>
 							<div className='topic-header'>
-								<strong>{topic.topic?.toUpperCase()}</strong>
+								<strong>
+									{mappedTheme
+										? mappedTheme.toUpperCase()
+										: topic.topic?.toUpperCase()}
+								</strong>
 								<span>{integerFormat(count)} menções</span>
 							</div>
 							<div className='topic-columns'>
@@ -154,7 +185,6 @@ export default function ReviewAnalysis({ data }) {
 									>
 										[{keywords}]
 									</p>
-
 									{examples.length ? (
 										examples.map((sentence, i) => (
 											<span key={`q-${i}`}>"{sentence}"</span>

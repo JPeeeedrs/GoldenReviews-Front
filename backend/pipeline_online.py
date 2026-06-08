@@ -179,6 +179,7 @@ class ABSAPipeline:
 
             topic_payload = {
                 "topic": topic_name,
+                "topic_id": tid,
                 "mentions": mentions,
                 "score": round(score, 1),
                 "keywords": keywords,

@@ -1,0 +1,5580 @@
+{
+    "🐛 Bugs e Crashes": [
+        {
+            "topic_id": 13,
+            "words": [
+                "bugs",
+                "bug",
+                "muitos",
+                "alguns",
+                "cheio"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 14,
+            "words": [
+                "puzzles",
+                "puzzle",
+                "resolver",
+                "quebra",
+                "cabeças"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 76,
+            "words": [
+                "bug",
+                "sim",
+                "boi",
+                "balao",
+                "estoura"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 85,
+            "words": [
+                "ubisoft",
+                "uplay",
+                "ac",
+                "unity",
+                "bugs"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 207,
+            "words": [
+                "hours",
+                "nasa",
+                "few",
+                "bugs",
+                "average"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 223,
+            "words": [
+                "patch",
+                "patches",
+                "patchs",
+                "corrigidos",
+                "bugs"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 251,
+            "words": [
+                "falhas",
+                "dimensão",
+                "120p",
+                "220",
+                "falha"
+            ],
+            "score_similaridade": 0.42,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 300,
+            "words": [
+                "atrapalham",
+                "bugs",
+                "legais",
+                "insetos",
+                "brainsuckers"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 323,
+            "words": [
+                "gamers",
+                "ruins",
+                "medcore",
+                "tryhards",
+                "ok"
+            ],
+            "score_similaridade": 0.58,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 327,
+            "words": [
+                "tycoon",
+                "dev",
+                "mad",
+                "games",
+                "altamente"
+            ],
+            "score_similaridade": 0.4,
+            "metodo": "IA Matemática"
+        }
+    ],
+    "📉 Desempenho e FPS": [
+        {
+            "topic_id": 15,
+            "words": [
+                "ram",
+                "fps",
+                "gtx",
+                "8gb",
+                "gb"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 24,
+            "words": [
+                "recomendar",
+                "falha",
+                "ruim",
+                "javali",
+                "não"
+            ],
+            "score_similaridade": 0.41,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 75,
+            "words": [
+                "fps",
+                "fnaf",
+                "f2p",
+                "doom",
+                "atualidade"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 134,
+            "words": [
+                "otimizado",
+                "falha",
+                "mal",
+                "problemas",
+                "erros"
+            ],
+            "score_similaridade": 0.48,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 159,
+            "words": [
+                "decepção",
+                "decepcionante",
+                "decepcionado",
+                "desapontado",
+                "total"
+            ],
+            "score_similaridade": 0.4,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 183,
+            "words": [
+                "pior",
+                "piores",
+                "horrível",
+                "joguei",
+                "fifa"
+            ],
+            "score_similaridade": 0.49,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 195,
+            "words": [
+                "lento",
+                "lenta",
+                "lentidão",
+                "lag",
+                "ritmo"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        }
+    ],
+    "🎨 Gráficos e Visual": [
+        {
+            "topic_id": 1,
+            "words": [
+                "bom",
+                "recomendo",
+                "ótimo",
+                "divertido",
+                "maravilhoso"
+            ],
+            "score_similaridade": 0.46,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 3,
+            "words": [
+                "recomendo",
+                "bom",
+                "fantástico",
+                "sensacional",
+                "gostei"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 6,
+            "words": [
+                "gráficos",
+                "arte",
+                "gráfico",
+                "3d",
+                "bonitos"
+            ],
+            "score_similaridade": 0.64,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 10,
+            "words": [
+                "gráficos",
+                "gráfico",
+                "graficos",
+                "bonitos",
+                "bons"
+            ],
+            "score_similaridade": 0.69,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 42,
+            "words": [
+                "divertido",
+                "passatempo",
+                "diversão",
+                "fun",
+                "divertir"
+            ],
+            "score_similaridade": 0.4,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 78,
+            "words": [
+                "arte",
+                "obra",
+                "artista",
+                "pinturas",
+                "essa"
+            ],
+            "score_similaridade": 0.4,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 125,
+            "words": [
+                "vr",
+                "virtual",
+                "realidade",
+                "pinball",
+                "vrchat"
+            ],
+            "score_similaridade": 0.44,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 199,
+            "words": [
+                "visual",
+                "texturas",
+                "efeitos",
+                "cenários",
+                "visuais"
+            ],
+            "score_similaridade": 0.43,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 214,
+            "words": [
+                "lego",
+                "marvel",
+                "heroes",
+                "legos",
+                "meets"
+            ],
+            "score_similaridade": 0.49,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 244,
+            "words": [
+                "pc",
+                "gráfico",
+                "graficos",
+                "gráficos",
+                "computador"
+            ],
+            "score_similaridade": 0.41,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 279,
+            "words": [
+                "url",
+                "gameplay",
+                "aqui",
+                "dae",
+                "link"
+            ],
+            "score_similaridade": 0.42,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 384,
+            "words": [
+                "lindeza",
+                "texturas",
+                "gráficos",
+                "tramas",
+                "matrix"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 398,
+            "words": [
+                "zelda",
+                "legend",
+                "of",
+                "wild",
+                "mistura"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 412,
+            "words": [
+                "animações",
+                "animação",
+                "cartoon",
+                "animation",
+                "slides"
+            ],
+            "score_similaridade": 0.48,
+            "metodo": "IA Matemática"
+        }
+    ],
+    "🎮 Gameplay e Mecânicas": [
+        {
+            "topic_id": 18,
+            "words": [
+                "carro",
+                "carros",
+                "veículos",
+                "pneus",
+                "veículo"
+            ],
+            "score_similaridade": 0.44,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 27,
+            "words": [
+                "teclado",
+                "mouse",
+                "controle",
+                "joystick",
+                "controles"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 28,
+            "words": [
+                "combate",
+                "armas",
+                "luta",
+                "batalha",
+                "arma"
+            ],
+            "score_similaridade": 0.45,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 97,
+            "words": [
+                "mecânicas",
+                "modos",
+                "possibilidades",
+                "mecânica",
+                "grinds"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 103,
+            "words": [
+                "controles",
+                "controle",
+                "respondem",
+                "roleblock",
+                "comandos"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 149,
+            "words": [
+                "moto",
+                "motogp",
+                "motos",
+                "ride",
+                "motocross"
+            ],
+            "score_similaridade": 0.41,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 163,
+            "words": [
+                "mecânica",
+                "mecânicas",
+                "heisenberg",
+                "explicadas",
+                "mecanica"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 185,
+            "words": [
+                "classes",
+                "classe",
+                "habilidades",
+                "alts",
+                "escolher"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 216,
+            "words": [
+                "habilidades",
+                "skills",
+                "árvore",
+                "skill",
+                "habilidade"
+            ],
+            "score_similaridade": 0.48,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 219,
+            "words": [
+                "mecânica",
+                "divertido",
+                "gameplay",
+                "historia",
+                "viciante"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 287,
+            "words": [
+                "g27",
+                "logitech",
+                "volante",
+                "g29",
+                "configurar"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 375,
+            "words": [
+                "relaxar",
+                "relaxante",
+                "mecânico",
+                "relaxing",
+                "relaxe"
+            ],
+            "score_similaridade": 0.53,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 441,
+            "words": [
+                "skate",
+                "skates",
+                "andar",
+                "manobras",
+                "flip"
+            ],
+            "score_similaridade": 0.43,
+            "metodo": "IA Matemática"
+        }
+    ],
+    "📖 História e Narrativa": [
+        {
+            "topic_id": 5,
+            "words": [
+                "terror",
+                "horror",
+                "história",
+                "survival",
+                "narrativa"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 12,
+            "words": [
+                "história",
+                "narrativa",
+                "histórias",
+                "contada",
+                "envolvente"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 20,
+            "words": [
+                "personagens",
+                "personagem",
+                "personalidade",
+                "carismáticos",
+                "carisma"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 108,
+            "words": [
+                "história",
+                "blue",
+                "listen",
+                "him",
+                "and"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 132,
+            "words": [
+                "diálogos",
+                "diálogo",
+                "narrador",
+                "conversa",
+                "discussões"
+            ],
+            "score_similaridade": 0.43,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 171,
+            "words": [
+                "história",
+                "history",
+                "past",
+                "aula",
+                "trabalhada"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 272,
+            "words": [
+                "diálogo",
+                "história",
+                "conversa",
+                "sentenças",
+                "literária"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 282,
+            "words": [
+                "ficção",
+                "científica",
+                "marvel",
+                "sci",
+                "fi"
+            ],
+            "score_similaridade": 0.42,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 295,
+            "words": [
+                "habilidades",
+                "personagem",
+                "frascos",
+                "nível",
+                "melhorar"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 299,
+            "words": [
+                "cenários",
+                "cenário",
+                "ambientação",
+                "visão",
+                "detalhe"
+            ],
+            "score_similaridade": 0.42,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 305,
+            "words": [
+                "dizer",
+                "história",
+                "infantil",
+                "tem",
+                "só"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 348,
+            "words": [
+                "livro",
+                "dava",
+                "enormes",
+                "fazer",
+                "livros"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 418,
+            "words": [
+                "sonho",
+                "realizado",
+                "sonhos",
+                "adventure",
+                "enleo"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 444,
+            "words": [
+                "desista",
+                "ez",
+                "história",
+                "cutsene",
+                "1919"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 460,
+            "words": [
+                "assis",
+                "lenços",
+                "historinha",
+                "machado",
+                "tolkien"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        }
+    ],
+    "🎵 Áudio e Som": [
+        {
+            "topic_id": 2,
+            "words": [
+                "sonora",
+                "trilha",
+                "música",
+                "músicas",
+                "som"
+            ],
+            "score_similaridade": 0.51,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 95,
+            "words": [
+                "10",
+                "jogabilidade",
+                "sonora",
+                "trilha",
+                "gráficos"
+            ],
+            "score_similaridade": 0.67,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 270,
+            "words": [
+                "cantar",
+                "caboclo",
+                "faroeste",
+                "sony",
+                "mmorpg"
+            ],
+            "score_similaridade": 0.4,
+            "metodo": "IA Matemática"
+        }
+    ],
+    "💰 Custo-Benefício": [
+        {
+            "topic_id": 0,
+            "words": [
+                "vale",
+                "preço",
+                "reais",
+                "pena",
+                "promoção"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 32,
+            "words": [
+                "promoção",
+                "comprar",
+                "compre",
+                "compra",
+                "espere"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 35,
+            "words": [
+                "pena",
+                "vale",
+                "valeu",
+                "comprar",
+                "compra"
+            ],
+            "score_similaridade": 0.51,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 62,
+            "words": [
+                "reais",
+                "99",
+                "00",
+                "preço",
+                "promoção"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 68,
+            "words": [
+                "reembolso",
+                "pedi",
+                "pedir",
+                "refund",
+                "volta"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 89,
+            "words": [
+                "preço",
+                "vale",
+                "pena",
+                "caro",
+                "absurdo"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 113,
+            "words": [
+                "comprei",
+                "resolvi",
+                "comprar",
+                "lançamento",
+                "joguei"
+            ],
+            "score_similaridade": 0.44,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 118,
+            "words": [
+                "centavo",
+                "cada",
+                "valeu",
+                "vale",
+                "investido"
+            ],
+            "score_similaridade": 0.43,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 145,
+            "words": [
+                "comprem",
+                "compre",
+                "dinheiro",
+                "buy",
+                "individual"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 150,
+            "words": [
+                "preço",
+                "vale",
+                "justo",
+                "pena",
+                "custo"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 170,
+            "words": [
+                "sobrando",
+                "queimar",
+                "dinheiro",
+                "espere",
+                "justo"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 259,
+            "words": [
+                "dinheiro",
+                "pagou",
+                "gasto",
+                "money",
+                "ech"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 336,
+            "words": [
+                "compra",
+                "recomendo",
+                "aguarde",
+                "af",
+                "rn"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 353,
+            "words": [
+                "diversão",
+                "horas",
+                "garantida",
+                "minutes",
+                "few"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 426,
+            "words": [
+                "garantida",
+                "diversão",
+                "acordadas",
+                "razoável",
+                "garantidas"
+            ],
+            "score_similaridade": 0.49,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 454,
+            "words": [
+                "pirata",
+                "piratão",
+                "comprei",
+                "olx",
+                "mereceram"
+            ],
+            "score_similaridade": 0.39,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 456,
+            "words": [
+                "centavo",
+                "vale",
+                "cada",
+                "pagando",
+                "determinado"
+            ],
+            "score_similaridade": 0.43,
+            "metodo": "IA Matemática"
+        }
+    ],
+    "🌐 Servidor e Online": [
+        {
+            "topic_id": 16,
+            "words": [
+                "brasil",
+                "brasileiros",
+                "brasileiro",
+                "brasileira",
+                "servidor"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 44,
+            "words": [
+                "multiplayer",
+                "singleplayer",
+                "campanha",
+                "modo",
+                "campanhas"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 54,
+            "words": [
+                "online",
+                "modo",
+                "internet",
+                "jogar",
+                "partidas"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 56,
+            "words": [
+                "pc",
+                "servidores",
+                "pcs",
+                "servidor",
+                "port"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 140,
+            "words": [
+                "ping",
+                "servidores",
+                "sul",
+                "américa",
+                "server"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 141,
+            "words": [
+                "online",
+                "internet",
+                "modo",
+                "conexão",
+                "albion"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 271,
+            "words": [
+                "multiplayer",
+                "mm",
+                "clãs",
+                "injogável",
+                "populoso"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 273,
+            "words": [
+                "servidores",
+                "servidor",
+                "server",
+                "servers",
+                "br"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 425,
+            "words": [
+                "toxicidade",
+                "categorias",
+                "descrever",
+                "problemas",
+                "conexão"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        }
+    ],
+    "🌍 Tradução e Dublagem": [
+        {
+            "topic_id": 8,
+            "words": [
+                "português",
+                "tradução",
+                "inglês",
+                "idioma",
+                "br"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 280,
+            "words": [
+                "dublagem",
+                "vozes",
+                "dubladores",
+                "voz",
+                "atuação"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 345,
+            "words": [
+                "url",
+                "curadoria",
+                "grátis",
+                "6874381",
+                "jogosgratisbrasil"
+            ],
+            "score_similaridade": 0.42,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 448,
+            "words": [
+                "japonês",
+                "japonesa",
+                "dublagem",
+                "inglês",
+                "chineses"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        }
+    ],
+    "📦 DLCs e Conteúdo Adicional": [
+        {
+            "topic_id": 31,
+            "words": [
+                "dlc",
+                "dlcs",
+                "comprar",
+                "essa",
+                "infinitamente"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 39,
+            "words": [
+                "dlc",
+                "dlcs",
+                "base",
+                "conteúdo",
+                "comprar"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 114,
+            "words": [
+                "horas",
+                "diversão",
+                "rende",
+                "jogatina",
+                "muitas"
+            ],
+            "score_similaridade": 0.47,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 137,
+            "words": [
+                "rts",
+                "starcraft",
+                "age",
+                "empires",
+                "unidades"
+            ],
+            "score_similaridade": 0.44,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 264,
+            "words": [
+                "curto",
+                "subnautica",
+                "newgame",
+                "aflige",
+                "duração"
+            ],
+            "score_similaridade": 0.54,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 283,
+            "words": [
+                "sims",
+                "mir4",
+                "the",
+                "coreano",
+                "mir"
+            ],
+            "score_similaridade": 0.41,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 362,
+            "words": [
+                "simuladores",
+                "arcade",
+                "simulador",
+                "acc",
+                "simulação"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática"
+        },
+        {
+            "topic_id": 451,
+            "words": [
+                "cartas",
+                "deck",
+                "carta",
+                "coins",
+                "forasteiros"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        },
+        {
+            "topic_id": 459,
+            "words": [
+                "expansões",
+                "expansão",
+                "decks",
+                "lógisticas",
+                "ambiciona"
+            ],
+            "score_similaridade": 1.0,
+            "metodo": "Regra Fixa"
+        }
+    ],
+    "🧩 Outros / Não Classificados": [
+        {
+            "topic_id": 4,
+            "words": [
+                "steam",
+                "versão",
+                "na",
+                "conquistas",
+                "url"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 7,
+            "words": [
+                "mapa",
+                "mapas",
+                "gps",
+                "explorar",
+                "montanhas"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 9,
+            "words": [
+                "amigos",
+                "jogar",
+                "divertido",
+                "sozinho",
+                "amigo"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 11,
+            "words": [
+                "resident",
+                "evil",
+                "revelations",
+                "remake",
+                "capcom"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 17,
+            "words": [
+                "horas",
+                "minutos",
+                "duração",
+                "30",
+                "12"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 19,
+            "words": [
+                "joguei",
+                "melhores",
+                "melhor",
+                "best",
+                "já"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 21,
+            "words": [
+                "10",
+                "nota",
+                "11",
+                "dou",
+                "daria"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 22,
+            "words": [
+                "inimigos",
+                "inimigo",
+                "ataque",
+                "ataques",
+                "atacar"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 23,
+            "words": [
+                "war",
+                "guerra",
+                "warhammer",
+                "total",
+                "segunda"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 25,
+            "words": [
+                "armas",
+                "arma",
+                "munição",
+                "granadas",
+                "fogo"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 26,
+            "words": [
+                "dlç",
+                "nao",
+                "porra",
+                "merda",
+                "cu"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 29,
+            "words": [
+                "cidade",
+                "cidades",
+                "cities",
+                "skylines",
+                "city"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 30,
+            "words": [
+                "simulador",
+                "simulator",
+                "simulação",
+                "simuladores",
+                "loading"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 33,
+            "words": [
+                "recomendado",
+                "recomendadíssimo",
+                "recomendo",
+                "super",
+                "recommend"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 34,
+            "words": [
+                "rpg",
+                "rpgs",
+                "mesa",
+                "maker",
+                "melhores"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 36,
+            "words": [
+                "h1",
+                "nota",
+                "list",
+                "10",
+                "veredito"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 37,
+            "words": [
+                "10",
+                "nota",
+                "wipeout",
+                "zero",
+                "rola"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 38,
+            "words": [
+                "remake",
+                "re3",
+                "re2",
+                "re7",
+                "re"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 40,
+            "words": [
+                "voo",
+                "aeronaves",
+                "aeronave",
+                "aviões",
+                "plane"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 41,
+            "words": [
+                "campanha",
+                "campanhas",
+                "curta",
+                "modo",
+                "principal"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 43,
+            "words": [
+                "kkkkk",
+                "kkkk",
+                "kkkkkkk",
+                "kkkkkk",
+                "kkk"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 45,
+            "words": [
+                "corrida",
+                "corridas",
+                "racing",
+                "campeonato",
+                "pista"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 46,
+            "words": [
+                "análise",
+                "review",
+                "analise",
+                "detalhada",
+                "aqui"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 47,
+            "words": [
+                "url",
+                "curador",
+                "apoie",
+                "análises",
+                "td"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 48,
+            "words": [
+                "dificuldade",
+                "difícil",
+                "desafiador",
+                "dificuldades",
+                "desafio"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 49,
+            "words": [
+                "hackers",
+                "hack",
+                "hacker",
+                "slash",
+                "hacks"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 50,
+            "words": [
+                "souls",
+                "dark",
+                "darksiders",
+                "darkest",
+                "darksouls"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 51,
+            "words": [
+                "alien",
+                "aliens",
+                "isolation",
+                "alienígenas",
+                "alienígena"
+            ],
+            "score_similaridade": 0.12,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 52,
+            "words": [
+                "ps4",
+                "ps2",
+                "ps3",
+                "xbox",
+                "playstation"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 53,
+            "words": [
+                "missões",
+                "missão",
+                "helicóptero",
+                "secundárias",
+                "helicopters"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 55,
+            "words": [
+                "batman",
+                "anime",
+                "arkham",
+                "capcom",
+                "gotham"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 57,
+            "words": [
+                "me",
+                "nunca",
+                "pensei",
+                "tentei",
+                "parei"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 58,
+            "words": [
+                "pc",
+                "computador",
+                "roda",
+                "meu",
+                "pcs"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 59,
+            "words": [
+                "não",
+                "comprem",
+                "exagero",
+                "newz",
+                "engane"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 60,
+            "words": [
+                "h1",
+                "list",
+                "td",
+                "tr",
+                "pontos"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 61,
+            "words": [
+                "animais",
+                "animal",
+                "dogs",
+                "cabras",
+                "watch"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 63,
+            "words": [
+                "difícil",
+                "desafiador",
+                "dificuldade",
+                "difíceis",
+                "desafios"
+            ],
+            "score_similaridade": 0.33,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 64,
+            "words": [
+                "ia",
+                "artificial",
+                "inteligência",
+                "ai",
+                "inteligencia"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 65,
+            "words": [
+                "mods",
+                "mod",
+                "comunidade",
+                "workshop",
+                "suporte"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 66,
+            "words": [
+                "boss",
+                "chefes",
+                "bosses",
+                "chefe",
+                "derrotar"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 67,
+            "words": [
+                "dinossauros",
+                "dinossauro",
+                "jurassic",
+                "park",
+                "parque"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 69,
+            "words": [
+                "f1",
+                "codemasters",
+                "2015",
+                "2017",
+                "2018"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 70,
+            "words": [
+                "fazenda",
+                "farming",
+                "simulator",
+                "fazendas",
+                "colheita"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 71,
+            "words": [
+                "episódio",
+                "episódios",
+                "série",
+                "serie",
+                "episodio"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 72,
+            "words": [
+                "atualizações",
+                "updates",
+                "atualização",
+                "upgrade",
+                "update"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 73,
+            "words": [
+                "bão",
+                "pó",
+                "comprar",
+                "compra",
+                "po"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 74,
+            "words": [
+                "youtube",
+                "canal",
+                "vídeo",
+                "vídeos",
+                "fiz"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 77,
+            "words": [
+                "negativos",
+                "negativas",
+                "pontos",
+                "negativa",
+                "negativo"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 79,
+            "words": [
+                "câmera",
+                "camera",
+                "câmeras",
+                "fotos",
+                "visão"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 80,
+            "words": [
+                "zombies",
+                "zombie",
+                "lawn",
+                "nazi",
+                "custom"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 81,
+            "words": [
+                "miss",
+                "morrer",
+                "morre",
+                "dead",
+                "morte"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 82,
+            "words": [
+                "horas",
+                "minutos",
+                "duração",
+                "40",
+                "segundos"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 83,
+            "words": [
+                "ela",
+                "susan",
+                "dela",
+                "her",
+                "andy"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 84,
+            "words": [
+                "yetu",
+                "aprovado",
+                "uliye",
+                "baba",
+                "ㅤㅤ"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 86,
+            "words": [
+                "dedos",
+                "aceitável",
+                "escreveu",
+                "fácil",
+                "100h"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 87,
+            "words": [
+                "simples",
+                "fácil",
+                "fáceis",
+                "casual",
+                "tranquilas"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 88,
+            "words": [
+                "espacial",
+                "space",
+                "exploração",
+                "espaço",
+                "espaciais"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 90,
+            "words": [
+                "naves",
+                "nave",
+                "navios",
+                "submarino",
+                "navio"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 91,
+            "words": [
+                "luz",
+                "noite",
+                "iluminação",
+                "luzes",
+                "lanterna"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 92,
+            "words": [
+                "adolescentes",
+                "crianças",
+                "cova",
+                "adultos",
+                "lindeza"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 93,
+            "words": [
+                "daylight",
+                "dead",
+                "dying",
+                "by",
+                "light"
+            ],
+            "score_similaridade": 0.09,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 94,
+            "words": [
+                "duty",
+                "call",
+                "of",
+                "warfare",
+                "modern"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 96,
+            "words": [
+                "chuva",
+                "clima",
+                "sol",
+                "tempestade",
+                "bão"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 98,
+            "words": [
+                "nostalgia",
+                "pura",
+                "memória",
+                "apagar",
+                "encantar"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 99,
+            "words": [
+                "graça",
+                "grátis",
+                "gratis",
+                "gratuito",
+                "free"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 100,
+            "words": [
+                "simulação",
+                "simulador",
+                "simulator",
+                "simuladores",
+                "opengl"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 101,
+            "words": [
+                "truck",
+                "euro",
+                "simulator",
+                "caminhões",
+                "caminhão"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 102,
+            "words": [
+                "criança",
+                "suvivor",
+                "killer",
+                "assassino",
+                "sobrevivente"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 104,
+            "words": [
+                "porta",
+                "portas",
+                "salas",
+                "abrir",
+                "cômodo"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 105,
+            "words": [
+                "pilha",
+                "gtx",
+                "pintado",
+                "conduza",
+                "vinci"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 106,
+            "words": [
+                "horrível",
+                "pior",
+                "ruim",
+                "piores",
+                "horrivel"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 107,
+            "words": [
+                "deus",
+                "ex",
+                "senhor",
+                "jesus",
+                "juramento"
+            ],
+            "score_similaridade": 0.09,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 109,
+            "words": [
+                "melhorou",
+                "melhorar",
+                "melhorias",
+                "melhora",
+                "ainda"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 110,
+            "words": [
+                "witcher",
+                "the",
+                "hunt",
+                "wild",
+                "geralt"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 111,
+            "words": [
+                "melhor",
+                "sky",
+                "crepúsculo",
+                "man",
+                "lol"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 112,
+            "words": [
+                "lamentável",
+                "vergonha",
+                "foda",
+                "loco",
+                "desgraça"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 115,
+            "words": [
+                "dizer",
+                "anotando",
+                "senhores",
+                "oque",
+                "quê"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 116,
+            "words": [
+                "gostei",
+                "fiquei",
+                "senti",
+                "me",
+                "nunca"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 117,
+            "words": [
+                "atualizações",
+                "atualização",
+                "updates",
+                "atualizado",
+                "constantemente"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 119,
+            "words": [
+                "estratégia",
+                "estrategia",
+                "strategy",
+                "turnos",
+                "real"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 120,
+            "words": [
+                "leite",
+                "sopa",
+                "chá",
+                "fermento",
+                "xícara"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 121,
+            "words": [
+                "me",
+                "fiquei",
+                "cruzado",
+                "estava",
+                "eu"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 122,
+            "words": [
+                "abre",
+                "instalei",
+                "instalar",
+                "consigo",
+                "launcher"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 123,
+            "words": [
+                "morrer",
+                "morre",
+                "mortes",
+                "morte",
+                "morrendo"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 124,
+            "words": [
+                "claire",
+                "natalia",
+                "jill",
+                "leon",
+                "chris"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 126,
+            "words": [
+                "nada",
+                "ninguém",
+                "dragstrip",
+                "cemitério",
+                "absolutamente"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 127,
+            "words": [
+                "botão",
+                "menus",
+                "botões",
+                "clicker",
+                "eta"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 128,
+            "words": [
+                "comunidade",
+                "tóxica",
+                "amigável",
+                "unida",
+                "toxica"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 129,
+            "words": [
+                "lara",
+                "croft",
+                "shadow",
+                "trindade",
+                "jonah"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 130,
+            "words": [
+                "celular",
+                "mobile",
+                "android",
+                "ios",
+                "versão"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 131,
+            "words": [
+                "completaria",
+                "senhora",
+                "normal",
+                "ms",
+                "paint"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 133,
+            "words": [
+                "foda",
+                "jason",
+                "merda",
+                "puta",
+                "caralho"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 135,
+            "words": [
+                "atualização",
+                "update",
+                "atualizações",
+                "lançamento",
+                "lançou"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 136,
+            "words": [
+                "simples",
+                "fácil",
+                "jogabilidade",
+                "facil",
+                "extremamente"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 138,
+            "words": [
+                "melhorar",
+                "potencial",
+                "melhorando",
+                "melhor",
+                "espero"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 139,
+            "words": [
+                "humor",
+                "piadas",
+                "risadas",
+                "rir",
+                "engraçada"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 142,
+            "words": [
+                "comunidade",
+                "pvp",
+                "pve",
+                "community",
+                "acolhedora"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 143,
+            "words": [
+                "defense",
+                "tower",
+                "moba",
+                "torres",
+                "defence"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 144,
+            "words": [
+                "campanha",
+                "horas",
+                "cerca",
+                "dura",
+                "secundárias"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 146,
+            "words": [
+                "estratégia",
+                "estratégias",
+                "stratégie",
+                "latim",
+                "grego"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 147,
+            "words": [
+                "bioshock",
+                "infinite",
+                "biomutant",
+                "burial",
+                "rapture"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 148,
+            "words": [
+                "prato",
+                "pão",
+                "beber",
+                "bartender",
+                "comida"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 151,
+            "words": [
+                "xcom",
+                "enemy",
+                "unknown",
+                "turnos",
+                "tático"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 152,
+            "words": [
+                "vou",
+                "sustinhos",
+                "jogarmos",
+                "irei",
+                "comigo"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 153,
+            "words": [
+                "moon",
+                "stardew",
+                "valley",
+                "harvest",
+                "to"
+            ],
+            "score_similaridade": 0.09,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 154,
+            "words": [
+                "nazistas",
+                "hitler",
+                "nazista",
+                "adolf",
+                "panzer"
+            ],
+            "score_similaridade": 0.07,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 155,
+            "words": [
+                "sandbox",
+                "modo",
+                "modos",
+                "ilimitado",
+                "campanha"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 156,
+            "words": [
+                "infância",
+                "marcou",
+                "minha",
+                "infancia",
+                "adolescência"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 157,
+            "words": [
+                "demônios",
+                "monstros",
+                "demônio",
+                "devil",
+                "dante"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 158,
+            "words": [
+                "fallout",
+                "vegas",
+                "new",
+                "nv",
+                "rpg"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 160,
+            "words": [
+                "clássico",
+                "classico",
+                "clássicos",
+                "homenagem",
+                "classic"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 161,
+            "words": [
+                "recomendo",
+                "nao",
+                "recomendar",
+                "ninguém",
+                "não"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 162,
+            "words": [
+                "experiência",
+                "única",
+                "memorável",
+                "incrível",
+                "experiencia"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 164,
+            "words": [
+                "ele",
+                "apache",
+                "apaches",
+                "chamaria",
+                "ninguém"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 165,
+            "words": [
+                "irritante",
+                "frustrante",
+                "irrita",
+                "denuvo",
+                "annoying"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 166,
+            "words": [
+                "aprender",
+                "fácil",
+                "aprende",
+                "difícil",
+                "facil"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 167,
+            "words": [
+                "perfeito",
+                "perfeita",
+                "perfeitamente",
+                "perfeição",
+                "perfect"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 168,
+            "words": [
+                "vídeo",
+                "www",
+                "salsatheone",
+                "vídeos",
+                "video"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 169,
+            "words": [
+                "quake",
+                "iii",
+                "ii",
+                "arena",
+                "ground"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 172,
+            "words": [
+                "joguinho",
+                "boneca",
+                "boneco",
+                "bonecas",
+                "possuídas"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 173,
+            "words": [
+                "sexo",
+                "gênero",
+                "mulheres",
+                "sexy",
+                "faço"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 174,
+            "words": [
+                "importa",
+                "tempo",
+                "passar",
+                "hora",
+                "time"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 175,
+            "words": [
+                "rainbow",
+                "six",
+                "siege",
+                "clancy",
+                "tom"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 176,
+            "words": [
+                "medo",
+                "assustador",
+                "assusta",
+                "fear",
+                "perigo"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 177,
+            "words": [
+                "star",
+                "wars",
+                "jedi",
+                "vader",
+                "pacote"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 178,
+            "words": [
+                "tomb",
+                "raider",
+                "shadow",
+                "reboot",
+                "2013"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 179,
+            "words": [
+                "parabéns",
+                "obrigado",
+                "agradecer",
+                "desenvolvedora",
+                "desenvolvedores"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 180,
+            "words": [
+                "franquia",
+                "melhor",
+                "melhores",
+                "mk",
+                "dúvida"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 181,
+            "words": [
+                "nostalgia",
+                "nostalgico",
+                "antigos",
+                "nes",
+                "pura"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 182,
+            "words": [
+                "desenvolvedores",
+                "desenvolvedor",
+                "desenvolvedora",
+                "sugestão",
+                "cartilha"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 184,
+            "words": [
+                "obrigado",
+                "agradeço",
+                "abençoe",
+                "atenção",
+                "thank"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 186,
+            "words": [
+                "desenvolvido",
+                "quem",
+                "foi",
+                "esse",
+                "economiza"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 187,
+            "words": [
+                "sale",
+                "espere",
+                "sim",
+                "demais",
+                "compensa"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 188,
+            "words": [
+                "deserto",
+                "montanhas",
+                "florestas",
+                "rios",
+                "floresta"
+            ],
+            "score_similaridade": 0.1,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 189,
+            "words": [
+                "comprei",
+                "comprado",
+                "venda",
+                "euroa",
+                "arrependo"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 190,
+            "words": [
+                "creed",
+                "assassin",
+                "origins",
+                "assassins",
+                "brotherhood"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 191,
+            "words": [
+                "gta",
+                "sr4",
+                "sr3",
+                "iv",
+                "theft"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 192,
+            "words": [
+                "peixes",
+                "pesca",
+                "pescaria",
+                "peixe",
+                "fishing"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 193,
+            "words": [
+                "fantasy",
+                "final",
+                "xv",
+                "xiv",
+                "noctis"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 194,
+            "words": [
+                "análise",
+                "comentada",
+                "olhada",
+                "queiram",
+                "segue"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 196,
+            "words": [
+                "ilha",
+                "ilhas",
+                "construir",
+                "explorar",
+                "marítimos"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 197,
+            "words": [
+                "neve",
+                "inverno",
+                "frio",
+                "snow",
+                "nevasca"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 198,
+            "words": [
+                "halo",
+                "chief",
+                "reach",
+                "qe",
+                "infinite"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 200,
+            "words": [
+                "speed",
+                "need",
+                "for",
+                "velocidade",
+                "pursuit"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 201,
+            "words": [
+                "scs",
+                "software",
+                "parabéns",
+                "washington",
+                "trabalho"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 202,
+            "words": [
+                "repetitivo",
+                "repetições",
+                "constantes",
+                "repetitivos",
+                "repetitiva"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 203,
+            "words": [
+                "positivo",
+                "positivos",
+                "ambos",
+                "vamos",
+                "pontos"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 204,
+            "words": [
+                "tutorial",
+                "aprender",
+                "tutoriais",
+                "ensina",
+                "un"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 205,
+            "words": [
+                "piratas",
+                "pirata",
+                "pirataria",
+                "pirate",
+                "navio"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 206,
+            "words": [
+                "trem",
+                "trens",
+                "train",
+                "railroad",
+                "estação"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 208,
+            "words": [
+                "alan",
+                "wake",
+                "remedy",
+                "escritor",
+                "escritores"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 209,
+            "words": [
+                "interface",
+                "limpa",
+                "intuitiva",
+                "confusa",
+                "aquário"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 210,
+            "words": [
+                "final",
+                "último",
+                "ué",
+                "fim",
+                "last"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 211,
+            "words": [
+                "sim",
+                "certeza",
+                "sério",
+                "hahahahah",
+                "verdade"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 212,
+            "words": [
+                "strange",
+                "life",
+                "is",
+                "storm",
+                "before"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 213,
+            "words": [
+                "sobrevivência",
+                "sobrevivencia",
+                "joguei",
+                "melhor",
+                "melhores"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 215,
+            "words": [
+                "chorar",
+                "chorei",
+                "chorando",
+                "coração",
+                "chorava"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 217,
+            "words": [
+                "chato",
+                "entediante",
+                "chata",
+                "boring",
+                "feia"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 218,
+            "words": [
+                "ea",
+                "origin",
+                "aom",
+                "app",
+                "dice"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 220,
+            "words": [
+                "personalizar",
+                "crafting",
+                "craft",
+                "workshop",
+                "customização"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 221,
+            "words": [
+                "irei",
+                "vou",
+                "mto",
+                "crono",
+                "donde"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 222,
+            "words": [
+                "nasa",
+                "dificil",
+                "rolalike",
+                "peasy",
+                "dwarf"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 224,
+            "words": [
+                "escutar",
+                "nivel",
+                "funk",
+                "nokia",
+                "trambolho"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 225,
+            "words": [
+                "carro",
+                "carros",
+                "cars",
+                "dirigir",
+                "vela"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 226,
+            "words": [
+                "beta",
+                "ajudem",
+                "fase",
+                "america",
+                "closed"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 227,
+            "words": [
+                "rocket",
+                "league",
+                "futebol",
+                "pes",
+                "fifa"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 228,
+            "words": [
+                "joguem",
+                "caralho",
+                "começar",
+                "krlh",
+                "onde"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 229,
+            "words": [
+                "fantasmas",
+                "ghosts",
+                "fantasma",
+                "ghost",
+                "assombrada"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 230,
+            "words": [
+                "filme",
+                "filmes",
+                "hollywood",
+                "primeiro",
+                "assistir"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 231,
+            "words": [
+                "surpresa",
+                "grata",
+                "surpreendeu",
+                "surpreender",
+                "choque"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 232,
+            "words": [
+                "parabéns",
+                "envolvidos",
+                "konami",
+                "trabalho",
+                "tml"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 233,
+            "words": [
+                "planetas",
+                "planeta",
+                "asteróides",
+                "estelares",
+                "asteroides"
+            ],
+            "score_similaridade": 0.08,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 234,
+            "words": [
+                "gggg",
+                "gg",
+                "lgf",
+                "ggg",
+                "__________________________"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 235,
+            "words": [
+                "vírus",
+                "plague",
+                "inc",
+                "crane",
+                "harran"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 236,
+            "words": [
+                "rally",
+                "dirt",
+                "off",
+                "road",
+                "burns"
+            ],
+            "score_similaridade": 0.09,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 237,
+            "words": [
+                "beta",
+                "alpha",
+                "alfa",
+                "versão",
+                "reina"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 238,
+            "words": [
+                "ônibus",
+                "train",
+                "simulator",
+                "bus",
+                "trens"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 239,
+            "words": [
+                "dirt",
+                "rally",
+                "wrc",
+                "simulador",
+                "errar"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 240,
+            "words": [
+                "título",
+                "titulo",
+                "este",
+                "títulos",
+                "incopetentes"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 241,
+            "words": [
+                "água",
+                "lake",
+                "aquário",
+                "aquático",
+                "lago"
+            ],
+            "score_similaridade": 0.04,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 242,
+            "words": [
+                "cyberpunk",
+                "2077",
+                "atmosfera",
+                "ex",
+                "temática"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 243,
+            "words": [
+                "cor",
+                "cores",
+                "preto",
+                "paleta",
+                "branco"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 245,
+            "words": [
+                "kart",
+                "mario",
+                "stars",
+                "transformed",
+                "racing"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 246,
+            "words": [
+                "bonito",
+                "linda",
+                "agradável",
+                "bonitas",
+                "legal"
+            ],
+            "score_similaridade": 0.37,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 247,
+            "words": [
+                "legalzin",
+                "pário",
+                "sangra",
+                "legal",
+                "juiz"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 248,
+            "words": [
+                "age",
+                "empires",
+                "of",
+                "iii",
+                "ii"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 249,
+            "words": [
+                "casa",
+                "apartamento",
+                "samsara",
+                "mansão",
+                "limpar"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 250,
+            "words": [
+                "conhecem",
+                "lindeza",
+                "espermatozóides",
+                "adolescentes",
+                "adultos"
+            ],
+            "score_similaridade": 0.03,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 252,
+            "words": [
+                "polícia",
+                "policiais",
+                "policial",
+                "ilegais",
+                "policia"
+            ],
+            "score_similaridade": 0.06,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 253,
+            "words": [
+                "ajudado",
+                "espero",
+                "contribuído",
+                "ajuda",
+                "tmj"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 254,
+            "words": [
+                "comunidade",
+                "tóxica",
+                "tóxicas",
+                "toxica",
+                "chat"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 255,
+            "words": [
+                "pedra",
+                "montanha",
+                "slay",
+                "spire",
+                "pedras"
+            ],
+            "score_similaridade": 0.09,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 256,
+            "words": [
+                "far",
+                "cry",
+                "crysis",
+                "mold",
+                "molde"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 257,
+            "words": [
+                "curto",
+                "curta",
+                "short",
+                "curtas",
+                "rsss"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 258,
+            "words": [
+                "pombos",
+                "iceworm",
+                "fire",
+                "fogueira",
+                "fogo"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 260,
+            "words": [
+                "todos",
+                "blá",
+                "tudo",
+                "moscow",
+                "concentro"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 261,
+            "words": [
+                "corrida",
+                "simuladores",
+                "corridas",
+                "simulador",
+                "simulação"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 262,
+            "words": [
+                "fifa",
+                "futebol",
+                "manager",
+                "football",
+                "soccer"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 263,
+            "words": [
+                "dizer",
+                "falar",
+                "sobre",
+                "desse",
+                "conheço"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 265,
+            "words": [
+                "skyrim",
+                "oblivion",
+                "morrowind",
+                "enderal",
+                "tes"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 266,
+            "words": [
+                "dragon",
+                "age",
+                "dragão",
+                "dragões",
+                "protegido"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 267,
+            "words": [
+                "demais",
+                "massa",
+                "top",
+                "cagão",
+                "trabalheira"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 268,
+            "words": [
+                "elder",
+                "scrolls",
+                "skyrim",
+                "oblivion",
+                "morrowind"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 269,
+            "words": [
+                "falha",
+                "falhas",
+                "witcher",
+                "120p",
+                "forno"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 274,
+            "words": [
+                "gênero",
+                "mulheres",
+                "sexo",
+                "nua",
+                "feminina"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 275,
+            "words": [
+                "equiparável",
+                "guitarra",
+                "dark",
+                "manha",
+                "souls"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 276,
+            "words": [
+                "medo",
+                "comprar",
+                "sem",
+                "podem",
+                "compra"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 277,
+            "words": [
+                "xadrez",
+                "chess",
+                "simply",
+                "ganhe",
+                "lvl"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 278,
+            "words": [
+                "spoilers",
+                "spoiler",
+                "coff",
+                "contém",
+                "direi"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 281,
+            "words": [
+                "magias",
+                "magia",
+                "cristal",
+                "mago",
+                "magic"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 284,
+            "words": [
+                "diferente",
+                "totalmente",
+                "sprites",
+                "desempodera",
+                "derrapada"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 285,
+            "words": [
+                "cor",
+                "roupas",
+                "customização",
+                "cabelo",
+                "customizar"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 286,
+            "words": [
+                "realismo",
+                "realidade",
+                "isla",
+                "realista",
+                "real"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 288,
+            "words": [
+                "2021",
+                "2019",
+                "2020",
+                "2022",
+                "espero"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 289,
+            "words": [
+                "potencial",
+                "otimizado",
+                "potential",
+                "gigantesco",
+                "disposition"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 290,
+            "words": [
+                "construir",
+                "base",
+                "prédio",
+                "construção",
+                "grid"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 291,
+            "words": [
+                "perfeito",
+                "perfect",
+                "perfeitamente",
+                "suurpreendi",
+                "absolute"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 292,
+            "words": [
+                "matei",
+                "aranhas",
+                "encontro",
+                "renatom",
+                "persisti"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 293,
+            "words": [
+                "horinhas",
+                "doubles",
+                "beans",
+                "slaps",
+                "terence"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 294,
+            "words": [
+                "acampamento",
+                "humanitária",
+                "raz",
+                "cidade",
+                "epidemia"
+            ],
+            "score_similaridade": 0.12,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 296,
+            "words": [
+                "twitch",
+                "quote",
+                "facebook",
+                "patreon",
+                "twitter"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 297,
+            "words": [
+                "caminhão",
+                "caminhões",
+                "tchê",
+                "caminhoneiro",
+                "fistaile"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 298,
+            "words": [
+                "half",
+                "life",
+                "opposing",
+                "original",
+                "reddit"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 301,
+            "words": [
+                "fã",
+                "fãs",
+                "escher",
+                "tokimeki",
+                "memorial"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 302,
+            "words": [
+                "abraço",
+                "forte",
+                "abraços",
+                "colegas",
+                "danke"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 303,
+            "words": [
+                "chernobylite",
+                "chernobyl",
+                "tatyana",
+                "igor",
+                "nuclear"
+            ],
+            "score_similaridade": 0.04,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 304,
+            "words": [
+                "remasterização",
+                "remastered",
+                "renovado",
+                "remaster",
+                "cas"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 306,
+            "words": [
+                "desinstalar",
+                "desinstalando",
+                "desinstala",
+                "contsruir",
+                "descontinuaram"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 307,
+            "words": [
+                "parabéns",
+                "desenvolvedores",
+                "publicadores",
+                "cedido",
+                "desenvolvedor"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 308,
+            "words": [
+                "hospital",
+                "cirurgias",
+                "médica",
+                "doutor",
+                "cirurgia"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 309,
+            "words": [
+                "futuro",
+                "encobrir",
+                "conflitar",
+                "consolida",
+                "transcendentais"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 310,
+            "words": [
+                "estradas",
+                "trânsito",
+                "tráfego",
+                "viadutos",
+                "rodovia"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 311,
+            "words": [
+                "horas",
+                "curto",
+                "duração",
+                "depende",
+                "longo"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 312,
+            "words": [
+                "black",
+                "ops",
+                "squad",
+                "counter",
+                "duty"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 313,
+            "words": [
+                "aberto",
+                "mundo",
+                "mundos",
+                "habitáveis",
+                "fundamento"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 314,
+            "words": [
+                "assisitir",
+                "basta",
+                "assisitr",
+                "perdoável",
+                "perdoa"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 315,
+            "words": [
+                "egito",
+                "zeus",
+                "roma",
+                "deuses",
+                "faraós"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 316,
+            "words": [
+                "mass",
+                "effect",
+                "kotor",
+                "bioware",
+                "mako"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 317,
+            "words": [
+                "depressão",
+                "câncer",
+                "sofria",
+                "cerebral",
+                "síndrome"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 318,
+            "words": [
+                "demais",
+                "arrogantes",
+                "too",
+                "acham",
+                "toperson"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 319,
+            "words": [
+                "cod",
+                "mw3",
+                "ultimo",
+                "melhor",
+                "cods"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 320,
+            "words": [
+                "cuphead",
+                "desenhos",
+                "netflix",
+                "chefes",
+                "replicando"
+            ],
+            "score_similaridade": 0.33,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 321,
+            "words": [
+                "sorte",
+                "boa",
+                "luck",
+                "good",
+                "night"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 322,
+            "words": [
+                "escadas",
+                "caminhar",
+                "andar",
+                "túnel",
+                "sozinho"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 324,
+            "words": [
+                "trine",
+                "plataforma",
+                "sarek",
+                "enchanted",
+                "entidades"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 325,
+            "words": [
+                "titanfall",
+                "titan",
+                "apex",
+                "par",
+                "favorito"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 326,
+            "words": [
+                "grandin",
+                "sobrinha",
+                "everywhere",
+                "15",
+                "horas"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 328,
+            "words": [
+                "nfs",
+                "heat",
+                "carbon",
+                "payback",
+                "rivals"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 329,
+            "words": [
+                "paciência",
+                "paciencia",
+                "exige",
+                "fundamental",
+                "requererá"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 330,
+            "words": [
+                "arrepender",
+                "garanto",
+                "arrependerá",
+                "irão",
+                "arrependeram"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 331,
+            "words": [
+                "exércitos",
+                "norte",
+                "exército",
+                "indígena",
+                "estava"
+            ],
+            "score_similaridade": 0.12,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 332,
+            "words": [
+                "chloe",
+                "rachel",
+                "alice",
+                "otherlands",
+                "mcgee"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 333,
+            "words": [
+                "mega",
+                "man",
+                "megaman",
+                "wily",
+                "bass"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 334,
+            "words": [
+                "mutações",
+                "mutantes",
+                "clone",
+                "guillain",
+                "avo"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 335,
+            "words": [
+                "razor",
+                "queimar",
+                "sobrando",
+                "avaliação",
+                "justo"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 337,
+            "words": [
+                "win",
+                "pay",
+                "to",
+                "desequilibrado",
+                "pagos"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 338,
+            "words": [
+                "gato",
+                "catland",
+                "lady",
+                "cat",
+                "gatos"
+            ],
+            "score_similaridade": 0.15,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 339,
+            "words": [
+                "raiva",
+                "irado",
+                "rachistas",
+                "amargurado",
+                "emote"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 340,
+            "words": [
+                "universo",
+                "cosmologia",
+                "zoada",
+                "exerceu",
+                "propósito"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 341,
+            "words": [
+                "survival",
+                "sobrevivência",
+                "sobreviver",
+                "keepup",
+                "matas"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 342,
+            "words": [
+                "superou",
+                "expectativas",
+                "esperava",
+                "minhas",
+                "expectativa"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 343,
+            "words": [
+                "clementine",
+                "lee",
+                "acompanhar",
+                "temporada",
+                "episodio"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 344,
+            "words": [
+                "média",
+                "atual",
+                "dentro",
+                "mediana",
+                "rankeds"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 346,
+            "words": [
+                "torchlight",
+                "queimar",
+                "lareira",
+                "objetos",
+                "blizzard"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 347,
+            "words": [
+                "microtransações",
+                "micro",
+                "microtransação",
+                "microtransacao",
+                "microtransactions"
+            ],
+            "score_similaridade": 0.05,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 349,
+            "words": [
+                "potencial",
+                "possibilidades",
+                "possuindo",
+                "majestoso",
+                "estocagem"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 350,
+            "words": [
+                "100",
+                "recomendo",
+                "experando",
+                "manipulador",
+                "chinesa"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 351,
+            "words": [
+                "resolução",
+                "tela",
+                "wide",
+                "esticar",
+                "resoluções"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 352,
+            "words": [
+                "masterpiece",
+                "prima",
+                "bjos",
+                "centralizando",
+                "esclarecido"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 354,
+            "words": [
+                "ano",
+                "2017",
+                "2018",
+                "2016",
+                "legalmente"
+            ],
+            "score_similaridade": 0.12,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 355,
+            "words": [
+                "flores",
+                "dignidade",
+                "desinstala",
+                "rosas",
+                "recuperar"
+            ],
+            "score_similaridade": 0.07,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 356,
+            "words": [
+                "simples",
+                "divertido",
+                "simple",
+                "leve",
+                "fun"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 357,
+            "words": [
+                "aleatórios",
+                "aleatoriamente",
+                "fases",
+                "geradas",
+                "randomicamente"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 358,
+            "words": [
+                "odeio",
+                "odiei",
+                "detesto",
+                "isolei",
+                "tamboril"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 359,
+            "words": [
+                "top",
+                "indico",
+                "plaaaannn",
+                "naelson",
+                "máximos"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 360,
+            "words": [
+                "macacos",
+                "desenhado",
+                "macaco",
+                "treino",
+                "paint"
+            ],
+            "score_similaridade": 0.33,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 361,
+            "words": [
+                "ônibus",
+                "baixe",
+                "escutar",
+                "playlist",
+                "caminhoes"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 363,
+            "words": [
+                "access",
+                "early",
+                "flaws",
+                "antecipado",
+                "acesso"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 364,
+            "words": [
+                "otimizado",
+                "condinzentes",
+                "pkrl",
+                "perfomance",
+                "otimizaçao"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 365,
+            "words": [
+                "cube",
+                "escape",
+                "1972",
+                "1971",
+                "2015"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 366,
+            "words": [
+                "sobrevivência",
+                "sobreviver",
+                "survival",
+                "extremo",
+                "indefinido"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 367,
+            "words": [
+                "biblioteca",
+                "tê",
+                "professor",
+                "lo",
+                "enriqueceria"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 368,
+            "words": [
+                "capricharam",
+                "caras",
+                "áudio",
+                "voz",
+                "alucinações"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 369,
+            "words": [
+                "worms",
+                "mayhem",
+                "armageddon",
+                "reloaded",
+                "ultimate"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 370,
+            "words": [
+                "passar",
+                "tempo",
+                "ótimo",
+                "sashimi",
+                "passa"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 371,
+            "words": [
+                "surpreendeu",
+                "surpresa",
+                "surpreendi",
+                "me",
+                "sentidos"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 372,
+            "words": [
+                "vampiros",
+                "vampire",
+                "vampiro",
+                "vampira",
+                "mascara"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 373,
+            "words": [
+                "tutorial",
+                "sabre",
+                "hardness",
+                "luz",
+                "mestres"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 374,
+            "words": [
+                "ck2",
+                "vira",
+                "jc2",
+                "mp",
+                "marcantes"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 376,
+            "words": [
+                "revolução",
+                "revolution",
+                "revolucionário",
+                "homefront",
+                "crise"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 377,
+            "words": [
+                "foltest",
+                "geraldo",
+                "rei",
+                "adda",
+                "triss"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 378,
+            "words": [
+                "evolução",
+                "awekening",
+                "cultivador",
+                "atavismo",
+                "depredação"
+            ],
+            "score_similaridade": 0.08,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 379,
+            "words": [
+                "ano",
+                "2017",
+                "year",
+                "2018",
+                "lançados"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 380,
+            "words": [
+                "platina",
+                "platinar",
+                "platinum",
+                "conquista",
+                "conquistas"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 381,
+            "words": [
+                "base",
+                "duração",
+                "coçada",
+                "quissesse",
+                "fuzilando"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 382,
+            "words": [
+                "curso",
+                "assista",
+                "videos",
+                "faça",
+                "série"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 383,
+            "words": [
+                "exatamente",
+                "isso",
+                "enfim",
+                "basicamente",
+                "geral"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 385,
+            "words": [
+                "dormir",
+                "manhã",
+                "remédio",
+                "insônia",
+                "noite"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 386,
+            "words": [
+                "obrigado",
+                "ler",
+                "leu",
+                "leitura",
+                "lerem"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 387,
+            "words": [
+                "horizon",
+                "chase",
+                "turbo",
+                "gear",
+                "corrida"
+            ],
+            "score_similaridade": 0.33,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 388,
+            "words": [
+                "palavras",
+                "preciso",
+                "falar",
+                "comentar",
+                "nada"
+            ],
+            "score_similaridade": 0.28,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 389,
+            "words": [
+                "payday",
+                "heist",
+                "microtransactions",
+                "overkill",
+                "2011"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 390,
+            "words": [
+                "panda",
+                "7655908",
+                "steampowered",
+                "curator",
+                "store"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 391,
+            "words": [
+                "twitch",
+                "url",
+                "youtube",
+                "pandadosgames",
+                "cbhjcu66qq"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 392,
+            "words": [
+                "esperando",
+                "aguardo",
+                "quê",
+                "esperaremos",
+                "joj"
+            ],
+            "score_similaridade": 0.1,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 393,
+            "words": [
+                "1ª",
+                "evolved",
+                "arkham",
+                "batman",
+                "otimizado"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 394,
+            "words": [
+                "mano",
+                "gostosin",
+                "artrose",
+                "peido",
+                "deusuuuu"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 395,
+            "words": [
+                "rage",
+                "bater",
+                "mãe",
+                "pro",
+                "conseguir"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 396,
+            "words": [
+                "espermatozóides",
+                "cornucopia",
+                "fanatic",
+                "intensified",
+                "purifier"
+            ],
+            "score_similaridade": 0.04,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 397,
+            "words": [
+                "complexo",
+                "complexidade",
+                "wargroove",
+                "trunfos",
+                "besiege"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 399,
+            "words": [
+                "fumar",
+                "cigarro",
+                "avô",
+                "pulmão",
+                "fumou"
+            ],
+            "score_similaridade": 0.08,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 400,
+            "words": [
+                "desenvolvido",
+                "foi",
+                "quem",
+                "giovannetti",
+                "lodge"
+            ],
+            "score_similaridade": 0.14,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 401,
+            "words": [
+                "replay",
+                "fator",
+                "replays",
+                "value",
+                "garante"
+            ],
+            "score_similaridade": 0.26,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 402,
+            "words": [
+                "bonus",
+                "lokooo",
+                "sms",
+                "loca",
+                "pad"
+            ],
+            "score_similaridade": 0.35,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 403,
+            "words": [
+                "pontes",
+                "ponte",
+                "bridge",
+                "poly",
+                "motoqueros"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 404,
+            "words": [
+                "gosta",
+                "mineração",
+                "contrabando",
+                "gerenciamento",
+                "administração"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 405,
+            "words": [
+                "zap",
+                "levanta",
+                "mão",
+                "uh",
+                "zumbi"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 406,
+            "words": [
+                "windows",
+                "compatibilidade",
+                "10",
+                "dll",
+                "directx"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 407,
+            "words": [
+                "easter",
+                "eggs",
+                "egg",
+                "sutis",
+                "ovos"
+            ],
+            "score_similaridade": 0.08,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 408,
+            "words": [
+                "fighter",
+                "street",
+                "iv",
+                "capcom",
+                "netcode"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 409,
+            "words": [
+                "tutorial",
+                "crysis",
+                "tutoriais",
+                "básico",
+                "manual"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 410,
+            "words": [
+                "closet",
+                "leech",
+                "key",
+                "hunter",
+                "recompensas"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 411,
+            "words": [
+                "ridículo",
+                "absurdo",
+                "pul",
+                "indignada",
+                "duma"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 413,
+            "words": [
+                "south",
+                "park",
+                "matt",
+                "stone",
+                "trey"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 414,
+            "words": [
+                "lasers",
+                "laser",
+                "áurea",
+                "nó",
+                "defensivo"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 415,
+            "words": [
+                "boca",
+                "piores",
+                "meia",
+                "cagar",
+                "getta"
+            ],
+            "score_similaridade": 0.33,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 416,
+            "words": [
+                "grind",
+                "desencana",
+                "pular",
+                "placar",
+                "heroína"
+            ],
+            "score_similaridade": 0.12,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 417,
+            "words": [
+                "confira",
+                "win",
+                "pay",
+                "espiadinha",
+                "oiadinha"
+            ],
+            "score_similaridade": 0.3,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 419,
+            "words": [
+                "assim",
+                "way",
+                "know",
+                "ué",
+                "ain"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 420,
+            "words": [
+                "20",
+                "rank",
+                "19",
+                "22",
+                "21"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 421,
+            "words": [
+                "final",
+                "terminado",
+                "sera",
+                "nossas",
+                "descobriremos"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 422,
+            "words": [
+                "ark",
+                "amo",
+                "passei",
+                "anjinha",
+                "sufiscientes"
+            ],
+            "score_similaridade": 0.32,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 423,
+            "words": [
+                "4k",
+                "invista",
+                "minimo",
+                "hardware",
+                "uns"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 424,
+            "words": [
+                "fase",
+                "fases",
+                "variantes",
+                "ondas",
+                "aditivos"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 427,
+            "words": [
+                "mudou",
+                "gostaram",
+                "crashar",
+                "efetuado",
+                "precessores"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 428,
+            "words": [
+                "nota",
+                "final",
+                "10",
+                "h1",
+                "carraco"
+            ],
+            "score_similaridade": 0.24,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 429,
+            "words": [
+                "bola",
+                "show",
+                "pula",
+                "kica",
+                "quabrado"
+            ],
+            "score_similaridade": 0.31,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 430,
+            "words": [
+                "mercado",
+                "vende",
+                "mercados",
+                "item",
+                "café"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 431,
+            "words": [
+                "exploração",
+                "amuletos",
+                "colecionáveis",
+                "áreas",
+                "union"
+            ],
+            "score_similaridade": 0.34,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 432,
+            "words": [
+                "starve",
+                "don",
+                "together",
+                "sobreviver",
+                "officina"
+            ],
+            "score_similaridade": 0.1,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 433,
+            "words": [
+                "pena",
+                "vale",
+                "gosta",
+                "propoorciona",
+                "difícieis"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 434,
+            "words": [
+                "metroidvania",
+                "metro",
+                "metrô",
+                "metroid",
+                "etsc"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 435,
+            "words": [
+                "escutar",
+                "nivel",
+                "trambolho",
+                "constar",
+                "lágrima"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 436,
+            "words": [
+                "kojima",
+                "hideo",
+                "konami",
+                "kazuya",
+                "akuma"
+            ],
+            "score_similaridade": 0.29,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 437,
+            "words": [
+                "knight",
+                "shovel",
+                "specter",
+                "hollow",
+                "plague"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 438,
+            "words": [
+                "olá",
+                "pessoal",
+                "hey",
+                "hello",
+                "greeting"
+            ],
+            "score_similaridade": 0.17,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 439,
+            "words": [
+                "desenvolvedor",
+                "desenvolvedora",
+                "desenvolvedores",
+                "duplo",
+                "salto"
+            ],
+            "score_similaridade": 0.22,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 440,
+            "words": [
+                "ideia",
+                "idéia",
+                "sádica",
+                "liderar",
+                "caravana"
+            ],
+            "score_similaridade": 0.27,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 442,
+            "words": [
+                "recomenda",
+                "recomendo",
+                "poupe",
+                "protesto",
+                "recomendar"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 443,
+            "words": [
+                "memórias",
+                "amnesia",
+                "perda",
+                "memória",
+                "omitidas"
+            ],
+            "score_similaridade": 0.25,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 445,
+            "words": [
+                "zorra",
+                "ido",
+                "assistir",
+                "prender",
+                "total"
+            ],
+            "score_similaridade": 0.16,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 446,
+            "words": [
+                "espada",
+                "hessir",
+                "berseker",
+                "angle",
+                "escudo"
+            ],
+            "score_similaridade": 0.36,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 447,
+            "words": [
+                "waves",
+                "ondas",
+                "jugg",
+                "wave",
+                "36"
+            ],
+            "score_similaridade": 0.1,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 449,
+            "words": [
+                "gay",
+                "direi",
+                "lê",
+                "críticas",
+                "99"
+            ],
+            "score_similaridade": 0.13,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 450,
+            "words": [
+                "indie",
+                "mercado",
+                "braid",
+                "aaa",
+                "hundreds"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 452,
+            "words": [
+                "legislação",
+                "autoral",
+                "impresso",
+                "autorização",
+                "proibida"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 453,
+            "words": [
+                "repetitivo",
+                "tornar",
+                "repete",
+                "again",
+                "óttimo"
+            ],
+            "score_similaridade": 0.19,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 455,
+            "words": [
+                "descrever",
+                "palavras",
+                "palavra",
+                "ffa",
+                "agar"
+            ],
+            "score_similaridade": 0.38,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 457,
+            "words": [
+                "cm",
+                "mojave",
+                "ruínas",
+                "exploradas",
+                "mutantes"
+            ],
+            "score_similaridade": 0.18,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 458,
+            "words": [
+                "nota",
+                "final",
+                "10",
+                "notal",
+                "lido"
+            ],
+            "score_similaridade": 0.23,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 461,
+            "words": [
+                "biblioteca",
+                "obrigatório",
+                "faltar",
+                "infrinjam",
+                "beyoond"
+            ],
+            "score_similaridade": 0.2,
+            "metodo": "IA Matemática (Descartado)"
+        },
+        {
+            "topic_id": 462,
+            "words": [
+                "decisões",
+                "escolhas",
+                "decisão",
+                "escolha",
+                "trazem"
+            ],
+            "score_similaridade": 0.21,
+            "metodo": "IA Matemática (Descartado)"
+        }
+    ]
+}
