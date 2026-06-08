@@ -1,3 +1,6 @@
+<!-- Melhorar e atualizar o README.md para refletir as mudanças recentes no projeto. Adicionar as imagens da estrutura que defini ou explicação textual -->
+
+
 # GOLDEN REVIEWS — Análise Inteligente de Reviews da Steam
 
 O **Golden Reviews** é uma aplicação Fullstack (React + FastAPI) que automatiza a coleta, o cruzamento e a interpretação em larga escala de comentários de jogadores publicados na loja da Steam.

@@ -20,26 +20,59 @@ else:
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# 1. Configurando Stop Words (Removendo lixo e nomes genéricos de jogos)
+
+# Expanção da lista de stop words para incluir termos comuns em reviews de jogos, gírias e lixo HTML. Organizado em categorias para facilitar manutenção futura.
+
 stop_words_pt = stopwords.words('portuguese')
-custom_stop_words = stop_words_pt + [
-    'jogo', 'jogar', 'game', 'steam', 'pra', 'pro', 'the', 'witcher',
-    'batman', 'resident', 'evil', 'horas', 'td', 'tr', 'h1',
-    'list', 'url', 'kkkk', 'kkkkk', 'cities', 'skylines', 'souls', 'arkham',
-    'capcom', 'revelations'
+
+termos_plataforma_metalinguagem = [
+    'jogo', 'jogar', 'game', 'steam', 'horas', 'pc', 'computador', 
+    'recomendo', 'recomendar', 'joguei', 'jogando', 'zerar', 'zerei', 
+    'review', 'analise', 'análise', 'mouse', 'teclado'
 ]
+
+internet_e_girias = [
+    'pra', 'pro', 'q', 'vc', 'tbm', 'tb', 'pq', 'mt', 'mto', 'ta', 'tá', 
+    'né', 'ne', 'eh', 'nd', 'oq', 'kkk', 'kkkk', 'kkkkk', 'ksksks', 'rs', 'poha'
+]
+
+lixo_html_api = [
+    'td', 'tr', 'h1', 'list', 'url', 'br', 'div', 'span', 'href', 
+    'http', 'https', 'img', 'b', 'i'
+]
+
+
+nomes_franquias_e_empresas = [
+    
+    'ubisoft', 'ea', 'rockstar', 'bethesda', 'valve', 'capcom', 'fromsoftware', 
+    'sony', 'microsoft', 'cdpr', 'projekt', 'red', 'square', 'enix',
+    'the', 'witcher', 'batman', 'resident', 'evil', 'cities', 'skylines', 
+    'souls', 'arkham', 'revelations', 'gta', 'cyberpunk', 'skyrim', 'fallout', 
+    'assassins', 'creed', 'farcry', 'fifa', 'cod', 'call', 'duty', 'battlefield', 
+    'csgo', 'cs', 'dota', 'pubg', 'minecraft', 'terraria', 'stardew', 'valley',
+    'halo', 'bioshock', 'persona', 'zelda', 'mario'
+]
+
+custom_stop_words = (
+    stop_words_pt + 
+    termos_plataforma_metalinguagem + 
+    internet_e_girias + 
+    lixo_html_api + 
+    nomes_franquias_e_empresas
+)
+
 vectorizer_model = CountVectorizer(stop_words=custom_stop_words)
 
 def main():
     print("1. Carregando dataset estático com reviews da Steam...")
-    # Substitua pelo caminho do seu arquivo Kaggle
+    
     df = pd.read_csv("steam_reviews.csv") 
 
-    # Considerando que existe uma coluna 'review'
+    
     reviews = df['review'].dropna().tolist()
 
-    # Extraindo uma amostra grande de textos (ex: 20000 para não estourar RAM local)
-    amostra_reviews = reviews[:20000]
+    # Aumentando a amostra de 20000 para 30.000 reviews para capturar mais diversidade de tópicos, mantendo um tamanho gerenciável para o treinamento offline.
+    amostra_reviews = reviews[:30000]
 
     print("2. Quebrando os textos em frases...")
     sentences = []
@@ -56,6 +89,7 @@ def main():
     print("Gerando embeddings (isso pode demorar)....")
     embeddings = embedding_model.encode(sentences, show_progress_bar=True)
 
+# TODO: Analisar possível mudança de modelo de embedding, definir um nr_topics fixo razoável e verificar os tópicos já gerados para ajustar o min_topic_size.
     print("4. Treinando o BERTopic parametrizado...")
     topic_model = BERTopic(
         embedding_model=embedding_model,
