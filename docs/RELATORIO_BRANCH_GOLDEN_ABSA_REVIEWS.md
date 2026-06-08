@@ -1,3 +1,5 @@
+
+
 # Relatório da branch `golden-absa-reviews`
 
 **Projeto:** Golden Reviews

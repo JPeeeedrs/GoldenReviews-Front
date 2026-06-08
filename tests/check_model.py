@@ -3,7 +3,7 @@ from bertopic import BERTopic
 def auditar_modelo():
     print("⏳ Carregando o modelo treinado...")
     # Carrega a pasta salva pelo train_offline
-    topic_model = BERTopic.load("steam_bertopic_model")
+    topic_model = BERTopic.load("./steam_bertopic_model")
     
     # Extrai a tabela de informações dos tópicos
     df_topics = topic_model.get_topic_info()

@@ -1,7 +1,4 @@
-"""
-Script 1: train_offline.py (Treinamento Base)
-Objetivo: Resolver o Cold Start utilizando um dataset estático do Kaggle.
-"""
+# Treinamento Offline do BERTopic para Análise de Tópicos em Reviews da Steam
 
 import pandas as pd
 from sentence_transformers import SentenceTransformer
@@ -27,7 +24,7 @@ nltk.download('stopwords')
 stop_words_pt = stopwords.words('portuguese')
 custom_stop_words = stop_words_pt + [
     'jogo', 'jogar', 'game', 'steam', 'pra', 'pro', 'the', 'witcher',
-    'batman', 'resident', 'evil', 'jogabilidade', 'horas', 'td', 'tr', 'h1',
+    'batman', 'resident', 'evil', 'horas', 'td', 'tr', 'h1',
     'list', 'url', 'kkkk', 'kkkkk', 'cities', 'skylines', 'souls', 'arkham',
     'capcom', 'revelations'
 ]
