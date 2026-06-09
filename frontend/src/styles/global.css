@@ -113,3 +113,15 @@ button {
 	border: 1px solid var(--danger);
 	color: var(--danger);
 }
+
+.muted {
+	color: var(--text-02);
+	font-size: 0.85rem;
+}
+
+.eyebrow {
+	color: var(--text-02);
+	font-size: 0.7rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}

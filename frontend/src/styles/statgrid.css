@@ -1,0 +1,42 @@
+.stat-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 16px;
+}
+
+.stat-card {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 18px;
+	background:
+		radial-gradient(circle at top, rgba(125, 77, 255, 0.24), transparent 62%),
+		var(--bg-contrast);
+	border: 1px solid rgba(125, 77, 255, 0.34);
+	border-radius: 16px;
+}
+
+.stat-card span {
+	color: var(--text-02);
+	font-size: 0.85rem;
+}
+
+.stat-card strong {
+	font-size: 1.25rem;
+}
+
+.stat-card.good {
+	background: linear-gradient(135deg, rgba(214, 161, 61, 0.36), transparent);
+}
+
+.stat-card.bad {
+	background: linear-gradient(135deg, rgba(125, 77, 255, 0.34), transparent);
+}
+
+.stat-card.neutral {
+	background: linear-gradient(135deg, rgba(125, 77, 255, 0.22), transparent);
+}
+
+.stat-card.highlight {
+	background: linear-gradient(135deg, rgba(243, 212, 137, 0.4), transparent);
+}

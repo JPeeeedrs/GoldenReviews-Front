@@ -1,0 +1,38 @@
+.analysis {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin-top: 40px;
+	padding: 32px;
+	background:
+		radial-gradient(
+			circle at top right,
+			rgba(125, 77, 255, 0.32),
+			transparent 48%
+		),
+		radial-gradient(
+			circle at bottom left,
+			rgba(214, 161, 61, 0.2),
+			transparent 44%
+		),
+		var(--bg-02);
+	border: 1px solid rgba(214, 161, 61, 0.28);
+	border-radius: 24px;
+	box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.dynamic-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: blur(2px) brightness(0.25);
+	transform: scale(1.1);
+	transition: background-image 0.5s ease-in-out;
+	pointer-events: none;
+}
