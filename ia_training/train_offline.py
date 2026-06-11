@@ -1,5 +1,5 @@
 """
-Script 1: train_offline.py (Treinamento Base)
+(Treinamento Base)
 Objetivo: Resolver o Cold Start utilizando um dataset estático do Kaggle.
 """
 
@@ -23,7 +23,7 @@ else:
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# 1. Configurando Stop Words (Removendo lixo e nomes genéricos de jogos)
+# Configurando Stop Words (Removendo lixo e nomes genéricos de jogos)
 stop_words_pt = stopwords.words('portuguese')
 custom_stop_words = stop_words_pt + [
     'jogo', 'jogar', 'game', 'steam', 'pra', 'pro', 'the', 'witcher',
@@ -35,13 +35,13 @@ vectorizer_model = CountVectorizer(stop_words=custom_stop_words)
 
 def main():
     print("1. Carregando dataset estático com reviews da Steam...")
-    # Substitua pelo caminho do seu arquivo Kaggle
+
     df = pd.read_csv("steam_reviews.csv") 
 
-    # Considerando que existe uma coluna 'review'
+
     reviews = df['review'].dropna().tolist()
 
-    # Extraindo uma amostra grande de textos (ex: 20000 para não estourar RAM local)
+    
     amostra_reviews = reviews[:20000]
 
     print("2. Quebrando os textos em frases...")
@@ -72,12 +72,12 @@ def main():
     topics, probs = topic_model.fit_transform(sentences, embeddings)
 
     print("5. Aplicando redução moderada de outliers (Threshold: 0.85)...")
-    # Resgata apenas os outliers que tenham 85% ou mais de similaridade com um tópico existente
+    
     new_topics = topic_model.reduce_outliers(
         sentences,
         topics,
         strategy="embeddings",
-        threshold=0.85
+        threshold=0.85 # Resgata apenas os outliers que tenham 85% ou mais de similaridade com um tópico existente
     )
 
     # Atualiza o modelo com os outliers resgatados

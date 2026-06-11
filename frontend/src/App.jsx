@@ -14,7 +14,7 @@ export default function App() {
 	const [games, setGames] = useState([]);
 	const [selected, setSelected] = useState(null);
 	const [reviews, setReviews] = useState(null);
-	const [maxReviews, setMaxReviews] = useState(1200);
+	const [maxReviews, setMaxReviews] = useState(1000); //Padrão é 1000! 
 	const [language, setLanguage] = useState("brazilian");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -74,7 +74,7 @@ export default function App() {
 		};
 
 		poll();
-		const intervalId = setInterval(poll, 2000);
+		const intervalId = setInterval(poll, 10000); //FIX : aumento de 2000(2s) para 10000(10s)
 		return () => {
 			active = false;
 			clearInterval(intervalId);
@@ -109,18 +109,8 @@ export default function App() {
 				showClear={Boolean(query) || Boolean(selected)}
 			/>
 
-			<div className='limit-box'>
-				<div>
-					<label>Qtd. máxima de reviews</label>
-					<input
-						type='number'
-						value={maxReviews}
-						onChange={(e) => setMaxReviews(Number(e.target.value))}
-						min={200}
-						max={5000}
-					/>
-				</div>
-
+			<div className='limit-box' style={{ justifyContent: 'center' }}>
+			{/* Remoção da opção do usuário definir quantidade máxima no FRONT. */}
 				<div>
 					<label>Idioma</label>
 					<select

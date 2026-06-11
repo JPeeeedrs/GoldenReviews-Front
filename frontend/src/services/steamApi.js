@@ -10,7 +10,7 @@ export async function searchSteamGames(term) {
 
 export async function getReviews(
 	appid,
-	maxReviews = 1200,
+	maxReviews = 1000, // Padrão agora é 1000 
 	language = "brazilian",
 ) {
 	const params = new URLSearchParams({

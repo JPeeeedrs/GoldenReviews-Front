@@ -25,41 +25,43 @@ class ABSAPipeline:
         print("Iniciando carregamento dos modelos na memória...")
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
-
-        self.sentiment_model_name = "tabularisai/multilingual-sentiment-analysis"
+        # Adicionando o modelo BERTweet baseado no BERTimbau
+        self.sentiment_model_name = "pysentimiento/bertweet-pt-sentiment"
+        
         self.sentiment_tokenizer = AutoTokenizer.from_pretrained(self.sentiment_model_name)
         self.sentiment_model = AutoModelForSequenceClassification.from_pretrained(self.sentiment_model_name)
         self.sentiment_model.eval()
         self.sentiment_model.to(self.device)
         
-
-        self.score_weights = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0]).to(self.device)
+        # 2️⃣ MAPEAMENTO DINÂMICO DE PESOS (A prova de falhas)
+        # O modelo retorna POS, NEG, NEU. Nós lemos a ordem exata da rede neural
+        # e criamos os multiplicadores: NEG=1.0, NEU=3.0, POS=5.0
+        label_to_score = {"NEG": 1.0, "NEU": 3.0, "POS": 5.0}
+        
+        weights_list = []
+        for i in range(len(self.sentiment_model.config.id2label)):
+            label_name = self.sentiment_model.config.id2label[i]
+            weights_list.append(label_to_score.get(label_name, 3.0)) 
+            
+        self.score_weights = torch.tensor(weights_list).to(self.device)
 
         self.embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
-
-
         self.topic_model = BERTopic.load(bertopic_model_path, embedding_model=self.embedding_model)
 
     def extract_continuous_score(self, text: str) -> float:
+        inputs = self.sentiment_tokenizer(text, return_tensors='pt', truncation=True, max_length=128).to(self.device)
 
-        inputs = self.sentiment_tokenizer(text, return_tensors='pt', truncation=True, max_length=512).to(self.device)
         with torch.no_grad():
             outputs = self.sentiment_model(**inputs)
             
         probs = F.softmax(outputs.logits, dim=-1).squeeze()
         
-
-        if len(probs) != 5:
-
-             if len(probs) == 3:
-                 temp_weights = torch.tensor([1.0, 3.0, 5.0]).to(self.device)
-                 score = torch.dot(probs, temp_weights).item()
-                 return score
-                 
-        score = torch.dot(probs, self.score_weights).item()
+        # 3️⃣ PRODUTO ESCALAR DE VOLTA!
+        # Mistura as porcentagens de POS/NEG/NEU com os pesos (1, 3 e 5) para gerar a nota quebrada
+        score = torch.dot(probs, self.score_weights).item() 
         return score
 
-    def simple_sentence_split(self, text: str) -> list[str]:
+    def simple_sentence_split(self, text: str) -> list[str]:# Divide o texto em sentenças usando nltk, filtrando sentenças muito curtas.
 
         frases = nltk.sent_tokenize(text, language='portuguese')
         return [f.strip() for f in frases if len(f.strip()) >= 30]
@@ -76,7 +78,7 @@ class ABSAPipeline:
         total_reviews = len(review_hours_map)
         avg_hours_dataset = (total_hours / total_reviews) if total_reviews > 0 else 1.0
 
-        avg_hours_dataset = max(avg_hours_dataset, 1.0)
+        avg_hours_dataset = max(avg_hours_dataset, 1.0) # Evita divisão por zero e mantém uma média mínima de 1 hora para o cálculo do peso, garantindo que reviews sem horas ou com horas muito baixas ainda tenham um peso razoável.
 
         for review in raw_reviews:
             r_text = review.get('text', '')
@@ -88,10 +90,12 @@ class ABSAPipeline:
                 sentences_to_infer.append(sent)
                 review_ids.append(review.get("id"))
 
-        if not sentences_to_infer:
+        if not sentences_to_infer: # Se a lista de sentenças estiver vazia, aciona a função que contrói uma resposta padrão vazia . 
             return self._build_empty_response(game_details, start_time)
 
-        topics, _ = self.topic_model.transform(sentences_to_infer)
+        topics, _ = self.topic_model.transform(sentences_to_infer) # Passa a lista de sentenças para o BERTopic processar e retornar os tópicos correspondentes a cada sentença. Observação: o _ depois do topics é uma forma de ignogar o segundo valor que o BERTopic retorna, que é a probabilidade que ele definiu de cada sentença pertencer a cada tópico. No momento não estamos utilizando por uma questão de praticidade mais talvez possa ser útil no futuro para filtrar sentenças com baixa confiança de classificação.
+
+    
 
         data_rows = []
         for i, sent in enumerate(sentences_to_infer):
@@ -127,25 +131,41 @@ class ABSAPipeline:
     def _aggregate_results(self, df: pd.DataFrame, game_details: dict, start_time: float, num_analyzed: int) -> Dict[str, Any]:
         
         df_valid = df[df['topic_id'] != -1]
+            
+            # Aplicando a abordagem da média dos jogadores para a nota dos tópicos também . 
+            # O código abaixo tá basicamente usando o Pandas para criar uma "nova" tabela onde todas as frases de uma review/id são fundidas em uma média. 
+        df_topico_por_review = df_valid.groupby(['review_id', 'topic_id']).agg({
+            'review_score': 'mean',  
+            'weight': 'first'       
+        }).reset_index()
         
-        agg_df = df_valid.groupby('topic_id').apply(
+        # Aqui ta calculando a nota ponderada com os pesos(tempo de jogo) dessa tabela temporária com as notas unificadas 
+        df_topico_por_review['weighted_score'] = df_topico_por_review['review_score'] * df_topico_por_review['weight']
+        
+        # Aqui ele ta fazendo a média que da o resultado da nota do tópico 
+        agg_df = df_topico_por_review.groupby('topic_id').apply(
             lambda g: pd.Series({
-                # Soma das notas ponderadas / Soma dos pesos
                 'score': g['weighted_score'].sum() / g['weight'].sum() if g['weight'].sum() > 0 else g['review_score'].mean(),
-                'mentions': len(g)
+                'mentions': len(g)  # Como cada linha já é um jogador único, len(g) é o total de pessoas!
             })
         ).reset_index()
         positive_topics = []
         negative_topics = []
-        
-        unique_reviews = df.drop_duplicates('review_id')
-        if len(unique_reviews) > 0 and unique_reviews['weight'].sum() > 0:
-            overall_score = unique_reviews['weighted_score'].sum() / unique_reviews['weight'].sum()
+        # Alteração do cálculo do score geral. O código anterior possua um erro gravíssimo que literalmente pegava somente a primeira sentença de um grupo de sentenças da mesma review e jogava todo o resto fora. O correto e fazer a média de todas as sentenças da review e depois aplicar o peso. Isso impede que por exemplo que uma das sentenças do usuário seja positva e tenha várias outras muito negativas que vão ser totalmente desconsideradas. 
+        if not df.empty:
+            df_por_review = df.groupby('review_id').agg({
+                'review_score': 'mean',
+                'weight': 'first'
+            })
+            df_por_review['weighted_score'] = df_por_review['review_score'] * df_por_review['weight']
+            overall_score = df_por_review['weighted_score'].sum() / df_por_review['weight'].sum() if df_por_review['weight'].sum() > 0 else 0
         else:
             overall_score = 0
 
-        topic_info = self.topic_model.get_topic_info()
+        # topic_info = self.topic_model.get_topic_info() -> comentado pois não estava sendo utilizado 
 
+
+        # É aqui que o sistema da definindo o nome dos tópicos, pegando as palavras mais frequentes de cada tópico e utilizando elas para criar um nome mais amigável. Bom saber! 
         for _, row in agg_df.iterrows():
             tid = int(row['topic_id'])
             score = float(row['score'])
@@ -160,7 +180,7 @@ class ABSAPipeline:
 
             if is_positive_topic:
                 df_topic_filtered = df_topic_all[df_topic_all['review_score'] >= 3.0] \
-                    .sort_values(by='review_score', ascending=False)
+                    .sort_values(by='review_score', ascending=False) # Analisar possível mudança do 3.0 para algo como 2.5 ? 
             else:
                 df_topic_filtered = df_topic_all[df_topic_all['review_score'] < 3.0] \
                     .sort_values(by='review_score', ascending=True)
@@ -177,7 +197,7 @@ class ABSAPipeline:
                 "topic_id": tid,
                 "mentions": mentions,
                 "score": round(score, 1),
-                "keywords": keywords,
+                "keywords": keywords, # pode ser usado para nuvem de palavras 
                 "quotes": quotes
             }
             

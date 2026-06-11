@@ -1,14 +1,12 @@
 """FastAPI backend para análise de reviews da Steam com cache SQLite (WAL) e ABSA."""
 
+# Remoção de imports não utilizados ou obsoletos: asyncio, datetime, timezone, Optionl 
 from __future__ import annotations
-
-import asyncio
 import json
 import sqlite3
 import time
-from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import requests
 from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
@@ -21,6 +19,7 @@ from llm_summary import gerar_resumo
 
 app = FastAPI(title="Golden Reviews API")
 
+#Libera tudo do CORS para a fase de desenvolvimento. Em produção é necessário restringir para manter segurança. 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -142,7 +141,7 @@ def fetch_reviews(
             "review_type": review_type,
             "purchase_type": "all",
             "num_per_page": 100,
-            "filter": "recent",
+            "filter": "recent",# Usar "filter":"all" aqui focaria em pegar as reviews mais votadas o que pode retornar reviews muito mais valiosas, porém isso pode trazer muitas reviews antigas que não refletem mais a realidade do jogo . Mais é bom considerar essa hipótese. 
             "cursor": cursor,
         }
 
@@ -245,8 +244,25 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
         # ------------------------------------------------------------------
 
         # ==================================================================
+
+        #FIX: Melhorando a lógica da LLM . Se não tiver chave api ou não funcionar ele vai para o plano B que usa as informações da própria ia interna . 
         print(f"[Worker] Gerando resumo em linguagem natural via LLM...")
-        texto_resumo = gerar_resumo(analysis_result)
+
+        try:
+            texto_resumo = gerar_resumo(analysis_result)
+        except Exception as llm_err:
+            print(f"[Worker] LLM indisponível ({llm_err}). Gerando resumo estatístico padrão...")
+
+            score_final = analysis_result["summary"].get("overall_score", 0.0)
+            total_revs = analysis_result["summary"].get("reviews_analyzed", 0)
+            pct_pos = analysis_result["summary"].get("positive_percentage", 0)
+
+            texto_resumo = (
+                f"Análise baseada em {total_revs} reviews recentes da Steam. "
+                f"O jogo apresenta um índice de aprovação de {pct_pos}% pelos usuários, "
+                f"com uma nota de sentimento calculada em {score_final}/5.0 baseada nos tópicos identificados."
+            )
+
         analysis_result["summary"]["ai_text_summary"] = texto_resumo
 
         with sqlite3.connect(DB_PATH) as conn:
@@ -280,12 +296,14 @@ def root():
 def reviews_endpoint(
     background_tasks: BackgroundTasks, 
     appid: str = Query(..., description="App ID na Steam"),
-    maxReviews: int = Query(1200, description="Nº máximo de reviews"),
+    maxReviews: int = Query(1000, description="Nº máximo de reviews"), #Alterando amx reviews para 1000 
     language: str = Query("brazilian", description="Idioma das reviews")
 ):
     appid = appid.strip()
     if not appid:
         return JSONResponse(status_code=400, content={"error": "Parâmetro 'appid' é obrigatório."})
+    
+    maxReviews = 1000 #Trava de segurança 
 
     # Consulta ao Cache (Catraca do Polling)
     with sqlite3.connect(DB_PATH) as conn:
