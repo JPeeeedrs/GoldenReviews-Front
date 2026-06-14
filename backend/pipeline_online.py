@@ -22,20 +22,22 @@ nltk.download('punkt', quiet=True)
 
 class ABSAPipeline:
     def __init__(self, bertopic_model_path: str):
+
         print("Iniciando carregamento dos modelos na memória...")
+
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        
-        # Adicionando o modelo BERTweet baseado no BERTimbau
         self.sentiment_model_name = "pysentimiento/bertweet-pt-sentiment"
-        
         self.sentiment_tokenizer = AutoTokenizer.from_pretrained(self.sentiment_model_name)
         self.sentiment_model = AutoModelForSequenceClassification.from_pretrained(self.sentiment_model_name)
         self.sentiment_model.eval()
+
+        if self.device.type == 'cpu':
+            print("CPU detectada — aplicando quantização dinâmica (reduz RAM ~50%)...")   
+            self.sentiment_model = torch.quantization.quantize_dynamic(self.sentiment_model,{torch.nn.Linear}, dtype=torch.qint8)
+            print("Quantização aplicada com sucesso!")
+
         self.sentiment_model.to(self.device)
         
-        # 2️⃣ MAPEAMENTO DINÂMICO DE PESOS (A prova de falhas)
-        # O modelo retorna POS, NEG, NEU. Nós lemos a ordem exata da rede neural
-        # e criamos os multiplicadores: NEG=1.0, NEU=3.0, POS=5.0
         label_to_score = {"NEG": 1.0, "NEU": 3.0, "POS": 5.0}
         
         weights_list = []
@@ -47,19 +49,33 @@ class ABSAPipeline:
 
         self.embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
         self.topic_model = BERTopic.load(bertopic_model_path, embedding_model=self.embedding_model)
+        print("Todos os modelos carregados.")
 
-    def extract_continuous_score(self, text: str) -> float:
-        inputs = self.sentiment_tokenizer(text, return_tensors='pt', truncation=True, max_length=128).to(self.device)
+    def extract_scores_batch(self, texts: list[str], batch_size: int = 32) -> list[float]:
 
-        with torch.no_grad():
-            outputs = self.sentiment_model(**inputs)
+        all_scores: list[float] = []
+
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i : i + batch_size]
+
+            inputs = self.sentiment_tokenizer(
+                batch, 
+                return_tensors = "pt", 
+                truncation = True, 
+                max_length = 128,
+                padding = True,
+                ).to(self.device)
+
+            with torch.no_grad():
+                outputs = self.sentiment_model(**inputs)
             
-        probs = F.softmax(outputs.logits, dim=-1).squeeze()
+            probs = F.softmax(outputs.logits, dim=-1)
         
-        # 3️⃣ PRODUTO ESCALAR DE VOLTA!
-        # Mistura as porcentagens de POS/NEG/NEU com os pesos (1, 3 e 5) para gerar a nota quebrada
-        score = torch.dot(probs, self.score_weights).item() 
-        return score
+            scores = torch.mv(probs, self.score_weights)
+
+            all_scores.extend(scores.tolist())
+
+        return all_scores
 
     def simple_sentence_split(self, text: str) -> list[str]:# Divide o texto em sentenças usando nltk, filtrando sentenças muito curtas.
 
@@ -93,39 +109,60 @@ class ABSAPipeline:
         if not sentences_to_infer: # Se a lista de sentenças estiver vazia, aciona a função que contrói uma resposta padrão vazia . 
             return self._build_empty_response(game_details, start_time)
 
+        t1 = time.time()
         topics, _ = self.topic_model.transform(sentences_to_infer) # Passa a lista de sentenças para o BERTopic processar e retornar os tópicos correspondentes a cada sentença. Observação: o _ depois do topics é uma forma de ignogar o segundo valor que o BERTopic retorna, que é a probabilidade que ele definiu de cada sentença pertencer a cada tópico. No momento não estamos utilizando por uma questão de praticidade mais talvez possa ser útil no futuro para filtrar sentenças com baixa confiança de classificação.
-
+        print(f"[Timer] BERTopic transform: {time.time() - t1:.2f}s")
     
 
-        data_rows = []
+        valid_items = []
         for i, sent in enumerate(sentences_to_infer):
             topic_id = topics[i]
 
-            if topic_id != -1:
-                sent_score = self.extract_continuous_score(sent)
+            if topic_id == -1:
+                continue 
+            hours_played = review_hours_map.get(review_ids[i], 0)
 
-                hours_played = review_hours_map.get(review_ids[i], 0)
+            valid_items.append({
+                "sentence": sent,
+                "topic_id": topic_id,
+                "review_id": review_ids[i],
+                "hours_played": hours_played,
+            })
 
-                razao_horas = min(hours_played / avg_hours_dataset, 3.0)
+        if not valid_items:
+            return self._build_empty_response(game_details, start_time)
 
-                peso_review = 0.5 + (0.5 * razao_horas)
+        valid_texts = [item["sentence"] for item in valid_items]
+        print(f"[Pipeline] Rodando sentimento em batch: {len(valid_texts)} frases válidas...")
 
-                data_rows.append({
-                    "review_id": review_ids[i],
-                    "sentence": sent,
-                    "review_score": sent_score,
-                    "topic_id": topic_id,
-                    "weight": peso_review,
-                    "weighted_score": sent_score * peso_review
-                })
+        t2 = time.time()
+        scores = self.extract_scores_batch(valid_texts, batch_size = 32)
+        print(f"[Timer] Sentiment batch ({len(valid_texts)} frases): {time.time() - t2:.2f}s")
+
+        data_rows = []
+        for item, score in zip(valid_items, scores):
+            razao_horas = min(item["hours_played"] / avg_hours_dataset, 3.0)
+            peso_review = 0.5 + (0.5 * razao_horas)
+
+            data_rows.append({
+                "review_id": item["review_id"],
+                "sentence": item["sentence"],
+                "review_score": score,
+                "topic_id": item["topic_id"],
+                "weight": peso_review,
+                "weighted_score": score * peso_review
+            })
 
         if not data_rows:
             return self._build_empty_response(game_details, start_time)
 
         df_valid = pd.DataFrame(data_rows)
 
+        t3 = time.time()
         resultado_final = self._aggregate_results(df_valid, game_details, start_time, len(raw_reviews))
+        print(f"[Timer] Agregação pandas: {time.time() - t3:.2f}s")
 
+        print(f"[Timer] TOTAL pipeline: {time.time() - start_time:.2f}s")
         return resultado_final
 
     def _aggregate_results(self, df: pd.DataFrame, game_details: dict, start_time: float, num_analyzed: int) -> Dict[str, Any]:
