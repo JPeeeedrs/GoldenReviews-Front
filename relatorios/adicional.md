@@ -1,6 +1,6 @@
 ## Resumo Geral:
 
-* O código foi modificado para ter uma quantidade de reviews padrão de 1000. Isso foi alterado no app.py, steamApi.js e App.jsx .
+* O código foi modificado para ter uma quantidade de reviews padrão de 1000. Isso foi alterado no app.py, steamApi.js e App.jsx .No app.py também tem uma trava de segurança : maxReviews.
 * No App.jsx foi alterado o tempo do polling para 10s, o que é mais do que suficiente para a maioria dos casos e ajuda a reduzir a carga no servidor. Mudanças para outros valores podem ser testadas . 
 * No App.jsx também foi removido o input onde o usuário poderia escolher a quantidade de reviews processadas. Isso evita desbalanceamento no banco de dados e da mais controle para o sistema . 
 * O llm_summary.py foi refatorado para permitir o sistema funcionar sem api key e acionar o Plano B automaticamente, sem crashar o backend. O código agora tem um try-catch que tenta gerar o resumo usando a LLM, e se ocorrer um erro (como falta de chave de API ou falha na LLM), ele gera um resumo estatístico padrão usando as informações disponíveis na análise.
