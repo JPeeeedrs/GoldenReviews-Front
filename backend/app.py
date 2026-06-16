@@ -11,7 +11,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from pipeline_online import ABSAPipeline
-
 from llm_summary import gerar_resumo
 
 steam_session = requests.Session()
@@ -40,7 +39,7 @@ PIPELINE = ABSAPipeline(MODEL_PATH)
 
 
 def init_db():
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
         conn.execute("PRAGMA journal_mode=WAL;")
         conn.execute(
             """
@@ -54,8 +53,8 @@ def init_db():
         )
 
 init_db()
-# HELPER FUNCTIONS
 
+# HELPER FUNCTIONS
 def fetch_game_details(app_id: str) -> dict[str, Any]:
     steamspy_data = fetch_steamspy_stats(app_id)
     try:
@@ -125,7 +124,14 @@ def fetch_reviews(
     max_errors = 5
     url = STEAM_REVIEWS_URL.format(app_id=app_id)
 
+    loop_count = 0 
+
     while True:
+        loop_count += 1
+        if loop_count > 150: 
+            print(f"\n[Aviso] Quebra de segurança acionada! A Steam entrou em loop no appid {app_id}.")
+            break
+
         params = {
             "json": 1,
             "language": language,
@@ -183,6 +189,8 @@ def fetch_reviews(
             if max_reviews and len(reviews) >= max_reviews:
                 return reviews
 
+        if loop_count % 5 == 0:
+            print(f"      -> Steam: Baixando reviews... {len(reviews)} coletadas até agora.")
         novo_cursor = data.get("cursor", "")
         if not novo_cursor or novo_cursor == cursor:
             break
@@ -199,7 +207,7 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
         game_details = fetch_game_details(appid)
         
         if not reviews:
-            with sqlite3.connect(DB_PATH) as conn:
+            with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
                 conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
                              ('{"error": "Nenhuma review encontrada."}', time.time(), appid))
             return
@@ -209,13 +217,30 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
         
         analysis_result["game"] = {**analysis_result.get("game", {}), **game_details}
 
+        topicos_positivos = analysis_result.get("topics", {}).get("positive", [])
+        topicos_negativos = analysis_result.get("topics", {}).get("negative", [])
+
+        frases_positivas = sum(t.get("mentions", 0) for t in topicos_positivos)
+        frases_negativas = sum(t.get("mentions", 0) for t in topicos_negativos)
+        total_frases = frases_positivas + frases_negativas
+
+        pct_positiva = round((frases_positivas / total_frases) * 100) if total_frases > 0 else 0
+        pct_negativa = round((frases_negativas / total_frases) * 100) if total_frases > 0 else 0
+
         total_reviews_baixadas = len(reviews)
         avg_hours = sum(r.get("hours", 0) for r in reviews) / total_reviews_baixadas if total_reviews_baixadas > 0 else 0
         
         if "summary" not in analysis_result:
             analysis_result["summary"] = {}
             
-        analysis_result["summary"]["avg_hours"] = avg_hours
+        analysis_result["summary"].update({
+            "avg_hours": avg_hours,
+            "sentences_positive_count": frases_positivas,
+            "sentences_negative_count": frases_negativas,
+            "sentences_positive_percentage": pct_positiva,
+            "sentences_negative_percentage": pct_negativa,
+            "total_extracted_sentences": total_frases
+        })
 
         print(f"[Worker] Gerando resumo em linguagem natural via LLM...")
 
@@ -236,7 +261,7 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
 
         analysis_result["summary"]["ai_text_summary"] = texto_resumo
 
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
             conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",
                          (json.dumps(analysis_result), time.time(), appid))
                          
@@ -244,7 +269,7 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
 
     except Exception as e:
         print(f"[Worker] Error processando appid={appid}: {e}")
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
             conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
                          (json.dumps({"error": str(e)}), time.time(), appid))
 
@@ -255,7 +280,8 @@ def _background_llm_recovery(appid: str, data_dict: dict):
         texto_resumo = gerar_resumo(data_dict)
         data_dict["summary"]["ai_text_summary"] = texto_resumo
         
-        with sqlite3.connect(DB_PATH) as conn:
+        # Salva de volta no banco
+        with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
             conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",
                          (json.dumps(data_dict), time.time(), appid))
             
@@ -264,7 +290,7 @@ def _background_llm_recovery(appid: str, data_dict: dict):
     except Exception as e:
         print(f"[Worker LLM] Falha na recuperação: {e}")
 
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
             conn.execute("UPDATE game_cache SET status='completed' WHERE appid=?", (appid,))
 
 def _default_capsule(appid: str) -> str:
@@ -282,7 +308,7 @@ def root():
 def reviews_endpoint(
     background_tasks: BackgroundTasks, 
     appid: str = Query(..., description="App ID na Steam"),
-    maxReviews: int = Query(1000, description="Nº máximo de reviews"), 
+    maxReviews: int = Query(1000, description="Nº máximo de reviews"),
     language: str = Query("brazilian", description="Idioma das reviews")
 ):
     appid = appid.strip()
@@ -291,7 +317,7 @@ def reviews_endpoint(
     
     maxReviews = 1000 #Trava de segurança 
 
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
         cursor = conn.execute("SELECT status, data FROM game_cache WHERE appid = ?", (appid,))
         row = cursor.fetchone()
 
@@ -317,7 +343,6 @@ def reviews_endpoint(
                     
                     conn.execute("UPDATE game_cache SET status='processing' WHERE appid=?", (appid,))
                     
-                    # Chama o worker passando o JSON já convertido
                     background_tasks.add_task(_background_llm_recovery, appid, dados_json)
                     
                     return JSONResponse(
@@ -328,7 +353,6 @@ def reviews_endpoint(
                         }
                     )
                 else:
-                    # Se não tem erro nenhum, devolve o JSON normalmente
                     return JSONResponse(content=dados_json)
                     
             elif status == "error":
@@ -343,11 +367,13 @@ def reviews_endpoint(
                      }
                  )
 
+        # Se não existe no cache, vamos engatilhar a Análise Background
         conn.execute(
             "INSERT INTO game_cache (appid, status, data, updated_at) VALUES (?, ?, ?, ?)",
             (appid, "processing", "", time.time())
         )
         
+    # Dispara a Fila de Espera (Worker CPU-bound)
     background_tasks.add_task(_background_analysis_task, appid, maxReviews, language)
 
     return JSONResponse(
@@ -361,7 +387,7 @@ def reviews_endpoint(
 @app.get("/recommended")
 def recommended_games():
     games = []
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
         cursor = conn.execute(
             "SELECT data FROM game_cache WHERE status = 'completed' ORDER BY updated_at DESC LIMIT 100"
         )

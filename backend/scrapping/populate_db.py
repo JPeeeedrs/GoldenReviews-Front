@@ -7,15 +7,17 @@ import gc
 import torch
 
 from app import fetch_reviews, fetch_game_details, PIPELINE, DB_PATH
-from llm_summary import gerar_resumo
 
+# =========================================================================
+# CONFIGURAÇÃO DO SISTEMA DE LOGS
+# =========================================================================
 logging.basicConfig(
     level=logging.INFO,
     format='[%(asctime)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[
         logging.FileHandler("scraper.log", encoding="utf-8"),
-        logging.StreamHandler()                             
+        logging.StreamHandler()
     ]
 )
 
@@ -25,7 +27,7 @@ IDIOMA = "brazilian"
 LIMITE_JOGOS = 1000 
 
 def init_db():
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
         conn.execute("PRAGMA journal_mode=WAL;")
         conn.execute(
             """
@@ -41,8 +43,8 @@ def init_db():
 def processar_jogo(appid: str, game_name: str):
     appid = str(appid)
     
-    # 1. Verifica se o jogo já foi processado com sucesso antes
-    with sqlite3.connect(DB_PATH) as conn:
+    # 1. Verifica se já está no banco
+    with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
         cursor = conn.execute("SELECT status FROM game_cache WHERE appid = ?", (appid,))
         row = cursor.fetchone()
         if row and row[0] == "completed":
@@ -52,7 +54,7 @@ def processar_jogo(appid: str, game_name: str):
     logging.info(f"\n[{game_name}] A iniciar extração de até {MAX_REVIEWS} reviews...")
     
     try:
-        # 2. Procura as reviews na API da Steam (Usa a correção do purchase_type='all')
+        # 2. Busca na Steam
         reviews = fetch_reviews(appid, MAX_REVIEWS, IDIOMA)
         game_details = fetch_game_details(appid)
         
@@ -60,50 +62,52 @@ def processar_jogo(appid: str, game_name: str):
             logging.warning(f"[{game_name}] Ignorado: Nenhuma review em PT-BR encontrada.")
             return False
 
-        # 3. Regra de Segurança: Filtro anti-gargalo (Ex: Caso do PUBG com poucas reviews)
         if len(reviews) < 100:
-            logging.warning(f"[{game_name}] Ignorado: Apenas {len(reviews)} reviews recolhidas. Quantidade insuficiente para análise!")
+            logging.warning(f"[{game_name}] Ignorado: Apenas {len(reviews)} reviews recolhidas.")
             return False
             
-        logging.info(f"[{game_name}] Recolhidas {len(reviews)} reviews. A processar Inteligência Artificial (BERTopic)...")
+        logging.info(f"[{game_name}] Recolhidas {len(reviews)} reviews. A processar BERTopic...")
         
-        # 4. Processa no seu Pipeline Local otimizado para GPU
+        # 3. Processa no Pipeline (BERTopic)
         analysis_result = PIPELINE.process_reviews(reviews, game_details)
         analysis_result["game"] = {**analysis_result.get("game", {}), **game_details}
 
-        # 5. Cálculos estatísticos para o Frontend
-        total = len(reviews)
-        pos_count = sum(1 for r in reviews if r.get("recommended"))
-        neg_count = total - pos_count
-        pos_pct = round((pos_count / total) * 100) if total > 0 else 0
-        neg_pct = round((neg_count / total) * 100) if total > 0 else 0
-        avg_hours = sum(r.get("hours", 0) for r in reviews) / total if total > 0 else 0
+        # 4. Matemática Exata das Frases (Nova Lógica)
+        topicos_positivos = analysis_result.get("topics", {}).get("positive", [])
+        topicos_negativos = analysis_result.get("topics", {}).get("negative", [])
+
+        frases_positivas = sum(t.get("mentions", 0) for t in topicos_positivos)
+        frases_negativas = sum(t.get("mentions", 0) for t in topicos_negativos)
+        total_frases = frases_positivas + frases_negativas
+
+        pct_positiva = round((frases_positivas / total_frases) * 100) if total_frases > 0 else 0
+        pct_negativa = round((frases_negativas / total_frases) * 100) if total_frases > 0 else 0
+
+        total_reviews_baixadas = len(reviews)
+        avg_hours = sum(r.get("hours", 0) for r in reviews) / total_reviews_baixadas if total_reviews_baixadas > 0 else 0
         
         if "summary" not in analysis_result:
             analysis_result["summary"] = {}
             
         analysis_result["summary"].update({
-            "reviews_analyzed": total,
-            "positive_count": pos_count,
-            "positive_percentage": pos_pct,
-            "negative_count": neg_count,
-            "negative_percentage": neg_pct,
-            "avg_hours": avg_hours
+            "reviews_analyzed": total_reviews_baixadas,
+            "avg_hours": avg_hours,
+            "sentences_positive_count": frases_positivas,
+            "sentences_negative_count": frases_negativas,
+            "sentences_positive_percentage": pct_positiva,
+            "sentences_negative_percentage": pct_negativa,
+            "total_extracted_sentences": total_frases,
+            "ai_text_summary": "Pendente de Processamento (Fase 2)" # Marcação provisória
         })
 
-        # 6. Gera o Resumo utilizando a API ultra-rápida do GROQ (Llama 3)
-        logging.info(f"[{game_name}] A gerar Resumo de texto com a API do Groq...")
-        texto_resumo = gerar_resumo(analysis_result)
-        analysis_result["summary"]["ai_text_summary"] = texto_resumo
-
-        # 7. Guarda o progresso de forma cirúrgica na Base de Dados
-        with sqlite3.connect(DB_PATH) as conn:
+        # 5. Guarda o progresso no Banco IMEDIATAMENTE (Sem chamar o Groq)
+        with sqlite3.connect(DB_PATH, timeout=10.0) as conn:
             conn.execute(
                 "INSERT OR REPLACE INTO game_cache (appid, status, data, updated_at) VALUES (?, ?, ?, ?)",
                 (appid, 'completed', json.dumps(analysis_result), time.time())
             )
             
-        logging.info(f"✅ [{game_name}] Concluído com sucesso e guardado!")
+        logging.info(f"✅ [{game_name}] Análise BERT concluída e guardada!")
         return True
 
     except Exception as e:
@@ -111,54 +115,37 @@ def processar_jogo(appid: str, game_name: str):
         return False
 
 def main():
-    logging.info("🚀 A iniciar Script de População em Massa Golden Reviews (Versão Groq + Logs) 🚀")
+    logging.info("🚀 A iniciar FASE 1: Extração e BERTopic 🚀")
     init_db()
 
     if not os.path.exists(ARQUIVO_JSON):
-        logging.error(f"Erro fatal: Ficheiro {ARQUIVO_JSON} não encontrado na pasta!")
+        logging.error(f"Erro fatal: Ficheiro {ARQUIVO_JSON} não encontrado!")
         return
 
     with open(ARQUIVO_JSON, 'r', encoding='utf-8') as f:
         jogos_lista = json.load(f)
 
     jogos_para_processar = jogos_lista[:LIMITE_JOGOS]
-
-    logging.info(f"Encontrados {len(jogos_lista)} jogos no JSON. Alvo: Processar {len(jogos_para_processar)} jogos.")
-    
     sucessos = 0
-    falhas = 0
 
     for i, jogo in enumerate(jogos_para_processar):
-
         appid = jogo.get("steam_appid_ref") or jogo.get("appid")
-        
-        nome = "Jogo Desconhecido"
-        if "game" in jogo and "name" in jogo["game"]:
-            nome = jogo["game"]["name"]
+        nome = jogo.get("game", {}).get("name", "Jogo Desconhecido") if "game" in jogo else "Jogo Desconhecido"
         
         if not appid:
             continue
             
-        logging.info(f"\n--- Progresso: {i+1}/{len(jogos_para_processar)} ---")
-        sucesso = processar_jogo(appid, nome)
-        
-        if sucesso:
+        logging.info(f"--- Progresso: {i+1}/{len(jogos_para_processar)} | Jogo: {nome} ---")
+        if processar_jogo(appid, nome):
             sucessos += 1
-        else:
-            falhas += 1
             
-        time.sleep(10)
+        time.sleep(2) # Pausa mínima só para Steam respirar
 
         gc.collect()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    logging.info("\n" + "="*40)
-    logging.info("🏁 RELATÓRIO FINAL DO SCRAPER 🏁")
-    logging.info(f"Total Processado: {len(jogos_para_processar)}")
-    logging.info(f"Sucessos Gravados: {sucessos}")
-    logging.info(f"Falhas/Ignorados: {falhas}")
-    logging.info("="*40)
+    logging.info(f"🏁 FASE 1 CONCLUÍDA. Sucessos: {sucessos} 🏁")
 
 if __name__ == "__main__":
     main()
