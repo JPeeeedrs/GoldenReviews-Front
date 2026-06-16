@@ -14,8 +14,12 @@ export default function StatGrid({ game, summary, metadata, meta }) {
 	return (
 		<div className='stat-grid'>
 			<div className='stat-card'>
-				<span>Reviews processadas</span>
-				<strong>{integerFormat(summary?.reviews_analyzed ?? 0)}</strong>
+				<span>Frases extraídas (IA)</span>
+				<strong>
+					{integerFormat(
+						summary?.total_sentences ?? summary?.reviews_analyzed ?? 0,
+					)}
+				</strong>
 			</div>
 			<div className='stat-card good'>
 				<span>Positivas</span>

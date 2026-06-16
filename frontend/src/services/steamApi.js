@@ -10,7 +10,7 @@ export async function searchSteamGames(term) {
 
 export async function getReviews(
 	appid,
-	maxReviews = 1000, // Padrão agora é 1000 
+	maxReviews = 1000,
 	language = "brazilian",
 ) {
 	const params = new URLSearchParams({
@@ -21,13 +21,11 @@ export async function getReviews(
 
 	const res = await fetch(`${BASE_URL}/reviews?${params.toString()}`);
 
-	// Lógica de polling mantida da HEAD: 202 significa que a IA ainda está processando
 	if (res.status === 202) {
 		return { status: 202, data: await res.json() };
 	}
 
 	if (!res.ok) throw new Error("Erro ao analisar reviews");
 
-	// 200 significa que o cache retornou o JSON completo
 	return { status: 200, data: await res.json() };
 }

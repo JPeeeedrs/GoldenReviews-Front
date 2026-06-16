@@ -1,6 +1,3 @@
-#UPDATE: Refatoração completa para permitir o sistema funcionar sem api key e acionar o Plano B automaticamente, sem crashar o backend.
-
-
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -9,7 +6,6 @@ load_dotenv()
 
 api_key = os.getenv("GROQ_API_KEY")
 
-# 1️⃣ Não dá crash no topo! Só deixa o client "vazio" se não tiver chave
 client = OpenAI(
     api_key=api_key,
     base_url="https://api.groq.com/openai/v1"
@@ -17,8 +13,6 @@ client = OpenAI(
 
 def gerar_resumo(analysis_result: dict) -> dict:
 
-    # 2️⃣ Se o client estiver vazio (sem .env), estoura o erro AQUI na hora da chamada. 
-    # Isso vai fazer o Python pular direto pro Plano B lá no app.py!
     if not client:
         raise Exception("Sem chave de API! Acionando Plano B automático...")
 
@@ -30,7 +24,6 @@ def gerar_resumo(analysis_result: dict) -> dict:
     str_positivos = ", ".join(pos_topics) if pos_topics else "Nenhum ponto positivo forte detectado."
     str_negativos = ", ".join(neg_topics) if neg_topics else "Nenhum problema grave relatado."
 
-    # Mantive o seu prompt original pedindo a NOTA para a IA!
     prompt = f"""
     Você é um assistente especialista em analisar avaliações de jogos na Steam.
     Com base nos dados abaixo, responda exatamente neste formato, sem texto adicional:
@@ -66,6 +59,4 @@ def gerar_resumo(analysis_result: dict) -> dict:
         
     except Exception as e:
         print(f"Erro ao gerar resumo via LLM: {e}")
-        # 3️⃣ A JOGADA DE MESTRE: Em vez de retornar 0.0, nós REPASSAMOS o erro.
-        # Assim o try/except do app.py entende que a LLM falhou e aciona o Plano B!
         raise e

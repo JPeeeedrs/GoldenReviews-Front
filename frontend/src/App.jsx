@@ -3,6 +3,7 @@ import SearchBox from "./components/SearchBox";
 import Results from "./components/Results";
 import SelectedGame from "./components/SelectedGame";
 import ReviewAnalysis from "./components/ReviewAnalysis";
+import RecommendedGames from "./components/RecommendedGames";
 
 import { searchSteamGames, getReviews } from "./services/steamApi";
 
@@ -14,12 +15,13 @@ export default function App() {
 	const [games, setGames] = useState([]);
 	const [selected, setSelected] = useState(null);
 	const [reviews, setReviews] = useState(null);
-	const [maxReviews, setMaxReviews] = useState(1000); //Padrão é 1000! 
+	const [maxReviews, setMaxReviews] = useState(1000);
 	const [language, setLanguage] = useState("brazilian");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	// Buscar jogos
+	const [showFoxy, setShowFoxy] = useState(false);
+
 	useEffect(() => {
 		if (query.length < 2) return;
 
@@ -42,7 +44,6 @@ export default function App() {
 		setReviews(null);
 	}
 
-	// Polling Effect - Mantido da HEAD com as novas chamadas do ABSA
 	useEffect(() => {
 		if (!loading || !selected) return;
 
@@ -53,7 +54,6 @@ export default function App() {
 				const result = await getReviews(selected.appid, maxReviews, language);
 				if (!active) return;
 
-				// Se o cache já concluiu e montou o JSON completo (Status 200)
 				if (result.status === 200) {
 					setReviews({
 						...result.data,
@@ -64,7 +64,6 @@ export default function App() {
 					});
 					setLoading(false);
 				}
-				// Se retornar 202, continua em polling silenciosamente
 			} catch (e) {
 				if (!active) return;
 				console.error(e);
@@ -74,16 +73,46 @@ export default function App() {
 		};
 
 		poll();
-		const intervalId = setInterval(poll, 10000); //FIX : aumento de 2000(2s) para 10000(10s)
+		const intervalId = setInterval(poll, 10000);
 		return () => {
 			active = false;
 			clearInterval(intervalId);
 		};
 	}, [loading, selected, maxReviews, language]);
 
-	// BOTÃO ANALISAR
 	function handleAnalyze() {
 		if (!selected) return;
+		const nomeDoJogo = selected.name.toLowerCase();
+
+		if (
+			nomeDoJogo.includes("death stranding 2") ||
+			nomeDoJogo.includes("on the beach")
+		) {
+			const audioEasterEgg = new Audio(
+				"../public/brksedu-impressionante-demais.mp3",
+			);
+			audioEasterEgg.volume = 0.25;
+
+			audioEasterEgg
+				.play()
+				.catch((erro) => console.log("Erro ao tocar áudio:", erro));
+		}
+		if (
+			nomeDoJogo.includes("fnaf 2") ||
+			nomeDoJogo.includes("five nights at freddy's 2")
+		) {
+			const audioFnaf = new Audio("../public/foxy-scream-fnaf.mp3");
+			audioFnaf.volume = 0.2;
+			audioFnaf
+				.play()
+				.catch((erro) => console.log("Erro ao tocar áudio FNAF:", erro));
+
+			setShowFoxy(true);
+
+			setTimeout(() => {
+				setShowFoxy(false);
+			}, 5000);
+		}
 
 		setLoading(true);
 		setReviews(null);
@@ -109,22 +138,7 @@ export default function App() {
 				showClear={Boolean(query) || Boolean(selected)}
 			/>
 
-			<div className='limit-box' style={{ justifyContent: 'center' }}>
-			{/* Remoção da opção do usuário definir quantidade máxima no FRONT. */}
-				<div>
-					<label>Idioma</label>
-					<select
-						value={language}
-						onChange={(e) => setLanguage(e.target.value)}
-					>
-						<option value='brazilian'>Português (Brasil)</option>
-						<option value='english'>Inglês</option>
-						<option value='all'>Todos idiomas</option>
-					</select>
-				</div>
-			</div>
-
-			{!query && <div className='status-info'>Digite algo para começar.</div>}
+			{!query && !selected && <RecommendedGames onSelectGame={handleSelect} />}
 
 			{selected && (
 				<button
@@ -141,7 +155,7 @@ export default function App() {
 
 			<SelectedGame game={selected} />
 
-			{!selected && (
+			{!selected && query.length >= 2 && (
 				<Results
 					games={visibleGames}
 					onSelect={handleSelect}
@@ -149,7 +163,6 @@ export default function App() {
 				/>
 			)}
 
-			{/* Botão de Análise atualizado com a nova UX */}
 			{selected && (
 				<button
 					className='analyze-btn'
@@ -171,6 +184,13 @@ export default function App() {
 			)}
 
 			<ReviewAnalysis data={reviews} />
+			{showFoxy && (
+				<img
+					src='../public/fnaf-memes.gif'
+					alt='Jumpscare do Foxy'
+					className='jumpscare-overlay'
+				/>
+			)}
 		</div>
 	);
 }

@@ -1,6 +1,3 @@
-"""FastAPI backend para análise de reviews da Steam com cache SQLite (WAL) e ABSA."""
-
-# Remoção de imports não utilizados ou obsoletos: asyncio, datetime, timezone, Optionl 
 from __future__ import annotations
 import json
 import sqlite3
@@ -17,9 +14,10 @@ from pipeline_online import ABSAPipeline
 
 from llm_summary import gerar_resumo
 
+steam_session = requests.Session()
+
 app = FastAPI(title="Golden Reviews API")
 
-#Libera tudo do CORS para a fase de desenvolvimento. Em produção é necessário restringir para manter segurança. 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -28,10 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ════════════════════════════════════════════════════════════════════════════
 # CONFIG & DB
-# ════════════════════════════════════════════════════════════════════════════
-
 STEAM_REVIEWS_URL = "https://store.steampowered.com/appreviews/{app_id}"
 STEAM_DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={app_id}&l=portuguese"
 STEAM_SEARCH_URL = "https://store.steampowered.com/api/storesearch/"
@@ -45,7 +40,6 @@ PIPELINE = ABSAPipeline(MODEL_PATH)
 
 
 def init_db():
-    """Inicializa o banco de dados SQLite com suporte a concorrência."""
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute("PRAGMA journal_mode=WAL;")
         conn.execute(
@@ -60,15 +54,12 @@ def init_db():
         )
 
 init_db()
-
-# ════════════════════════════════════════════════════════════════════════════
 # HELPER FUNCTIONS
-# ════════════════════════════════════════════════════════════════════════════
 
 def fetch_game_details(app_id: str) -> dict[str, Any]:
     steamspy_data = fetch_steamspy_stats(app_id)
     try:
-        resp = requests.get(
+        resp = steam_session.get(
             STEAM_DETAILS_URL.format(app_id=app_id),
             timeout=8,
         )
@@ -106,7 +97,7 @@ def fetch_game_details(app_id: str) -> dict[str, Any]:
 def fetch_steamspy_stats(app_id: str) -> dict[str, Any]:
     params = {"request": "appdetails", "appid": app_id}
     try:
-        resp = requests.get(STEAMSPY_DETAILS_URL, params=params, timeout=8)
+        resp = steam_session.get(STEAMSPY_DETAILS_URL, params=params, timeout=8)
         resp.raise_for_status()
         data = resp.json()
         positive = int(data.get("positive", 0) or 0)
@@ -141,12 +132,12 @@ def fetch_reviews(
             "review_type": review_type,
             "purchase_type": "all",
             "num_per_page": 100,
-            "filter": "recent",# Usar "filter":"all" aqui focaria em pegar as reviews mais votadas o que pode retornar reviews muito mais valiosas, porém isso pode trazer muitas reviews antigas que não refletem mais a realidade do jogo . Mais é bom considerar essa hipótese. 
+            "filter": "recent",
             "cursor": cursor,
         }
 
         try:
-            resp = requests.get(url, params=params, timeout=15)
+            resp = steam_session.get(url, params=params, timeout=15)
             resp.raise_for_status()
             data = resp.json()
             errors = 0
@@ -192,16 +183,16 @@ def fetch_reviews(
             if max_reviews and len(reviews) >= max_reviews:
                 return reviews
 
-        cursor = data.get("cursor", "")
-        if not cursor:
+        novo_cursor = data.get("cursor", "")
+        if not novo_cursor or novo_cursor == cursor:
             break
 
+        cursor = novo_cursor
         time.sleep(0.35)
 
     return reviews
 
 def _background_analysis_task(appid: str, max_reviews: int, language: str):
-    """Worker Thread para evitar bloqueio do event loop do FastAPI"""
     try:
         print(f"[Worker] Fetching reviews para appid={appid}...")
         reviews = fetch_reviews(appid, max_reviews, language)
@@ -218,34 +209,14 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
         
         analysis_result["game"] = {**analysis_result.get("game", {}), **game_details}
 
-        # ------------------------------------------------------------------
-        # FIX: Restaurando a matemática do Summary que o Front espera
-        # ------------------------------------------------------------------
-        total = len(reviews)
-        pos_count = sum(1 for r in reviews if r.get("recommended"))
-        neg_count = total - pos_count
-        
-        pos_pct = round((pos_count / total) * 100) if total > 0 else 0
-        neg_pct = round((neg_count / total) * 100) if total > 0 else 0
-        avg_hours = sum(r.get("hours", 0) for r in reviews) / total if total > 0 else 0
+        total_reviews_baixadas = len(reviews)
+        avg_hours = sum(r.get("hours", 0) for r in reviews) / total_reviews_baixadas if total_reviews_baixadas > 0 else 0
         
         if "summary" not in analysis_result:
             analysis_result["summary"] = {}
             
-        # Atualiza o summary com os dados crus da Steam preservando o que a IA gerou
-        analysis_result["summary"].update({
-            "reviews_analyzed": total,
-            "positive_count": pos_count,
-            "positive_percentage": pos_pct,
-            "negative_count": neg_count,
-            "negative_percentage": neg_pct,
-            "avg_hours": avg_hours
-        })
-        # ------------------------------------------------------------------
+        analysis_result["summary"]["avg_hours"] = avg_hours
 
-        # ==================================================================
-
-        #FIX: Melhorando a lógica da LLM . Se não tiver chave api ou não funcionar ele vai para o plano B que usa as informações da própria ia interna . 
         print(f"[Worker] Gerando resumo em linguagem natural via LLM...")
 
         try:
@@ -277,14 +248,29 @@ def _background_analysis_task(appid: str, max_reviews: int, language: str):
             conn.execute("UPDATE game_cache SET status='error', data=?, updated_at=? WHERE appid=?",
                          (json.dumps({"error": str(e)}), time.time(), appid))
 
+def _background_llm_recovery(appid: str, data_dict: dict):
+    try:
+        print(f"[Worker LLM] Re-analisando AppID {appid} via Groq...")
+        
+        texto_resumo = gerar_resumo(data_dict)
+        data_dict["summary"]["ai_text_summary"] = texto_resumo
+        
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='completed', data=?, updated_at=? WHERE appid=?",
+                         (json.dumps(data_dict), time.time(), appid))
+            
+        print(f"[Worker LLM] AppID {appid} curado com sucesso!")
+        
+    except Exception as e:
+        print(f"[Worker LLM] Falha na recuperação: {e}")
+
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.execute("UPDATE game_cache SET status='completed' WHERE appid=?", (appid,))
+
 def _default_capsule(appid: str) -> str:
     return f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/capsule_184x69.jpg"
 
-
-# ════════════════════════════════════════════════════════════════════════════
 # ROUTES
-# ════════════════════════════════════════════════════════════════════════════
-
 @app.get("/")
 def root():
     return {
@@ -296,7 +282,7 @@ def root():
 def reviews_endpoint(
     background_tasks: BackgroundTasks, 
     appid: str = Query(..., description="App ID na Steam"),
-    maxReviews: int = Query(1000, description="Nº máximo de reviews"), #Alterando amx reviews para 1000 
+    maxReviews: int = Query(1000, description="Nº máximo de reviews"), 
     language: str = Query("brazilian", description="Idioma das reviews")
 ):
     appid = appid.strip()
@@ -305,17 +291,49 @@ def reviews_endpoint(
     
     maxReviews = 1000 #Trava de segurança 
 
-    # Consulta ao Cache (Catraca do Polling)
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.execute("SELECT status, data FROM game_cache WHERE appid = ?", (appid,))
         row = cursor.fetchone()
 
         if row:
-            status, data = row
+            status, data_str = row
             if status == "completed":
-                return JSONResponse(content=json.loads(data))
+                # 1. Transforma a string do banco num dicionário real (isso resolve o problema dos acentos)
+                dados_json = json.loads(data_str)
+                
+                # 2. Navega até onde o texto da IA está salvo
+                summary = dados_json.get("summary", {})
+                ai_text_obj = summary.get("ai_text_summary", "")
+                
+                texto_resumo = ""
+                if isinstance(ai_text_obj, dict):
+                    texto_resumo = ai_text_obj.get("resumo", "").lower()
+                elif isinstance(ai_text_obj, str):
+                    texto_resumo = ai_text_obj.lower()
+                
+                # 3. Verifica o erro no texto já extraído e limpo
+                if "indisponível" in texto_resumo or "limite de requisições" in texto_resumo:
+                    print(f"[Auto-cura] Acionando recuperação LLM para o appid {appid}.")
+                    
+                    conn.execute("UPDATE game_cache SET status='processing' WHERE appid=?", (appid,))
+                    
+                    # Chama o worker passando o JSON já convertido
+                    background_tasks.add_task(_background_llm_recovery, appid, dados_json)
+                    
+                    return JSONResponse(
+                        status_code=202,
+                        content={
+                            "status": "processing",
+                            "message": "Re-conectando com a Inteligência Artificial. Aguarde..."
+                        }
+                    )
+                else:
+                    # Se não tem erro nenhum, devolve o JSON normalmente
+                    return JSONResponse(content=dados_json)
+                    
             elif status == "error":
-                 return JSONResponse(status_code=500, content=json.loads(data))
+                 return JSONResponse(status_code=500, content=json.loads(data_str))
+                 
             elif status == "processing":
                  return JSONResponse(
                      status_code=202,
@@ -325,13 +343,11 @@ def reviews_endpoint(
                      }
                  )
 
-        # Se não existe no cache, vamos engatilhar a Análise Background
         conn.execute(
             "INSERT INTO game_cache (appid, status, data, updated_at) VALUES (?, ?, ?, ?)",
             (appid, "processing", "", time.time())
         )
         
-    # Dispara a Fila de Espera (Worker CPU-bound)
     background_tasks.add_task(_background_analysis_task, appid, maxReviews, language)
 
     return JSONResponse(
@@ -342,6 +358,36 @@ def reviews_endpoint(
          }
     )
 
+@app.get("/recommended")
+def recommended_games():
+    games = []
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.execute(
+            "SELECT data FROM game_cache WHERE status = 'completed' ORDER BY updated_at DESC LIMIT 100"
+        )
+        for row in cursor:
+            try:
+                game_data = json.loads(row[0])
+                game_info = game_data.get("game", {})
+                
+                appid = game_info.get("appid")
+                if not appid:
+                    continue
+                    
+                image = game_info.get("header_image")
+                if not image:
+                    image = _default_capsule(str(appid))
+                    
+                games.append({
+                    "appid": str(appid),
+                    "name": game_info.get("name", f"App {appid}"),
+                    "image": image
+                })
+            except Exception:
+                continue
+                
+    return games
+
 
 @app.get("/search")
 def search(q: str = Query("", description="Termo de pesquisa", alias="q")):
@@ -351,7 +397,7 @@ def search(q: str = Query("", description="Termo de pesquisa", alias="q")):
 
     params = {"term": term, "l": "portuguese", "cc": "BR"}
     try:
-        res = requests.get(STEAM_SEARCH_URL, params=params, timeout=5)
+        res = steam_session.get(STEAM_SEARCH_URL, params=params, timeout=5)
         data = res.json()
     except requests.RequestException:
         raise HTTPException(status_code=502, detail="Erro na comunicação com a Steam")
@@ -381,4 +427,5 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000, 
         reload=False,
-        workers=1,)
+        workers=1,
+    )

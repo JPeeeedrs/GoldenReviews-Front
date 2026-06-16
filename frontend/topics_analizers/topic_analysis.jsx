@@ -88,7 +88,6 @@ export default function TopicAnalysis() {
 				</select>
 			</div>
 
-			{/* Lista de temas */}
 			{rows.map(([name, count]) => {
 				const pct = ((count / total) * 100).toFixed(1);
 				const barW = Math.round((count / maxCount) * 100);
