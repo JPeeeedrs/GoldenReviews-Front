@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# 1. Chave API
 api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
@@ -14,7 +13,6 @@ if not api_key:
 
 client = Client(api_key=api_key)
 
-# 2. Temas Base (Servem apenas como guia/inspiração para a IA)
 MACRO_THEMES_BASE = [
     "🐛 Bugs e Crashes",
     "📉 Desempenho e FPS",
@@ -34,14 +32,12 @@ TOPICS_JSON_PATH = Path("backend/steam_bertopic_model/topics.json")
 OUTPUT_PATH = Path("grouped_topics_llm.json")
 
 def classificar_com_ia(topics_dict):
-    # Simplificamos a estrutura para garantir que é apenas texto simples
     dados_para_ia = {}
     for tid, words in topics_dict.items():
         if str(tid) == "-1": continue
         
-        # Garante que as palavras sejam convertidas para uma string simples
         if isinstance(words, list):
-            # Se for lista de listas, pega o primeiro item de cada
+
             if len(words) > 0 and isinstance(words[0], list):
                 palavras = ", ".join([item[0] for item in words[:5]])
             else:
@@ -51,7 +47,6 @@ def classificar_com_ia(topics_dict):
             
         dados_para_ia[str(tid)] = palavras
 
-    # Prompt corrigido: garantindo que tudo seja convertido para string antes do dump
     prompt = f"""
     És um analista de dados especialista em videojogos.
     Classifica os seguintes tópicos nos temas base: {", ".join(MACRO_THEMES_BASE)}.
@@ -92,7 +87,6 @@ def main():
 
         print(f"✅ Sucesso Absoluto! JSON salvo em {OUTPUT_PATH}")
         
-        # Um pequeno log extra para te avisar se a IA criou coisas novas!
         temas_gerados = list(resultado_final.keys())
         novos_temas = [t for t in temas_gerados if t not in MACRO_THEMES_BASE and t != CATEGORY_TRASH]
         if novos_temas:

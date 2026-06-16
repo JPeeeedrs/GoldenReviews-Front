@@ -1,0 +1,100 @@
+.recommended-section {
+	margin: 20px 0 30px 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.recommended-title {
+	font-size: 1.2rem;
+	color: var(--text-color, #e0e0e0);
+	margin-bottom: 15px;
+	text-align: center;
+	font-weight: 600;
+}
+
+.carousel-container {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+	-webkit-mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+}
+
+.carousel-track {
+	display: flex;
+	gap: 15px;
+	width: max-content;
+	animation: scroll-carousel 90s linear infinite;
+}
+
+.carousel-track:hover {
+	animation-play-state: paused;
+}
+
+.carousel-card {
+	position: relative;
+	width: 200px;
+	height: 94px;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+	flex-shrink: 0;
+	background: #1e1e24;
+}
+
+.carousel-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.carousel-card-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+	color: white;
+	font-size: 0.85rem;
+	padding: 20px 10px 8px 10px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.carousel-card:hover .carousel-card-title {
+	opacity: 1;
+}
+
+@keyframes scroll-carousel {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-50% - 7.5px));
+	}
+}

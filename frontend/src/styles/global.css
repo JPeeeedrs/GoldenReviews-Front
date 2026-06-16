@@ -125,3 +125,14 @@ button {
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 }
+
+.jumpscare-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: 99999;
+	pointer-events: none;
+}

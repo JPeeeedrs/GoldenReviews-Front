@@ -77,7 +77,7 @@ class ABSAPipeline:
 
         return all_scores
 
-    def simple_sentence_split(self, text: str) -> list[str]:# Divide o texto em sentenças usando nltk, filtrando sentenças muito curtas.
+    def simple_sentence_split(self, text: str) -> list[str]:
 
         frases = nltk.sent_tokenize(text, language='portuguese')
         return [f.strip() for f in frases if len(f.strip()) >= 30]
@@ -94,7 +94,7 @@ class ABSAPipeline:
         total_reviews = len(review_hours_map)
         avg_hours_dataset = (total_hours / total_reviews) if total_reviews > 0 else 1.0
 
-        avg_hours_dataset = max(avg_hours_dataset, 1.0) # Evita divisão por zero e mantém uma média mínima de 1 hora para o cálculo do peso, garantindo que reviews sem horas ou com horas muito baixas ainda tenham um peso razoável.
+        avg_hours_dataset = max(avg_hours_dataset, 1.0) 
 
         for review in raw_reviews:
             r_text = review.get('text', '')
@@ -110,7 +110,7 @@ class ABSAPipeline:
             return self._build_empty_response(game_details, start_time)
 
         t1 = time.time()
-        topics, _ = self.topic_model.transform(sentences_to_infer) # Passa a lista de sentenças para o BERTopic processar e retornar os tópicos correspondentes a cada sentença. Observação: o _ depois do topics é uma forma de ignogar o segundo valor que o BERTopic retorna, que é a probabilidade que ele definiu de cada sentença pertencer a cada tópico. No momento não estamos utilizando por uma questão de praticidade mais talvez possa ser útil no futuro para filtrar sentenças com baixa confiança de classificação.
+        topics, _ = self.topic_model.transform(sentences_to_infer)
         print(f"[Timer] BERTopic transform: {time.time() - t1:.2f}s")
     
 
@@ -168,27 +168,34 @@ class ABSAPipeline:
     def _aggregate_results(self, df: pd.DataFrame, game_details: dict, start_time: float, num_analyzed: int) -> Dict[str, Any]:
         
         df_valid = df[df['topic_id'] != -1]
+        
+        total_sentences = len(df_valid)
+        if total_sentences > 0:
+            pos_sentences = len(df_valid[df_valid['review_score'] >= 3.0])
+            neg_sentences = len(df_valid[df_valid['review_score'] < 3.0])
+            pos_pct = round((pos_sentences / total_sentences) * 100)
+            neg_pct = round((neg_sentences / total_sentences) * 100)
+        else:
+            pos_sentences = neg_sentences = pos_pct = neg_pct = 0
             
-            # Aplicando a abordagem da média dos jogadores para a nota dos tópicos também . 
-            # O código abaixo tá basicamente usando o Pandas para criar uma "nova" tabela onde todas as frases de uma review/id são fundidas em uma média. 
+        # Aplicando a abordagem da média dos jogadores para a nota dos tópicos também . 
         df_topico_por_review = df_valid.groupby(['review_id', 'topic_id']).agg({
             'review_score': 'mean',  
             'weight': 'first'       
         }).reset_index()
-        
-        # Aqui ta calculando a nota ponderada com os pesos(tempo de jogo) dessa tabela temporária com as notas unificadas 
+
         df_topico_por_review['weighted_score'] = df_topico_por_review['review_score'] * df_topico_por_review['weight']
         
-        # Aqui ele ta fazendo a média que da o resultado da nota do tópico 
+
         agg_df = df_topico_por_review.groupby('topic_id').apply(
             lambda g: pd.Series({
                 'score': g['weighted_score'].sum() / g['weight'].sum() if g['weight'].sum() > 0 else g['review_score'].mean(),
-                'mentions': len(g)  # Como cada linha já é um jogador único, len(g) é o total de pessoas!
+                'mentions': len(g) 
             })
         ).reset_index()
         positive_topics = []
         negative_topics = []
-        # Alteração do cálculo do score geral. O código anterior possua um erro gravíssimo que literalmente pegava somente a primeira sentença de um grupo de sentenças da mesma review e jogava todo o resto fora. O correto e fazer a média de todas as sentenças da review e depois aplicar o peso. Isso impede que por exemplo que uma das sentenças do usuário seja positva e tenha várias outras muito negativas que vão ser totalmente desconsideradas. 
+        
         if not df.empty:
             df_por_review = df.groupby('review_id').agg({
                 'review_score': 'mean',
@@ -199,10 +206,7 @@ class ABSAPipeline:
         else:
             overall_score = 0
 
-        # topic_info = self.topic_model.get_topic_info() -> comentado pois não estava sendo utilizado 
-
-
-        # É aqui que o sistema da definindo o nome dos tópicos, pegando as palavras mais frequentes de cada tópico e utilizando elas para criar um nome mais amigável. Bom saber! 
+        
         for _, row in agg_df.iterrows():
             tid = int(row['topic_id'])
             score = float(row['score'])
@@ -217,7 +221,7 @@ class ABSAPipeline:
 
             if is_positive_topic:
                 df_topic_filtered = df_topic_all[df_topic_all['review_score'] >= 3.0] \
-                    .sort_values(by='review_score', ascending=False) # Analisar possível mudança do 3.0 para algo como 2.5 ? 
+                    .sort_values(by='review_score', ascending=False)
             else:
                 df_topic_filtered = df_topic_all[df_topic_all['review_score'] < 3.0] \
                     .sort_values(by='review_score', ascending=True)
@@ -234,7 +238,7 @@ class ABSAPipeline:
                 "topic_id": tid,
                 "mentions": mentions,
                 "score": round(score, 1),
-                "keywords": keywords, # pode ser usado para nuvem de palavras 
+                "keywords": keywords, 
                 "quotes": quotes
             }
             
@@ -255,7 +259,12 @@ class ABSAPipeline:
             },
             "summary": {
                 "overall_score": round(float(overall_score), 1),
-                "reviews_analyzed": num_analyzed
+                "reviews_analyzed": num_analyzed,
+                "total_sentences": total_sentences,
+                "positive_count": pos_sentences,
+                "positive_percentage": pos_pct,
+                "negative_count": neg_sentences,
+                "negative_percentage": neg_pct
             },
             "topics": {
                 "positive": positive_topics[:10], 

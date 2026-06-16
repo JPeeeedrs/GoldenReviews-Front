@@ -6,31 +6,49 @@ const numberFormat = (value) =>
 
 export default function GameHero({ game, summary, meta, aiNota }) {
 	const avgHours = summary?.avg_hours;
+	const positivePct = summary?.positive_percentage || 0;
+	const negativePct = summary?.negative_percentage || 0;
 
 	return (
 		<header className='analysis-hero'>
-			<div>
-				<p className='eyebrow'>GOLDEN REVIEWS • JOGO EM ANÁLISE</p>
-				<h2>{game?.name ?? ""}</h2>
-				<div className='meta-line'>
-					{(aiNota ?? summary?.overall_score) !== undefined && (
-						<span>
-							⭐ {numberFormat(aiNota ?? summary.overall_score)} Score Geral
-							(IA)
-						</span>
+			<div className='hero-main-row'>
+				<div className='hero-text-content'>
+					<h2>{game?.name ?? ""}</h2>
+
+					<div className='meta-line'>
+						{avgHours !== undefined && avgHours !== null && (
+							<span>⏱️ {numberFormat(avgHours)} h médias jogadas</span>
+						)}
+						{game?.release_date && <span>📅 {game.release_date}</span>}
+						{game?.price && <span>💰 {game.price}</span>}
+					</div>
+
+					{game?.short_description && (
+						<p className='description'>{game.short_description}</p>
 					)}
-					{avgHours !== undefined && avgHours !== null && (
-						<span>⏱️ {numberFormat(avgHours)} h médias jogadas</span>
-					)}
-					{game?.release_date && <span>📅 {game.release_date}</span>}
-					{game?.price && <span>💰 {game.price}</span>}
 				</div>
-				{game?.short_description && (
-					<p className='description'>{game.short_description}</p>
+
+				{game?.header_image && (
+					<img
+						src={game.header_image}
+						alt={game?.name}
+						className='game-cover'
+					/>
 				)}
 			</div>
-			{game?.header_image && (
-				<img src={game.header_image} alt={game?.name} className='game-cover' />
+
+			{(positivePct > 0 || negativePct > 0) && (
+				<div
+					className='hero-sentiment-bar'
+					title={`${positivePct}% Positivas / ${negativePct}% Negativas`}
+				>
+					<div className='bar-green' style={{ width: `${positivePct}%` }}>
+						{positivePct > 10 && <span>{positivePct}%</span>}
+					</div>
+					<div className='bar-red' style={{ width: `${negativePct}%` }}>
+						{negativePct > 10 && <span>{negativePct}%</span>}
+					</div>
+				</div>
 			)}
 		</header>
 	);

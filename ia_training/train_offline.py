@@ -1,8 +1,3 @@
-"""
-(Treinamento Base)
-Objetivo: Resolver o Cold Start utilizando um dataset estático do Kaggle.
-"""
-
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from bertopic import BERTopic
@@ -12,7 +7,6 @@ import nltk
 import ssl
 import certifi
 
-# Bypass para download nltk se houver problemas de SSL
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -23,7 +17,6 @@ else:
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# Configurando Stop Words (Removendo lixo e nomes genéricos de jogos)
 stop_words_pt = stopwords.words('portuguese')
 custom_stop_words = stop_words_pt + [
     'jogo', 'jogar', 'game', 'steam', 'pra', 'pro', 'the', 'witcher',
@@ -77,10 +70,9 @@ def main():
         sentences,
         topics,
         strategy="embeddings",
-        threshold=0.85 # Resgata apenas os outliers que tenham 85% ou mais de similaridade com um tópico existente
+        threshold=0.85 
     )
 
-    # Atualiza o modelo com os outliers resgatados
     topic_model.update_topics(sentences, topics=new_topics)
 
     print("6. Salvando o modelo refinado em disco...")

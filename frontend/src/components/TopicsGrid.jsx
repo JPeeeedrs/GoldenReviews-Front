@@ -109,7 +109,6 @@ export default function TopicsGrid({ topics }) {
 				{orderedTopics.map((topic, idx) => {
 					const examples = topic?.quotes ?? [];
 					const count = topic?.mentions ?? 0;
-					const keywords = topic?.keywords?.slice(0, 3).join(", ");
 					const mappedTheme = getMappedTheme(topic.topic_id);
 
 					return (
@@ -126,12 +125,6 @@ export default function TopicsGrid({ topics }) {
 								<div>
 									<p className='eyebrow'>
 										Score semântico: {numberFormat(topic.score)} / 5.0
-									</p>
-									<p
-										className='eyebrow'
-										style={{ marginTop: "-8px", fontStyle: "italic" }}
-									>
-										[{keywords}]
 									</p>
 									{examples.length ? (
 										examples.map((sentence, i) => (
