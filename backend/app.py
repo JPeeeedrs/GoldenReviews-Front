@@ -1,6 +1,5 @@
 """FastAPI backend para análise de reviews da Steam com cache SQLite (WAL) e ABSA."""
 
-# Remoção de imports não utilizados ou obsoletos: asyncio, datetime, timezone, Optionl 
 from __future__ import annotations
 import json
 import sqlite3
@@ -19,7 +18,7 @@ from llm_summary import gerar_resumo
 
 app = FastAPI(title="Golden Reviews API")
 
-#Libera tudo do CORS para a fase de desenvolvimento. Em produção é necessário restringir para manter segurança. 
+#CORS: Permisão total 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -28,9 +27,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ════════════════════════════════════════════════════════════════════════════
-# CONFIG & DB
-# ════════════════════════════════════════════════════════════════════════════
 
 STEAM_REVIEWS_URL = "https://store.steampowered.com/appreviews/{app_id}"
 STEAM_DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={app_id}&l=portuguese"
@@ -45,7 +41,7 @@ PIPELINE = ABSAPipeline(MODEL_PATH)
 
 
 def init_db():
-    """Inicializa o banco de dados SQLite com suporte a concorrência."""
+    
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute("PRAGMA journal_mode=WAL;")
         conn.execute(
@@ -103,6 +99,7 @@ def fetch_game_details(app_id: str) -> dict[str, Any]:
     }
 
 
+# Requisição de detelhes da SteamSpy: voted up e voted_down 
 def fetch_steamspy_stats(app_id: str) -> dict[str, Any]:
     params = {"request": "appdetails", "appid": app_id}
     try:
