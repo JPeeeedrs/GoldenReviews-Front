@@ -2,29 +2,36 @@ import "../styles/aisummarybox.css";
 
 export default function AiSummaryBox({
 	aiSummaryText,
-	positivePct,
-	negativePct,
+	aiNota, // Recebendo a nota em vez das porcentagens
 }) {
 	if (!aiSummaryText) return null;
 
 	return (
 		<div className='ai-summary-box'>
-			<div className='ai-summary-header'>
+			<div
+				className='ai-summary-header'
+				style={{
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+				}}
+			>
 				<h3>✨ Opinião dos Jogadores (Resumo IA)</h3>
 
-				{(positivePct > 0 || negativePct > 0) && (
+				{/* Exibindo a nota da IA se ela existir */}
+				{aiNota !== undefined && aiNota !== null && aiNota > 0 && (
 					<div
-						className='sentiment-bar-wrapper'
-						title={`${positivePct}% Positivas / ${negativePct}% Negativas`}
+						className='ai-score-badge'
+						style={{
+							backgroundColor: "#171a21",
+							padding: "6px 14px",
+							borderRadius: "8px",
+							border: "1px solid #66c0f4",
+							color: "#66c0f4",
+							fontWeight: "bold",
+						}}
 					>
-						<div className='sentiment-bar'>
-							<div className='bar-green' style={{ width: `${positivePct}%` }}>
-								{positivePct > 10 && <span>{positivePct}%</span>}
-							</div>
-							<div className='bar-red' style={{ width: `${negativePct}%` }}>
-								{negativePct > 10 && <span>{negativePct}%</span>}
-							</div>
-						</div>
+						Nota IA: {aiNota}
 					</div>
 				)}
 			</div>

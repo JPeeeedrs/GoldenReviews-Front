@@ -17,22 +17,37 @@ export default function StatGrid({ game, summary, metadata, meta }) {
 				<span>Frases extraídas (IA)</span>
 				<strong>
 					{integerFormat(
-						summary?.total_sentences ?? summary?.reviews_analyzed ?? 0,
+						summary?.total_extracted_sentences ??
+							summary?.total_sentences ??
+							summary?.reviews_analyzed ??
+							0,
 					)}
 				</strong>
 			</div>
 			<div className='stat-card good'>
-				<span>Positivas</span>
+				<span>Frases Positivas</span>
 				<strong>
-					{integerFormat(summary?.positive_count ?? 0)} •{" "}
-					{summary?.positive_percentage ?? 0}%
+					{integerFormat(
+						summary?.sentences_positive_count ?? summary?.positive_count ?? 0,
+					)}{" "}
+					•{" "}
+					{summary?.sentences_positive_percentage ??
+						summary?.positive_percentage ??
+						0}
+					%
 				</strong>
 			</div>
 			<div className='stat-card bad'>
-				<span>Negativas</span>
+				<span>Frases Negativas</span>
 				<strong>
-					{integerFormat(summary?.negative_count ?? 0)} •{" "}
-					{summary?.negative_percentage ?? 0}%
+					{integerFormat(
+						summary?.sentences_negative_count ?? summary?.negative_count ?? 0,
+					)}{" "}
+					•{" "}
+					{summary?.sentences_negative_percentage ??
+						summary?.negative_percentage ??
+						0}
+					%
 				</strong>
 			</div>
 			<div className='stat-card neutral'>

@@ -27,12 +27,8 @@ export default function ReviewAnalysis({ data }) {
 				/>
 			)}
 			<section className='analysis'>
-				<GameHero game={game} summary={summary} meta={meta} aiNota={aiNota} />
-				<AiSummaryBox
-					aiSummaryText={aiSummaryText}
-					positivePct={summary?.positive_percentage || 0}
-					negativePct={summary?.negative_percentage || 0}
-				/>
+				<GameHero game={game} summary={summary} meta={meta} />
+				<AiSummaryBox aiSummaryText={aiSummaryText} aiNota={aiNota} />
 				<StatGrid
 					game={game}
 					summary={summary}

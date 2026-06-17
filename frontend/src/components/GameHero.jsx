@@ -4,10 +4,13 @@ import "../styles/global.css";
 const numberFormat = (value) =>
 	new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
 
-export default function GameHero({ game, summary, meta, aiNota }) {
+export default function GameHero({ game, summary, meta }) {
 	const avgHours = summary?.avg_hours;
-	const positivePct = summary?.positive_percentage || 0;
-	const negativePct = summary?.negative_percentage || 0;
+
+	const positivePct =
+		summary?.sentences_positive_percentage ?? summary?.positive_percentage ?? 0;
+	const negativePct =
+		summary?.sentences_negative_percentage ?? summary?.negative_percentage ?? 0;
 
 	return (
 		<header className='analysis-hero'>
@@ -40,7 +43,7 @@ export default function GameHero({ game, summary, meta, aiNota }) {
 			{(positivePct > 0 || negativePct > 0) && (
 				<div
 					className='hero-sentiment-bar'
-					title={`${positivePct}% Positivas / ${negativePct}% Negativas`}
+					title={`Frases: ${positivePct}% Positivas / ${negativePct}% Negativas`}
 				>
 					<div className='bar-green' style={{ width: `${positivePct}%` }}>
 						{positivePct > 10 && <span>{positivePct}%</span>}
