@@ -83,7 +83,7 @@ def fetch_game_details(app_id: str) -> dict[str, Any]:
                 "short_description": info.get("short_description"),
                 "steamspy": steamspy_data,
             }
-    except requests.RequestException:
+    except (requests.RequestException, ValueError): #FIX : ValueError adicinado para evitar erros de json mal formatado ou vazio.
         pass
     return {
         "appid": str(app_id),
